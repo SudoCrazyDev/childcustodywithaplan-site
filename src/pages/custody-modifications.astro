@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+---
+
+<BaseLayout
+  title="Custody Modification Attorney Maryland | Modify Child Custody Order | Child Custody with a Plan"
+  description="Need to modify a child custody order in Maryland? Our attorneys handle custody modifications when circumstances change. Rockville & Baltimore. Free consultation — call (301) 289-8917."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          🔄 Custody Modifications
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">
+          Maryland Custody <span class="text-gold-400">Modification Attorneys</span>
+        </h1>
+        <p class="text-teal-100 text-xl leading-relaxed mb-8">
+          Life changes. Your custody order should reflect your family's current reality. We help Maryland parents modify custody arrangements when circumstances have materially changed.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">
+            Free Modification Consultation
+          </a>
+          <a href="tel:3012898917" class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-teal-800 font-bold px-8 py-4 rounded-lg transition-all">
+            (301) 289-8917
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/services" class="hover:text-teal-600">Services</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Custody Modifications</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <div class="gold-bar"></div>
+          <h2 class="font-serif text-3xl font-bold text-teal-800 mb-5">When Can You Modify a Custody Order in Maryland?</h2>
+
+          <div class="space-y-5 text-gray-600">
+            <p class="leading-relaxed">
+              In Maryland, a custody order can be modified when there has been a <strong>material change in circumstances</strong> since the original order was entered. Courts do not reopen custody cases simply because one parent is unhappy with the arrangement — there must be a genuine, significant change that warrants reconsideration.
+            </p>
+            <p class="leading-relaxed">
+              Once a material change is established, the court applies the same "best interests of the child" standard used in the original custody determination, evaluating whether the proposed modification would better serve the child's physical, emotional, and developmental needs.
+            </p>
+          </div>
+
+          <!-- Material Changes -->
+          <div class="mt-10 bg-teal-50 rounded-2xl p-8">
+            <h3 class="font-serif font-bold text-teal-800 text-xl mb-6">What Qualifies as a Material Change in Circumstances?</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "A parent's relocation to another city or state",
+                "Remarriage of a parent with children involved",
+                "Substantial change in a parent's work schedule",
+                "The child's increased age and changing needs",
+                "Evidence of substance abuse by a parent",
+                "Domestic violence in the home",
+                "A parent's serious illness or health change",
+                "The child's own expressed preference (if mature)",
+                "Violation of the existing custody order",
+                "Parental alienation by the custodial parent",
+                "A parent losing their job or housing stability",
+                "The other parent's new partner posing risks",
+              ].map((item) => (
+                <div class="flex items-start gap-2">
+                  <div class="w-5 h-5 bg-teal-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="w-2 h-2 bg-teal-600 rounded-full"></div>
+                  </div>
+                  <span class="text-gray-700 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Process Steps -->
+          <div class="mt-12">
+            <h3 class="font-serif font-bold text-teal-800 text-xl mb-6">The Modification Process in Maryland</h3>
+            <div class="space-y-4">
+              {[
+                {
+                  step: "1",
+                  title: "Evaluate Your Grounds",
+                  desc: "We start by assessing whether the changes in your situation qualify as a 'material change' under Maryland law. This is the most critical threshold question — and we evaluate it honestly.",
+                },
+                {
+                  step: "2",
+                  title: "Document the Change",
+                  desc: "We help you gather and organize the evidence that demonstrates the material change — records, communications, reports, witness statements, and other documentation.",
+                },
+                {
+                  step: "3",
+                  title: "File the Petition",
+                  desc: "We file a Petition to Modify Custody in the appropriate Maryland circuit court, along with supporting affidavits and a proposed modified parenting plan.",
+                },
+                {
+                  step: "4",
+                  title: "Negotiation or Hearing",
+                  desc: "Many modifications are resolved through negotiation or mediation. If agreement is not possible, we present your case at a formal modification hearing before a judge.",
+                },
+                {
+                  step: "5",
+                  title: "New Order Entered",
+                  desc: "If successful, the court enters a new custody order reflecting the modified arrangement. We ensure the order is precise and enforceable to prevent future disputes.",
+                },
+              ].map((step) => (
+                <div class="flex gap-4 p-5 bg-gray-50 rounded-xl border border-gray-200">
+                  <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                    {step.step}
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-teal-800 mb-1">{step.title}</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="mt-12">
+            <h3 class="font-serif font-bold text-teal-800 text-2xl mb-6">Custody Modification FAQ</h3>
+            <div class="space-y-4">
+              {[
+                {
+                  q: "How long after the original order can I seek a modification?",
+                  a: "There is no strict waiting period, but modifications require a material change in circumstances. Courts are generally reluctant to reopen cases too soon after the original order unless there is a compelling reason. Typically, modifications become viable when meaningful life changes occur — often six months or more after the original order.",
+                },
+                {
+                  q: "Can I modify custody if my ex and I agree?",
+                  a: "Yes. If both parents agree on a modification, you can present a consent agreement to the court for approval. A judge will review it to confirm it serves the child's best interests. This is often faster and less expensive than a contested modification.",
+                },
+                {
+                  q: "What if my ex refuses to agree to a necessary modification?",
+                  a: "If the other parent won't agree, you can file a contested modification petition. The court will hear evidence from both sides and determine whether a modification is warranted. We prepare thorough, evidence-backed presentations for modification hearings.",
+                },
+                {
+                  q: "How is a modification different from a new custody case?",
+                  a: "A modification is a petition to change an existing order — not a brand new custody proceeding. The key difference is that you must first establish a material change in circumstances before the court will even consider modifying the terms of the original order.",
+                },
+              ].map((faq) => (
+                <div class="p-5 bg-teal-50 rounded-xl border-l-4 border-teal-600">
+                  <h4 class="font-semibold text-teal-800 text-sm mb-2">{faq.q}</h4>
+                  <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-teal-900 text-white rounded-2xl p-7 sticky top-24">
+            <h3 class="font-serif font-bold text-xl mb-3">Is a Modification Right for You?</h3>
+            <p class="text-teal-200 text-sm mb-5">Talk to a Maryland custody modification attorney today. Free, confidential consultation.</p>
+            <a href="/free-consultation" class="btn-primary w-full justify-center mb-3 block text-center">Free Consultation</a>
+            <a href="tel:3012898917" class="block text-center border border-teal-600 text-white hover:bg-teal-800 py-3 rounded-lg text-sm font-semibold transition-colors">(301) 289-8917</a>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h4 class="font-semibold text-amber-800 mb-3">⚠️ Defending a Modification Petition?</h4>
+            <p class="text-amber-700 text-sm leading-relaxed">
+              If your ex has filed to modify custody against you, time is critical. Contact us immediately to evaluate the petition and build your defense strategy.
+            </p>
+            <a href="tel:3012898917" class="block mt-3 text-center bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors">Call Now</a>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-semibold text-teal-800 mb-4">Related Services</h4>
+            <ul class="space-y-2">
+              {[
+                { label: "Father's Rights", href: "/fathers-rights" },
+                { label: "Mother's Rights", href: "/mothers-rights" },
+                { label: "Emergency Custody", href: "/emergency-custody" },
+                { label: "Visitation Rights", href: "/visitation-rights" },
+              ].map((link) => (
+                <li>
+                  <a href={link.href} class="flex items-center gap-2 text-teal-600 hover:text-teal-800 text-sm transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA heading="Your Circumstances Have Changed — Your Custody Order Should Too" subtext="Our Maryland custody modification attorneys are ready to evaluate your case and pursue the change your family needs. Free consultation, no obligation." />
+</BaseLayout>

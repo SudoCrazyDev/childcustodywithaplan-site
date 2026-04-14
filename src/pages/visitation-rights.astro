@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+---
+
+<BaseLayout
+  title="Visitation Rights Attorney Maryland | Child Visitation Lawyer | Child Custody with a Plan"
+  description="Maryland visitation rights attorneys helping non-custodial parents establish, enforce, and modify visitation schedules. Don't lose time with your children. Free consultation — (301) 289-8917."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          📅 Visitation Rights
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">
+          Maryland Visitation Rights <span class="text-gold-400">Attorneys</span>
+        </h1>
+        <p class="text-teal-100 text-xl leading-relaxed mb-8">
+          Every parent deserves meaningful time with their child. Whether you need to establish, enforce, or modify visitation rights in Maryland, we advocate powerfully on your behalf.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">
+            Free Visitation Consultation
+          </a>
+          <a href="tel:3012898917" class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-teal-800 font-bold px-8 py-4 rounded-lg transition-all">
+            (301) 289-8917
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/services" class="hover:text-teal-600">Services</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Visitation Rights</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <div class="gold-bar"></div>
+          <h2 class="font-serif text-3xl font-bold text-teal-800 mb-5">Protecting Your Right to Parent</h2>
+
+          <div class="space-y-5 text-gray-600">
+            <p class="leading-relaxed">
+              Visitation rights — also called access rights or parenting time — ensure that non-custodial parents maintain a meaningful relationship with their children. Maryland courts strongly believe that children benefit from having both parents actively involved in their lives, and courts are generally reluctant to deny or severely restrict visitation unless there is a compelling safety reason.
+            </p>
+            <p class="leading-relaxed">
+              Despite this legal framework, many parents find their visitation rights being undermined — by the other parent refusing to comply with the schedule, by vague orders that allow for manipulation, or by a complete lack of any court-ordered visitation at all.
+            </p>
+            <p class="leading-relaxed">
+              At Child Custody with a Plan, we help non-custodial parents in Maryland get the time with their children they legally deserve — and we fight to protect that time when it's being denied.
+            </p>
+          </div>
+
+          <!-- Types of Visitation -->
+          <div class="mt-10">
+            <h3 class="font-serif font-bold text-teal-800 text-xl mb-6">Types of Visitation Arrangements in Maryland</h3>
+            <div class="space-y-4">
+              {[
+                {
+                  title: "Scheduled Visitation",
+                  desc: "The most common arrangement — a specific, court-ordered schedule defining which days, weekends, holidays, and vacations each parent has with the child. Detailed schedules prevent ambiguity and reduce conflict.",
+                  icon: "📅",
+                },
+                {
+                  title: "Reasonable Visitation",
+                  desc: "A flexible arrangement where the parents are expected to work out visitation themselves. While this sounds cooperative, it often leads to disputes. We typically advise against this unless both parents have an excellent co-parenting relationship.",
+                  icon: "🤝",
+                },
+                {
+                  title: "Supervised Visitation",
+                  desc: "Court-ordered supervision during visits, typically when there are safety concerns about a parent. Supervised visits can occur at a visitation center, at a neutral party's home, or with a court-appointed supervisor.",
+                  icon: "👀",
+                },
+                {
+                  title: "Virtual Visitation",
+                  desc: "Video calls and phone contact that supplement in-person visitation, especially when parents live far apart. Maryland courts increasingly recognize virtual visitation as a meaningful component of a comprehensive parenting plan.",
+                  icon: "📱",
+                },
+                {
+                  title: "Grandparent Visitation",
+                  desc: "Maryland law allows grandparents to petition for visitation rights in certain circumstances. We help grandparents navigate this process and establish meaningful access to their grandchildren.",
+                  icon: "👴👵",
+                },
+              ].map((type) => (
+                <div class="flex gap-4 p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-teal-300 transition-colors">
+                  <div class="text-3xl flex-shrink-0">{type.icon}</div>
+                  <div>
+                    <h4 class="font-serif font-bold text-teal-800 mb-2">{type.title}</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">{type.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Denial of Visitation -->
+          <div class="mt-12 bg-amber-50 border border-amber-200 rounded-2xl p-8">
+            <h3 class="font-serif font-bold text-amber-800 text-xl mb-4">⚠️ Is the Other Parent Denying Your Visitation?</h3>
+            <p class="text-gray-700 leading-relaxed mb-5">
+              Denying court-ordered visitation is a contempt of court violation in Maryland. If your ex is refusing to follow the visitation order, you have legal remedies available — and you should act quickly.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {[
+                "Document every denied visit with dates and communications",
+                "Send written notice to the other parent via text or email",
+                "File a contempt of court motion",
+                "Seek makeup visitation time from the court",
+                "Request a modification to primary custody based on interference",
+                "Request sanctions against the violating parent",
+              ].map((step) => (
+                <div class="flex items-start gap-2">
+                  <div class="w-5 h-5 bg-amber-200 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="w-2 h-2 bg-amber-600 rounded-full"></div>
+                  </div>
+                  <span class="text-gray-700 text-sm">{step}</span>
+                </div>
+              ))}
+            </div>
+            <a href="/free-consultation" class="btn-primary">Get Help Now</a>
+          </div>
+
+          <!-- Parenting Plan Elements -->
+          <div class="mt-12">
+            <h3 class="font-serif font-bold text-teal-800 text-xl mb-6">Elements of a Comprehensive Maryland Parenting Plan</h3>
+            <p class="text-gray-600 mb-5">We draft detailed, enforceable parenting plans that eliminate ambiguity and protect your visitation time. A strong parenting plan addresses:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Regular weekly/biweekly schedule",
+                "Holiday and school break schedule",
+                "Summer vacation arrangements",
+                "Pick-up and drop-off logistics",
+                "Communication protocols",
+                "Right of first refusal",
+                "Travel and vacation notice requirements",
+                "Virtual visitation provisions",
+                "Decision-making in emergencies",
+                "Process for schedule changes",
+                "Protocols for illness or schedule conflicts",
+                "Review/modification trigger events",
+              ].map((item) => (
+                <div class="flex items-center gap-2 text-sm text-gray-700">
+                  <div class="w-4 h-4 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                  </div>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="mt-12">
+            <h3 class="font-serif font-bold text-teal-800 text-2xl mb-6">Visitation Rights FAQ</h3>
+            <div class="space-y-4">
+              {[
+                {
+                  q: "Can the custodial parent refuse visitation if child support isn't paid?",
+                  a: "No. In Maryland, visitation and child support are entirely separate legal obligations. A parent cannot legally withhold visitation as leverage for unpaid support — and doing so can constitute contempt of court. Similarly, a non-custodial parent cannot withhold support because visitation is being denied.",
+                },
+                {
+                  q: "What age can a child refuse visitation in Maryland?",
+                  a: "There is no specific age at which a child can legally refuse visitation in Maryland. Courts may consider a child's preferences — particularly for older teenagers — but children cannot simply opt out of a court-ordered visitation schedule. Parents who allow a child to refuse court-ordered visitation may face contempt proceedings.",
+                },
+                {
+                  q: "Can I get more visitation if I'm paying child support?",
+                  a: "Paying child support does not automatically entitle you to more visitation. Visitation is based on the child's best interests, not financial contributions. However, demonstrating your financial commitment can support your overall case as a responsible, engaged parent.",
+                },
+                {
+                  q: "What if I believe the other parent is bad-mouthing me to my child?",
+                  a: "This may be evidence of parental alienation — a pattern of behavior where one parent deliberately undermines the child's relationship with the other. Courts take parental alienation seriously. Document instances, and discuss the behavior with your attorney to determine appropriate legal responses.",
+                },
+              ].map((faq) => (
+                <div class="p-5 bg-teal-50 rounded-xl border-l-4 border-teal-600">
+                  <h4 class="font-semibold text-teal-800 text-sm mb-2">{faq.q}</h4>
+                  <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-teal-900 text-white rounded-2xl p-7 sticky top-24">
+            <h3 class="font-serif font-bold text-xl mb-3">Protect Your Time with Your Children</h3>
+            <p class="text-teal-200 text-sm mb-5">Don't let another weekend go by without seeing your kids. We'll fight for your visitation rights.</p>
+            <a href="/free-consultation" class="btn-primary w-full justify-center mb-3 block text-center">Free Consultation</a>
+            <a href="tel:3012898917" class="block text-center border border-teal-600 text-white hover:bg-teal-800 py-3 rounded-lg text-sm font-semibold transition-colors">(301) 289-8917</a>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-semibold text-teal-800 mb-4">Common Visitation Issues We Handle</h4>
+            <ul class="space-y-2">
+              {[
+                "Establishing initial visitation rights",
+                "Enforcing denied or blocked visitation",
+                "Modifying inadequate schedules",
+                "Supervised visitation modification",
+                "Grandparent visitation petitions",
+                "Long-distance visitation planning",
+                "Holiday schedule disputes",
+              ].map((item) => (
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                  <div class="w-4 h-4 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                  </div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-semibold text-teal-800 mb-4">Related Services</h4>
+            <ul class="space-y-2">
+              {[
+                { label: "Father's Rights", href: "/fathers-rights" },
+                { label: "Mother's Rights", href: "/mothers-rights" },
+                { label: "Custody Modifications", href: "/custody-modifications" },
+                { label: "Emergency Custody", href: "/emergency-custody" },
+              ].map((link) => (
+                <li>
+                  <a href={link.href} class="flex items-center gap-2 text-teal-600 hover:text-teal-800 text-sm transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA heading="Your Children Deserve Time with Both Parents" subtext="Don't let your visitation rights be denied or ignored. Our Maryland visitation rights attorneys will fight to protect your relationship with your children. Free consultation." />
+</BaseLayout>

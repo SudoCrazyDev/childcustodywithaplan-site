@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+
+const articles = [
+  {
+    title: "How to Win a Custody Battle in Maryland: What Judges Actually Look For",
+    category: "Strategy",
+    excerpt: "Understanding the specific factors Maryland judges weigh when determining custody can give you a significant strategic advantage. We break down the 'best interests' standard and how to present your case effectively.",
+    readTime: "8 min read",
+    date: "January 15, 2025",
+    slug: "#",
+    featured: true,
+    tags: ["custody strategy", "best interests", "Maryland courts"],
+  },
+  {
+    title: "Father's Rights in Maryland: Everything a Dad Needs to Know in 2025",
+    category: "Father's Rights",
+    excerpt: "Despite what many fathers believe, Maryland courts do not automatically favor mothers. Learn how Maryland law treats paternal custody rights, how to establish paternity, and how to fight for equal parenting time.",
+    readTime: "10 min read",
+    date: "January 10, 2025",
+    slug: "#",
+    featured: true,
+    tags: ["father's rights", "equal custody", "Maryland"],
+  },
+  {
+    title: "Emergency Custody Orders in Maryland: A Step-by-Step Guide",
+    category: "Emergency Custody",
+    excerpt: "When a child's safety is at immediate risk, the court system can move fast. This guide explains when emergency orders are available, what evidence you need, and exactly how the process works in Maryland.",
+    readTime: "7 min read",
+    date: "January 5, 2025",
+    slug: "#",
+    featured: true,
+    tags: ["emergency custody", "protective orders", "urgent"],
+  },
+  {
+    title: "Joint Custody vs. Sole Custody in Maryland: Pros, Cons & Deciding Factors",
+    category: "Custody Types",
+    excerpt: "What's the difference between joint and sole custody in Maryland? We explain the legal distinctions, the practical implications for your family, and what factors influence which arrangement a court is likely to order.",
+    readTime: "6 min read",
+    date: "December 28, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["joint custody", "sole custody", "custody types"],
+  },
+  {
+    title: "How to Modify a Child Custody Order in Maryland",
+    category: "Modifications",
+    excerpt: "If your life has changed significantly since your custody order was entered, you may be eligible to modify it. Learn what qualifies as a 'material change in circumstances' and how to navigate the modification process.",
+    readTime: "8 min read",
+    date: "December 20, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["custody modification", "material change", "Maryland law"],
+  },
+  {
+    title: "Parental Alienation: Recognizing It and Fighting It in Maryland Courts",
+    category: "Parental Alienation",
+    excerpt: "Parental alienation — when one parent deliberately undermines the child's relationship with the other — is taken seriously by Maryland courts. Learn how to identify it, document it, and address it legally.",
+    readTime: "9 min read",
+    date: "December 15, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["parental alienation", "custody disputes", "documentation"],
+  },
+  {
+    title: "Visitation Rights in Maryland: What Non-Custodial Parents Must Know",
+    category: "Visitation",
+    excerpt: "Whether you've been denied visitation or are trying to establish a schedule, understanding your legal rights is essential. This guide covers everything non-custodial parents need to know about Maryland visitation law.",
+    readTime: "7 min read",
+    date: "December 10, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["visitation rights", "non-custodial parent", "parenting time"],
+  },
+  {
+    title: "What to Expect at a Maryland Custody Hearing",
+    category: "Court Process",
+    excerpt: "Nervous about your upcoming custody hearing? We walk you through exactly what happens at a Maryland custody hearing — from the opening statements to the judge's decision — so you know what to expect.",
+    readTime: "8 min read",
+    date: "December 5, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["custody hearing", "court process", "preparation"],
+  },
+  {
+    title: "How Maryland Courts Handle Custody When Parents Live in Different States",
+    category: "Interstate Custody",
+    excerpt: "When parents live in different states, custody disputes become significantly more complex. Learn about the UCCJEA, how Maryland courts handle jurisdiction, and what your rights are in interstate custody situations.",
+    readTime: "9 min read",
+    date: "November 28, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["interstate custody", "UCCJEA", "relocation"],
+  },
+  {
+    title: "The True Cost of Not Having a Custody Attorney in Maryland",
+    category: "Legal Guidance",
+    excerpt: "Many parents try to navigate custody proceedings without legal representation. We explain the real risks — including costly mistakes, unfair orders, and outcomes that can affect your children for years — and when you truly need a lawyer.",
+    readTime: "6 min read",
+    date: "November 20, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["legal representation", "custody attorney", "self-representation"],
+  },
+  {
+    title: "Grandparent Custody and Visitation Rights in Maryland",
+    category: "Grandparent Rights",
+    excerpt: "Maryland law does allow grandparents to petition for visitation — and in some circumstances, custody. This guide explains when and how grandparents can assert their rights under Maryland family law.",
+    readTime: "7 min read",
+    date: "November 15, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["grandparent rights", "visitation", "non-parent custody"],
+  },
+  {
+    title: "How to Document Your Parenting for a Custody Case",
+    category: "Strategy",
+    excerpt: "Documentation is one of the most powerful tools in any custody case. We share the specific records, communications, and evidence that Maryland parents should gather — starting now, before any hearing.",
+    readTime: "8 min read",
+    date: "November 10, 2024",
+    slug: "#",
+    featured: false,
+    tags: ["documentation", "evidence", "custody strategy"],
+  },
+];
+
+const categories = ["All", "Strategy", "Father's Rights", "Mother's Rights", "Emergency Custody", "Modifications", "Visitation", "Court Process", "Interstate Custody", "Legal Guidance", "Grandparent Rights", "Parental Alienation"];
+---
+
+<BaseLayout
+  title="Child Custody Resources & Blog | Maryland Custody Law | Child Custody with a Plan"
+  description="Free child custody resources, articles, and guides from Maryland's dedicated child custody attorneys. Learn about Maryland custody law, father's rights, emergency orders, and more."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">Custody Resources <span class="text-gold-400">&amp; Insights</span></h1>
+      <p class="text-teal-100 text-xl leading-relaxed">
+        Free, attorney-written guides to help Maryland parents understand their rights and navigate custody law with confidence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Resources & Blog</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Featured Articles -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="gold-bar mx-auto"></div>
+        <h2 class="section-heading">Featured Articles</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {articles.filter(a => a.featured).map((article) => (
+          <a href={article.slug} class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100 block">
+            <div class="bg-gradient-to-br from-teal-700 to-teal-900 p-6">
+              <span class="badge badge-gold text-xs mb-2 inline-block">{article.category}</span>
+              <h3 class="font-serif font-bold text-white text-lg leading-tight group-hover:text-gold-300 transition-colors">{article.title}</h3>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-400 text-xs">{article.date}</span>
+                <span class="text-teal-600 text-xs font-semibold">{article.readTime}</span>
+              </div>
+              <div class="mt-4 flex items-center gap-1 text-teal-600 font-semibold text-sm group-hover:text-gold-500 transition-colors">
+                Read Article
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- All Articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <div class="gold-bar mx-auto"></div>
+        <h2 class="section-heading">All Articles & Resources</h2>
+      </div>
+
+      <!-- Categories -->
+      <div class="flex flex-wrap gap-2 justify-center mb-10">
+        {categories.slice(0, 8).map((cat) => (
+          <button class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${cat === 'All' ? 'bg-teal-600 text-white' : 'bg-white text-gray-700 border border-gray-200 hover:border-teal-400 hover:text-teal-600'}`}>
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Article Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((article) => (
+          <a href={article.slug} class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group block">
+            <div class="h-2 bg-gradient-to-r from-teal-600 to-teal-700"></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge badge-teal text-xs">{article.category}</span>
+                <span class="text-gray-400 text-xs">{article.readTime}</span>
+              </div>
+              <h3 class="font-serif font-bold text-teal-800 text-base leading-tight mb-3 group-hover:text-teal-600 transition-colors">{article.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{article.excerpt}</p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-1 mb-4">
+                {article.tags.slice(0, 2).map((tag) => (
+                  <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">#{tag}</span>
+                ))}
+              </div>
+
+              <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                <span class="text-gray-400 text-xs">{article.date}</span>
+                <span class="flex items-center gap-1 text-teal-600 text-xs font-semibold group-hover:text-gold-500 transition-colors">
+                  Read More
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics Sidebar Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- Quick Reference -->
+        <div class="lg:col-span-2">
+          <div class="gold-bar"></div>
+          <h2 class="font-serif text-2xl font-bold text-teal-800 mb-6">Maryland Custody Law Quick Reference</h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {[
+              { q: "What standard do Maryland courts use?", a: "The 'best interests of the child' standard — a holistic evaluation of all factors affecting the child's welfare." },
+              { q: "Do mothers automatically get custody?", a: "No. Maryland law is gender-neutral. Both parents have equal footing in custody proceedings." },
+              { q: "Can I get joint custody?", a: "Yes. Joint legal and/or physical custody is common in Maryland when both parents are fit and capable." },
+              { q: "How long does a custody case take?", a: "Contested cases typically take 6–18 months. Uncontested cases can resolve much faster." },
+              { q: "Can I represent myself?", a: "Technically yes, but custody cases are complex and self-represented parties often get less favorable outcomes." },
+              { q: "What if I can't afford an attorney?", a: "Contact us. We offer free consultations and discuss payment structures. Legal aid resources also exist for qualifying individuals." },
+            ].map((item) => (
+              <div class="p-5 bg-teal-50 rounded-xl border border-teal-100">
+                <h4 class="font-semibold text-teal-800 text-sm mb-2">Q: {item.q}</h4>
+                <p class="text-gray-600 text-xs leading-relaxed">A: {item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <div class="bg-teal-900 text-white rounded-2xl p-7 mb-6">
+            <h3 class="font-serif font-bold text-xl mb-4">Get Expert Guidance</h3>
+            <p class="text-teal-200 text-sm mb-5">Articles can inform — but only an attorney who knows your situation can guide you. Free consultation available.</p>
+            <a href="/free-consultation" class="btn-primary w-full justify-center block text-center mb-3">Free Consultation</a>
+            <a href="tel:3012898917" class="block text-center border border-teal-600 text-white hover:bg-teal-800 py-3 rounded-lg text-sm font-semibold transition-colors">(301) 289-8917</a>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-semibold text-teal-800 mb-4">Practice Area Guides</h4>
+            <ul class="space-y-2">
+              {[
+                { label: "Child Custody Overview", href: "/services" },
+                { label: "Father's Rights Guide", href: "/fathers-rights" },
+                { label: "Mother's Rights Guide", href: "/mothers-rights" },
+                { label: "Modification Guide", href: "/custody-modifications" },
+                { label: "Emergency Custody Guide", href: "/emergency-custody" },
+                { label: "Visitation Rights Guide", href: "/visitation-rights" },
+              ].map((link) => (
+                <li>
+                  <a href={link.href} class="flex items-center gap-2 text-teal-600 hover:text-teal-800 text-sm transition-colors py-1">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA
+    heading="Have a Custody Question?"
+    subtext="Our Maryland child custody attorneys offer free consultations. Get honest, expert answers specific to your situation — not generic online information."
+  />
+</BaseLayout>

@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+---
+
+<BaseLayout
+  title="Child Custody Services Maryland | Child Custody with a Plan"
+  description="Comprehensive child custody legal services in Maryland — legal and physical custody, joint custody, sole custody, parenting plans, custody evaluations, and more. Rockville & Baltimore attorneys."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">Child Custody Services<br/><span class="text-gold-400">in Maryland</span></h1>
+      <p class="text-teal-100 text-xl leading-relaxed">
+        Dedicated, strategic custody representation for every type of custody matter — from parenting plans to high-conflict trials.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Services</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="gold-bar mx-auto"></div>
+      <h2 class="section-heading">Focused Exclusively on Child Custody</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        While other firms divide their attention across dozens of practice areas, Child Custody with a Plan focuses exclusively on custody law. That means every attorney on our team has deep, specialized knowledge of Maryland custody statutes, case law, and judicial expectations — knowledge that makes a real difference in outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Understanding Maryland Custody Types -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="gold-bar mx-auto"></div>
+        <h2 class="section-heading">Understanding Maryland Custody Types</h2>
+        <p class="section-subheading">Maryland law distinguishes between legal custody and physical custody — and between joint and sole arrangements. Understanding these distinctions is essential to your strategy.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "Legal Custody",
+            icon: "📜",
+            desc: "Legal custody refers to the right and responsibility to make major decisions about your child's life — including education, healthcare, and religious upbringing. In Maryland, courts may award joint legal custody (both parents share decision-making) or sole legal custody (one parent decides alone).",
+            keyPoints: ["Joint legal custody is most common", "Requires cooperative co-parenting", "Can be separated from physical custody"],
+          },
+          {
+            title: "Physical Custody",
+            icon: "🏠",
+            desc: "Physical custody determines where the child primarily lives and which parent handles day-to-day care. Joint physical custody means the child spends significant time with both parents. Primary physical custody means the child lives primarily with one parent, with visitation for the other.",
+            keyPoints: ["Joint vs. primary physical custody", "Parenting schedule and time-sharing", "Parenting plans must be detailed"],
+          },
+          {
+            title: "Joint Custody",
+            icon: "🤝",
+            desc: "Joint custody — whether legal, physical, or both — means both parents share responsibility for and time with the child. Maryland courts often favor joint arrangements that keep both parents actively involved in the child's life, assuming both parents are fit.",
+            keyPoints: ["Preferred when both parents are fit", "Requires detailed parenting plan", "Regular review as child's needs change"],
+          },
+          {
+            title: "Sole Custody",
+            icon: "⚖️",
+            desc: "Sole custody may be awarded when joint custody would not serve the child's best interests — for example, when one parent is unfit, when there's a history of domestic violence, or when the parents are so high-conflict that joint decision-making is unworkable.",
+            keyPoints: ["Requires showing joint custody unworkable", "Doesn't eliminate visitation rights", "Can be modified if circumstances change"],
+          },
+        ].map((type) => (
+          <div class="bg-white rounded-xl shadow-md p-7 border-l-4 border-teal-600 hover:shadow-xl transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-3xl">{type.icon}</div>
+              <h3 class="font-serif font-bold text-teal-800 text-xl">{type.title}</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-5">{type.desc}</p>
+            <ul class="space-y-2">
+              {type.keyPoints.map((point) => (
+                <li class="flex items-center gap-2 text-sm text-gray-700">
+                  <div class="w-4 h-4 bg-gold-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div class="w-2 h-2 bg-gold-400 rounded-full"></div>
+                  </div>
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="gold-bar mx-auto"></div>
+        <h2 class="section-heading">Our Child Custody Practice Areas</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: "Father's Rights", href: "/fathers-rights", icon: "👨‍👧‍👦", desc: "Dedicated advocacy for fathers seeking fair parenting time and equal custody rights in Maryland courts." },
+          { title: "Mother's Rights", href: "/mothers-rights", icon: "👩‍👧‍👦", desc: "Fierce representation for mothers seeking primary custody, safe parenting arrangements, and protection from alienation." },
+          { title: "Custody Modifications", href: "/custody-modifications", icon: "🔄", desc: "Petitioning or defending against changes to existing custody orders when circumstances have materially changed." },
+          { title: "Emergency Custody", href: "/emergency-custody", icon: "🚨", desc: "Immediate legal action to protect children in danger — same-day emergency order filings available." },
+          { title: "Visitation Rights", href: "/visitation-rights", icon: "📅", desc: "Establishing, enforcing, and modifying visitation schedules for non-custodial parents." },
+          { title: "Parenting Plans", href: "/free-consultation", icon: "📋", desc: "Drafting comprehensive, enforceable parenting plans that govern custody schedules, holidays, and major decisions." },
+          { title: "Custody Mediation", href: "/free-consultation", icon: "🕊️", desc: "Alternative dispute resolution to reach custody agreements without costly court battles." },
+          { title: "Parental Relocation", href: "/free-consultation", icon: "🗺️", desc: "Navigating custody implications when one parent wants to move — in-state or out-of-state." },
+          { title: "Grandparent Custody & Visitation", href: "/free-consultation", icon: "👴👵", desc: "Helping grandparents pursue custody or visitation rights under Maryland law." },
+          { title: "Parental Alienation", href: "/free-consultation", icon: "🛡️", desc: "Identifying and legally challenging parental alienation — when one parent undermines the child's relationship with the other." },
+          { title: "Interstate Custody (UCCJEA)", href: "/free-consultation", icon: "🗽", desc: "Handling cross-state custody disputes under the Uniform Child Custody Jurisdiction and Enforcement Act." },
+          { title: "Child Support Integration", href: "/free-consultation", icon: "💰", desc: "Coordinating custody and child support to ensure fair financial arrangements for your children." },
+        ].map((service) => (
+          <a href={service.href} class="practice-card group block">
+            <div class="flex items-start gap-4 mb-3">
+              <div class="text-3xl flex-shrink-0">{service.icon}</div>
+              <h3 class="font-serif font-bold text-teal-800 text-base group-hover:text-teal-600 transition-colors">{service.title}</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+            <div class="mt-4 flex items-center gap-1 text-teal-600 text-xs font-semibold">
+              Learn More <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Interests Standard -->
+  <section class="py-16 bg-teal-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="w-16 h-1 bg-gold-400 mb-6"></div>
+          <h2 class="font-serif text-3xl font-bold mb-5 text-white">How Maryland Judges Decide Custody</h2>
+          <p class="text-teal-200 leading-relaxed mb-6">
+            Maryland courts apply the "best interests of the child" standard — a holistic evaluation of everything that affects the child's welfare. Our attorneys know exactly what factors Maryland courts weigh, and we build cases that address each one effectively.
+          </p>
+          <a href="/free-consultation" class="btn-primary">Build Your Strategy Today</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            "Fitness of each parent",
+            "Character & reputation",
+            "Desire of the natural parents",
+            "Agreement between parents",
+            "Potential disruption to child",
+            "Geographic proximity of parents",
+            "Age, health & sex of child",
+            "Child's preference (age-appropriate)",
+            "Material opportunities",
+            "Prior abandonment",
+            "History of domestic violence",
+            "Employment stability",
+          ].map((factor) => (
+            <div class="flex items-center gap-2 text-teal-200 text-sm">
+              <div class="w-5 h-5 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              {factor}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="gold-bar mx-auto"></div>
+        <h2 class="section-heading">How We Handle Your Case</h2>
+        <p class="section-subheading">A clear, structured process designed to keep you informed and in control at every stage.</p>
+      </div>
+
+      <div class="space-y-6">
+        {[
+          { step: "01", title: "Free Consultation", desc: "We start with a free, confidential consultation — in person, by phone, or by video. We listen to your situation, evaluate the legal issues, and answer your questions honestly." },
+          { step: "02", title: "Strategy Development", desc: "Your attorney develops a customized custody strategy. We assess the strengths and vulnerabilities of your case, identify the evidence you'll need, and outline a clear path forward." },
+          { step: "03", title: "Filing & Negotiation", desc: "We handle all filings and court documents. Before litigation, we often pursue negotiated agreements or mediation — saving time, money, and emotional stress when possible." },
+          { step: "04", title: "Court Representation", desc: "If your case requires a hearing or trial, we represent you with thorough preparation, compelling arguments, and skilled cross-examination of opposing witnesses and experts." },
+          { step: "05", title: "Post-Order Support", desc: "Custody orders are not always permanent. We're here to enforce court orders, address violations, and file for modifications when your circumstances change." },
+        ].map((step, idx) => (
+          <div class="flex gap-6 bg-white rounded-xl p-6 shadow-md border border-gray-100">
+            <div class="w-14 h-14 bg-teal-600 rounded-xl flex items-center justify-center text-white font-bold font-serif text-xl flex-shrink-0">
+              {step.step}
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-teal-800 text-lg mb-2">{step.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA />
+</BaseLayout>

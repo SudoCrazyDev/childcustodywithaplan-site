@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Free Child Custody Consultation Maryland | Child Custody with a Plan"
+  description="Schedule your free child custody consultation with Maryland's dedicated custody attorneys. No obligation, completely confidential. Call (301) 289-8917 or complete the form — Rockville & Baltimore."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+        ✅ Free · Confidential · No Obligation
+      </div>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">
+        Your Free Child Custody <span class="text-gold-400">Consultation</span>
+      </h1>
+      <p class="text-teal-100 text-xl leading-relaxed">
+        Take the first step. Speak directly with a Maryland child custody attorney — at no cost. We'll evaluate your situation honestly and explain your options clearly.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Free Consultation</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- What to Expect -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <!-- Benefits -->
+        <div class="lg:col-span-1">
+          <div class="gold-bar"></div>
+          <h2 class="font-serif text-2xl font-bold text-teal-800 mb-5">What's Included in Your Free Consultation</h2>
+
+          <div class="space-y-4">
+            {[
+              { icon: "🎯", title: "Case Evaluation", desc: "A thorough review of your custody situation with a licensed Maryland attorney." },
+              { icon: "⚖️", title: "Legal Analysis", desc: "We explain your rights under Maryland law and how courts typically handle your type of case." },
+              { icon: "🗺️", title: "Strategic Overview", desc: "An initial assessment of your options and what a winning strategy might look like." },
+              { icon: "💰", title: "Fee Discussion", desc: "Transparent information about our fees and representation structure — no surprises." },
+              { icon: "❓", title: "Q&A Time", desc: "Bring your questions. We answer them all honestly, no matter how difficult or sensitive." },
+              { icon: "🔒", title: "Complete Confidentiality", desc: "Everything you share is protected by attorney-client privilege from your very first contact." },
+            ].map((item) => (
+              <div class="flex gap-3">
+                <div class="text-2xl flex-shrink-0">{item.icon}</div>
+                <div>
+                  <p class="font-semibold text-teal-800 text-sm">{item.title}</p>
+                  <p class="text-gray-600 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Contact Quick Info -->
+          <div class="mt-8 bg-teal-50 rounded-xl p-5 border border-teal-100">
+            <p class="font-semibold text-teal-800 mb-3 text-sm">Prefer to call?</p>
+            <a href="tel:3012898917" class="flex items-center gap-2 text-teal-700 font-bold hover:text-teal-600 transition-colors text-lg mb-1">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+              (301) 289-8917
+            </a>
+            <p class="text-gray-600 text-xs">Mon–Fri, 9AM–9PM</p>
+          </div>
+
+          <!-- Offices -->
+          <div class="mt-5 space-y-3">
+            <p class="font-semibold text-teal-800 text-sm">Our Offices:</p>
+            <div class="text-sm text-gray-600">
+              <p class="font-medium text-teal-700">Rockville</p>
+              <p>100 Park Ave Suite 205, Rockville, MD 20850</p>
+            </div>
+            <div class="text-sm text-gray-600">
+              <p class="font-medium text-teal-700">Baltimore</p>
+              <p>1537 Light St #100, Baltimore, MD 21230</p>
+            </div>
+            <p class="text-xs text-teal-600 mt-2">📞 Phone and video consultations also available.</p>
+          </div>
+        </div>
+
+        <!-- Consultation Form -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <h3 class="font-serif font-bold text-teal-800 text-2xl mb-2">Schedule Your Free Consultation</h3>
+            <p class="text-gray-500 text-sm mb-6">Complete the form below and an attorney will contact you within 1 business hour during office hours.</p>
+
+            <form class="space-y-5" action="#" method="POST">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">First Name *</label>
+                  <input type="text" name="first_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm" placeholder="First name" />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Last Name *</label>
+                  <input type="text" name="last_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm" placeholder="Last name" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number *</label>
+                  <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm" placeholder="(xxx) xxx-xxxx" />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address *</label>
+                  <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm" placeholder="your@email.com" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Type of Custody Matter *</label>
+                  <select name="matter_type" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm bg-white">
+                    <option value="">Select a matter type</option>
+                    <option value="initial_custody">Initial Custody (No Order Yet)</option>
+                    <option value="fathers_rights">Father's Rights</option>
+                    <option value="mothers_rights">Mother's Rights</option>
+                    <option value="modification">Modify Existing Order</option>
+                    <option value="emergency">Emergency / Urgent Situation</option>
+                    <option value="visitation">Visitation Rights</option>
+                    <option value="enforcement">Enforce Existing Order</option>
+                    <option value="grandparent">Grandparent Custody/Visitation</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Preferred Consultation Format</label>
+                  <select name="format" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm bg-white">
+                    <option value="phone">Phone Call</option>
+                    <option value="video">Video Call</option>
+                    <option value="in_person_rockville">In-Person (Rockville Office)</option>
+                    <option value="in_person_baltimore">In-Person (Baltimore Office)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Your County / City</label>
+                  <input type="text" name="county" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm" placeholder="e.g. Montgomery County" />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Best Time to Call</label>
+                  <select name="best_time" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm bg-white">
+                    <option value="morning">Morning (9AM–12PM)</option>
+                    <option value="afternoon">Afternoon (12PM–5PM)</option>
+                    <option value="evening">Evening (5PM–9PM)</option>
+                    <option value="anytime">Anytime</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Tell Us About Your Situation *</label>
+                <textarea name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent text-sm resize-none" placeholder="Briefly describe your custody situation — what's happening, what you need, any relevant background. This helps us prepare before we call."></textarea>
+              </div>
+
+              <!-- Emergency Note -->
+              <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p class="text-amber-800 text-xs">
+                  <strong>⚡ Is this urgent or an emergency?</strong> If your child is in immediate danger, please call us directly at <a href="tel:3012898917" class="font-bold underline">(301) 289-8917</a> rather than submitting this form.
+                </p>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input type="checkbox" name="consent" required class="w-4 h-4 text-teal-600 mt-0.5" />
+                <label class="text-xs text-gray-600">
+                  I understand that submitting this form does not create an attorney-client relationship. Communications are confidential but do not establish representation until a written retainer agreement is signed. *
+                </label>
+              </div>
+
+              <button type="submit" class="btn-primary w-full justify-center text-base py-4 text-lg">
+                Request Free Consultation
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </button>
+
+              <p class="text-center text-gray-400 text-xs">We respond within 1 business hour during office hours (Mon–Fri, 9AM–9PM)</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="py-14 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+        {[
+          { icon: "🏆", label: "2025 Elite Lawyer Award", sub: "Josephia Rouse, Founder" },
+          { icon: "⚖️", label: "Maryland Licensed", sub: "All attorneys in good standing" },
+          { icon: "🔒", label: "100% Confidential", sub: "Attorney-client privilege protected" },
+          { icon: "🕐", label: "Fast Response", sub: "Within 1 business hour" },
+        ].map((item) => (
+          <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+            <div class="text-4xl mb-3">{item.icon}</div>
+            <p class="font-semibold text-teal-800 text-sm">{item.label}</p>
+            <p class="text-gray-500 text-xs mt-1">{item.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Start Now -->
+  <section class="py-14 bg-teal-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="w-16 h-1 bg-gold-400 mx-auto mb-6"></div>
+      <h2 class="font-serif text-3xl font-bold mb-5">Why Starting Early Matters</h2>
+      <p class="text-teal-200 text-lg leading-relaxed mb-8">
+        In custody law, early action makes a real difference. The sooner you have legal counsel, the sooner you start building the documentation, strategy, and narrative that wins cases. Waiting often means playing defense — and giving the other side a head start.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        {[
+          { icon: "📋", title: "Documentation Time", desc: "Building a strong evidence record takes time. The earlier we start, the stronger your case." },
+          { icon: "🏃", title: "Respond to Their Moves", desc: "If the other parent files first, you're already behind. Early legal counsel means you're prepared." },
+          { icon: "🕊️", title: "Out-of-Court Options", desc: "Early intervention creates opportunities for negotiated agreements — often better and faster than litigation." },
+        ].map((item) => (
+          <div class="bg-teal-800 bg-opacity-60 rounded-xl p-5 border border-teal-700">
+            <div class="text-2xl mb-3">{item.icon}</div>
+            <h3 class="font-semibold text-white mb-2">{item.title}</h3>
+            <p class="text-teal-300 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

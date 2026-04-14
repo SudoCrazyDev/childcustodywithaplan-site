@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+---
+
+<BaseLayout
+  title="Father's Rights Attorney Maryland | Child Custody for Dads | Child Custody with a Plan"
+  description="Maryland father's rights attorney fighting for equal parenting time and custody. Fathers deserve fair treatment in Maryland courts. Free consultation — Rockville & Baltimore offices."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+          👨‍👧‍👦 Father's Rights
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">
+          Maryland Father's Rights <span class="text-gold-400">Attorneys</span>
+        </h1>
+        <p class="text-teal-100 text-xl leading-relaxed mb-8">
+          You have the right to be an equal parent. We fight for Maryland fathers who deserve fair custody, meaningful parenting time, and a court that sees them as the dedicated dads they are.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg">
+            Free Father's Rights Consultation
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a href="tel:3012898917" class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-teal-800 font-bold px-8 py-4 rounded-lg transition-all">
+            (301) 289-8917
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/services" class="hover:text-teal-600">Services</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Father's Rights</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Main -->
+        <div class="lg:col-span-2">
+          <div class="gold-bar"></div>
+          <h2 class="font-serif text-3xl font-bold text-teal-800 mb-5">Fathers Have Equal Rights in Maryland</h2>
+
+          <div class="prose max-w-none text-gray-600 space-y-5">
+            <p class="leading-relaxed">
+              Maryland law is clear: neither parent has an automatic advantage in custody proceedings. Gender is not a factor in determining custody. What matters is the <strong>best interests of the child</strong> — and fathers who are actively involved, stable, and committed to their children's wellbeing have every legal right to seek primary or equal custody.
+            </p>
+            <p class="leading-relaxed">
+              Despite this legal reality, many fathers enter custody proceedings feeling like the system is stacked against them. Whether from outdated assumptions, aggressive opposing counsel, or simply not knowing their rights, fathers often fail to present their case as powerfully as they could.
+            </p>
+            <p class="leading-relaxed">
+              At Child Custody with a Plan, we level that playing field. Our father's rights attorneys know the arguments, the evidence, and the courtroom techniques that get Maryland fathers the parenting time they deserve.
+            </p>
+          </div>
+
+          <!-- What We Handle -->
+          <div class="mt-10">
+            <h3 class="font-serif font-bold text-teal-800 text-xl mb-6">Father's Rights Cases We Handle</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: "Seeking Equal Parenting Time", desc: "We build cases for 50/50 or substantial parenting time for fathers." },
+                { title: "Challenging Sole Custody to Mother", desc: "When sole maternal custody isn't in the child's best interest, we challenge it." },
+                { title: "Unmarried Father's Rights", desc: "Establishing paternity and asserting parental rights for unwed fathers." },
+                { title: "Paternity Establishment", desc: "Legal paternity through acknowledgment or court-ordered DNA testing." },
+                { title: "Parental Alienation Defense", desc: "When a mother is alienating the child from the father, we act quickly." },
+                { title: "Relocation Opposition", desc: "Stopping a custodial parent from moving your child out of reach." },
+                { title: "Custody Modifications", desc: "Modifying existing orders to increase your parenting time and rights." },
+                { title: "Visitation Enforcement", desc: "Enforcing court-ordered visitation when the mother is denying access." },
+              ].map((item) => (
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-100">
+                  <h4 class="font-semibold text-teal-800 text-sm mb-2">{item.title}</h4>
+                  <p class="text-gray-600 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="mt-12">
+            <h3 class="font-serif font-bold text-teal-800 text-2xl mb-6">Father's Rights FAQ</h3>
+            <div class="space-y-4">
+              {[
+                {
+                  q: "Can a father get primary custody in Maryland?",
+                  a: "Yes. Maryland courts cannot legally favor mothers over fathers based on gender alone. A father who demonstrates consistent, active involvement in the child's life, a stable home environment, and the child's best interests can absolutely receive primary or sole custody.",
+                },
+                {
+                  q: "What if I'm not on the birth certificate?",
+                  a: "Unmarried fathers who are not on the birth certificate must establish paternity before they can seek custody or visitation rights. This can be done voluntarily through an Acknowledgment of Paternity or through a court-ordered paternity action. Once established, you have the same legal rights as any other parent.",
+                },
+                {
+                  q: "What can I do if my ex won't let me see my kids?",
+                  a: "If you have a court-ordered visitation schedule and the other parent is denying access, this is a contempt of court violation. We can file an emergency motion for enforcement and, in serious cases, seek modification of custody based on the other parent's interference.",
+                },
+                {
+                  q: "My ex is trying to move my kids to another state. Can I stop her?",
+                  a: "In Maryland, a custodial parent must typically seek court approval before relocating a child out of state over the non-custodial parent's objection. We can file to prevent the relocation or negotiate a modified parenting plan that accounts for the distance.",
+                },
+                {
+                  q: "How does child support affect custody for fathers?",
+                  a: "Child support and custody are legally separate issues in Maryland. Paying child support does not automatically guarantee visitation or custody rights, and visa versa. However, both are often addressed simultaneously, and our attorneys help coordinate both effectively.",
+                },
+              ].map((faq) => (
+                <div class="faq-item">
+                  <div class="p-5 bg-teal-50 border-l-4 border-teal-600">
+                    <h4 class="font-semibold text-teal-800 text-sm mb-2">{faq.q}</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <!-- CTA Card -->
+          <div class="bg-teal-900 text-white rounded-2xl p-7 sticky top-24">
+            <h3 class="font-serif font-bold text-xl mb-3">Protect Your Rights as a Father</h3>
+            <p class="text-teal-200 text-sm mb-5">Don't wait. Maryland courts respond to fathers who are proactive and prepared. Get your free consultation today.</p>
+            <a href="/free-consultation" class="btn-primary w-full justify-center mb-3 block text-center">Free Consultation</a>
+            <a href="tel:3012898917" class="block text-center border border-teal-600 text-white hover:bg-teal-800 py-3 rounded-lg text-sm font-semibold transition-colors">(301) 289-8917</a>
+
+            <div class="mt-6 pt-6 border-t border-teal-800 space-y-3">
+              <div class="flex items-center gap-2 text-teal-300 text-xs">
+                <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Free initial consultation
+              </div>
+              <div class="flex items-center gap-2 text-teal-300 text-xs">
+                <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Mon–Fri 9AM–9PM
+              </div>
+              <div class="flex items-center gap-2 text-teal-300 text-xs">
+                <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Rockville & Baltimore offices
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Stats -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-semibold text-teal-800 mb-4">Maryland Father's Rights Facts</h4>
+            <div class="space-y-3">
+              {[
+                { stat: "Equal", label: "Gender neutrality under Maryland law" },
+                { stat: "28+", label: "Factors courts consider in custody" },
+                { stat: "50/50", label: "Joint custody achievable for active dads" },
+              ].map((s) => (
+                <div class="text-center p-3 bg-teal-50 rounded-lg">
+                  <div class="text-2xl font-serif font-bold text-teal-700">{s.stat}</div>
+                  <div class="text-xs text-gray-600">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Related -->
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h4 class="font-semibold text-teal-800 mb-4">Related Services</h4>
+            <ul class="space-y-2">
+              {[
+                { label: "Visitation Rights", href: "/visitation-rights" },
+                { label: "Custody Modifications", href: "/custody-modifications" },
+                { label: "Emergency Custody", href: "/emergency-custody" },
+                { label: "All Services", href: "/services" },
+              ].map((link) => (
+                <li>
+                  <a href={link.href} class="flex items-center gap-2 text-teal-600 hover:text-teal-800 text-sm transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategy Section -->
+  <section class="py-16 bg-teal-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <div class="w-16 h-1 bg-gold-400 mx-auto mb-6"></div>
+        <h2 class="font-serif text-3xl font-bold mb-4">How We Win Father's Rights Cases</h2>
+        <p class="text-teal-200 max-w-2xl mx-auto">Our approach is methodical, evidence-based, and relentless. Here's what sets us apart.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: "📊", title: "Document Everything", desc: "We help fathers build an evidence record — communication logs, parenting journals, school involvement, and more." },
+          { icon: "👨‍⚖️", title: "Know Your Court", desc: "We know Montgomery County and Baltimore courts — the judges, the expectations, and what arguments land." },
+          { icon: "🔍", title: "Challenge Bias", desc: "When gender bias appears in opposing arguments or evaluations, we address it directly and legally." },
+          { icon: "🎯", title: "Stay Focused", desc: "Custody battles get emotional. We keep your case focused on facts, law, and the child's genuine interests." },
+        ].map((item) => (
+          <div class="bg-teal-800 bg-opacity-60 rounded-xl p-6 text-center border border-teal-700">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="font-semibold text-white mb-2">{item.title}</h3>
+            <p class="text-teal-300 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA heading="Fight for Your Rights as a Father" subtext="You deserve to be part of your children's lives. Our Maryland father's rights attorneys are ready to build your case. Free consultation — no obligation." />
+</BaseLayout>

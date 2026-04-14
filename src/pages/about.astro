@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+---
+
+<BaseLayout
+  title="About Child Custody with a Plan | Maryland Child Custody Law Firm"
+  description="Learn about Child Custody with a Plan — our founding story, our mission, our team, and why Maryland families trust us with their most important custody battles. Led by 2025 Elite Lawyer Award recipient Josephia Rouse."
+>
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <svg width="100%" height="100%"><defs><pattern id="g" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/></svg>
+    </div>
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+        Our Story
+      </div>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">About Child Custody<br/><span class="text-gold-400">with a Plan</span></h1>
+      <p class="text-teal-100 text-xl leading-relaxed max-w-3xl mx-auto">
+        A Maryland child custody firm built on strategy, empathy, and an unwavering commitment to your family's future.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">About Us</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Our Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div class="gold-bar"></div>
+          <h2 class="section-heading">Built for Families, Driven by Purpose</h2>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Child Custody with a Plan was founded with a simple but powerful idea: parents going through custody battles deserve more than just legal representation — they deserve a <em>strategy</em>. A plan. A path forward that accounts for not just the courtroom, but their family's long-term wellbeing.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            We are a Maryland-based child custody law firm with offices in Rockville and Baltimore, serving clients throughout Montgomery County, Prince George's County, Baltimore City, Howard County, and beyond. While most family law firms handle everything from divorces to wills, we concentrate specifically on child custody — giving our clients the benefit of deep, focused expertise in this single critical area.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            We are proud to be a sister firm to <strong><a href="https://divorcewithaplan.com" class="text-teal-600 hover:underline">Divorce with a Plan</a></strong>, and together, our firms represent the full spectrum of family law needs facing Maryland families today.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="/free-consultation" class="btn-primary">Free Consultation</a>
+            <a href="/attorneys" class="btn-outline">Meet Our Team</a>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          {[
+            { number: "01", title: "Specialized Focus", desc: "Unlike general family law firms, we focus exclusively on child custody — so you get the depth of expertise this critical matter demands." },
+            { number: "02", title: "Community Roots", desc: "We are a community-centered firm. We understand the diverse needs of Maryland families and represent clients from all backgrounds with equal dedication." },
+            { number: "03", title: "Strategic Planning", desc: "Every case begins with a plan. We assess your unique circumstances and develop a litigation or negotiation strategy tailored to your goals." },
+            { number: "04", title: "Ongoing Support", desc: "From your first consultation through final order — and any modifications afterward — we are with you for the entire journey." },
+          ].map((item) => (
+            <div class="flex gap-5 p-5 bg-teal-50 rounded-xl border border-teal-100 hover:border-teal-300 transition-colors">
+              <div class="text-3xl font-serif font-bold text-teal-200 flex-shrink-0">{item.number}</div>
+              <div>
+                <h3 class="font-semibold text-teal-800 mb-1">{item.title}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="py-20 bg-teal-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <div class="w-16 h-1 bg-gold-400 mx-auto mb-6"></div>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Our Mission & Values</h2>
+        <p class="text-teal-200 text-lg max-w-2xl mx-auto">The principles that guide every decision we make, every case we take, and every family we serve.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "⚖️",
+            title: "Justice for Every Parent",
+            desc: "We believe every parent — regardless of gender, income, or background — deserves fearless, skilled legal representation. The system should work for your family.",
+          },
+          {
+            icon: "❤️",
+            title: "Children Come First",
+            desc: "Our strategies are always grounded in one guiding principle: what is truly best for the children involved. We never lose sight of the human stakes.",
+          },
+          {
+            icon: "🧭",
+            title: "Strategy Over Emotion",
+            desc: "Custody battles are emotionally charged, but the best outcomes come from clear-headed strategy. We provide the steady hand and sharp legal mind you need.",
+          },
+          {
+            icon: "🤝",
+            title: "Community-Centered",
+            desc: "We are part of the Maryland community we serve. We understand local courts, local culture, and the real-world pressures facing Maryland families.",
+          },
+          {
+            icon: "🔍",
+            title: "Transparency Always",
+            desc: "No legal jargon, no hidden surprises. We communicate clearly, update you regularly, and make sure you understand every step of your case.",
+          },
+          {
+            icon: "💪",
+            title: "Relentless Advocacy",
+            desc: "Whether in negotiations or at trial, we fight hard for our clients. We prepare thoroughly, argue compellingly, and don't back down from a fight worth having.",
+          },
+        ].map((v) => (
+          <div class="bg-teal-800 bg-opacity-60 rounded-xl p-6 border border-teal-700 hover:border-gold-400 transition-colors group">
+            <div class="text-3xl mb-4">{v.icon}</div>
+            <h3 class="font-serif font-bold text-white text-lg mb-3">{v.title}</h3>
+            <p class="text-teal-300 text-sm leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why We're Different -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8">
+            <h3 class="font-serif font-bold text-teal-800 text-2xl mb-6">Child Custody with a Plan vs. General Family Law Firms</h3>
+            <div class="space-y-4">
+              {[
+                { us: "Exclusive focus on child custody", them: "Handles divorces, wills, and more" },
+                { us: "Deep Maryland custody court knowledge", them: "Broad family law knowledge" },
+                { us: "Strategic plan from day one", them: "Reactive case management" },
+                { us: "Extended hours: 9AM–9PM Mon–Fri", them: "Standard 9–5 availability" },
+                { us: "Community-centered approach", them: "Corporate, impersonal service" },
+                { us: "Free initial consultation", them: "Paid consultations common" },
+                { us: "Sister firm for divorce matters", them: "Siloed practice areas" },
+              ].map((row) => (
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="flex items-start gap-2">
+                    <div class="w-5 h-5 bg-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <span class="text-teal-800 text-sm font-medium">{row.us}</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <div class="w-5 h-5 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span class="text-gray-600 text-xs">–</span>
+                    </div>
+                    <span class="text-gray-500 text-sm">{row.them}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="gold-bar"></div>
+          <h2 class="section-heading">Why Families Choose Us</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            When parents come to us, they're often scared, exhausted, and unsure of what to do next. That's exactly why we built our firm the way we did. We combine the focused expertise of a specialty firm with the warmth and accessibility of a community practice.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Our attorneys don't just file paperwork — they invest time in understanding your family dynamics, your children's needs, and the specific facts that will matter most in your Maryland courtroom.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            We've built our reputation on results, on genuine client care, and on the recognition we've earned from the legal community — including the <strong>2025 Elite Lawyer Award</strong> received by our founder, Josephia Rouse.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/free-consultation" class="btn-primary text-center">Start with a Free Consultation</a>
+            <a href="tel:3012898917" class="btn-outline text-center">(301) 289-8917</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards & Recognition -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <div class="gold-bar mx-auto"></div>
+        <h2 class="section-heading">Recognition & Credentials</h2>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8">
+        {[
+          { label: "2025 Elite Lawyer Award", sub: "Josephia Rouse, Founder", icon: "🏆" },
+          { label: "Maryland State Bar", sub: "Licensed & In Good Standing", icon: "⚖️" },
+          { label: "Family Law Section", sub: "Maryland Bar Association", icon: "📋" },
+          { label: "Sister Firm", sub: "Divorce with a Plan", icon: "🤝" },
+        ].map((award) => (
+          <div class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md w-44 hover:shadow-lg transition-shadow">
+            <div class="text-4xl mb-3">{award.icon}</div>
+            <p class="font-semibold text-teal-800 text-sm leading-tight mb-1">{award.label}</p>
+            <p class="text-gray-500 text-xs">{award.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA
+    heading="Ready to Build Your Custody Strategy?"
+    subtext="Our team is ready to listen, evaluate your situation, and help you create a plan that protects your children and your parental rights. The consultation is free — the value is priceless."
+  />
+</BaseLayout>

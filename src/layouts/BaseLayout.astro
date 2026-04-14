@@ -1,0 +1,323 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = 'https://childcustodywithaplan.com/og-default.jpg',
+  canonical,
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Child Custody with a Plan" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Geo targeting -->
+  <meta name="geo.region" content="US-MD" />
+  <meta name="geo.placename" content="Maryland" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data: Law Firm -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Child Custody with a Plan",
+    "url": "https://childcustodywithaplan.com",
+    "logo": "https://childcustodywithaplan.com/favicon.svg",
+    "description": "Maryland child custody attorneys providing strategic, compassionate legal representation in Rockville and Baltimore.",
+    "telephone": "(301) 289-8917",
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 09:00-21:00",
+    "areaServed": ["Maryland", "Rockville", "Baltimore", "Montgomery County", "Prince George's County"],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Park Ave Suite 205",
+        "addressLocality": "Rockville",
+        "addressRegion": "MD",
+        "postalCode": "20850",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1537 Light St #100",
+        "addressLocality": "Baltimore",
+        "addressRegion": "MD",
+        "postalCode": "21230",
+        "addressCountry": "US"
+      }
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Josephia Rouse",
+      "jobTitle": "Founding Attorney",
+      "award": "2025 Elite Lawyer Award"
+    },
+    "sameAs": [
+      "https://divorcewithaplan.com"
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-white text-gray-800">
+  <!-- Top Bar -->
+  <div class="bg-teal-900 text-white text-xs py-2 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+          info@childcustodywithaplan.com
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+          Rockville & Baltimore, MD
+        </span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/></svg>
+          Mon–Fri: 9AM–9PM
+        </span>
+        <a href="tel:3012898917" class="flex items-center gap-1.5 text-gold-400 font-semibold hover:text-gold-300 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          (301) 289-8917
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center shadow-md group-hover:bg-teal-700 transition-colors">
+            <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-serif font-bold text-teal-700 text-base leading-tight">Child Custody</div>
+            <div class="font-serif font-bold text-gold-500 text-base leading-tight">with a Plan</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden xl:flex items-center gap-1">
+          <a href="/" class="nav-link px-3 py-2 rounded-md hover:bg-teal-50">Home</a>
+          <a href="/about" class="nav-link px-3 py-2 rounded-md hover:bg-teal-50">About</a>
+          <a href="/attorneys" class="nav-link px-3 py-2 rounded-md hover:bg-teal-50">Attorneys</a>
+
+          <!-- Services Dropdown -->
+          <div class="relative group">
+            <button class="nav-link px-3 py-2 rounded-md hover:bg-teal-50 flex items-center gap-1">
+              Services
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 top-full mt-1 w-60 bg-white shadow-xl rounded-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <a href="/services" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700 font-medium">All Services</a>
+              <div class="border-t border-gray-100 my-1"></div>
+              <a href="/fathers-rights" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700">Father's Rights</a>
+              <a href="/mothers-rights" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700">Mother's Rights</a>
+              <a href="/custody-modifications" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700">Custody Modifications</a>
+              <a href="/emergency-custody" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700">Emergency Custody</a>
+              <a href="/visitation-rights" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal-700">Visitation Rights</a>
+            </div>
+          </div>
+
+          <a href="/blog" class="nav-link px-3 py-2 rounded-md hover:bg-teal-50">Resources</a>
+          <a href="/contact" class="nav-link px-3 py-2 rounded-md hover:bg-teal-50">Contact</a>
+        </nav>
+
+        <!-- CTA -->
+        <div class="hidden xl:flex items-center gap-3">
+          <a href="tel:3012898917" class="text-teal-700 font-semibold text-sm hover:text-teal-600 transition-colors">
+            (301) 289-8917
+          </a>
+          <a href="/free-consultation" class="btn-primary text-sm py-2.5">
+            Free Consultation
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-toggle" class="xl:hidden p-2 text-teal-700 hover:bg-teal-50 rounded-lg" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="xl:hidden hidden border-t border-gray-100 bg-white shadow-lg">
+      <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+        <a href="/" class="block px-4 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-lg font-medium">Home</a>
+        <a href="/about" class="block px-4 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-lg font-medium">About Us</a>
+        <a href="/attorneys" class="block px-4 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-lg font-medium">Our Attorneys</a>
+        <a href="/services" class="block px-4 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-lg font-medium">All Services</a>
+        <a href="/fathers-rights" class="block px-4 py-2.5 text-gray-600 hover:bg-teal-50 hover:text-teal-700 rounded-lg text-sm pl-8">→ Father's Rights</a>
+        <a href="/mothers-rights" class="block px-4 py-2.5 text-gray-600 hover:bg-teal-50 hover:text-teal-700 rounded-lg text-sm pl-8">→ Mother's Rights</a>
+        <a href="/custody-modifications" class="block px-4 py-2.5 text-gray-600 hover:bg-teal-50 hover:text-teal-700 rounded-lg text-sm pl-8">→ Custody Modifications</a>
+        <a href="/emergency-custody" class="block px-4 py-2.5 text-gray-600 hover:bg-teal-50 hover:text-teal-700 rounded-lg text-sm pl-8">→ Emergency Custody</a>
+        <a href="/visitation-rights" class="block px-4 py-2.5 text-gray-600 hover:bg-teal-50 hover:text-teal-700 rounded-lg text-sm pl-8">→ Visitation Rights</a>
+        <a href="/blog" class="block px-4 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-lg font-medium">Resources</a>
+        <a href="/contact" class="block px-4 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-700 rounded-lg font-medium">Contact</a>
+        <div class="pt-3 border-t border-gray-100">
+          <a href="/free-consultation" class="btn-primary w-full text-center">Free Consultation</a>
+          <a href="tel:3012898917" class="block text-center mt-3 text-teal-700 font-semibold">(301) 289-8917</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-teal-900 text-white">
+    <!-- Main Footer -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-serif font-bold text-white text-sm leading-tight">Child Custody</div>
+              <div class="font-serif font-bold text-gold-400 text-sm leading-tight">with a Plan</div>
+            </div>
+          </div>
+          <p class="text-teal-200 text-sm leading-relaxed mb-5">
+            Where Child Custody Meets Strategy. Maryland's trusted child custody attorneys — strategic, empowering, and always in your corner.
+          </p>
+          <div class="flex items-center gap-2 text-sm text-teal-200">
+            <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            2025 Elite Lawyer Award Recipient
+          </div>
+          <div class="mt-4 pt-4 border-t border-teal-800">
+            <p class="text-xs text-teal-300">Sister site of</p>
+            <a href="https://divorcewithaplan.com" target="_blank" rel="noopener" class="text-gold-400 hover:text-gold-300 text-sm font-semibold transition-colors">divorcewithaplan.com →</a>
+          </div>
+        </div>
+
+        <!-- Practice Areas -->
+        <div>
+          <h3 class="font-serif font-bold text-white mb-5 text-lg">Practice Areas</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/services" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Child Custody Services</a></li>
+            <li><a href="/fathers-rights" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Father's Rights</a></li>
+            <li><a href="/mothers-rights" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Mother's Rights</a></li>
+            <li><a href="/custody-modifications" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Custody Modifications</a></li>
+            <li><a href="/emergency-custody" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Emergency Custody</a></li>
+            <li><a href="/visitation-rights" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Visitation Rights</a></li>
+          </ul>
+        </div>
+
+        <!-- Firm Links -->
+        <div>
+          <h3 class="font-serif font-bold text-white mb-5 text-lg">Our Firm</h3>
+          <ul class="space-y-2.5">
+            <li><a href="/about" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">About Us</a></li>
+            <li><a href="/attorneys" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Our Attorneys</a></li>
+            <li><a href="/blog" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Resources & Blog</a></li>
+            <li><a href="/free-consultation" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Free Consultation</a></li>
+            <li><a href="/contact" class="text-teal-200 hover:text-gold-400 text-sm transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="font-serif font-bold text-white mb-5 text-lg">Contact Us</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-gold-400 font-semibold text-sm mb-1">Rockville Office</p>
+              <p class="text-teal-200 text-sm">100 Park Ave Suite 205<br/>Rockville, MD 20850</p>
+            </div>
+            <div>
+              <p class="text-gold-400 font-semibold text-sm mb-1">Baltimore Office</p>
+              <p class="text-teal-200 text-sm">1537 Light St #100<br/>Baltimore, MD 21230</p>
+            </div>
+            <div>
+              <p class="text-gold-400 font-semibold text-sm mb-1">Phone</p>
+              <a href="tel:3012898917" class="text-white hover:text-gold-400 font-semibold transition-colors">(301) 289-8917</a>
+            </div>
+            <div>
+              <p class="text-gold-400 font-semibold text-sm mb-1">Hours</p>
+              <p class="text-teal-200 text-sm">Monday – Friday: 9AM – 9PM<br/>Free consultations available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-teal-800">
+      <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-teal-400 text-xs text-center md:text-left">
+          © {new Date().getFullYear()} Child Custody with a Plan. All rights reserved. | Maryland Child Custody Attorneys
+        </p>
+        <p class="text-teal-500 text-xs text-center">
+          The information on this website is for general informational purposes only and does not constitute legal advice.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

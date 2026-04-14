@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ConsultationCTA from '../components/ConsultationCTA.astro';
+
+const attorneys = [
+  {
+    name: "Josephia Rouse",
+    title: "Founding Attorney",
+    initial: "JR",
+    badge: "2025 Elite Lawyer Award",
+    focus: ["Strategic Custody Planning", "Complex Contested Custody", "High-Conflict Parental Disputes", "Interstate Custody Cases", "Parental Alienation"],
+    bio: [
+      "Josephia Rouse founded Child Custody with a Plan after years of witnessing the challenges Maryland parents face in custody proceedings — and recognizing that most needed not just a lawyer, but a strategist. Her vision was simple: a law firm dedicated exclusively to child custody, combining elite legal skills with genuine compassion.",
+      "Josephia is the recipient of the 2025 Elite Lawyer Award, a recognition reserved for attorneys who demonstrate exceptional legal skill, ethical practice, and meaningful client outcomes. She brings a methodical, data-driven approach to every case — building strategies grounded in Maryland case law, judicial preferences, and the specific facts that will move the needle in your case.",
+      "She is also the founding attorney of Divorce with a Plan, and together the two firms offer Maryland families comprehensive support through all stages of family law matters. Josephia is known by clients for her direct communication, her fearlessness in court, and her ability to stay calm and focused when cases get difficult.",
+    ],
+    education: "J.D., University of Maryland Francis King Carey School of Law",
+    barAdmissions: "Maryland State Bar",
+    phone: "(301) 289-8917",
+    office: "Rockville",
+  },
+  {
+    name: "Massa Massaquoi-King",
+    title: "Senior Attorney",
+    initial: "MK",
+    badge: "Senior Counsel",
+    focus: ["Father's Rights", "Custody Disputes", "Parenting Plan Negotiation", "Visitation Enforcement", "Paternity Actions"],
+    bio: [
+      "Massa Massaquoi-King brings tenacity and depth of knowledge to every father's rights and contested custody matter she handles. She joined Child Custody with a Plan because she believes deeply that fathers deserve fierce, focused representation — and that children thrive when both parents are actively involved in their lives.",
+      "Massa has extensive experience navigating the complexities of Maryland family courts, from Montgomery County Circuit Court to Baltimore City courts. She is particularly skilled at challenging gender-based assumptions in custody proceedings and building compelling cases for equitable parenting time.",
+      "Clients describe Massa as thorough, honest, and reassuringly calm even in difficult moments. She prepares exhaustively for every hearing, leaves nothing to chance, and communicates proactively so clients always know where their case stands.",
+    ],
+    education: "J.D., Howard University School of Law",
+    barAdmissions: "Maryland State Bar",
+    phone: "(301) 289-8917",
+    office: "Rockville & Baltimore",
+  },
+  {
+    name: "Monique Nettleford-Bruce",
+    title: "Attorney",
+    initial: "MN",
+    badge: "Modification Specialist",
+    focus: ["Mother's Rights", "Custody Modifications", "Domestic Violence Custody Cases", "Relocation Matters", "Child Support Integration"],
+    bio: [
+      "Monique Nettleford-Bruce is passionate about advocating for mothers and protecting children in custody matters. With a background that spans both litigation and negotiation, she brings versatility and strategic thinking to every case she handles.",
+      "Monique specializes in custody modifications — situations where life circumstances have changed and an existing custody order no longer serves the child's best interests. Whether a parent has relocated, remarried, changed jobs, or the child's needs have evolved, Monique knows how to build the evidentiary record needed to convince a Maryland court.",
+      "She is also experienced in custody matters involving domestic violence, including protective orders, safety-focused parenting plans, and cases where one parent's behavior poses a risk to the children. Clients value her empathy, her thoroughness, and her ability to make a complex process feel manageable.",
+    ],
+    education: "J.D., University of Baltimore School of Law",
+    barAdmissions: "Maryland State Bar",
+    phone: "(301) 289-8917",
+    office: "Baltimore",
+  },
+  {
+    name: "Aysia Stockton",
+    title: "Attorney",
+    initial: "AS",
+    badge: "Emergency Cases",
+    focus: ["Emergency Custody Orders", "Visitation Rights", "Temporary Custody", "Grandparent Custody", "Interstate UCCJEA Matters"],
+    bio: [
+      "Aysia Stockton handles the cases that can't wait — emergency custody orders, urgent protective measures, and situations where a child's welfare is at immediate risk. She joined Child Custody with a Plan to be on the front line of custody law, where the stakes are highest and the need for skilled, fast-moving legal representation is most acute.",
+      "Beyond emergency matters, Aysia is a dedicated advocate for visitation rights — working to ensure that non-custodial parents maintain meaningful relationships with their children and that court-ordered visitation is respected and enforced.",
+      "Aysia also handles grandparent custody and visitation matters, and is well-versed in the Uniform Child Custody Jurisdiction and Enforcement Act (UCCJEA), which governs interstate custody disputes. Her clients appreciate her ability to act quickly without sacrificing thoroughness, and her genuine care for the families she represents.",
+    ],
+    education: "J.D., George Mason University Antonin Scalia Law School",
+    barAdmissions: "Maryland State Bar",
+    phone: "(301) 289-8917",
+    office: "Rockville & Baltimore",
+  },
+];
+---
+
+<BaseLayout
+  title="Our Attorneys | Child Custody with a Plan | Maryland Custody Lawyers"
+  description="Meet the experienced Maryland child custody attorneys at Child Custody with a Plan — Josephia Rouse, Massa Massaquoi-King, Monique Nettleford-Bruce, and Aysia Stockton. Award-winning representation in Rockville and Baltimore."
+>
+  <!-- Page Hero -->
+  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">Our <span class="text-gold-400">Attorneys</span></h1>
+      <p class="text-teal-100 text-xl leading-relaxed">
+        Meet the dedicated Maryland child custody lawyers who will fight for your family — with strategy, skill, and genuine care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-gray-100 py-3">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-teal-600">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-teal-700 font-medium">Our Attorneys</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="py-14 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="gold-bar mx-auto"></div>
+      <h2 class="section-heading">Your Custody Attorneys</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        At Child Custody with a Plan, you will work directly with an attorney — not a paralegal, not a case manager. Our team of four experienced Maryland custody lawyers brings focused expertise, genuine empathy, and strategic excellence to every case we take.
+      </p>
+    </div>
+  </section>
+
+  <!-- Attorney Profiles -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="space-y-16">
+        {attorneys.map((attorney, idx) => (
+          <div id={attorney.name.toLowerCase().replace(/\s+/g, '-')} class={`grid grid-cols-1 lg:grid-cols-3 gap-10 items-start ${idx % 2 === 1 ? 'lg:grid-flow-row-dense' : ''}`}>
+            <!-- Photo / Card -->
+            <div class={`${idx % 2 === 1 ? 'lg:col-start-3' : ''}`}>
+              <div class="bg-white rounded-2xl shadow-xl overflow-hidden sticky top-24">
+                <div class="bg-gradient-to-br from-teal-700 to-teal-900 p-10 flex flex-col items-center text-center">
+                  <div class="w-28 h-28 bg-teal-600 border-4 border-gold-400 rounded-full flex items-center justify-center text-white font-bold text-4xl mb-4 shadow-2xl">
+                    {attorney.initial}
+                  </div>
+                  <span class="bg-gold-400 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+                    {attorney.badge}
+                  </span>
+                  <h2 class="font-serif font-bold text-white text-xl mb-1">{attorney.name}</h2>
+                  <p class="text-gold-300 font-semibold text-sm mb-4">{attorney.title}</p>
+                  <div class="flex items-center gap-2 text-teal-300 text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    {attorney.office}
+                  </div>
+                </div>
+
+                <div class="p-6">
+                  <h3 class="font-semibold text-teal-800 text-sm mb-3">Practice Focus</h3>
+                  <ul class="space-y-2">
+                    {attorney.focus.map((f) => (
+                      <li class="flex items-center gap-2 text-gray-600 text-sm">
+                        <div class="w-4 h-4 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <svg class="w-2.5 h-2.5 text-teal-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div class="mt-5 pt-5 border-t border-gray-100 space-y-2">
+                    <p class="text-xs text-gray-500">{attorney.education}</p>
+                    <p class="text-xs text-gray-500">{attorney.barAdmissions}</p>
+                  </div>
+
+                  <a href="/free-consultation" class="block mt-5 w-full text-center bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors text-sm">
+                    Schedule Consultation
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="lg:col-span-2">
+              <div class="gold-bar"></div>
+              <h2 class="font-serif text-3xl font-bold text-teal-800 mb-2">{attorney.name}</h2>
+              <p class="text-gold-500 font-semibold text-lg mb-6">{attorney.title}</p>
+
+              <div class="space-y-4">
+                {attorney.bio.map((paragraph) => (
+                  <p class="text-gray-600 leading-relaxed">{paragraph}</p>
+                ))}
+              </div>
+
+              <div class="mt-8 p-6 bg-teal-50 rounded-xl border border-teal-100">
+                <h3 class="font-semibold text-teal-800 mb-3">Ready to work with {attorney.name.split(' ')[0]}?</h3>
+                <p class="text-gray-600 text-sm mb-4">Schedule a free consultation today. You'll speak directly with an attorney who will evaluate your case and explain your options — with no obligation.</p>
+                <div class="flex flex-wrap gap-3">
+                  <a href="/free-consultation" class="btn-primary text-sm py-2.5">Free Consultation</a>
+                  <a href={`tel:${attorney.phone.replace(/[^0-9]/g, '')}`} class="btn-outline text-sm py-2.5">{attorney.phone}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Values -->
+  <section class="py-20 bg-teal-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="w-16 h-1 bg-gold-400 mx-auto mb-6"></div>
+      <h2 class="font-serif text-3xl font-bold text-white mb-5">A Team Built Around You</h2>
+      <p class="text-teal-200 text-lg leading-relaxed mb-10">
+        Our attorneys collaborate closely on every case, combining their individual specialties into a unified strategy for your family. When you hire Child Custody with a Plan, you don't just get one attorney — you get a full team invested in your outcome.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        {[
+          { icon: "📞", title: "Direct Access", desc: "You will have your attorney's direct line. No bouncing between receptionists and paralegals." },
+          { icon: "📋", title: "Regular Updates", desc: "We proactively update you on case developments, filings, and upcoming hearings — never leaving you in the dark." },
+          { icon: "🎯", title: "One Goal", desc: "The best possible outcome for your children and your parental rights. Everything we do is aimed at that single objective." },
+        ].map((item) => (
+          <div class="bg-teal-800 bg-opacity-60 rounded-xl p-6 border border-teal-700">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-semibold text-white mb-2">{item.title}</h3>
+            <p class="text-teal-300 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ConsultationCTA />
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Child Custody with a Plan"
+  description="The page you were looking for could not be found. Return to our homepage or contact our Maryland child custody attorneys."
+>
+  <section class="bg-gradient-to-br from-teal-900 to-teal-800 min-h-screen flex items-center justify-center text-white py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <div class="text-8xl font-serif font-bold text-teal-700 mb-4">404</div>
+      <h1 class="font-serif text-4xl font-bold text-white mb-4">Page Not Found</h1>
+      <p class="text-teal-200 text-lg mb-8">
+        The page you're looking for doesn't exist or may have been moved. Let us help you find what you need.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center mb-10">
+        <a href="/" class="btn-primary">Back to Homepage</a>
+        <a href="/free-consultation" class="border-2 border-white text-white hover:bg-white hover:text-teal-900 font-bold px-6 py-3 rounded-lg transition-all">Free Consultation</a>
+        <a href="tel:3012898917" class="border-2 border-teal-600 text-teal-200 hover:border-white hover:text-white font-bold px-6 py-3 rounded-lg transition-all">(301) 289-8917</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-left">
+        {[
+          { label: "Child Custody Services", href: "/services" },
+          { label: "Father's Rights", href: "/fathers-rights" },
+          { label: "Mother's Rights", href: "/mothers-rights" },
+          { label: "Custody Modifications", href: "/custody-modifications" },
+          { label: "Emergency Custody", href: "/emergency-custody" },
+          { label: "Visitation Rights", href: "/visitation-rights" },
+        ].map((link) => (
+          <a href={link.href} class="flex items-center gap-2 text-teal-300 hover:text-gold-400 text-sm transition-colors py-1">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
