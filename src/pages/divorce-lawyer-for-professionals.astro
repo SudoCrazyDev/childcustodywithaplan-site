@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Divorce Lawyer for Professionals in Maryland | Doctors, Executives & High Earners | Child Custody with a Plan"
+  description="Discreet, strategic divorce representation for Maryland doctors, executives, attorneys, and high-earning professionals. Protect your career, income, and reputation. Call (301) 289-8917."
+  ogTitle="Maryland Divorce Lawyer for Professionals | Child Custody with a Plan"
+  ogDescription="Confidential divorce representation for Maryland professionals — doctors, executives, attorneys, and high earners. Strategic. Discreet. Results-driven."
+>
+
+  <!-- Hero -->
+  <section class="relative bg-[#0D6E6E] text-white py-20 md:py-28">
+    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-repeat"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+      <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-3">Divorce for High-Achieving Professionals</p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
+        Discreet Divorce Representation<br class="hidden md:block" /> for Maryland Professionals
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+        Doctors. Executives. Attorneys. Business owners. High earners. When your career and reputation are as much on the line as your assets, you need attorneys who understand the stakes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-consultation" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
+          Confidential Consultation
+        </a>
+        <a href="tel:3012898917" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D6E6E] transition-colors">
+          (301) 289-8917
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-6 py-3">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-[#0D6E6E]">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/divorce" class="hover:text-[#0D6E6E]">Divorce</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-800 font-medium">Divorce Lawyer for Professionals</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Why Different -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-5">Why Divorce Is Different for Professionals</h2>
+          <p class="text-gray-600 mb-4">
+            High-earning professionals face unique vulnerabilities in divorce that most attorneys aren't equipped to handle. Your complex compensation structure, professional licenses, practice goodwill, deferred compensation, and public reputation all require specialized legal attention.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Beyond finances, professionals often face issues of confidentiality — court proceedings are generally public, and the last thing you need is your divorce appearing in professional publications, social media, or becoming known to colleagues, patients, or clients.
+          </p>
+          <p class="text-gray-600">
+            Our attorneys approach every professional's divorce with the strategic precision and discretion your career demands. We work efficiently to resolve matters — ideally out of court — while never sacrificing your legal position.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <div class="bg-[#0D6E6E]/5 border border-[#0D6E6E]/20 rounded-xl p-6">
+            <h3 class="font-bold text-[#0D6E6E] mb-3">Unique Challenges Professionals Face</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              {[
+                "Complex income structures (salary, bonuses, equity, deferred comp)",
+                "Professional practice goodwill and licensing at stake",
+                "Reputation and confidentiality in a high-profile field",
+                "Retirement accounts and pension plans with special rules",
+                "Stock options, RSUs, and unvested compensation",
+                "Partnership interests in medical or legal practices",
+                "Support for a non-working or lower-earning spouse",
+                "International assets or multi-state income sources"
+              ].map(item => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#D4A843] font-bold">→</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Professionals We Represent</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">We have deep experience representing high-achieving individuals across Maryland's professional sectors.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            icon: "⚕️",
+            title: "Physicians & Surgeons",
+            desc: "Medical practice goodwill, hospital privileges, licensing implications, and income protection from high-earning medical careers."
+          },
+          {
+            icon: "💼",
+            title: "Corporate Executives",
+            desc: "Stock options, RSUs, deferred compensation, executive benefits packages, and golden parachute provisions."
+          },
+          {
+            icon: "⚖️",
+            title: "Attorneys & Judges",
+            desc: "Client confidentiality implications, law firm partnership interests, book of business valuation, and bar license protection."
+          },
+          {
+            icon: "🦷",
+            title: "Dentists & Healthcare Professionals",
+            desc: "Dental practice valuation, equipment assets, patient base goodwill, and professional liability considerations."
+          },
+          {
+            icon: "🏗️",
+            title: "Business Owners & Entrepreneurs",
+            desc: "Closely held businesses, LLC interests, shareholder agreements, and protection of operational control during divorce."
+          },
+          {
+            icon: "🏦",
+            title: "Finance & Banking Professionals",
+            desc: "Complex investment portfolios, deferred bonuses, FINRA licensing implications, and financial industry reputation."
+          },
+          {
+            icon: "🎓",
+            title: "University Administrators & Academics",
+            desc: "Tenure protections, academic reputation, retirement TIAA-CREF accounts, and faculty benefits."
+          },
+          {
+            icon: "🏛️",
+            title: "Government & Political Officials",
+            desc: "Public scrutiny, Federal pension plans, security clearance implications, and discreet case management."
+          },
+          {
+            icon: "🏠",
+            title: "Real Estate Professionals",
+            desc: "Real estate portfolios, LLC structures, passive income streams, and commercial property division."
+          }
+        ].map(prof => (
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+            <div class="text-3xl mb-3">{prof.icon}</div>
+            <h3 class="font-bold text-gray-900 mb-2">{prof.title}</h3>
+            <p class="text-gray-600 text-sm">{prof.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Income & Compensation Issues -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Income & Compensation Complexity</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">For Maryland professionals, income isn't just a salary — and that complexity directly affects child support, alimony, and asset division calculations.</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "Calculating True Income",
+            items: [
+              "Base salary and guaranteed bonuses",
+              "Discretionary bonuses (averaged over 3–5 years)",
+              "Equity compensation: stock options, RSUs, PSUs",
+              "Deferred compensation and profit-sharing",
+              "K-1 income from business partnerships",
+              "Rental and investment income",
+              "Benefits with monetary value (company car, housing)"
+            ]
+          },
+          {
+            title: "Protecting Your Income in Divorce",
+            items: [
+              "Challenge inflated income calculations by opposing counsel",
+              "Properly attribute business expenses vs. personal income",
+              "Address income fluctuations and practice variations",
+              "Structure support obligations to reflect actual available income",
+              "Plan for tax implications of all support and property transfers",
+              "Protect future earning capacity from excessive alimony orders",
+              "Ensure correct imputation of income for unemployed spouses"
+            ]
+          }
+        ].map(section => (
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-xl font-bold text-[#0D6E6E] mb-4">{section.title}</h3>
+            <ul class="space-y-2 text-gray-600">
+              {section.items.map(item => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#D4A843] font-bold mt-0.5">✓</span>
+                  <span class="text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Discretion & Confidentiality -->
+  <section class="py-16 bg-[#0D6E6E]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white mb-3">Discretion is Non-Negotiable</h2>
+        <p class="text-white/75 max-w-2xl mx-auto">We understand that for professionals, the way your divorce is handled can be as important as the outcome itself.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { icon: "🔒", title: "Strict Confidentiality", desc: "Every matter is handled with attorney-client privilege and complete discretion. We never discuss your case outside the attorney-client relationship." },
+          { icon: "📋", title: "Protective Orders", desc: "When appropriate, we seek court orders to seal sensitive financial records, business information, and other confidential documents." },
+          { icon: "🤝", title: "Settlement Priority", desc: "We pursue resolution through negotiation and mediation first — keeping your divorce out of public court records whenever possible." },
+          { icon: "⚡", title: "Efficient Resolution", desc: "We work strategically to minimize the duration of proceedings — protecting your time, your income, and your focus on your career." }
+        ].map(item => (
+          <div class="bg-white/10 rounded-xl p-5 text-white text-center">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-white/75 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Attorneys Who Understand Your World</h2>
+      <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Our attorneys bring sophisticated legal knowledge and a commitment to strategic, discreet representation for Maryland's professional community.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            name: "Monique Nettleford-Bruce",
+            role: "Attorney",
+            highlight: "Editor-in-Chief, The Modern American Law Brief | American University Washington College of Law",
+            desc: "Monique brings intellectual rigor and genuine empathy to every professional divorce case. Her experience at Maryland Legal Aid provided deep insight into complex family dynamics and financial disputes, making her an exceptional advocate for professionals navigating high-stakes divorce."
+          },
+          {
+            name: "Aysia Stockton",
+            role: "Attorney",
+            highlight: "Barred in Maryland & Washington D.C. | Appalachian School of Law",
+            desc: "Aysia's background in criminal justice and family law — combined with her experience as a Deputy Clerk — gives her a unique perspective on legal procedure. She is recognized for her compassionate, thorough approach to divorce and custody representation for professionals."
+          }
+        ].map(atty => (
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <div class="w-14 h-14 bg-[#0D6E6E] rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+              {atty.name.split(' ').map(n => n[0]).join('')}
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">{atty.name}</h3>
+            <p class="text-[#D4A843] text-sm font-semibold mb-2">{atty.role}</p>
+            <p class="text-xs text-[#0D6E6E] italic mb-3">{atty.highlight}</p>
+            <p class="text-gray-600 text-sm">{atty.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/our-attorneys" class="inline-flex items-center gap-2 text-[#0D6E6E] font-semibold hover:underline">
+          View Full Attorney Profiles <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Schedule a Confidential Consultation</h2>
+      <p class="text-gray-600 mb-8">Your career, reputation, and financial future are too important to leave to chance. Speak with a Maryland divorce attorney who understands the unique needs of professionals.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-consultation" class="bg-[#0D6E6E] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#0a5a5a] transition-colors">
+          Confidential Free Consultation
+        </a>
+        <a href="tel:3012898917" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
+          Call (301) 289-8917
+        </a>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">Rockville & Baltimore · Mon–Fri 9AM–9PM · All consultations strictly confidential</p>
+    </div>
+  </section>
+
+</BaseLayout>

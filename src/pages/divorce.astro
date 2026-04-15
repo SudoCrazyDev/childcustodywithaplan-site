@@ -1,0 +1,263 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Maryland Divorce Attorneys | Contested & Uncontested Divorce | Child Custody with a Plan"
+  description="Experienced Maryland divorce attorneys serving Rockville and Baltimore. Strategic representation for contested and uncontested divorce. Call (301) 289-8917 for a free consultation."
+  ogTitle="Maryland Divorce Attorneys | Child Custody with a Plan"
+  ogDescription="Strategic divorce representation in Maryland — contested, uncontested, and complex cases. Serving Rockville, Baltimore, Montgomery County, and surrounding areas."
+>
+
+  <!-- Hero -->
+  <section class="relative bg-[#0D6E6E] text-white py-20 md:py-28">
+    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-repeat"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+      <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-3">Maryland Divorce Law</p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
+        Maryland Divorce Attorneys<br class="hidden md:block" /> Who Come Prepared
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+        Whether your divorce is amicable or fiercely contested, our attorneys craft a clear strategy from day one — protecting your assets, your parenting rights, and your future.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-consultation" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
+          Book Free Consultation
+        </a>
+        <a href="tel:3012898917" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D6E6E] transition-colors">
+          (301) 289-8917
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-6 py-3">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-[#0D6E6E]">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-800 font-medium">Divorce</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-5">Divorce in Maryland: What You Need to Know</h2>
+          <p class="text-gray-600 mb-4">
+            Maryland law was significantly updated in October 2023, eliminating the old "limited divorce" and expanding grounds for absolute divorce. Today, couples can seek an absolute divorce based on a 6-month separation, mutual consent, irreconcilable differences, or fault-based grounds including adultery, abuse, and desertion.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Navigating these changes — and understanding how they affect asset division, spousal support, and parenting arrangements — requires attorneys who are deeply current in Maryland family law. That's exactly what our team delivers.
+          </p>
+          <p class="text-gray-600">
+            At Child Custody with a Plan, we represent clients in Rockville, Baltimore, Montgomery County, Howard County, Prince George's County, Anne Arundel County, and throughout Maryland.
+          </p>
+        </div>
+        <div class="bg-[#0D6E6E]/5 border border-[#0D6E6E]/20 rounded-xl p-8">
+          <h3 class="text-xl font-bold text-[#0D6E6E] mb-4">Maryland Absolute Divorce Grounds (2024)</h3>
+          <ul class="space-y-3">
+            {[
+              "6-Month Separation (no minor children required to live apart)",
+              "Mutual Consent (written settlement agreement in place)",
+              "Irreconcilable Differences",
+              "Adultery",
+              "Desertion (actual or constructive)",
+              "Conviction of Certain Crimes",
+              "Abuse or Cruelty (domestic violence)"
+            ].map(ground => (
+              <li class="flex items-start gap-3">
+                <span class="text-[#D4A843] font-bold mt-0.5">✓</span>
+                <span class="text-gray-700">{ground}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contested vs Uncontested -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Contested vs. Uncontested Divorce</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Every divorce is different. We tailor our approach to your specific situation — whether you and your spouse agree on everything or nothing at all.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Uncontested -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div class="bg-[#0D6E6E] px-6 py-4">
+            <h3 class="text-xl font-bold text-white">Uncontested Divorce</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-5">Both spouses agree on all material issues — property division, spousal support, custody, and child support. A well-drafted marital settlement agreement is the foundation.</p>
+            <h4 class="font-semibold text-gray-800 mb-3">How We Help:</h4>
+            <ul class="space-y-2 text-gray-600">
+              {[
+                "Draft comprehensive marital settlement agreements",
+                "Review agreements before you sign",
+                "File all required court documents",
+                "Identify terms that could hurt you later",
+                "Streamline the process to reduce cost and time"
+              ].map(item => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#D4A843] font-bold">→</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-6 bg-[#D4A843]/10 rounded-lg p-4">
+              <p class="text-sm text-gray-700"><strong>Typical Timeline:</strong> 60–90 days from filing if all paperwork is in order.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contested -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div class="bg-gray-800 px-6 py-4">
+            <h3 class="text-xl font-bold text-white">Contested Divorce</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-5">Spouses disagree on one or more issues — this is more common than you'd think. We fight for your interests through negotiation, mediation, and if necessary, trial.</p>
+            <h4 class="font-semibold text-gray-800 mb-3">Our Approach:</h4>
+            <ul class="space-y-2 text-gray-600">
+              {[
+                "Strategic case assessment and planning",
+                "Pre-trial discovery and evidence gathering",
+                "Expert witness coordination (financial, custody)",
+                "Aggressive negotiation and mediation",
+                "Full courtroom trial representation",
+                "Post-judgment enforcement and modification"
+              ].map(item => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#D4A843] font-bold">→</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-6 bg-[#D4A843]/10 rounded-lg p-4">
+              <p class="text-sm text-gray-700"><strong>Our Edge:</strong> We've successfully tried contested high-asset cases exceeding $2M.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE Framework -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-2">Our Proprietary Process</p>
+        <h2 class="text-3xl font-bold text-gray-900">The PROMISE Framework™</h2>
+        <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Every divorce case we handle follows our proven, structured process designed to achieve the best possible outcome.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { letter: "P", word: "Prepare", desc: "Thorough case assessment, goal identification, and strategy development before we file a single document." },
+          { letter: "R", word: "Research", desc: "Deep dive into marital assets, financial records, custody history, and applicable Maryland law." },
+          { letter: "O", word: "Organize", desc: "Systematic organization of all evidence, documentation, and supporting materials for your case." },
+          { letter: "M", word: "Mediate", desc: "Explore resolution through skilled negotiation and mediation to protect your time and resources." },
+          { letter: "I", word: "Implement", desc: "Execute the agreed strategy — in settlement or in the courtroom — with precision and confidence." },
+          { letter: "S", word: "Secure", desc: "Lock in your final order and ensure every provision is enforceable and protects your future." },
+          { letter: "E", word: "Empower", desc: "Leave the process informed, supported, and ready for the next chapter of your life." }
+        ].map(step => (
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <div class="w-12 h-12 bg-[#0D6E6E] rounded-full flex items-center justify-center mb-4">
+              <span class="text-xl font-bold text-[#D4A843]">{step.letter}</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{step.word}</h3>
+            <p class="text-gray-600 text-sm">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Issues We Handle -->
+  <section class="py-16 bg-[#0D6E6E]">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-white text-center mb-3">Divorce Issues We Handle</h2>
+      <p class="text-white/75 text-center mb-12 max-w-2xl mx-auto">From the simplest uncontested divorce to the most complex high-asset litigation, we handle all matters that arise in Maryland divorce proceedings.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { title: "Asset & Property Division", link: "/asset-division" },
+          { title: "Spousal Support / Alimony", link: "/spousal-support" },
+          { title: "Child Custody & Parenting Plans", link: "/child-custody" },
+          { title: "Child Support Calculation", link: "/child-custody" },
+          { title: "Business Valuation & Division", link: "/divorces-involving-businesses" },
+          { title: "Retirement Account Division (QDRO)", link: "/high-net-worth-divorce" },
+          { title: "Real Estate & Marital Home", link: "/asset-division" },
+          { title: "High-Net-Worth Divorce", link: "/high-net-worth-divorce" },
+          { title: "Divorce for Professionals", link: "/divorce-lawyer-for-professionals" }
+        ].map(issue => (
+          <a href={issue.link} class="bg-white/10 hover:bg-white/20 text-white rounded-lg p-4 flex items-center justify-between group transition-colors">
+            <span class="font-medium">{issue.title}</span>
+            <span class="text-[#D4A843] group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Why Maryland Families Choose Us</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            icon: "⚖️",
+            title: "Strategic, Plan-Based Approach",
+            desc: "We don't just react — we build a comprehensive strategy for your case before proceedings begin. Our PROMISE Framework ensures nothing is left to chance."
+          },
+          {
+            icon: "🏛️",
+            title: "Deep Maryland Court Experience",
+            desc: "Our attorneys have appeared in Montgomery County, Baltimore City, Howard County, and courts across Maryland. We know the judges, the procedures, and what works."
+          },
+          {
+            icon: "💼",
+            title: "High-Asset Case Expertise",
+            desc: "Our attorneys have successfully tried contested high-asset divorce cases exceeding $2 million, with experience in business valuation, QDROs, and complex portfolio division."
+          },
+          {
+            icon: "🤝",
+            title: "Compassionate, Discreet Representation",
+            desc: "Divorce is deeply personal. We treat every client with dignity, maintain strict confidentiality, and ensure you feel supported throughout the process."
+          }
+        ].map(reason => (
+          <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex gap-5">
+            <div class="text-3xl flex-shrink-0">{reason.icon}</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">{reason.title}</h3>
+              <p class="text-gray-600">{reason.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Start Your Divorce with a Plan?</h2>
+      <p class="text-gray-600 mb-8">Schedule a free consultation with one of our Maryland divorce attorneys. We'll review your situation, explain your options, and outline a clear path forward.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-consultation" class="bg-[#0D6E6E] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#0a5a5a] transition-colors">
+          Book Free Consultation
+        </a>
+        <a href="tel:3012898917" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
+          Call (301) 289-8917
+        </a>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">Available Mon–Fri, 9AM–9PM · Rockville & Baltimore offices</p>
+    </div>
+  </section>
+
+</BaseLayout>

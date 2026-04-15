@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Spousal Support & Alimony in Maryland | Pendente Lite & Rehabilitative Alimony | Child Custody with a Plan"
+  description="Maryland alimony attorneys handling pendente lite, rehabilitative, and indefinite alimony. Modification and termination representation. Rockville & Baltimore. Call (301) 289-8917."
+  ogTitle="Maryland Spousal Support & Alimony Attorneys | Child Custody with a Plan"
+  ogDescription="Experienced Maryland spousal support attorneys. We represent both payors and recipients in alimony disputes, modifications, and termination proceedings."
+>
+
+  <!-- Hero -->
+  <section class="relative bg-[#0D6E6E] text-white py-20 md:py-28">
+    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-repeat"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+      <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-3">Maryland Alimony Law</p>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
+        Spousal Support &<br class="hidden md:block" /> Alimony in Maryland
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
+        Alimony decisions can define your financial life for years — sometimes decades. Whether you're seeking support or contesting it, we build the case that best positions you for the outcome you need.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-consultation" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
+          Book Free Consultation
+        </a>
+        <a href="tel:3012898917" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D6E6E] transition-colors">
+          (301) 289-8917
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-6 py-3">
+      <nav class="text-sm text-gray-500">
+        <a href="/" class="hover:text-[#0D6E6E]">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/divorce" class="hover:text-[#0D6E6E]">Divorce</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-800 font-medium">Spousal Support</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-5">Maryland Alimony Law Explained</h2>
+          <p class="text-gray-600 mb-4">
+            In Maryland, alimony — formally called "spousal support" — is not automatically awarded in divorce. A court will only award alimony if a spouse can demonstrate that it is necessary based on the circumstances of the marriage.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Maryland Family Law § 11-106 sets out twelve factors courts must consider when determining whether to award alimony, how much to award, and for how long. The law favors rehabilitation — helping the lower-earning spouse become self-supporting — over permanent ongoing support.
+          </p>
+          <p class="text-gray-600">
+            However, Maryland law does allow for indefinite alimony in certain circumstances — particularly in long-term marriages or where one spouse's earning capacity has been significantly impaired. Understanding which type of alimony applies to your situation is the critical first step.
+          </p>
+        </div>
+        <div class="bg-amber-50 border border-[#D4A843]/30 rounded-xl p-6">
+          <h3 class="font-bold text-gray-900 mb-4 text-lg">Quick Reference: Maryland Alimony Types</h3>
+          <div class="space-y-4">
+            {[
+              { type: "Pendente Lite", desc: "Temporary alimony awarded during the divorce proceedings to maintain the status quo. Ends when the final divorce order is entered." },
+              { type: "Rehabilitative Alimony", desc: "Limited-duration support designed to help the recipient spouse become financially self-sufficient through education, training, or career development." },
+              { type: "Indefinite Alimony", desc: "Long-term or permanent support awarded when the recipient cannot reasonably be expected to become self-supporting, or where unconscionable disparity exists." }
+            ].map(t => (
+              <div class="border-b border-[#D4A843]/20 pb-3 last:border-0 last:pb-0">
+                <p class="font-bold text-[#0D6E6E]">{t.type}</p>
+                <p class="text-sm text-gray-600 mt-1">{t.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types in Detail -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Types of Alimony in Maryland</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">Maryland law recognizes distinct forms of spousal support, each serving a different purpose and duration.</p>
+
+      <div class="space-y-6">
+        <!-- Pendente Lite -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="grid md:grid-cols-3">
+            <div class="bg-[#0D6E6E] p-6 text-white flex flex-col justify-center">
+              <h3 class="text-xl font-bold">Pendente Lite Alimony</h3>
+              <p class="text-white/75 text-sm mt-2">"During the pending litigation"</p>
+            </div>
+            <div class="md:col-span-2 p-6">
+              <p class="text-gray-600 mb-3">Pendente lite support is awarded on a temporary basis while the divorce is ongoing. Its purpose is to preserve the financial status quo so that both spouses can maintain reasonable living standards during the proceedings.</p>
+              <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">When Awarded:</p>
+                  <p class="text-gray-600">From the date of filing until the final divorce decree</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">Key Considerations:</p>
+                  <p class="text-gray-600">Immediate need, ability to pay, marital standard of living</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rehabilitative -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="grid md:grid-cols-3">
+            <div class="bg-gray-700 p-6 text-white flex flex-col justify-center">
+              <h3 class="text-xl font-bold">Rehabilitative Alimony</h3>
+              <p class="text-white/75 text-sm mt-2">Most common form in Maryland</p>
+            </div>
+            <div class="md:col-span-2 p-6">
+              <p class="text-gray-600 mb-3">Designed to help the lower-earning spouse attain the education or training necessary to become self-supporting. This is Maryland's preferred form of alimony — courts generally favor a defined end date tied to rehabilitation milestones.</p>
+              <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">Typical Duration:</p>
+                  <p class="text-gray-600">Months to several years, depending on the education or training needed</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">Key Considerations:</p>
+                  <p class="text-gray-600">Realistic self-sufficiency timeline, earning capacity, career prospects</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indefinite -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="grid md:grid-cols-3">
+            <div class="bg-[#D4A843] p-6 text-white flex flex-col justify-center">
+              <h3 class="text-xl font-bold">Indefinite Alimony</h3>
+              <p class="text-white/80 text-sm mt-2">Awarded in limited circumstances</p>
+            </div>
+            <div class="md:col-span-2 p-6">
+              <p class="text-gray-600 mb-3">Maryland courts will award indefinite (sometimes called "permanent") alimony when: (1) the recipient cannot reasonably be expected to make progress toward self-support due to age, illness, or disability; OR (2) even after rehabilitation, there will be an "unconscionable disparity" between the spouses' standards of living.</p>
+              <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">When Awarded:</p>
+                  <p class="text-gray-600">Long marriages, severe health impairment, or massive income disparity</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">Modification:</p>
+                  <p class="text-gray-600">Can be modified upon material change in circumstances</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statutory Factors -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Maryland's 12 Alimony Factors</h2>
+      <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Under Maryland Family Law § 11-106, courts must consider all of the following before making an alimony award.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          "Ability of the party seeking alimony to become self-supporting",
+          "Time needed for the requesting party to gain education or training",
+          "Standard of living established during the marriage",
+          "Duration of the marriage",
+          "Contributions (monetary and non-monetary) of each spouse",
+          "Circumstances leading to the estrangement of the parties",
+          "Age and physical/mental condition of each party",
+          "Ability of the party from whom support is sought to pay",
+          "Financial needs and resources of each party",
+          "Agreements between the parties",
+          "Financial obligations of each party",
+          "Any other factor the court deems appropriate"
+        ].map((factor, i) => (
+          <div class="bg-gray-50 rounded-lg p-4 border border-gray-100 flex items-start gap-3">
+            <span class="text-[#D4A843] font-bold text-sm w-5 flex-shrink-0">{i + 1}.</span>
+            <span class="text-gray-700 text-sm">{factor}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Modification & Termination -->
+  <section class="py-16 bg-[#0D6E6E]">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-white text-center mb-3">Alimony Modification & Termination</h2>
+      <p class="text-white/75 text-center mb-10 max-w-2xl mx-auto">Alimony orders aren't always final. Circumstances change — and Maryland law provides a path to modify or terminate support when they do.</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white/10 rounded-xl p-6 text-white">
+          <h3 class="text-xl font-bold mb-4">Grounds for Modification</h3>
+          <p class="text-white/80 mb-4 text-sm">Either party may petition for modification of alimony if there has been a material change in circumstances since the original order was entered.</p>
+          <ul class="space-y-2 text-sm text-white/90">
+            {[
+              "Significant change in either party's income",
+              "Job loss, disability, or serious illness",
+              "Retirement of the paying spouse",
+              "Recipient's increased earning capacity",
+              "Major changes in financial obligations",
+              "Cohabitation of the recipient spouse (may reduce or terminate)"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <span class="text-[#D4A843]">→</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white/10 rounded-xl p-6 text-white">
+          <h3 class="text-xl font-bold mb-4">Automatic Termination Events</h3>
+          <p class="text-white/80 mb-4 text-sm">Under Maryland law, alimony automatically terminates upon certain events, unless the court order specifies otherwise.</p>
+          <ul class="space-y-2 text-sm text-white/90">
+            {[
+              "Remarriage of the recipient spouse",
+              "Death of either party",
+              "Expiration of a fixed-term alimony period",
+              "Achievement of stated rehabilitation milestones",
+              "Specific date set by court order"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <span class="text-[#D4A843]">→</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="mt-4 bg-white/10 rounded-lg p-3">
+            <p class="text-xs text-white/75"><strong>Important:</strong> Cohabitation alone does not automatically terminate alimony in Maryland but may be grounds for modification. We can help you determine the right course of action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- We Represent Both -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">We Represent Both Payors and Recipients</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+          <h3 class="text-xl font-bold text-[#0D6E6E] mb-4">Seeking Alimony?</h3>
+          <p class="text-gray-600 mb-4">If you sacrificed career opportunities to support your spouse or care for your family, you may be entitled to meaningful spousal support. We help you document your contributions and present the strongest possible case for alimony.</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            {[
+              "Establish the marital standard of living",
+              "Document your non-monetary contributions",
+              "Demonstrate your financial need and timeline to self-support",
+              "Argue for pendente lite support to protect you during proceedings",
+              "Seek indefinite alimony where circumstances justify"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <span class="text-[#D4A843] font-bold">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+          <h3 class="text-xl font-bold text-[#0D6E6E] mb-4">Contesting Alimony?</h3>
+          <p class="text-gray-600 mb-4">If you're the higher-earning spouse, you need attorneys who will push back on inflated demands and ensure any alimony order is fair, reasonable, and appropriately limited in scope and duration.</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            {[
+              "Challenge the recipient's actual financial need",
+              "Present evidence of the recipient's earning capacity",
+              "Limit duration through rehabilitative alimony arguments",
+              "Counter excessive demands with financial analysis",
+              "Include protective provisions for changed circumstances",
+              "Seek modification when circumstances change post-divorce"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <span class="text-[#D4A843] font-bold">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Alimony Questions? Get Answers Today.</h2>
+      <p class="text-gray-600 mb-8">Spousal support decisions have long-lasting financial consequences. Speak with a Maryland alimony attorney for a clear understanding of your rights and options.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-consultation" class="bg-[#0D6E6E] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#0a5a5a] transition-colors">
+          Book Free Consultation
+        </a>
+        <a href="tel:3012898917" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
+          Call (301) 289-8917
+        </a>
+      </div>
+      <p class="text-sm text-gray-500 mt-4">Rockville: 100 Park Ave Suite 205 · Baltimore: 1537 Light St #100 · Mon–Fri 9AM–9PM</p>
+    </div>
+  </section>
+
+</BaseLayout>
