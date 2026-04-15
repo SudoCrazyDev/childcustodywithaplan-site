@@ -4,35 +4,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Page Not Found | Child Custody with a Plan"
-  description="The page you were looking for could not be found. Return to our homepage or contact our Maryland child custody attorneys."
+  description="The page you're looking for doesn't exist. Return to the Child Custody with a Plan homepage or contact us for help."
+  noindex={true}
 >
-  <section class="bg-gradient-to-br from-teal-900 to-teal-800 min-h-screen flex items-center justify-center text-white py-20 relative overflow-hidden">
-    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
-    <div class="max-w-2xl mx-auto px-4 text-center">
-      <div class="text-8xl font-serif font-bold text-teal-700 mb-4">404</div>
-      <h1 class="font-serif text-4xl font-bold text-white mb-4">Page Not Found</h1>
-      <p class="text-teal-200 text-lg mb-8">
-        The page you're looking for doesn't exist or may have been moved. Let us help you find what you need.
+  <section class="teal-gradient min-h-[70vh] flex items-center justify-center text-white relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
+    <div class="max-w-2xl mx-auto px-4 text-center relative z-10">
+      <div class="text-8xl font-serif font-bold text-gold-400 mb-4">404</div>
+      <h1 class="font-serif font-bold text-3xl md:text-4xl text-white mb-4">
+        Page Not Found
+      </h1>
+      <p class="text-teal-100 text-lg mb-8 leading-relaxed">
+        We couldn't find the page you're looking for. It may have been moved, renamed, or may not exist. Let us help you find what you need.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center mb-10">
-        <a href="/" class="btn-primary">Back to Homepage</a>
-        <a href="/free-consultation" class="border-2 border-white text-white hover:bg-white hover:text-teal-900 font-bold px-6 py-3 rounded-lg transition-all">Free Consultation</a>
-        <a href="tel:3012898917" class="border-2 border-teal-600 text-teal-200 hover:border-white hover:text-white font-bold px-6 py-3 rounded-lg transition-all">(301) 289-8917</a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <a href="/" class="btn-primary !py-4 !px-8">
+          Return to Homepage
+        </a>
+        <a href="/contact" class="btn-secondary !py-4 !px-8">
+          Contact Us
+        </a>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-left">
-        {[
-          { label: "Child Custody Services", href: "/services" },
-          { label: "Father's Rights", href: "/fathers-rights" },
-          { label: "Mother's Rights", href: "/mothers-rights" },
-          { label: "Custody Modifications", href: "/custody-modifications" },
-          { label: "Emergency Custody", href: "/emergency-custody" },
-          { label: "Visitation Rights", href: "/visitation-rights" },
-        ].map((link) => (
-          <a href={link.href} class="flex items-center gap-2 text-teal-300 hover:text-gold-400 text-sm transition-colors py-1">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            {link.label}
-          </a>
-        ))}
+
+      <!-- Quick links -->
+      <div class="bg-teal-600/30 backdrop-blur rounded-2xl p-6 mt-4">
+        <p class="text-teal-200 font-semibold mb-4">Looking for one of these?</p>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          {[
+            ['Child Custody', '/child-custody'],
+            ['Custody Modification', '/child-custody-modification'],
+            ['Divorce', '/divorce'],
+            ['Spousal Support', '/spousal-support'],
+            ['Our Attorneys', '/attorneys'],
+            ['Free Consultation', '/free-consultation'],
+            ['Contact Us', '/contact'],
+            ['All Services', '/services'],
+          ].map(([label, href]) => (
+            <a href={href} class="text-teal-100 hover:text-gold-400 transition-colors py-1">
+              → {label}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>

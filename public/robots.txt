@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://childcustodywithaplan.com/sitemap.xml
-
-# Block sensitive pages from indexing
-Disallow: /api/

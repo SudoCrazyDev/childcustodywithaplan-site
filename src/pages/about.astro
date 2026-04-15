@@ -1,219 +1,227 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ConsultationCTA from '../components/ConsultationCTA.astro';
+import CTASection from '../components/CTASection.astro';
+
+const promiseSteps = [
+  {
+    letter: 'P',
+    title: 'Plan',
+    color: 'bg-teal-500',
+    desc: 'We begin every engagement with a thorough case assessment. We evaluate your family circumstances, your goals, and the legal landscape specific to your Maryland jurisdiction. No two plans are alike.',
+  },
+  {
+    letter: 'R',
+    title: 'Research',
+    color: 'bg-teal-600',
+    desc: 'Our team conducts meticulous legal research — analyzing applicable Maryland statutes, relevant case law, and your specific situation to identify the strongest possible path forward.',
+  },
+  {
+    letter: 'O',
+    title: 'Organize',
+    color: 'bg-teal-500',
+    desc: 'We systematically compile your documentation, financial records, parenting history, and supporting evidence, ensuring everything is in order before any court filings or negotiations begin.',
+  },
+  {
+    letter: 'M',
+    title: 'Mobilize',
+    color: 'bg-teal-600',
+    desc: 'We take decisive, strategic legal action — filing motions, initiating negotiations, and advocating powerfully on your behalf in every courtroom appearance and settlement conference.',
+  },
+  {
+    letter: 'I',
+    title: 'Implement',
+    color: 'bg-teal-500',
+    desc: 'Your customized strategy is executed with precision at every stage of proceedings. We monitor developments, adapt to opposing arguments, and maintain a consistent forward momentum.',
+  },
+  {
+    letter: 'S',
+    title: 'Stabilize',
+    color: 'bg-teal-600',
+    desc: 'We work toward a durable outcome that brings stability to your family — for you and your children — both in the immediate term and for the years ahead.',
+  },
+  {
+    letter: 'E',
+    title: 'Evolve',
+    color: 'bg-teal-500',
+    desc: 'Families change. We help you adapt your legal arrangements as circumstances evolve — whether that means modifications, enforcement actions, or new challenges that arise post-judgment.',
+  },
+];
+
+const values = [
+  {
+    icon: '⚖️',
+    title: 'Strategic Excellence',
+    desc: 'We approach every case as a strategist, not just a litigator. We plan every move with your long-term goals in mind.',
+  },
+  {
+    icon: '💗',
+    title: 'Compassionate Advocacy',
+    desc: 'We understand the emotional weight of family law matters. We combine empathy with expertise to guide you through with dignity.',
+  },
+  {
+    icon: '🌱',
+    title: 'Community-Centered',
+    desc: 'We are deeply invested in the Maryland communities we serve — uplifting families and changing how communities navigate family transitions.',
+  },
+  {
+    icon: '🔒',
+    title: 'Confidential & Discreet',
+    desc: 'Your family\'s privacy is paramount. We handle every case with the discretion it deserves, protecting your personal and professional reputation.',
+  },
+  {
+    icon: '✊',
+    title: 'Women Empowering Women',
+    desc: 'Our women-led team provides a safe space for clients — especially women — to tell their full story and receive the fierce representation they deserve.',
+  },
+  {
+    icon: '🎯',
+    title: 'Child-First Philosophy',
+    desc: 'Every strategy we build places the best interests of your children at the center. Their well-being drives every legal decision we make.',
+  },
+];
 ---
 
 <BaseLayout
-  title="About Child Custody with a Plan | Maryland Child Custody Law Firm"
-  description="Learn about Child Custody with a Plan — our founding story, our mission, our team, and why Maryland families trust us with their most important custody battles. Led by 2025 Elite Lawyer Award recipient Josephia Rouse."
+  title="About Us | Child Custody with a Plan — Maryland Women-Led Family Law Firm"
+  description="Learn about Child Custody with a Plan — a Maryland women-led family law firm founded by Josephia Rouse (2025 Elite Lawyer Award). Discover our PROMISE Framework, mission, and community-centered approach."
 >
-  <!-- Page Hero -->
-  <section class="bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white py-20 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-5">
-      <svg width="100%" height="100%"><defs><pattern id="g" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/></svg>
-    </div>
-    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
-    <div class="relative max-w-4xl mx-auto px-4 text-center">
-      <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-        Our Story
+  <!-- Hero -->
+  <section class="teal-gradient text-white py-20 md:py-28 relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <p class="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-3">Our Story</p>
+        <h1 class="font-serif font-bold text-4xl md:text-5xl text-white leading-tight mb-6">
+          Where Strategy Meets Compassion in Maryland Family Law
+        </h1>
+        <p class="text-teal-100 text-xl leading-relaxed">
+          Child Custody with a Plan was built on a simple but powerful belief: families deserve more than legal representation. They deserve a plan.
+        </p>
       </div>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6">About Child Custody<br/><span class="text-gold-400">with a Plan</span></h1>
-      <p class="text-teal-100 text-xl leading-relaxed max-w-3xl mx-auto">
-        A Maryland child custody firm built on strategy, empathy, and an unwavering commitment to your family's future.
-      </p>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <div class="bg-white border-b border-gray-100 py-3">
-    <div class="max-w-7xl mx-auto px-4">
-      <nav class="text-sm text-gray-500">
-        <a href="/" class="hover:text-teal-600">Home</a>
-        <span class="mx-2">/</span>
-        <span class="text-teal-700 font-medium">About Us</span>
-      </nav>
-    </div>
-  </div>
-
   <!-- Our Story -->
-  <section class="py-20 bg-white">
+  <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div>
-          <div class="gold-bar"></div>
-          <h2 class="section-heading">Built for Families, Driven by Purpose</h2>
-          <p class="text-gray-600 leading-relaxed mb-5">
-            Child Custody with a Plan was founded with a simple but powerful idea: parents going through custody battles deserve more than just legal representation — they deserve a <em>strategy</em>. A plan. A path forward that accounts for not just the courtroom, but their family's long-term wellbeing.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-5">
-            We are a Maryland-based child custody law firm with offices in Rockville and Baltimore, serving clients throughout Montgomery County, Prince George's County, Baltimore City, Howard County, and beyond. While most family law firms handle everything from divorces to wills, we concentrate specifically on child custody — giving our clients the benefit of deep, focused expertise in this single critical area.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-8">
-            We are proud to be a sister firm to <strong><a href="https://divorcewithaplan.com" class="text-teal-600 hover:underline">Divorce with a Plan</a></strong>, and together, our firms represent the full spectrum of family law needs facing Maryland families today.
-          </p>
-
-          <div class="flex flex-wrap gap-3">
-            <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-            <a href="/attorneys" class="btn-outline">Meet Our Team</a>
+          <p class="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3">Our Foundation</p>
+          <h2 class="font-serif font-bold text-3xl md:text-4xl text-teal-700 mb-6">A Firm Built for Maryland Families</h2>
+          <div class="prose-custom">
+            <p>
+              <strong>Child Custody with a Plan</strong> is the sister site and practice arm of <em>Divorce with a Plan</em>, Maryland's premier women-led family law firm. Together, these practices represent the vision of founder <strong>Josephia Rouse, Esq.</strong> — to transform how Maryland families navigate divorce, child custody, and family transitions.
+            </p>
+            <p>
+              Josephia launched her practice after observing a troubling pattern: too many Maryland families were coming to family court unprepared, overwhelmed, and without a real strategy for the road ahead. She believed that the families who struggled most weren't lacking good attorneys — they were lacking a <em>plan</em>.
+            </p>
+            <p>
+              That insight became the foundation of a firm — and a methodology. The PROMISE Framework™ was born from Josephia's commitment to transforming client preparation from an afterthought into the centerpiece of every legal representation.
+            </p>
+            <p>
+              Today, with offices in <strong>Rockville</strong> and <strong>Baltimore</strong>, Child Custody with a Plan serves families across Maryland with the same unwavering belief: strategic preparation, compassionate advocacy, and a community-centered mission.
+            </p>
           </div>
         </div>
-
-        <div class="space-y-5">
-          {[
-            { number: "01", title: "Specialized Focus", desc: "Unlike general family law firms, we focus exclusively on child custody — so you get the depth of expertise this critical matter demands." },
-            { number: "02", title: "Community Roots", desc: "We are a community-centered firm. We understand the diverse needs of Maryland families and represent clients from all backgrounds with equal dedication." },
-            { number: "03", title: "Strategic Planning", desc: "Every case begins with a plan. We assess your unique circumstances and develop a litigation or negotiation strategy tailored to your goals." },
-            { number: "04", title: "Ongoing Support", desc: "From your first consultation through final order — and any modifications afterward — we are with you for the entire journey." },
-          ].map((item) => (
-            <div class="flex gap-5 p-5 bg-teal-50 rounded-xl border border-teal-100 hover:border-teal-300 transition-colors">
-              <div class="text-3xl font-serif font-bold text-teal-200 flex-shrink-0">{item.number}</div>
+        <div class="space-y-6">
+          <!-- Award callout -->
+          <div class="bg-teal-50 rounded-2xl p-8 border border-teal-200">
+            <div class="flex items-start gap-4">
+              <div class="w-16 h-16 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              </div>
               <div>
-                <h3 class="font-semibold text-teal-800 mb-1">{item.title}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <h3 class="font-serif font-bold text-teal-700 text-xl mb-2">2025 Elite Lawyer Award</h3>
+                <p class="text-gray-600">Josephia Rouse has been recognized with the prestigious <strong>2025 Elite Lawyer Award</strong>, reflecting her commitment to exceptional client representation, legal excellence, and her transformative impact on Maryland families.</p>
               </div>
             </div>
-          ))}
+          </div>
+
+          <!-- Sister site callout -->
+          <div class="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
+            <h3 class="font-serif font-bold text-teal-700 text-xl mb-3">Sister Firm: Divorce with a Plan</h3>
+            <p class="text-gray-600 mb-4">Child Custody with a Plan operates as the sister practice to <strong>Divorce with a Plan</strong> (divorcewithaplan.com) — both led by Josephia Rouse and sharing the same strategic methodology, attorney team, and community-centered mission.</p>
+            <a href="https://divorcewithaplan.com" target="_blank" rel="noopener" class="text-teal-600 font-semibold hover:text-teal-700 text-sm flex items-center gap-1">
+              Visit Divorce with a Plan
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Mission & Values -->
-  <section class="py-20 bg-teal-900 text-white">
+  <section class="py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-14">
-        <div class="w-16 h-1 bg-gold-400 mx-auto mb-6"></div>
-        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Our Mission & Values</h2>
-        <p class="text-teal-200 text-lg max-w-2xl mx-auto">The principles that guide every decision we make, every case we take, and every family we serve.</p>
+      <div class="text-center mb-12">
+        <p class="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3">What We Stand For</p>
+        <h2 class="section-heading">Our Mission & Core Values</h2>
+        <p class="section-subheading">
+          Our mission is to empower Maryland families with strategic legal representation — and to change how our communities navigate the most difficult family transitions.
+        </p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            icon: "⚖️",
-            title: "Justice for Every Parent",
-            desc: "We believe every parent — regardless of gender, income, or background — deserves fearless, skilled legal representation. The system should work for your family.",
-          },
-          {
-            icon: "❤️",
-            title: "Children Come First",
-            desc: "Our strategies are always grounded in one guiding principle: what is truly best for the children involved. We never lose sight of the human stakes.",
-          },
-          {
-            icon: "🧭",
-            title: "Strategy Over Emotion",
-            desc: "Custody battles are emotionally charged, but the best outcomes come from clear-headed strategy. We provide the steady hand and sharp legal mind you need.",
-          },
-          {
-            icon: "🤝",
-            title: "Community-Centered",
-            desc: "We are part of the Maryland community we serve. We understand local courts, local culture, and the real-world pressures facing Maryland families.",
-          },
-          {
-            icon: "🔍",
-            title: "Transparency Always",
-            desc: "No legal jargon, no hidden surprises. We communicate clearly, update you regularly, and make sure you understand every step of your case.",
-          },
-          {
-            icon: "💪",
-            title: "Relentless Advocacy",
-            desc: "Whether in negotiations or at trial, we fight hard for our clients. We prepare thoroughly, argue compellingly, and don't back down from a fight worth having.",
-          },
-        ].map((v) => (
-          <div class="bg-teal-800 bg-opacity-60 rounded-xl p-6 border border-teal-700 hover:border-gold-400 transition-colors group">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {values.map((v) => (
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gray-100">
             <div class="text-3xl mb-4">{v.icon}</div>
-            <h3 class="font-serif font-bold text-white text-lg mb-3">{v.title}</h3>
-            <p class="text-teal-300 text-sm leading-relaxed">{v.desc}</p>
+            <h3 class="font-serif font-bold text-teal-700 text-xl mb-3">{v.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{v.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Why We're Different -->
-  <section class="py-20 bg-white">
+  <!-- PROMISE Framework -->
+  <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-        <div class="order-2 lg:order-1">
-          <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8">
-            <h3 class="font-serif font-bold text-teal-800 text-2xl mb-6">Child Custody with a Plan vs. General Family Law Firms</h3>
-            <div class="space-y-4">
-              {[
-                { us: "Exclusive focus on child custody", them: "Handles divorces, wills, and more" },
-                { us: "Deep Maryland custody court knowledge", them: "Broad family law knowledge" },
-                { us: "Strategic plan from day one", them: "Reactive case management" },
-                { us: "Extended hours: 9AM–9PM Mon–Fri", them: "Standard 9–5 availability" },
-                { us: "Community-centered approach", them: "Corporate, impersonal service" },
-                { us: "Free initial consultation", them: "Paid consultations common" },
-                { us: "Sister firm for divorce matters", them: "Siloed practice areas" },
-              ].map((row) => (
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="flex items-start gap-2">
-                    <div class="w-5 h-5 bg-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                    </div>
-                    <span class="text-teal-800 text-sm font-medium">{row.us}</span>
-                  </div>
-                  <div class="flex items-start gap-2">
-                    <div class="w-5 h-5 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span class="text-gray-600 text-xs">–</span>
-                    </div>
-                    <span class="text-gray-500 text-sm">{row.them}</span>
-                  </div>
-                </div>
-              ))}
+      <div class="text-center mb-12">
+        <p class="text-gold-500 font-semibold text-sm uppercase tracking-widest mb-3">Our Proprietary Process</p>
+        <h2 class="section-heading">The PROMISE Framework™</h2>
+        <p class="section-subheading max-w-3xl mx-auto">
+          The PROMISE Framework is our proprietary 7-step client strategy process — developed by Josephia Rouse to ensure every client receives not just representation, but a comprehensive, strategic plan tailored to their unique situation.
+        </p>
+      </div>
+
+      <div class="space-y-4 max-w-4xl mx-auto">
+        {promiseSteps.map((step, i) => (
+          <div class="flex items-start gap-6 bg-teal-50 rounded-xl p-6 border border-teal-100 hover:border-teal-300 transition-colors">
+            <div class={`w-14 h-14 ${step.color} text-white font-serif font-bold text-2xl rounded-full flex items-center justify-center flex-shrink-0 shadow-md`}>
+              {step.letter}
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-teal-700 text-xl mb-2">{step.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{step.desc}</p>
             </div>
           </div>
-        </div>
-
-        <div class="order-1 lg:order-2">
-          <div class="gold-bar"></div>
-          <h2 class="section-heading">Why Families Choose Us</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            When parents come to us, they're often scared, exhausted, and unsure of what to do next. That's exactly why we built our firm the way we did. We combine the focused expertise of a specialty firm with the warmth and accessibility of a community practice.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Our attorneys don't just file paperwork — they invest time in understanding your family dynamics, your children's needs, and the specific facts that will matter most in your Maryland courtroom.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-8">
-            We've built our reputation on results, on genuine client care, and on the recognition we've earned from the legal community — including the <strong>2025 Elite Lawyer Award</strong> received by our founder, Josephia Rouse.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/free-consultation" class="btn-primary text-center">Start with a Free Consultation</a>
-            <a href="tel:3012898917" class="btn-outline text-center">(301) 289-8917</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Awards & Recognition -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-10">
-        <div class="gold-bar mx-auto"></div>
-        <h2 class="section-heading">Recognition & Credentials</h2>
-      </div>
-      <div class="flex flex-wrap justify-center gap-8">
-        {[
-          { label: "2025 Elite Lawyer Award", sub: "Josephia Rouse, Founder", icon: "🏆" },
-          { label: "Maryland State Bar", sub: "Licensed & In Good Standing", icon: "⚖️" },
-          { label: "Family Law Section", sub: "Maryland Bar Association", icon: "📋" },
-          { label: "Sister Firm", sub: "Divorce with a Plan", icon: "🤝" },
-        ].map((award) => (
-          <div class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md w-44 hover:shadow-lg transition-shadow">
-            <div class="text-4xl mb-3">{award.icon}</div>
-            <p class="font-semibold text-teal-800 text-sm leading-tight mb-1">{award.label}</p>
-            <p class="text-gray-500 text-xs">{award.sub}</p>
-          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <ConsultationCTA
-    heading="Ready to Build Your Custody Strategy?"
-    subtext="Our team is ready to listen, evaluate your situation, and help you create a plan that protects your children and your parental rights. The consultation is free — the value is priceless."
-  />
+  <!-- Community Section -->
+  <section class="py-16 md:py-20 teal-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-3">Community First</p>
+        <h2 class="font-serif font-bold text-3xl md:text-4xl text-white mb-6">Rooted in the Maryland Community</h2>
+        <p class="text-teal-100 text-lg leading-relaxed mb-6">
+          Child Custody with a Plan isn't just a law firm — it's a community resource. We're dedicated to changing the narrative around divorce and child custody in Maryland, turning these difficult transitions into opportunities for clarity, healing, and new beginnings.
+        </p>
+        <p class="text-teal-100 text-lg leading-relaxed mb-8">
+          We're especially committed to serving underrepresented communities across Baltimore and Montgomery County, ensuring that every family — regardless of background — has access to strategic, compassionate legal counsel.
+        </p>
+        <a href="/free-consultation" class="btn-primary text-base !py-4 !px-8">
+          Start Your Journey Today
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection variant="light" />
 </BaseLayout>

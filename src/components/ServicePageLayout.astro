@@ -1,0 +1,102 @@
+---
+export interface Props {
+  title: string;
+  headline: string;
+  intro: string;
+}
+
+const { title, headline, intro } = Astro.props;
+
+const services = [
+  { label: 'Divorce', href: '/divorce' },
+  { label: 'Asset Division', href: '/asset-division' },
+  { label: 'Divorces Involving Businesses', href: '/divorces-involving-businesses' },
+  { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
+  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
+  { label: 'Spousal Support', href: '/spousal-support' },
+  { label: 'Child Custody', href: '/child-custody' },
+  { label: 'Child Custody Modification', href: '/child-custody-modification' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<section class="teal-gradient text-white py-16 md:py-24 relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="max-w-3xl">
+      <p class="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-3">Practice Area</p>
+      <h1 class="font-serif font-bold text-4xl md:text-5xl text-white mb-6">{headline}</h1>
+      <p class="text-teal-100 text-lg leading-relaxed mb-8">{intro}</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/free-consultation" class="btn-primary !py-3.5 !px-7">Schedule Free Consultation</a>
+        <a href="tel:3012898917" class="btn-secondary !py-3.5 !px-7">(301) 289-8917</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-7xl mx-auto px-4 py-12 lg:py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+    <!-- Sidebar -->
+    <aside class="lg:col-span-1">
+      <div class="sticky top-28 space-y-6">
+        <!-- Practice areas nav -->
+        <div class="bg-teal-50 rounded-xl p-5 border border-teal-100">
+          <h3 class="font-serif font-bold text-teal-700 mb-4 text-lg">Practice Areas</h3>
+          <nav class="space-y-1">
+            {services.map((s) => (
+              <a
+                href={s.href}
+                class={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                  currentPath === s.href
+                    ? 'bg-teal-500 text-white font-medium'
+                    : 'text-gray-700 hover:bg-teal-100 hover:text-teal-700'
+                }`}
+              >
+                {s.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <!-- CTA box -->
+        <div class="teal-gradient rounded-xl p-6 text-white">
+          <h3 class="font-serif font-bold text-xl mb-3">Ready to Take Action?</h3>
+          <p class="text-teal-100 text-sm mb-4 leading-relaxed">Schedule a free consultation with our team and build your strategy today.</p>
+          <a href="/free-consultation" class="block w-full bg-gold-400 hover:bg-gold-500 text-white font-semibold py-3 px-4 rounded-lg text-center text-sm transition-colors">
+            Free Consultation
+          </a>
+          <a href="tel:3012898917" class="block w-full mt-3 border border-teal-400 hover:bg-teal-600 text-white font-medium py-3 px-4 rounded-lg text-center text-sm transition-colors">
+            (301) 289-8917
+          </a>
+        </div>
+
+        <!-- Office info -->
+        <div class="bg-white rounded-xl p-5 shadow-md border border-gray-100">
+          <h3 class="font-serif font-bold text-teal-700 mb-3 text-base">Our Offices</h3>
+          <div class="space-y-3 text-sm text-gray-600">
+            <div>
+              <p class="font-semibold text-teal-600">Rockville</p>
+              <p>100 Park Ave Suite 205</p>
+              <p>Rockville, MD 20850</p>
+            </div>
+            <div>
+              <p class="font-semibold text-teal-600">Baltimore</p>
+              <p>1537 Light St #100</p>
+              <p>Baltimore, MD 21230</p>
+            </div>
+            <div class="pt-1 border-t border-gray-100">
+              <p class="text-teal-600 font-medium">Mon–Fri: 9AM–9PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="lg:col-span-3 prose-custom">
+      <slot />
+    </div>
+  </div>
+</div>

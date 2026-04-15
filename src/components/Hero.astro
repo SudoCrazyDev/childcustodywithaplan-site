@@ -1,87 +1,98 @@
 ---
 export interface Props {
   headline: string;
-  subheadline: string;
-  ctaPrimary?: { text: string; href: string };
-  ctaSecondary?: { text: string; href: string };
+  subheadline?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
   badge?: string;
-  showTrustBar?: boolean;
+  showStats?: boolean;
+  compact?: boolean;
 }
 
 const {
   headline,
   subheadline,
-  ctaPrimary = { text: 'Get Free Consultation', href: '/free-consultation' },
-  ctaSecondary = { text: 'Call (301) 289-8917', href: 'tel:3012898917' },
+  ctaText = 'Schedule Free Consultation',
+  ctaHref = '/free-consultation',
+  secondaryCtaText = 'Explore Practice Areas',
+  secondaryCtaHref = '/services',
   badge,
-  showTrustBar = true,
+  showStats = false,
+  compact = false,
 } = Astro.props;
 ---
 
-<section class="relative bg-gradient-to-br from-teal-900 via-teal-800 to-teal-700 text-white overflow-hidden">
+<section class={`teal-gradient text-white relative overflow-hidden ${compact ? 'py-16 md:py-24' : 'py-20 md:py-32'}`}>
   <!-- Background pattern -->
-  <div class="absolute inset-0 opacity-5">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
         </pattern>
       </defs>
-      <rect width="100%" height="100%" fill="url(#grid)"/>
+      <rect width="100" height="100" fill="url(#grid)"/>
     </svg>
   </div>
 
-  <!-- Gold accent bar -->
-  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+  <!-- Gold accent circles -->
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
+  <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 py-20 md:py-28">
-    <div class="max-w-3xl">
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
       {badge && (
-        <div class="inline-flex items-center gap-2 bg-gold-400 bg-opacity-20 border border-gold-400 border-opacity-50 text-gold-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <div class="inline-flex items-center gap-2 bg-gold-400/20 border border-gold-400/40 text-gold-300 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
           {badge}
         </div>
       )}
 
-      <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6" set:html={headline}></h1>
+      <h1 class={`font-serif font-bold text-white leading-tight mb-6 ${compact ? 'text-3xl md:text-4xl lg:text-5xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}>
+        {headline}
+      </h1>
 
-      <p class="text-teal-100 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-        {subheadline}
-      </p>
+      {subheadline && (
+        <p class="text-lg md:text-xl text-teal-100 mb-8 leading-relaxed max-w-3xl mx-auto">
+          {subheadline}
+        </p>
+      )}
 
-      <div class="flex flex-wrap gap-4">
-        <a href={ctaPrimary.href} class="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-base">
-          {ctaPrimary.text}
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={ctaHref} class="btn-primary text-base !py-4 !px-8 shadow-xl">
+          {ctaText}
         </a>
-        <a href={ctaSecondary.href} class="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-teal-800 font-bold px-8 py-4 rounded-lg transition-all duration-200 text-base">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-          {ctaSecondary.text}
-        </a>
+        {secondaryCtaText && (
+          <a href={secondaryCtaHref} class="btn-secondary text-base !py-4 !px-8">
+            {secondaryCtaText}
+          </a>
+        )}
       </div>
-    </div>
 
-    {showTrustBar && (
-      <div class="mt-14 pt-10 border-t border-teal-700">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      {showStats && (
+        <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-teal-400/30 pt-10">
           <div class="text-center">
-            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">15+</div>
-            <div class="text-teal-300 text-sm">Years Combined Experience</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">500+</div>
-            <div class="text-teal-300 text-sm">Families Served</div>
+            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">4</div>
+            <div class="text-teal-200 text-sm">Expert Attorneys</div>
           </div>
           <div class="text-center">
             <div class="text-3xl font-serif font-bold text-gold-400 mb-1">2</div>
-            <div class="text-teal-300 text-sm">Maryland Offices</div>
+            <div class="text-teal-200 text-sm">Maryland Offices</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">8</div>
+            <div class="text-teal-200 text-sm">Practice Areas</div>
           </div>
           <div class="text-center">
             <div class="text-3xl font-serif font-bold text-gold-400 mb-1">Free</div>
-            <div class="text-teal-300 text-sm">Initial Consultation</div>
+            <div class="text-teal-200 text-sm">Consultations</div>
           </div>
         </div>
-      </div>
-    )}
+      )}
+    </div>
   </div>
 </section>
