@@ -1,203 +1,98 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
 ---
 
-<BaseLayout
-  title="Maryland Divorce Attorneys | Divorce With A Plan"
-  description="Experienced Maryland divorce attorneys serving Rockville, Baltimore, Howard County, and Montgomery County. Strategic, plan-based divorce representation since 2013. Call (240) 269-3592."
-  ogTitle="Maryland Divorce Attorneys | Divorce With A Plan"
-  ogDescription="Strategic divorce representation in Maryland since 2013. Serving Rockville, Baltimore, and surrounding counties. Call today for a free consultation."
+<ServicePageLayout
+  title="Maryland Divorce Attorneys — Contested & Uncontested"
+  metaTitle="Maryland Divorce Attorneys | Contested & Uncontested Divorce | Child Custody with a Plan"
+  description="Experienced Maryland divorce attorneys serving Rockville and Baltimore. We handle contested and uncontested divorce with strategic planning and compassionate counsel. Call (301) 289-8917."
+  heroSubtitle="Maryland Divorce Law"
+  heroDescription="Whether your divorce is amicable or contested, our Maryland attorneys provide strategic representation that protects your rights, your assets, and your family's future."
+  badge="Rockville & Baltimore Divorce Attorneys"
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">Maryland Divorce Attorneys</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Divorce Doesn't Have to Mean Disorder.<br class="hidden md:block" />
-        We Give You a Plan.
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-        Since 2013, Divorce With A Plan has helped Maryland residents navigate divorce with clarity, strategy, and confidence. Our attorneys combine legal expertise with genuine compassion — so you know exactly what to expect, every step of the way.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Schedule Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Call (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
+  <h2>Maryland Divorce Representation You Can Count On</h2>
+  <p>
+    Divorce is one of the most significant legal events in a person's life — emotionally, financially, and practically. At <strong>Child Custody with a Plan</strong>, our Maryland divorce attorneys understand the gravity of what you're facing, and we are committed to providing you with a clear strategy, transparent guidance, and unwavering advocacy from start to finish.
+  </p>
+  <p>
+    We serve clients throughout Rockville, Baltimore, Montgomery County, Howard County, Prince George's County, Baltimore County, and across Maryland. Whether your divorce is straightforward or involves complex disputes over assets, custody, and support, our attorneys have the experience and dedication to guide you through.
+  </p>
 
-  <!-- What Is Divorce in Maryland -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-5">Understanding Divorce in Maryland</h2>
-          <p class="text-slate-600 mb-4">
-            Maryland law has undergone significant changes in recent years. As of October 2023, Maryland now offers <strong>absolute divorce</strong> based on a 6-month separation or mutual consent — eliminating many of the old fault-based hurdles that complicated the process.
-          </p>
-          <p class="text-slate-600 mb-4">
-            However, even with simplified grounds, divorce still involves critical decisions about <strong>property division, spousal support, child custody, and child support</strong>. Getting these decisions wrong can have lasting financial and personal consequences.
-          </p>
-          <p class="text-slate-600">
-            That's why having an experienced Maryland divorce attorney isn't just helpful — it's essential. Our team at Divorce With A Plan has handled hundreds of cases across Montgomery County, Howard County, Baltimore, and surrounding areas.
-          </p>
-        </div>
-        <div class="bg-slate-50 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">Divorce Grounds in Maryland</h3>
-          <ul class="space-y-3">
-            {[
-              "6-month separation (no-fault)",
-              "Mutual consent (no-fault)",
-              "Adultery",
-              "Cruelty or excessively vicious conduct",
-              "Constructive desertion",
-              "Conviction of a crime"
-            ].map(ground => (
-              <li class="flex items-start gap-3">
-                <span class="text-amber-500 font-bold mt-0.5">✓</span>
-                <span class="text-slate-700">{ground}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>Types of Divorce in Maryland</h2>
 
-  <!-- Our Divorce Services -->
-  <section class="py-16 px-4 bg-slate-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Our Divorce Legal Services</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">From straightforward uncontested divorces to complex, high-asset litigation — we handle it all with precision and discretion.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: "Uncontested Divorce",
-            desc: "When both spouses agree on all major terms, we help you finalize your divorce efficiently, correctly, and without unnecessary delay.",
-            icon: "📋"
-          },
-          {
-            title: "Contested Divorce",
-            desc: "When disagreements arise over property, custody, or support, our trial-ready attorneys advocate fiercely for your interests in court.",
-            icon: "⚖️"
-          },
-          {
-            title: "High-Asset Divorce",
-            desc: "Protecting complex portfolios, business interests, retirement accounts, and real estate requires specialized legal strategy.",
-            icon: "🏛️"
-          },
-          {
-            title: "Divorce for Professionals",
-            desc: "Doctors, executives, and business owners face unique divorce challenges. We understand how professional income and assets are treated.",
-            icon: "💼"
-          },
-          {
-            title: "Child Custody & Support",
-            desc: "We help parents develop parenting plans that protect their children's best interests and secure appropriate support arrangements.",
-            icon: "👨‍👧"
-          },
-          {
-            title: "Spousal Support",
-            desc: "Whether seeking or contesting alimony, our attorneys build evidence-based arguments grounded in Maryland law.",
-            icon: "💰"
-          }
-        ].map(service => (
-          <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-            <div class="text-3xl mb-3">{service.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
-            <p class="text-slate-600 text-sm">{service.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h3>Uncontested Divorce</h3>
+  <p>
+    An uncontested divorce occurs when both spouses agree on all material issues — including property division, spousal support, child custody, and child support. Maryland law allows for an absolute divorce when spouses have lived apart for a required period or have reached a mutual agreement.
+  </p>
+  <p>
+    Even in uncontested divorces, having an attorney review your separation agreement and divorce documents is essential. A poorly drafted agreement can have long-lasting consequences that aren't apparent until years later. Our attorneys ensure your agreement truly protects your interests.
+  </p>
 
-  <!-- The Divorce Process -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">The Maryland Divorce Process</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">We walk you through every stage — no surprises, no confusion.</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          { step: "01", title: "Initial Consultation", desc: "We assess your situation, explain your options, and begin forming your strategy." },
-          { step: "02", title: "Filing & Service", desc: "We prepare and file your divorce complaint and properly serve your spouse." },
-          { step: "03", title: "Discovery & Negotiation", desc: "We gather financial records and negotiate a fair settlement on your behalf." },
-          { step: "04", title: "Resolution", desc: "We finalize your divorce through settlement agreement or trial representation." }
-        ].map(item => (
-          <div class="text-center">
-            <div class="w-16 h-16 bg-amber-500 text-white text-xl font-bold rounded-full flex items-center justify-center mx-auto mb-4">{item.step}</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-            <p class="text-slate-600 text-sm">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h3>Contested Divorce</h3>
+  <p>
+    A contested divorce arises when spouses cannot agree on one or more key issues. Contested matters may involve disagreements over:
+  </p>
+  <ul>
+    <li>Division of marital property and assets</li>
+    <li>Spousal support (alimony)</li>
+    <li>Child custody and visitation arrangements</li>
+    <li>Child support amounts</li>
+    <li>Debt allocation</li>
+  </ul>
+  <p>
+    Contested divorces typically require court intervention and may involve discovery, depositions, expert witnesses, and hearings. Our attorneys are fully prepared to advocate for you at every stage of litigation.
+  </p>
 
-  <!-- Why Choose Us -->
-  <section class="py-16 px-4 bg-slate-900 text-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Why Maryland Clients Choose Divorce With A Plan</h2>
-        <p class="text-slate-300 max-w-2xl mx-auto">We've built a reputation for strategic, client-centered divorce representation across Maryland.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        {[
-          { title: "Founded in 2013", desc: "Over a decade of Maryland family law experience, with hundreds of cases resolved for clients across the state." },
-          { title: "Certified Best Interest Attorneys", desc: "Josephia Rouse and Massa Massaquoi-King hold BIA certifications — a rare credential demonstrating deep expertise in family court." },
-          { title: "High-Asset Case Experience", desc: "Massa Massaquoi-King has successfully tried contested divorce cases exceeding $2 million in marital assets." },
-          { title: "Statewide Maryland Representation", desc: "We serve Montgomery County, Baltimore City & County, Howard County, Prince George's County, Anne Arundel County, and beyond." }
-        ].map(item => (
-          <div class="flex gap-4">
-            <div class="text-amber-400 text-2xl mt-1">★</div>
-            <div>
-              <h3 class="text-lg font-bold mb-2">{item.title}</h3>
-              <p class="text-slate-300 text-sm">{item.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="highlight-box">
+    <h3 style="margin-top:0; color:#0D6E6E;">Maryland Divorce Grounds</h3>
+    <p>Maryland recognizes <strong>no-fault divorce</strong> (based on a 12-month separation or mutual consent) and <strong>fault-based grounds</strong> including adultery, desertion, cruelty of treatment, and excessively vicious conduct. Our attorneys will advise you on which grounds are most appropriate and strategic for your situation.</p>
+  </div>
 
-  <!-- Counties Served -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-slate-900 mb-6">Serving Clients Across Maryland</h2>
-      <p class="text-slate-600 mb-8 max-w-2xl mx-auto">Our Rockville and Baltimore offices allow us to conveniently serve clients throughout the greater Maryland area.</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        {[
-          "Montgomery County", "Baltimore City", "Baltimore County", "Howard County",
-          "Prince George's County", "Anne Arundel County", "Frederick County",
-          "Carroll County", "Harford County", "Charles County"
-        ].map(county => (
-          <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-medium">{county}</span>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h2>The Maryland Divorce Process</h2>
+  <p>Understanding what to expect can ease the stress of the divorce process. Here's a general overview:</p>
+  <ol>
+    <li><strong>Initial Consultation:</strong> Review your situation, goals, and legal options with one of our attorneys.</li>
+    <li><strong>Filing the Complaint:</strong> We file your Complaint for Absolute Divorce in the appropriate Maryland Circuit Court.</li>
+    <li><strong>Service of Process:</strong> Your spouse is formally served with the divorce papers.</li>
+    <li><strong>Discovery:</strong> Exchange of financial information, assets, and other relevant documents.</li>
+    <li><strong>Negotiation / Mediation:</strong> Attempt to resolve disputes outside of court when possible.</li>
+    <li><strong>Trial or Settlement:</strong> If agreement cannot be reached, the case proceeds to trial.</li>
+    <li><strong>Final Decree:</strong> The court issues an Absolute Divorce decree finalizing the divorce.</li>
+  </ol>
 
-  <!-- CTA -->
-  <section class="py-16 px-4 bg-amber-500">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Ready to Start Your Divorce With A Plan?</h2>
-      <p class="text-amber-100 mb-8 text-lg">Your first consultation is free. Let's talk through your situation and build a strategy together.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-white text-amber-600 hover:bg-amber-50 font-bold py-3 px-8 rounded-lg transition-colors">
-          Book Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white text-white hover:bg-amber-600 font-bold py-3 px-8 rounded-lg transition-colors">
-          (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <h2>What Happens to Property in a Maryland Divorce?</h2>
+  <p>
+    Maryland is an <strong>equitable distribution</strong> state, meaning marital property is divided fairly — though not necessarily equally — based on various factors including:
+  </p>
+  <ul>
+    <li>Length of the marriage</li>
+    <li>Each spouse's monetary and non-monetary contributions</li>
+    <li>Each spouse's economic circumstances</li>
+    <li>How and when property was acquired</li>
+    <li>Dissipation of marital assets</li>
+  </ul>
+
+  <div class="gold-box">
+    <strong>Important:</strong> Not all property is subject to division. Separate property — assets owned before marriage or received as gifts or inheritance — is generally not subject to equitable distribution. However, commingling separate and marital funds can complicate this distinction. Our attorneys will carefully analyze your assets to protect what is rightfully yours.
+  </div>
+
+  <h2>Spousal Support in a Maryland Divorce</h2>
+  <p>
+    Maryland courts may award alimony (spousal support) in three forms: <strong>pendente lite</strong> (temporary support during the proceedings), <strong>rehabilitative alimony</strong> (time-limited support to help a spouse become self-supporting), and <strong>indefinite alimony</strong> (for cases of significant disparity in living standards or where rehabilitation is not practical).
+  </p>
+
+  <h2>Children and Divorce</h2>
+  <p>
+    When children are involved, the divorce also encompasses child custody and child support determinations. Maryland courts use the <strong>best interests of the child</strong> standard to determine appropriate custody arrangements. Our attorneys are particularly skilled in custody matters — it is the cornerstone of our practice.
+  </p>
+
+  <h2>Why Choose Child Custody with a Plan for Your Maryland Divorce?</h2>
+  <ul>
+    <li>Founded in 2013 with deep Maryland family law experience</li>
+    <li>Proprietary PROMISE Framework™ ensures a clear legal strategy</li>
+    <li>Licensed in Maryland and Virginia</li>
+    <li>Two convenient offices: Rockville and Baltimore</li>
+    <li>Free initial consultation</li>
+    <li>Available Monday–Friday, 9AM–9PM</li>
+  </ul>
+</ServicePageLayout>

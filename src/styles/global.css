@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-offwhite text-charcoal font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif leading-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-gold text-white font-semibold px-7 py-3 rounded-lg shadow hover:bg-gold-500 transition-all duration-200 text-center;
+  }
+
+  .btn-secondary {
+    @apply inline-block border-2 border-teal text-teal font-semibold px-7 py-3 rounded-lg hover:bg-teal hover:text-white transition-all duration-200 text-center;
+  }
+
+  .btn-white {
+    @apply inline-block bg-white text-teal font-semibold px-7 py-3 rounded-lg shadow hover:bg-offwhite transition-all duration-200 text-center;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-serif font-bold text-teal mb-4;
+  }
+
+  .section-subheading {
+    @apply text-lg text-gray-600 max-w-2xl;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6 hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  .nav-link {
+    @apply text-gray-700 font-medium hover:text-teal transition-colors duration-200;
+  }
+
+  .gold-bar {
+    @apply w-16 h-1 bg-gold rounded-full mb-5;
+  }
+
+  .practice-area-card {
+    @apply bg-white border border-teal-100 rounded-2xl p-6 hover:border-teal hover:shadow-card-hover transition-all duration-300 group;
+  }
+}
+
+/* Custom dropdown styles */
+.dropdown-menu {
+  display: none;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+/* Scroll-reveal animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}

@@ -1,205 +1,95 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
 ---
 
-<BaseLayout
-  title="High-Net-Worth Divorce Attorneys Maryland | Divorce With A Plan"
-  description="Maryland high-asset divorce attorneys protecting complex portfolios, businesses, real estate, and retirement accounts. Tried cases exceeding $2M. Rockville & Baltimore offices."
-  ogTitle="High-Net-Worth Divorce Attorneys Maryland | Divorce With A Plan"
-  ogDescription="Expert high-asset divorce representation in Maryland. Our attorneys have tried contested cases exceeding $2 million. Free consultation available."
+<ServicePageLayout
+  title="High Net Worth Divorce Attorneys in Maryland | Complex Asset Divorce"
+  metaTitle="High Net Worth Divorce Maryland | Complex Asset Divorce Attorneys | Child Custody with a Plan"
+  description="Maryland high net worth divorce attorneys in Rockville and Baltimore. We handle complex asset divorce with real estate portfolios, investments, businesses, and trusts. Call (301) 289-8917."
+  heroSubtitle="High Net Worth Divorce"
+  heroDescription="When significant wealth is at stake, every decision in your divorce matters. Our Maryland attorneys provide the sophisticated, precision-driven counsel high-net-worth divorce demands."
+  badge="Maryland High Net Worth Divorce Counsel"
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">High-Net-Worth Divorce — Maryland</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        High-Asset Divorce Requires<br class="hidden md:block" />
-        a Higher Level of Representation
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-        When significant wealth is at stake, every decision carries major financial consequences. Our Maryland high-net-worth divorce attorneys have the experience, resources, and trial capability to protect your assets and secure your financial future.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Schedule Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Call (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
+  <h2>Sophisticated Counsel for High-Stakes Maryland Divorce</h2>
+  <p>
+    High net worth divorces involve levels of financial complexity that require a fundamentally different approach than standard divorce proceedings. When the marital estate includes multiple real estate holdings, investment portfolios, business interests, retirement accounts, trusts, and potentially international assets, every detail matters — and every mistake can cost you millions.
+  </p>
+  <p>
+    At <strong>Child Custody with a Plan</strong>, our Maryland divorce attorneys have the expertise, the resources, and the strategic mindset to handle the most complex high-net-worth divorce cases in Rockville, Baltimore, Montgomery County, Howard County, and throughout Maryland.
+  </p>
 
-  <!-- Proven Track Record -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-5">Proven High-Asset Divorce Experience</h2>
-          <p class="text-slate-600 mb-4">
-            Not every Maryland divorce attorney is equipped to handle a high-net-worth case. Complex asset portfolios, business valuations, forensic accounting, and aggressive opposing counsel require a different level of preparation and expertise.
-          </p>
-          <p class="text-slate-600 mb-4">
-            Our Managing Attorney, <strong>Massa Massaquoi-King</strong>, has <strong>successfully tried several contested high-asset divorce cases exceeding $2 million</strong> in marital assets. Her background in franchise law, corporate law, and commercial real estate adds a unique dimension to her financial acuity.
-          </p>
-          <p class="text-slate-600">
-            Combined with Founder Josephia Rouse's decade of Maryland family law experience and reputation for strategic, discreet advocacy, our team is uniquely positioned to handle your high-net-worth divorce case.
-          </p>
-        </div>
-        <div class="bg-slate-50 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">What Sets Our High-Asset Practice Apart</h3>
-          <ul class="space-y-3">
-            {[
-              "Contested cases tried exceeding $2M in marital assets",
-              "Corporate and franchise law background on our team",
-              "Strategic use of forensic accountants and business appraisers",
-              "Experience with de facto and third-party custody in HNW cases",
-              "Certified Best Interest Attorneys on staff (Rouse & Massaquoi-King)",
-              "Trial-ready when settlement isn't in your best interest",
-              "Discreet, professional handling of sensitive financial matters"
-            ].map(item => (
-              <li class="flex items-start gap-3">
-                <span class="text-amber-500 font-bold mt-0.5">★</span>
-                <span class="text-slate-700 text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>What Makes High Net Worth Divorce Different?</h2>
+  <p>
+    High-net-worth divorces differ from typical divorces in several critical ways:
+  </p>
+  <ul>
+    <li><strong>Greater asset complexity:</strong> Multiple types of assets, many of which require expert valuation</li>
+    <li><strong>Higher stakes:</strong> Errors in strategy or negotiation can result in catastrophic financial losses</li>
+    <li><strong>Greater potential for hidden assets:</strong> Complex financial structures can conceal income and wealth</li>
+    <li><strong>More sophisticated legal tactics:</strong> Opposing counsel in high-net-worth cases are typically experienced litigators</li>
+    <li><strong>Prenuptial and postnuptial agreements:</strong> These may be contested and require careful analysis</li>
+    <li><strong>Lifestyle and standard of living considerations:</strong> Spousal support in high-net-worth divorces can be substantial</li>
+    <li><strong>Privacy concerns:</strong> Protecting financial information from public disclosure requires strategic case management</li>
+  </ul>
 
-  <!-- Complex Asset Types -->
-  <section class="py-16 px-4 bg-slate-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">High-Value Assets We Handle</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">High-net-worth divorces involve a wide range of complex financial assets that require specialized legal and financial analysis.</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { icon: "🏢", title: "Commercial Real Estate", desc: "Office buildings, retail centers, multi-family properties, and land holdings valued and divided strategically." },
-          { icon: "💼", title: "Business Ownership", desc: "Full or partial ownership stakes in corporations, LLCs, partnerships, and professional practices." },
-          { icon: "📈", title: "Investment Portfolios", desc: "Stocks, bonds, hedge fund interests, private equity holdings, and alternative investments." },
-          { icon: "🏖️", title: "Vacation & Luxury Properties", desc: "Second homes, vacation properties, and luxury real estate in and outside Maryland." },
-          { icon: "🏦", title: "Retirement & Pension Assets", desc: "Complex retirement accounts including executive deferred compensation plans and defined benefit pensions." },
-          { icon: "✈️", title: "Luxury & Collectible Assets", desc: "Aircraft, boats, art collections, jewelry, classic cars, and fine wine collections." },
-          { icon: "💎", title: "Trusts & Inheritance", desc: "Inherited wealth, trust assets, and family wealth structures that intersect with marital property." },
-          { icon: "🔑", title: "Intellectual Property", desc: "Patents, royalties, trademarks, and copyrights with ongoing income streams." },
-          { icon: "📊", title: "Stock Options & Equity Comp", desc: "Unvested stock options, RSUs, and deferred equity awards that span both marital and separate property periods." }
-        ].map(asset => (
-          <div class="bg-white rounded-xl p-6 shadow-sm">
-            <div class="text-3xl mb-3">{asset.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{asset.title}</h3>
-            <p class="text-slate-600 text-sm">{asset.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="highlight-box">
+    <h3 style="margin-top:0; color:#0D6E6E;">Protecting Your Wealth Requires a Plan</h3>
+    <p>Our proprietary PROMISE Framework™ is particularly powerful in high-net-worth divorce cases. We conduct comprehensive asset audits, build detailed financial dossiers, retain the right experts, and develop a strategic position that protects your financial interests at every stage — from initial negotiations through trial if necessary.</p>
+  </div>
 
-  <!-- Hidden Assets -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="bg-red-50 border border-red-200 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-red-900 mb-4">⚠️ Hidden Assets in High-Net-Worth Divorce</h3>
-          <p class="text-red-700 text-sm mb-4">
-            In high-asset divorces, concealment of assets is more common than most people realize. Sophisticated spouses — especially business owners and executives — may attempt to hide income or assets through:
-          </p>
-          <ul class="space-y-2">
-            {[
-              "Overpaying taxes to receive a post-divorce refund",
-              "Deferring salary, bonuses, or commissions until after divorce",
-              "Creating fictitious debts or business expenses",
-              "Transferring assets to friends, family, or shell companies",
-              "Undervaluing business assets or interests",
-              "Hiding cryptocurrency or offshore accounts"
-            ].map(item => (
-              <li class="flex items-start gap-2 text-sm text-red-700">
-                <span class="mt-0.5">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-5">We Find What's Hidden</h2>
-          <p class="text-slate-600 mb-4">
-            Our attorneys know the warning signs of asset concealment and work with forensic accountants and financial investigators to uncover the full picture of marital wealth.
-          </p>
-          <p class="text-slate-600 mb-4">
-            Through the legal discovery process — including subpoenas, depositions, interrogatories, and requests for financial documents — we build a comprehensive financial portrait of your marriage that leaves little room for concealment.
-          </p>
-          <p class="text-slate-600">
-            Courts take asset concealment seriously. When we uncover hidden assets, the consequences for the concealing spouse can be significant — including sanctions and adverse rulings on asset division.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>Complex Assets We Handle</h2>
 
-  <!-- Privacy & Strategy -->
-  <section class="py-16 px-4 bg-slate-900 text-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Strategic Options for High-Net-Worth Clients</h2>
-        <p class="text-slate-300 max-w-2xl mx-auto">We explore every available option to achieve the best outcome for you — in or out of court.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: "Negotiated Settlement",
-            desc: "Most high-asset divorces are resolved through negotiation. We build a compelling financial case to negotiate from a position of strength."
-          },
-          {
-            title: "Mediation",
-            desc: "Private mediation allows you to resolve complex financial disputes confidentially, avoiding public court proceedings."
-          },
-          {
-            title: "Litigation & Trial",
-            desc: "When settlement isn't possible or fair, our trial-ready attorneys are fully prepared to advocate for you in Maryland family court."
-          }
-        ].map(option => (
-          <div class="bg-slate-800 rounded-xl p-6">
-            <h3 class="text-lg font-bold text-amber-400 mb-3">{option.title}</h3>
-            <p class="text-slate-300 text-sm">{option.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h3>Real Estate Portfolios</h3>
+  <p>
+    Multiple properties — primary residences, vacation homes, rental properties, commercial real estate, and investment properties — require individual appraisal and strategic division planning. Tax implications, rental income streams, mortgage obligations, and capital gains exposure are all factors in our analysis.
+  </p>
 
-  <!-- Serve Across MD -->
-  <section class="py-16 px-4 bg-slate-50">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-slate-900 mb-6">Serving High-Net-Worth Clients Across Maryland</h2>
-      <p class="text-slate-600 mb-8 max-w-2xl mx-auto">From our Rockville and Baltimore offices, we represent high-asset clients throughout the state — including Maryland's most affluent communities.</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        {[
-          "Bethesda", "Chevy Chase", "Potomac", "Rockville", "Gaithersburg",
-          "Columbia", "Ellicott City", "Annapolis", "Baltimore", "Towson",
-          "Owings Mills", "Lutherville", "Hunt Valley", "Bowie", "Silver Spring"
-        ].map(city => (
-          <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm shadow-sm">{city}</span>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h3>Investment Portfolios & Brokerage Accounts</h3>
+  <p>
+    Stocks, bonds, mutual funds, ETFs, private equity investments, hedge fund interests, and brokerage accounts accumulated during the marriage are subject to equitable distribution. We ensure accurate valuation dates, appropriate treatment of investment gains and losses, and tax-efficient distribution strategies.
+  </p>
 
-  <!-- CTA -->
-  <section class="py-16 px-4 bg-amber-500">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Your Wealth Deserves Expert Protection</h2>
-      <p class="text-amber-100 mb-8 text-lg">Schedule a confidential consultation with our high-net-worth Maryland divorce attorneys today.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-white text-amber-600 hover:bg-amber-50 font-bold py-3 px-8 rounded-lg transition-colors">
-          Book Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white text-white hover:bg-amber-600 font-bold py-3 px-8 rounded-lg transition-colors">
-          (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <h3>Business Interests</h3>
+  <p>
+    Multiple business interests or significant ownership stakes require thorough business valuation by certified experts. We manage the entire process — from retaining valuators to challenging opposing expert opinions in litigation.
+  </p>
+
+  <h3>Retirement & Deferred Compensation</h3>
+  <p>
+    Executive retirement packages, defined benefit pensions, 401(k) plans, deferred compensation arrangements, and supplemental executive retirement plans (SERPs) all require careful analysis and, in many cases, QDROs or other specialized orders.
+  </p>
+
+  <h3>Trusts & Estate Planning Instruments</h3>
+  <p>
+    Inherited wealth held in trusts, family trusts, irrevocable life insurance trusts (ILITs), and other estate planning vehicles require analysis to determine what is marital versus separate property, and whether trust assets may be considered "available" for support purposes.
+  </p>
+
+  <h3>Cryptocurrency & Digital Assets</h3>
+  <p>
+    Digital assets — including cryptocurrency, NFTs, and digital investment accounts — are increasingly significant in high-net-worth divorce. Proper valuation and tracing of these assets requires specialized expertise that our attorneys are prepared to engage.
+  </p>
+
+  <h3>International Assets</h3>
+  <p>
+    Offshore accounts, foreign real estate, international business interests, and assets held in foreign jurisdictions add significant complexity. Our attorneys coordinate with international counsel when necessary to ensure comprehensive asset identification and division.
+  </p>
+
+  <h2>Prenuptial & Postnuptial Agreement Enforcement</h2>
+  <p>
+    High-net-worth divorces frequently involve prenuptial or postnuptial agreements. Whether you need to enforce an agreement that protects your separate wealth or challenge an agreement that is unfair or was improperly executed, our attorneys have the experience to handle these proceedings effectively.
+  </p>
+
+  <h2>Alimony in High Net Worth Divorce</h2>
+  <p>
+    When one spouse has significantly higher income and assets, spousal support can be a critical — and contentious — issue. Our attorneys conduct detailed lifestyle analysis, income capacity assessments, and financial projections to develop strategic alimony positions that protect your long-term financial interests.
+  </p>
+
+  <h2>Uncovering Hidden Assets</h2>
+  <p>
+    In high-net-worth divorces, asset concealment is a real and documented concern. Offshore accounts, underreported business income, manipulated cash flow, and undisclosed investment accounts are tactics our attorneys are trained to identify. We work with forensic accountants and financial investigators to ensure full financial disclosure and expose any attempts to conceal marital wealth.
+  </p>
+
+  <div class="gold-box">
+    <strong>The difference between excellent and average representation in a high-net-worth divorce can be measured in hundreds of thousands — or millions — of dollars.</strong> Our attorneys at Child Custody with a Plan are committed to delivering the precision, expertise, and strategic advocacy your case demands.
+  </div>
+</ServicePageLayout>

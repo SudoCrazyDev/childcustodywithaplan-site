@@ -1,55 +1,49 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Page Not Found | Divorce With A Plan"
-  description="The page you're looking for doesn't exist. Return to the homepage or contact Divorce With A Plan at (240) 269-3592."
-  ogTitle="Page Not Found | Divorce With A Plan"
-  ogDescription="This page doesn't exist. Visit our homepage or contact our Maryland divorce attorneys directly."
+  title="Page Not Found | Child Custody with a Plan"
+  description="The page you're looking for doesn't exist. Visit our homepage or contact Child Custody with a Plan — Maryland family law attorneys in Rockville and Baltimore."
+  noindex={true}
 >
-  <section class="min-h-[70vh] flex items-center justify-center py-20 px-4 bg-slate-50">
-    <div class="max-w-2xl mx-auto text-center">
-      <div class="text-8xl font-bold text-amber-500 mb-4">404</div>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+  <section class="bg-gradient-to-br from-teal-900 to-teal-600 text-white min-h-[70vh] flex items-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <div class="text-8xl font-serif font-bold text-gold mb-4 opacity-80">404</div>
+      <h1 class="text-3xl sm:text-4xl font-serif font-bold mb-4">
         Page Not Found
       </h1>
-      <p class="text-lg text-slate-600 mb-8">
-        The page you're looking for doesn't exist or may have been moved. Let's get you back on track.
+      <p class="text-lg text-teal-100 mb-8 max-w-xl mx-auto leading-relaxed">
+        The page you're looking for doesn't exist or may have moved. Let us help you find what you need.
       </p>
 
-      <!-- Quick Links -->
-      <div class="grid sm:grid-cols-2 gap-4 mb-10 text-left">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="/" class="btn-primary text-base px-8 py-4">
+          Go to Homepage
+        </a>
+        <a href="/contact" class="btn-white text-base px-8 py-4">
+          Contact Us
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
         {[
-          { href: "/", label: "Homepage", desc: "Return to the Divorce With A Plan homepage" },
-          { href: "/divorce", label: "Divorce Services", desc: "Learn about our Maryland divorce representation" },
-          { href: "/child-custody", label: "Child Custody", desc: "Maryland child custody attorneys" },
-          { href: "/free-consultation", label: "Free Consultation", desc: "Schedule a free consultation with our team" },
-          { href: "/high-net-worth-divorce", label: "High-Asset Divorce", desc: "High-net-worth divorce representation" },
-          { href: "/blog", label: "Blog", desc: "Maryland family law articles and guides" }
-        ].map(link => (
-          <a href={link.href} class="flex items-start gap-3 bg-white border border-slate-200 rounded-lg p-4 hover:border-amber-400 hover:shadow-sm transition-all group">
-            <span class="text-amber-500 font-bold mt-0.5 group-hover:translate-x-0.5 transition-transform">→</span>
-            <div>
-              <span class="font-semibold text-slate-900 block">{link.label}</span>
-              <span class="text-sm text-slate-500">{link.desc}</span>
-            </div>
+          { label: 'Child Custody', href: '/child-custody' },
+          { label: 'Divorce', href: '/divorce' },
+          { label: 'Our Attorneys', href: '/attorneys' },
+          { label: 'Free Consultation', href: '/free-consultation' },
+        ].map((link) => (
+          <a
+            href={link.href}
+            class="bg-teal-700 hover:bg-teal-600 text-white text-sm font-medium px-4 py-3 rounded-xl transition-colors text-center"
+          >
+            {link.label}
           </a>
         ))}
       </div>
 
-      <!-- Contact -->
-      <div class="bg-slate-900 text-white rounded-2xl p-8">
-        <h2 class="text-xl font-bold mb-3">Need Immediate Assistance?</h2>
-        <p class="text-slate-300 mb-6">Our Maryland divorce attorneys are ready to help. Reach out directly:</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:2402693592" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-            📞 (240) 269-3592
-          </a>
-          <a href="/free-consultation" class="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold py-3 px-6 rounded-lg transition-colors">
-            Schedule Free Consultation
-          </a>
-        </div>
+      <div class="mt-10 text-teal-200 text-sm">
+        Need help immediately? Call us: <a href="tel:+13012898917" class="text-gold font-bold hover:text-gold-300">(301) 289-8917</a>
       </div>
     </div>
   </section>

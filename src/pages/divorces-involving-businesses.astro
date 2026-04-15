@@ -1,221 +1,87 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
 ---
 
-<BaseLayout
-  title="Divorces Involving Businesses in Maryland | Divorce With A Plan"
-  description="Maryland divorce attorneys experienced in business valuation, ownership disputes, and protecting your company during divorce. Serving Rockville, Baltimore & Montgomery County."
-  ogTitle="Divorces Involving Businesses in Maryland | Divorce With A Plan"
-  ogDescription="Protect your business during divorce. Our Maryland attorneys handle business valuation, buyouts, and ownership disputes. Free consultation available."
+<ServicePageLayout
+  title="Divorces Involving Businesses | Maryland Business Divorce Attorneys"
+  metaTitle="Divorces Involving Businesses Maryland | Business Valuation & Division | Child Custody with a Plan"
+  description="Maryland divorce attorneys specializing in divorces involving businesses. Business valuation, buyouts, and division strategies in Rockville and Baltimore. Call (301) 289-8917."
+  heroSubtitle="Business & Divorce"
+  heroDescription="When a family business is part of your divorce, precision matters. Our Maryland attorneys navigate business valuation, ownership disputes, and buyout negotiations with expertise and strategy."
+  badge="Maryland Business Divorce Specialists"
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">Business & Divorce — Maryland Attorneys</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Protecting Your Business<br class="hidden md:block" />
-        Through Divorce
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-        When a business is part of your marriage, divorce becomes far more complex. Our Maryland divorce attorneys understand how to value, protect, and strategically handle business interests so your life's work isn't sacrificed in court.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Schedule Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Call (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
+  <h2>When Your Business Is Part of Your Divorce</h2>
+  <p>
+    A family business represents years — sometimes decades — of hard work, sacrifice, and investment. When a marriage ends and a business is part of the marital estate, the stakes could not be higher. Improper handling of business interests in divorce can result in forced sales, unfair buyouts, or devastating financial losses.
+  </p>
+  <p>
+    At <strong>Child Custody with a Plan</strong>, our Maryland divorce attorneys have experience handling complex business divorce cases — from small family businesses to multi-million dollar enterprises. We work with business valuation experts, forensic accountants, and financial analysts to ensure your business interests are properly valued and protected.
+  </p>
 
-  <!-- Is Your Business Marital Property? -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-5">Is Your Business Subject to Division?</h2>
-          <p class="text-slate-600 mb-4">
-            In Maryland, whether your business is considered marital property — and therefore subject to division — depends on several factors: <strong>when the business was founded, how it was funded, and whether marital assets or labor contributed to its growth.</strong>
-          </p>
-          <p class="text-slate-600 mb-4">
-            Even businesses started before marriage can have a marital component if they grew in value or were maintained using marital funds or labor during the marriage. This "active appreciation" concept is one of the most contested issues in Maryland business divorce cases.
-          </p>
-          <p class="text-slate-600">
-            Our attorneys work with certified business valuators and forensic accountants to establish the accurate marital vs. separate components of your business — protecting what's rightfully yours.
-          </p>
-        </div>
-        <div class="bg-slate-50 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">Key Questions in Business Divorce Cases</h3>
-          <ul class="space-y-3">
-            {[
-              "Was the business founded before or during the marriage?",
-              "Did marital funds contribute to the business?",
-              "Did the non-owner spouse contribute labor or support?",
-              "How much has the business grown in value since marriage?",
-              "Are there buy-sell agreements or shareholder agreements?",
-              "Are co-owners (not parties to the divorce) affected?",
-              "What is the business truly worth today?"
-            ].map(q => (
-              <li class="flex items-start gap-3">
-                <span class="text-amber-500 font-bold mt-0.5">?</span>
-                <span class="text-slate-700 text-sm">{q}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>Is Your Business Marital Property?</h2>
+  <p>
+    The first critical question in any business divorce is whether the business — or a portion of it — is subject to equitable distribution. The answer depends on several factors:
+  </p>
+  <ul>
+    <li><strong>Pre-marital business:</strong> A business started before marriage may be separate property, but any increase in value during the marriage (including your spouse's contributions) may be marital.</li>
+    <li><strong>Marital business:</strong> A business founded during the marriage is typically marital property subject to equitable distribution.</li>
+    <li><strong>Commingled assets:</strong> If marital funds were used to support, grow, or sustain a pre-marital business, the business value may be at least partially marital.</li>
+    <li><strong>Spouse's contributions:</strong> Even if a spouse was not formally involved in the business, their indirect contributions (running the household, supporting the owner spouse) may entitle them to a share of its value.</li>
+  </ul>
 
-  <!-- Business Valuation -->
-  <section class="py-16 px-4 bg-slate-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Business Valuation: The Heart of the Matter</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">Getting the business valuation right is critical — overpay and you lose; undervalue and your spouse's attorney will challenge it in court.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: "Income Approach",
-            desc: "Values the business based on its ability to generate income, discounting future cash flows to present value. Common for service-based businesses.",
-            icon: "📊"
-          },
-          {
-            title: "Market Approach",
-            desc: "Compares the business to similar recently sold businesses in the same industry and geographic area.",
-            icon: "🏪"
-          },
-          {
-            title: "Asset Approach",
-            desc: "Determines value based on the fair market value of all business assets minus liabilities. Common for asset-heavy or holding companies.",
-            icon: "🏭"
-          }
-        ].map(method => (
-          <div class="bg-white rounded-xl p-6 shadow-sm">
-            <div class="text-3xl mb-3">{method.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{method.title}</h3>
-            <p class="text-slate-600 text-sm">{method.desc}</p>
-          </div>
-        ))}
-      </div>
-      <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
-        <p class="text-slate-700 text-sm"><strong class="text-amber-700">Our Approach:</strong> We work with qualified business appraisers and forensic accountants who specialize in divorce-related business valuations. When opposing counsel challenges the valuation — and they usually do — we're prepared to defend our numbers in court.</p>
-      </div>
-    </div>
-  </section>
+  <div class="highlight-box">
+    <h3 style="margin-top:0; color:#0D6E6E;">Goodwill: Personal vs. Enterprise</h3>
+    <p>Maryland courts distinguish between <strong>enterprise goodwill</strong> (value attributable to the business itself, which is marital) and <strong>personal goodwill</strong> (value attributable to an individual's skills and reputation, which may not be). Properly categorizing goodwill can significantly impact the business's marital value. Our attorneys work with valuation experts to make this critical distinction accurately.</p>
+  </div>
 
-  <!-- Resolution Options -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">How Business Issues Get Resolved</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">There are several ways to handle a business in divorce. We help you evaluate each option strategically.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        {[
-          {
-            title: "Buy Out Your Spouse",
-            desc: "One spouse retains full ownership of the business by compensating the other spouse with equivalent marital assets or cash. Keeps the business intact and under one owner's control.",
-            pros: ["Business continues uninterrupted", "Clean break with no ongoing shared ownership", "Owner retains control"]
-          },
-          {
-            title: "Co-Own After Divorce",
-            desc: "Both spouses continue as business co-owners post-divorce. Rare, but sometimes appropriate when both are actively involved and can maintain professional separation.",
-            pros: ["No immediate buyout cash required", "Business stays intact", "Can work with strong operational agreements"]
-          },
-          {
-            title: "Sell the Business",
-            desc: "The business is sold and the proceeds are divided as marital property. Often the cleanest solution when neither party wants continued involvement.",
-            pros: ["Clear financial outcome", "Eliminates future entanglement", "Market determines value"]
-          },
-          {
-            title: "Offset With Other Assets",
-            desc: "The business owner keeps the business, and the other spouse receives other marital assets of equivalent value (real estate, retirement accounts, investments).",
-            pros: ["No need to liquidate the business", "Straightforward division", "Minimizes business disruption"]
-          }
-        ].map(option => (
-          <div class="bg-slate-50 rounded-xl p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">{option.title}</h3>
-            <p class="text-slate-600 text-sm mb-4">{option.desc}</p>
-            <ul class="space-y-1">
-              {option.pros.map(pro => (
-                <li class="flex items-center gap-2 text-sm text-slate-600">
-                  <span class="text-amber-500">✓</span> {pro}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h2>Business Valuation in Maryland Divorce</h2>
+  <p>
+    Accurate business valuation is the foundation of any business divorce. Our attorneys coordinate with certified business valuation experts (CBVs) and forensic accountants who employ recognized valuation methodologies:
+  </p>
+  <ul>
+    <li><strong>Income Approach:</strong> Values the business based on its ability to generate future income (capitalized earnings, discounted cash flow).</li>
+    <li><strong>Market Approach:</strong> Compares the business to recent sales of similar businesses.</li>
+    <li><strong>Asset Approach:</strong> Values the business based on its net assets (book value, adjusted book value).</li>
+  </ul>
+  <p>
+    The appropriate methodology depends on the type of business, industry, and available financial records. We ensure the chosen approach accurately reflects the true value of your business interest.
+  </p>
 
-  <!-- Types of Businesses -->
-  <section class="py-16 px-4 bg-slate-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Business Types We've Handled</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">No two business divorce cases are alike. Our experience spans a wide range of business structures and industries.</p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-3">
-        {[
-          "Medical Practices", "Law Firms", "Dental Practices", "Restaurants & Food Service",
-          "Real Estate Investment Companies", "Retail Businesses", "Technology Companies",
-          "Construction Companies", "Consulting Firms", "Manufacturing Businesses",
-          "Franchises", "Family-Owned Businesses", "LLCs & Partnerships", "S-Corporations & C-Corporations"
-        ].map(type => (
-          <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm shadow-sm">{type}</span>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h2>Options for Dividing a Business in Divorce</h2>
 
-  <!-- Why Choose Us -->
-  <section class="py-16 px-4 bg-slate-900 text-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Why Business Owners Trust Divorce With A Plan</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: "Trial-Ready Advocacy",
-            desc: "Managing Attorney Massa Massaquoi-King has successfully tried contested high-asset divorce cases exceeding $2 million in value."
-          },
-          {
-            title: "Corporate Law Background",
-            desc: "Massa Massaquoi-King's background in franchise, corporate, and commercial real estate law gives us unique insight into business structures."
-          },
-          {
-            title: "Strategic, Discreet Representation",
-            desc: "We understand that business divorce cases require discretion. Our firm is known for handling sensitive, high-stakes matters with professionalism."
-          }
-        ].map(item => (
-          <div class="bg-slate-800 rounded-xl p-6">
-            <h3 class="text-lg font-bold text-amber-400 mb-3">{item.title}</h3>
-            <p class="text-slate-300 text-sm">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h3>Buyout</h3>
+  <p>
+    One spouse purchases the other's interest in the business. The buying spouse retains full ownership while the selling spouse receives compensation — often in the form of cash, other assets, or structured payments. This is typically the preferred outcome when one spouse is the primary operator.
+  </p>
 
-  <!-- CTA -->
-  <section class="py-16 px-4 bg-amber-500">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Protect Your Business. Protect Your Future.</h2>
-      <p class="text-amber-100 mb-8 text-lg">Talk to a Maryland business divorce attorney today — free consultation, no obligation.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-white text-amber-600 hover:bg-amber-50 font-bold py-3 px-8 rounded-lg transition-colors">
-          Book Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white text-white hover:bg-amber-600 font-bold py-3 px-8 rounded-lg transition-colors">
-          (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <h3>Continued Co-Ownership</h3>
+  <p>
+    In some cases, divorcing spouses agree to continue operating the business together post-divorce. This requires a carefully drafted co-ownership agreement and is generally only viable when the parties maintain a functional working relationship.
+  </p>
+
+  <h3>Sale of the Business</h3>
+  <p>
+    If neither party can buy out the other or agree on continued ownership, the business may be sold and the proceeds divided. Our attorneys work to maximize the value of any business sale and ensure equitable distribution of proceeds.
+  </p>
+
+  <h2>Key Issues We Address</h2>
+  <ul>
+    <li>Identifying business ownership interests in the marital estate</li>
+    <li>Retaining qualified business valuation experts</li>
+    <li>Conducting financial discovery to uncover hidden income or assets</li>
+    <li>Negotiating buyout structures that preserve business continuity</li>
+    <li>Addressing cash flow diversion and income manipulation</li>
+    <li>Handling businesses with multiple owners or partners</li>
+    <li>Franchise agreement considerations in divorce</li>
+    <li>Protecting your business's reputation throughout proceedings</li>
+  </ul>
+
+  <h2>Professional Practice Divorces</h2>
+  <p>
+    Divorces involving professional practices — law firms, medical practices, dental offices, accounting firms, and similar entities — present unique valuation challenges. Professional licenses may be separate property, but the practice itself often has significant marital value. Our attorneys understand these nuances and are equipped to address them. For divorces involving professional credentials and compensation structures, also see our <a href="/divorce-lawyer-for-professionals" class="text-teal font-semibold hover:text-teal-600">Divorce for Professionals</a> page.
+  </p>
+
+  <div class="gold-box">
+    <strong>Don't navigate a business divorce without specialized counsel.</strong> The financial consequences of improperly handled business division in divorce can be irreversible. Whether you are protecting a business you built or seeking your fair share of a marital business interest, our attorneys are ready to fight for your financial future.
+  </div>
+</ServicePageLayout>

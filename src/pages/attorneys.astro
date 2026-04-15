@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTASection from '../components/CTASection.astro';
+
+const attorneys = [
+  {
+    id: 'monique',
+    name: 'Monique Nettleford-Bruce',
+    title: 'Associate Attorney',
+    barAdmissions: ['Maryland', 'Virginia'],
+    lawSchool: 'American University Washington College of Law (J.D.)',
+    undergraduate: 'University of Arizona — B.A. in Political Science (Magna Cum Laude)',
+    highlights: [
+      'Editor-in-Chief, The Modern American Law Brief',
+      'Former Staff Attorney, Maryland Legal Aid',
+      'Extensive experience in housing, custody, divorce & public benefits',
+    ],
+    bio: [
+      'Monique Nettleford-Bruce is a compassionate and strategic family law attorney who brings both intellect and empathy to every case she handles. Originally from Arizona, her life and education have spanned the United States and abroad, giving her a uniquely broad perspective on the challenges families face.',
+      'At American University Washington College of Law, Monique distinguished herself academically and as a leader, serving as Editor-in-Chief of The Modern American Law Brief — a prestigious role that reflects her exceptional writing, analytical, and leadership abilities.',
+      'Prior to joining Child Custody with a Plan, Monique served as a Staff Attorney at Maryland Legal Aid, where she represented individuals navigating the complex intersection of housing law, family matters, custody disputes, divorce proceedings, and public benefits. This experience gave her direct insight into the real-world stakes of family law and a deep commitment to serving clients with both competence and compassion.',
+      'Monique graduated magna cum laude from the University of Arizona with a Bachelor of Arts in Political Science — a foundation that sharpened her analytical and advocacy skills long before law school. She is admitted to practice in both Maryland and Virginia, and brings a combination of intellectual rigor and genuine empathy that sets her apart as a family law advocate.',
+    ],
+    practiceAreas: ['Child Custody', 'Divorce', 'Spousal Support', 'Asset Division', 'Family Law'],
+    initials: 'MNB',
+  },
+  {
+    id: 'aysia',
+    name: 'Aysia Stockton',
+    title: 'Associate Attorney',
+    barAdmissions: ['Maryland', 'Washington D.C.'],
+    lawSchool: 'Appalachian School of Law, Grundy, Virginia (J.D., 2020)',
+    undergraduate: 'Clark Atlanta University — B.S. in Criminal Justice',
+    highlights: [
+      'Former Deputy Clerk, Richmond General District Court',
+      'Senior Editor, Appalachian School of Law Journal',
+      'Executive Board Member, Black Law Students Association',
+      'Previously at Rusz Legal Services (Divorce & Custody Representation)',
+    ],
+    bio: [
+      'Aysia Stockton is a dedicated family law attorney known for her thorough, compassionate approach to every case she handles. Originally from Richmond, Virginia, Aysia\'s path to law was shaped by a genuine desire to serve and advocate for individuals navigating life\'s most difficult moments.',
+      'After earning her B.S. in Criminal Justice from Clark Atlanta University — one of the nation\'s premier HBCUs — Aysia took an invaluable step before law school: she served as a Deputy Clerk for the Richmond General District Court for two years. This hands-on experience inside the courtroom gave her rare insight into the day-to-day mechanics of the legal system and a practical understanding of judicial proceedings that few attorneys possess.',
+      'At the Appalachian School of Law in Grundy, Virginia, Aysia was a standout student and leader. She served on the Executive Board of the Black Law Students Association and as a Senior Editor of the Appalachian School of Law Journal — demonstrating both her commitment to community and her rigorous academic standards. She earned both her Juris Master\'s degree (M.J.) in 2018 and her Juris Doctor (J.D.) in 2020.',
+      'Following graduation, Aysia was admitted to the bars of both Maryland and Washington D.C. She previously worked at Rusz Legal Services in Edgewater, Maryland, where she was recognized for her compassionate and thorough representation of clients in divorce, custody, and child support matters. At Child Custody with a Plan, Aysia continues this tradition — bringing strategic thinking and genuine care to every family she serves.',
+    ],
+    practiceAreas: ['Child Custody', 'Child Custody Modification', 'Divorce', 'Child Support', 'Family Law'],
+    initials: 'AS',
+  },
+];
+---
+
+<BaseLayout
+  title="Our Attorneys | Child Custody with a Plan — Maryland Family Law"
+  description="Meet Monique Nettleford-Bruce and Aysia Stockton — the dedicated family law attorneys at Child Custody with a Plan. Serving Maryland, Virginia & D.C. Schedule your free consultation today."
+>
+  <Hero
+    variant="interior"
+    subtitle="Our Legal Team"
+    title="Meet Our Attorneys"
+    description="Dedicated. Strategic. Compassionate. Our attorneys bring academic excellence and real-world experience to every Maryland family law case."
+    ctaText="Schedule Free Consultation"
+    ctaHref="/free-consultation"
+  />
+
+  <!-- Attorneys overview -->
+  <section class="bg-offwhite py-10 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        {attorneys.map((atty) => (
+          <a
+            href={`#${atty.id}`}
+            class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:border-teal hover:shadow-card transition-all"
+          >
+            <div class="w-14 h-14 bg-teal rounded-full flex items-center justify-center text-white font-serif font-bold text-xl shrink-0">
+              {atty.initials}
+            </div>
+            <div>
+              <div class="font-serif font-bold text-charcoal">{atty.name}</div>
+              <div class="text-teal text-sm font-semibold">{atty.title}</div>
+              <div class="text-xs text-gray-500 mt-0.5">Barred in: {atty.barAdmissions.join(' & ')}</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Attorney profiles -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      {attorneys.map((atty, idx) => (
+        <div id={atty.id} class="scroll-mt-28">
+          <div class={`grid lg:grid-cols-3 gap-10 ${idx % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+            <!-- Profile sidebar -->
+            <div class={`lg:col-span-1 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
+              <div class="bg-teal rounded-2xl p-8 text-white text-center sticky top-28">
+                <div class="w-28 h-28 bg-teal-600 rounded-full flex items-center justify-center text-white font-serif font-bold text-4xl mx-auto mb-5 border-4 border-gold shadow-lg">
+                  {atty.initials}
+                </div>
+                <h2 class="text-xl font-serif font-bold mb-1">{atty.name}</h2>
+                <p class="text-gold font-semibold text-sm mb-4">{atty.title}</p>
+
+                <div class="border-t border-teal-600 pt-4 mb-4">
+                  <div class="text-xs text-teal-300 uppercase tracking-wider mb-2">Bar Admissions</div>
+                  {atty.barAdmissions.map((bar) => (
+                    <div class="text-sm text-teal-100">{bar}</div>
+                  ))}
+                </div>
+
+                <div class="border-t border-teal-600 pt-4 mb-4 text-left">
+                  <div class="text-xs text-teal-300 uppercase tracking-wider mb-2">Education</div>
+                  <div class="text-sm text-teal-100 mb-2">{atty.lawSchool}</div>
+                  <div class="text-sm text-teal-100">{atty.undergraduate}</div>
+                </div>
+
+                <div class="border-t border-teal-600 pt-4 text-left">
+                  <div class="text-xs text-teal-300 uppercase tracking-wider mb-2">Practice Areas</div>
+                  <div class="flex flex-wrap gap-1.5">
+                    {atty.practiceAreas.map((area) => (
+                      <span class="bg-teal-700 text-teal-100 text-xs px-2.5 py-1 rounded-full">{area}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <a href="/free-consultation" class="mt-6 block bg-gold text-white font-semibold py-2.5 rounded-lg hover:bg-gold-500 transition-colors text-sm">
+                  Schedule Consultation
+                </a>
+              </div>
+            </div>
+
+            <!-- Bio content -->
+            <div class={`lg:col-span-2 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <div class="mb-6">
+                <p class="text-gold font-semibold text-xs uppercase tracking-widest mb-2">Attorney Profile</p>
+                <h2 class="text-3xl font-serif font-bold text-charcoal mb-1">{atty.name}</h2>
+                <p class="text-teal font-semibold">{atty.title} — Child Custody with a Plan</p>
+              </div>
+
+              {/* Highlights */}
+              <div class="bg-teal-50 border border-teal-100 rounded-xl p-5 mb-7">
+                <h3 class="font-semibold text-teal text-sm uppercase tracking-wider mb-3">Highlights</h3>
+                <ul class="space-y-2">
+                  {atty.highlights.map((h) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-700">
+                      <svg class="w-4 h-4 text-gold shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Biography */}
+              <div class="space-y-4 text-gray-700 leading-relaxed">
+                {atty.bio.map((para) => (
+                  <p>{para}</p>
+                ))}
+              </div>
+
+              <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                <a href="/free-consultation" class="btn-primary">Schedule a Consultation</a>
+                <a href="tel:+13012898917" class="btn-secondary">Call (301) 289-8917</a>
+              </div>
+            </div>
+          </div>
+          {idx < attorneys.length - 1 && (
+            <hr class="border-gray-200 mt-20" />
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Jurisdictions -->
+  <section class="bg-offwhite py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-serif font-bold text-teal mb-6">Licensed to Practice In</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        {['Maryland', 'Virginia', 'Washington D.C.'].map((j) => (
+          <div class="bg-white border-2 border-teal rounded-xl px-8 py-4 text-teal font-semibold text-lg shadow-sm">
+            {j}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Ready to Work With Our Team?"
+    description="Schedule your free, confidential consultation today. Our attorneys are ready to listen and develop your legal strategy."
+  />
+</BaseLayout>

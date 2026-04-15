@@ -1,0 +1,387 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTASection from '../components/CTASection.astro';
+
+const services = [
+  {
+    title: 'Child Custody',
+    description: 'Strategic representation in legal and physical custody, parenting plan negotiations, and best-interests advocacy for your children.',
+    href: '/child-custody',
+    icon: '👨‍👩‍👧',
+  },
+  {
+    title: 'Divorce',
+    description: 'Contested and uncontested divorce representation with a focus on protecting your rights, assets, and future.',
+    href: '/divorce',
+    icon: '⚖️',
+  },
+  {
+    title: 'High Net Worth Divorce',
+    description: 'Sophisticated counsel for complex divorces involving significant assets, investments, and business interests.',
+    href: '/high-net-worth-divorce',
+    icon: '💼',
+  },
+  {
+    title: 'Spousal Support',
+    description: 'Experienced advocacy for alimony, pendente lite support, and rehabilitative support arrangements.',
+    href: '/spousal-support',
+    icon: '🤝',
+  },
+  {
+    title: 'Asset Division',
+    description: 'Equitable distribution of marital property — from real estate and retirement accounts to personal property.',
+    href: '/asset-division',
+    icon: '🏠',
+  },
+  {
+    title: 'Custody Modification',
+    description: 'Post-divorce custody modifications when circumstances change and your parenting plan needs to evolve.',
+    href: '/child-custody-modification',
+    icon: '🔄',
+  },
+  {
+    title: 'Divorces Involving Businesses',
+    description: 'Business valuation, buyouts, and division strategies when a family business is part of your divorce.',
+    href: '/divorces-involving-businesses',
+    icon: '🏢',
+  },
+  {
+    title: 'Divorce for Professionals',
+    description: 'Discreet, sophisticated representation for doctors, executives, and high-profile professionals.',
+    href: '/divorce-lawyer-for-professionals',
+    icon: '👩‍⚕️',
+  },
+];
+
+const promiseSteps = [
+  { letter: 'P', title: 'Plan', desc: 'We develop a personalized legal strategy tailored to your unique situation and goals.' },
+  { letter: 'R', title: 'Research', desc: 'Thorough research of all legal precedents, case facts, and applicable Maryland law.' },
+  { letter: 'O', title: 'Organize', desc: 'Every document, evidence point, and timeline organized for maximum impact.' },
+  { letter: 'M', title: 'Mediate', desc: 'When appropriate, we explore mediation to achieve resolution efficiently.' },
+  { letter: 'I', title: 'Implement', desc: 'Execute your strategy with precision — in negotiation or in the courtroom.' },
+  { letter: 'S', title: 'Secure', desc: 'Secure the best possible outcome and protect your future and your children\'s wellbeing.' },
+  { letter: 'E', title: 'Evaluate', desc: 'Ongoing evaluation ensures your plan adapts as circumstances evolve.' },
+];
+
+const stats = [
+  { value: '10+', label: 'Years Serving Maryland' },
+  { value: '2', label: 'Convenient Offices' },
+  { value: '3', label: 'Jurisdictions: MD, VA & DC' },
+  { value: '100%', label: 'Family Law Focus' },
+];
+---
+
+<BaseLayout
+  title="Child Custody with a Plan | Maryland Child Custody & Divorce Attorneys"
+  description="Child Custody with a Plan — Maryland's strategic family law firm. Serving Rockville, Baltimore & surrounding areas. Expert child custody, divorce, and family law representation. Call (301) 289-8917."
+>
+  <!-- Hero -->
+  <Hero
+    variant="home"
+    badge="Maryland Family Law — Rockville & Baltimore"
+    subtitle="Where Child Custody Meets Strategy"
+    title="Your Family Deserves a Plan, Not Just an Attorney"
+    description="At Child Custody with a Plan, we combine empathy with strategy to protect what matters most — your children and your future. Serving families across Maryland since 2013."
+    ctaText="Schedule Free Consultation"
+    ctaHref="/free-consultation"
+    ctaSecondaryText="Meet Our Attorneys"
+    ctaSecondaryHref="/attorneys"
+  />
+
+  <!-- Stats bar -->
+  <div class="bg-charcoal text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-3xl font-bold text-gold mb-1">{stat.value}</div>
+            <div class="text-sm text-gray-300">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro section -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Our Difference</p>
+          <h2 class="section-heading">Strategy. Empathy. Results.</h2>
+          <div class="gold-bar"></div>
+          <p class="text-gray-700 leading-relaxed mb-5">
+            Child custody and divorce proceedings are among the most emotionally charged legal matters a person can face. At <strong>Child Custody with a Plan</strong>, we believe every family deserves a clear, strategic legal roadmap — not just representation, but a <em>plan</em>.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-5">
+            Founded in 2013, our firm has built a reputation across Maryland for combining rigorous legal strategy with genuine compassion. We serve clients in Rockville, Baltimore, Montgomery County, Howard County, Baltimore County, Prince George's County, and throughout the state.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-7">
+            Whether you're navigating a contested custody battle, a high-net-worth divorce, or seeking to modify an existing order, our attorneys bring intellectual depth and heartfelt advocacy to every case.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/about" class="btn-primary">Learn About Our Firm</a>
+            <a href="/attorneys" class="btn-secondary">Meet Our Attorneys</a>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          {[
+            {
+              title: 'Proprietary PROMISE Framework™',
+              desc: 'Our exclusive 7-step methodology transforms complex family law cases into clear, manageable strategies.',
+              icon: '⭐',
+            },
+            {
+              title: 'Women-Led & Community-Centered',
+              desc: 'Our founding team built this firm to serve Maryland families with integrity, discretion, and unwavering dedication.',
+              icon: '💪',
+            },
+            {
+              title: 'Multi-Jurisdictional Coverage',
+              desc: 'Licensed to practice in Maryland, Virginia, and Washington D.C. — providing seamless representation across the region.',
+              icon: '🗺️',
+            },
+            {
+              title: 'Two Convenient Office Locations',
+              desc: 'Offices in Rockville and Baltimore ensure accessibility for clients throughout Maryland.',
+              icon: '📍',
+            },
+          ].map((item) => (
+            <div class="flex gap-4 p-5 bg-offwhite rounded-xl hover:shadow-card transition-shadow">
+              <div class="text-2xl shrink-0">{item.icon}</div>
+              <div>
+                <h3 class="font-semibold text-charcoal mb-1">{item.title}</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section class="bg-offwhite py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-3">What We Do</p>
+        <h2 class="section-heading">Practice Areas</h2>
+        <div class="gold-bar mx-auto"></div>
+        <p class="section-subheading mx-auto text-center">
+          From contested custody battles to high-net-worth divorces, we handle the full spectrum of family law matters in Maryland.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <a href={service.href} class="practice-area-card block">
+            <div class="text-3xl mb-3">{service.icon}</div>
+            <h3 class="font-serif font-bold text-charcoal text-lg mb-2 group-hover:text-teal transition-colors">{service.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">{service.description}</p>
+            <span class="text-teal font-semibold text-sm flex items-center gap-1">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/services" class="btn-secondary">View All Practice Areas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE Framework -->
+  <section id="promise" class="bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Our Process</p>
+        <h2 class="section-heading">The PROMISE Framework™</h2>
+        <div class="gold-bar mx-auto"></div>
+        <p class="section-subheading mx-auto text-center">
+          Every client receives a personalized legal strategy built on our proprietary 7-step process — turning complexity into clarity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {promiseSteps.map((step, i) => (
+          <div class="bg-offwhite rounded-2xl p-6 border-t-4 border-teal hover:shadow-card transition-shadow">
+            <div class="w-12 h-12 bg-teal text-white rounded-xl flex items-center justify-center font-serif font-bold text-xl mb-4 shadow">
+              {step.letter}
+            </div>
+            <h3 class="font-serif font-bold text-charcoal text-lg mb-2">{step.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Attorneys teaser -->
+  <section class="bg-teal-50 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-3">The Team</p>
+        <h2 class="section-heading">Meet Our Attorneys</h2>
+        <div class="gold-bar mx-auto"></div>
+        <p class="section-subheading mx-auto text-center">
+          Dedicated, experienced, and deeply committed to your family's future.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {[
+          {
+            name: 'Monique Nettleford-Bruce',
+            title: 'Associate Attorney',
+            bar: 'Barred: Maryland & Virginia',
+            school: 'American University Washington College of Law',
+            highlight: 'Former Staff Attorney, Maryland Legal Aid | Editor-in-Chief, The Modern American Law Brief',
+            href: '/attorneys#monique',
+          },
+          {
+            name: 'Aysia Stockton',
+            title: 'Associate Attorney',
+            bar: 'Barred: Maryland & Washington D.C.',
+            school: 'Appalachian School of Law (J.D., 2020)',
+            highlight: 'Former Deputy Clerk, Richmond General District Court | Clark Atlanta University Alumni',
+            href: '/attorneys#aysia',
+          },
+        ].map((atty) => (
+          <div class="card flex flex-col">
+            <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center text-white font-serif font-bold text-2xl mb-4 shadow">
+              {atty.name.charAt(0)}
+            </div>
+            <h3 class="text-xl font-serif font-bold text-charcoal mb-1">{atty.name}</h3>
+            <p class="text-teal font-semibold text-sm mb-1">{atty.title}</p>
+            <p class="text-xs text-gray-500 mb-3">{atty.bar}</p>
+            <p class="text-sm text-gray-600 mb-2"><strong>Education:</strong> {atty.school}</p>
+            <p class="text-sm text-gray-500 italic mb-5">{atty.highlight}</p>
+            <a href={atty.href} class="mt-auto text-teal font-semibold text-sm flex items-center gap-1 hover:text-teal-600 transition-colors">
+              Full Bio
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/attorneys" class="btn-primary">Meet Our Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Why Choose Us</p>
+          <h2 class="section-heading">The Right Firm for Your Family's Future</h2>
+          <div class="gold-bar"></div>
+          <p class="text-gray-700 leading-relaxed mb-8">
+            Choosing the right family law attorney is one of the most important decisions you'll make. Here's why Maryland families trust Child Custody with a Plan:
+          </p>
+          <ul class="space-y-5">
+            {[
+              { title: 'Strategic, Not Reactive', desc: 'We build proactive legal strategies, not just responses. Every decision is guided by your end goal.' },
+              { title: 'Empathy-First Approach', desc: 'We understand the emotional weight of family law matters. You'll never feel like just another case number.' },
+              { title: 'Transparent Communication', desc: 'We keep you informed at every step. No surprises, no hidden agendas.' },
+              { title: 'Courtroom-Ready', desc: 'While we pursue efficient resolutions, we are fully prepared to advocate aggressively in court when needed.' },
+              { title: 'Results-Focused', desc: 'Our attorneys are trained to achieve the best possible outcomes while minimizing conflict for your family.' },
+            ].map((item) => (
+              <li class="flex gap-4">
+                <div class="w-8 h-8 bg-gold rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-charcoal mb-1">{item.title}</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-teal rounded-2xl p-8 text-white">
+          <h3 class="text-2xl font-serif font-bold mb-6">We Serve All of Maryland</h3>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            {[
+              'Montgomery County', 'Baltimore City', 'Baltimore County',
+              'Howard County', 'Prince George\'s County', 'Anne Arundel County',
+              'Frederick County', 'Carroll County', 'Harford County', 'Charles County',
+            ].map((county) => (
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-3.5 h-3.5 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-teal-100">{county}</span>
+              </div>
+            ))}
+          </div>
+          <a href="/contact" class="block text-center bg-gold text-white font-semibold py-3 rounded-lg hover:bg-gold-500 transition-colors">
+            Contact Us Today
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ snippet -->
+  <section class="bg-offwhite py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-gold font-semibold text-sm uppercase tracking-widest mb-3">Common Questions</p>
+        <h2 class="section-heading">Maryland Child Custody FAQs</h2>
+        <div class="gold-bar mx-auto"></div>
+      </div>
+
+      <div class="space-y-4">
+        {[
+          {
+            q: 'What is the difference between legal and physical custody in Maryland?',
+            a: 'Legal custody refers to decision-making authority over a child\'s education, health, and welfare. Physical custody refers to where the child primarily lives. Maryland courts may award joint or sole custody for each type based on the best interests of the child.',
+          },
+          {
+            q: 'How does Maryland determine child custody?',
+            a: 'Maryland courts use the "best interests of the child" standard, considering factors such as each parent\'s fitness, the child\'s relationships, the distance between parents\' homes, the child\'s preference (if of sufficient age), and the ability of each parent to communicate and co-parent.',
+          },
+          {
+            q: 'Can a custody order be modified in Maryland?',
+            a: 'Yes. A custody order can be modified if there has been a material change in circumstances since the last order was entered. Examples include relocation, changes in the child\'s needs, or changes in a parent\'s work schedule or living situation.',
+          },
+          {
+            q: 'Do I need an attorney for my custody case?',
+            a: 'While you are not legally required to have an attorney, family law matters are complex and the outcomes significantly affect your children\'s lives. An experienced attorney helps you navigate procedures, avoid costly mistakes, and advocate effectively for your family\'s best interests.',
+          },
+        ].map((faq) => (
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 group">
+            <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold text-charcoal list-none">
+              <span>{faq.q}</span>
+              <svg class="w-5 h-5 text-teal shrink-0 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-5 pb-5 text-gray-600 leading-relaxed text-sm border-t border-gray-100 pt-4">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Your Family Deserves a Strategic Plan"
+    description="Don't face Maryland's family courts alone. Our attorneys are ready to listen, strategize, and fight for your family's best outcome."
+  />
+</BaseLayout>

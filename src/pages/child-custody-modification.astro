@@ -1,236 +1,98 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePageLayout from '../layouts/ServicePageLayout.astro';
 ---
 
-<BaseLayout
-  title="Child Custody Modification Maryland | Divorce With A Plan"
-  description="Need to modify a Maryland child custody order? Our attorneys handle custody modification cases when circumstances have materially changed. Rockville & Baltimore offices."
-  ogTitle="Child Custody Modification Maryland | Divorce With A Plan"
-  ogDescription="Maryland child custody modification attorneys. When life changes, your custody order can too. Free consultation with our Rockville and Baltimore family law team."
+<ServicePageLayout
+  title="Child Custody Modification Attorneys in Maryland"
+  metaTitle="Child Custody Modification Maryland | Post-Divorce Custody Changes | Child Custody with a Plan"
+  description="Maryland child custody modification attorneys in Rockville and Baltimore. We handle post-divorce custody modifications when circumstances change. Serving MD statewide. Call (301) 289-8917."
+  heroSubtitle="Custody Modification"
+  heroDescription="Life changes. When it does, your custody order may need to change with it. Our Maryland attorneys provide strategic representation for post-divorce custody modifications of every kind."
+  badge="Maryland Custody Modification Attorneys"
 >
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">Maryland Custody Modification Attorneys</p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Life Changes. Your Custody<br class="hidden md:block" />
-        Order Can Too.
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-        When significant changes in your life or your child's circumstances make the existing custody arrangement unworkable or harmful, Maryland law allows you to seek a modification. Our attorneys know how to build the legal case for change.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Schedule Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-          Call (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
+  <h2>When Your Custody Order No Longer Fits Your Family</h2>
+  <p>
+    A child custody order entered by a Maryland court is not necessarily permanent. Family dynamics, living situations, employment, and children's needs all evolve over time — and custody arrangements often need to evolve with them. At <strong>Child Custody with a Plan</strong>, our Maryland child custody modification attorneys help parents navigate the legal process of modifying existing custody orders when circumstances have meaningfully changed.
+  </p>
+  <p>
+    We represent parents across Rockville, Baltimore, Montgomery County, Howard County, Prince George's County, and throughout Maryland in custody modification proceedings — whether you are seeking a change to better serve your children or defending against a modification that is not in their best interests.
+  </p>
 
-  <!-- The Legal Standard -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-5">The Legal Standard for Custody Modification</h2>
-          <p class="text-slate-600 mb-4">
-            Maryland courts start with a strong presumption in favor of maintaining the existing custody order. To successfully modify custody, you must generally demonstrate two things:
-          </p>
-          <div class="space-y-4 mb-4">
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
-              <h3 class="font-bold text-slate-900 mb-1">1. Material Change in Circumstances</h3>
-              <p class="text-slate-600 text-sm">A significant change that wasn't anticipated when the original order was entered and that affects the welfare of the child.</p>
-            </div>
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
-              <h3 class="font-bold text-slate-900 mb-1">2. Modification Is in the Child's Best Interests</h3>
-              <p class="text-slate-600 text-sm">Even after a material change is shown, the court must find that changing custody actually serves the child's best interests.</p>
-            </div>
-          </div>
-          <p class="text-slate-600">
-            The threshold required — and how courts apply it — can vary based on the nature of the change and the type of modification sought. Our attorneys help you evaluate whether your situation meets the legal standard and build the strongest possible case.
-          </p>
-        </div>
-        <div class="bg-slate-50 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">Common Grounds for Modification</h3>
-          <ul class="space-y-3">
-            {[
-              "A parent's relocation to a different city or state",
-              "Significant change in a parent's work schedule",
-              "Remarriage or new partner in the home",
-              "A parent's new substance abuse problem or criminal activity",
-              "Child's changing needs as they grow older",
-              "Evidence of domestic violence or child abuse",
-              "One parent consistently violating the existing order",
-              "The child's expressed preference (at an appropriate age)",
-              "A parent's serious illness or disability",
-              "Change in the child's school or educational needs"
-            ].map(item => (
-              <li class="flex items-start gap-3">
-                <span class="text-amber-500 font-bold mt-0.5">✓</span>
-                <span class="text-slate-700 text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>The Legal Standard for Custody Modification in Maryland</h2>
+  <p>
+    Maryland law does not allow parents to seek custody modifications simply because they are dissatisfied with the current arrangement. To modify a custody order, a parent must demonstrate two things:
+  </p>
+  <ol>
+    <li><strong>Material Change in Circumstances:</strong> There has been a substantial change in circumstances since the last custody order was entered.</li>
+    <li><strong>Best Interests of the Child:</strong> The requested modification is in the best interests of the child.</li>
+  </ol>
+  <p>
+    Both elements must be present. Courts are cautious about disrupting established custody arrangements, recognizing that stability is generally in children's best interests. However, when genuine material changes have occurred, Maryland courts will act to ensure children's welfare is protected.
+  </p>
 
-  <!-- Types of Modifications -->
-  <section class="py-16 px-4 bg-slate-50">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Types of Custody Modifications</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">Custody modifications range from minor scheduling adjustments to complete reversals of the existing custody arrangement.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        {[
-          {
-            title: "Parenting Schedule Modification",
-            desc: "Adjusting holiday schedules, vacation time, pickup/dropoff arrangements, or day-to-day time-sharing without changing the underlying custody designation.",
-            scope: "Minor to Moderate"
-          },
-          {
-            title: "Physical Custody Modification",
-            desc: "Changing where the child primarily resides — for example, shifting from sole physical custody with one parent to shared physical custody, or vice versa.",
-            scope: "Significant"
-          },
-          {
-            title: "Legal Custody Modification",
-            desc: "Changing who has decision-making authority — for example, shifting from shared legal custody to sole legal custody when co-parenting communication has completely broken down.",
-            scope: "Significant"
-          }
-        ].map(type => (
-          <div class="bg-white rounded-xl p-6 shadow-sm">
-            <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full">Scope: {type.scope}</span>
-            <h3 class="text-lg font-bold text-slate-900 mt-4 mb-3">{type.title}</h3>
-            <p class="text-slate-600 text-sm">{type.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="highlight-box">
+    <h3 style="margin-top:0; color:#0D6E6E;">What Counts as a "Material Change in Circumstances"?</h3>
+    <p>Not every change qualifies as a material change in circumstances. Maryland courts look for changes that are <strong>significant, lasting, and directly affect the child's welfare</strong>. Common examples include: parental relocation, remarriage, a parent's substance abuse issues, domestic violence, a parent's significant change in work schedule, the child's changing developmental or educational needs, and more. Our attorneys help you evaluate whether your situation meets the threshold.</p>
+  </div>
 
-  <!-- Relocation Focus -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-5">Relocation: One of the Most Complex Modifications</h2>
-          <p class="text-slate-600 mb-4">
-            When one parent wants to move a significant distance away — especially out of state — the impact on the existing custody arrangement can be profound. These cases are among the most contested in Maryland family law.
-          </p>
-          <p class="text-slate-600 mb-4">
-            Courts carefully evaluate the reason for the relocation, the impact on the child's relationship with the remaining parent, and whether a new custody/visitation arrangement can adequately preserve both relationships.
-          </p>
-          <p class="text-slate-600">
-            We represent parents on both sides: those seeking to relocate with their children, and those trying to prevent the other parent from taking their children away.
-          </p>
-        </div>
-        <div class="bg-slate-50 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">What Courts Consider in Relocation Cases</h3>
-          <ul class="space-y-2">
-            {[
-              "The reason for the move (job, family support, new spouse)",
-              "The impact on the child's stability and continuity",
-              "The quality of the child's relationship with each parent",
-              "The relocating parent's willingness to facilitate the other parent's relationship",
-              "Whether the remaining parent would also relocate",
-              "The child's ties to current community, school, and friends",
-              "The child's age and adaptability"
-            ].map(item => (
-              <li class="flex items-start gap-3">
-                <span class="text-amber-500 font-bold mt-0.5">→</span>
-                <span class="text-slate-700 text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2>Common Grounds for Custody Modification</h2>
 
-  <!-- Emergency Modifications -->
-  <section class="py-16 px-4 bg-red-50 border-y border-red-200">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Emergency Custody Modifications</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto">When your child's safety is at immediate risk, Maryland courts can grant emergency custody modifications — sometimes within 24 hours.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <h3 class="text-xl font-bold text-slate-900 mb-4">When Emergency Action May Be Required</h3>
-          <ul class="space-y-2">
-            {[
-              "Immediate risk of abuse or neglect",
-              "Parent is actively using drugs or alcohol around the child",
-              "Imminent risk of parental abduction",
-              "Child is being exposed to domestic violence",
-              "Parent is threatening to take child out of state or country",
-              "Sudden abandonment of care responsibilities"
-            ].map(item => (
-              <li class="flex items-start gap-3">
-                <span class="text-red-500 font-bold mt-0.5">⚠</span>
-                <span class="text-slate-700 text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-white rounded-xl p-6 border border-red-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">Our Emergency Response</h3>
-          <p class="text-slate-600 text-sm mb-4">
-            When a child's safety is at risk, there is no time to wait. Our attorneys are experienced in obtaining emergency protective orders and expedited custody hearings in Maryland courts.
-          </p>
-          <p class="text-slate-600 text-sm mb-4">
-            We move quickly to file the necessary motions, present compelling evidence to the court, and obtain relief that protects your child immediately.
-          </p>
-          <a href="tel:2402693592" class="block text-center bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-            Call Now: (240) 269-3592
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h3>Parental Relocation</h3>
+  <p>
+    When a parent plans to move — whether across the state or out of Maryland entirely — the existing custody arrangement may no longer be practical. Relocation cases are among the most contentious in family law, as they involve balancing one parent's right to move with the other parent's right to maintain their relationship with the child. Maryland law requires careful analysis of the relocating parent's reasons for moving, the impact on the child, and whether a workable modified arrangement can be crafted.
+  </p>
 
-  <!-- The Modification Process -->
-  <section class="py-16 px-4 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">The Custody Modification Process in Maryland</h2>
-      </div>
-      <div class="grid md:grid-cols-4 gap-6">
-        {[
-          { step: "01", title: "Free Consultation", desc: "We evaluate your situation and assess whether your circumstances meet the legal standard for modification." },
-          { step: "02", title: "File Motion", desc: "We draft and file a Motion to Modify Custody with the appropriate Maryland Circuit Court." },
-          { step: "03", title: "Hearing & Evidence", desc: "We present your case to the judge with documentary evidence, witness testimony, and legal argument." },
-          { step: "04", title: "New Order Issued", desc: "The court issues a modified custody order that reflects the new arrangement." }
-        ].map(item => (
-          <div class="text-center">
-            <div class="w-16 h-16 bg-amber-500 text-white text-xl font-bold rounded-full flex items-center justify-center mx-auto mb-4">{item.step}</div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-            <p class="text-slate-600 text-sm">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <h3>Changes in Parental Circumstances</h3>
+  <p>
+    Significant changes in a parent's life situation — job loss, new employment, remarriage, new household members, health issues, substance abuse, or domestic violence — can all constitute material changes that warrant custody review. Our attorneys evaluate these circumstances and their impact on the child's welfare.
+  </p>
 
-  <!-- CTA -->
-  <section class="py-16 px-4 bg-amber-500">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Your Child's Needs Have Changed. Your Custody Order Can Too.</h2>
-      <p class="text-amber-100 mb-8 text-lg">Talk to our Maryland custody modification attorneys for a free evaluation of your case.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-white text-amber-600 hover:bg-amber-50 font-bold py-3 px-8 rounded-lg transition-colors">
-          Book Free Consultation
-        </a>
-        <a href="tel:2402693592" class="border-2 border-white text-white hover:bg-amber-600 font-bold py-3 px-8 rounded-lg transition-colors">
-          (240) 269-3592
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <h3>Child's Changing Needs</h3>
+  <p>
+    As children grow, their needs change. A parenting schedule that worked for a toddler may not serve a teenager's schedule, social life, and educational needs. A child's changing school district, extracurricular commitments, or special educational needs may all create grounds for modification.
+  </p>
+
+  <h3>Child's Stated Preference</h3>
+  <p>
+    Maryland courts give increasing weight to a child's preference as the child matures. While no specific age triggers this consideration, older children — particularly teenagers — may express preferences that the court finds meaningful. Our attorneys help ensure a child's genuine preferences are appropriately and safely presented to the court.
+  </p>
+
+  <h3>Parent's Non-Compliance or Misconduct</h3>
+  <p>
+    If the custodial parent is consistently denying visitation, relocating without permission, exposing the child to harmful situations, or otherwise violating the existing order, these violations may provide grounds for modification. Our attorneys aggressively address parental misconduct when it affects children's welfare.
+  </p>
+
+  <h3>Domestic Violence or Safety Concerns</h3>
+  <p>
+    When a child's safety is at risk — due to domestic violence, substance abuse, child abuse, or neglect — custody modification may be urgently necessary. Maryland courts take safety concerns seriously and can act quickly in emergency situations.
+  </p>
+
+  <h2>Emergency Custody Modifications</h2>
+  <p>
+    When a child faces imminent danger, waiting for the normal modification process is not an option. Maryland courts can issue emergency or "ex parte" temporary custody orders to protect children in urgent situations. Our attorneys are prepared to pursue emergency relief swiftly and effectively when your child's safety demands it.
+  </p>
+
+  <h2>The Custody Modification Process in Maryland</h2>
+  <ol>
+    <li><strong>Consultation and Case Evaluation:</strong> We assess whether your situation meets the threshold for modification.</li>
+    <li><strong>Filing a Motion to Modify:</strong> We file the appropriate motion in the Maryland Circuit Court that issued the original order.</li>
+    <li><strong>Service on the Other Parent:</strong> The other parent is formally notified of the modification request.</li>
+    <li><strong>Mediation:</strong> Maryland courts frequently order mediation before a contested modification hearing.</li>
+    <li><strong>Hearing:</strong> If mediation fails, a judge hears testimony and evidence and makes a determination.</li>
+    <li><strong>New Order:</strong> If modification is granted, a new custody order is entered that reflects the changed circumstances.</li>
+  </ol>
+
+  <h2>Defending Against an Unwanted Modification</h2>
+  <p>
+    If your co-parent is seeking a custody modification that you believe is not in your child's best interests — or does not reflect a genuine material change in circumstances — our attorneys will build a strong defense. We document the stability and quality of your current parenting arrangement, challenge claims of material change, and make compelling arguments for maintaining your child's established routine and relationships.
+  </p>
+
+  <h2>Contempt of Custody Orders</h2>
+  <p>
+    When a parent willfully violates an existing custody order — by denying visitation, interfering with parenting time, or refusing to follow court-mandated arrangements — the remedy may be contempt proceedings. Our attorneys handle contempt filings and ensure that custody orders are respected and enforced.
+  </p>
+
+  <div class="gold-box">
+    <strong>Every custody modification decision has lasting consequences for your children and your relationship with them.</strong> Whether you are seeking a change or defending the current arrangement, the stakes are too high to proceed without experienced legal counsel. Our Maryland custody modification attorneys are ready to help you navigate this critical process.
+  </div>
+</ServicePageLayout>
