@@ -1,98 +1,81 @@
 ---
-export interface Props {
-  headline: string;
-  subheadline?: string;
-  ctaText?: string;
-  ctaHref?: string;
-  secondaryCtaText?: string;
-  secondaryCtaHref?: string;
-  badge?: string;
-  showStats?: boolean;
-  compact?: boolean;
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  badges?: string[];
+  variant?: 'full' | 'compact';
 }
 
 const {
-  headline,
-  subheadline,
-  ctaText = 'Schedule Free Consultation',
-  ctaHref = '/free-consultation',
-  secondaryCtaText = 'Explore Practice Areas',
-  secondaryCtaHref = '/services',
-  badge,
-  showStats = false,
-  compact = false,
+  title,
+  subtitle,
+  description,
+  primaryCta,
+  secondaryCta,
+  badges,
+  variant = 'full',
 } = Astro.props;
 ---
 
-<section class={`teal-gradient text-white relative overflow-hidden ${compact ? 'py-16 md:py-24' : 'py-20 md:py-32'}`}>
-  <!-- Background pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<section class={`bg-[#0D6E6E] relative overflow-hidden ${variant === 'full' ? 'py-24 md:py-32' : 'py-16 md:py-20'}`}>
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+        <pattern id="hero-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
         </pattern>
       </defs>
-      <rect width="100" height="100" fill="url(#grid)"/>
+      <rect width="100%" height="100%" fill="url(#hero-grid)" />
     </svg>
   </div>
 
-  <!-- Gold accent circles -->
-  <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
-  <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-gold-400 rounded-full opacity-10 blur-3xl"></div>
+  <!-- Gold accent bar -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4A843] via-[#DFB85C] to-[#D4A843]"></div>
 
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      {badge && (
-        <div class="inline-flex items-center gap-2 bg-gold-400/20 border border-gold-400/40 text-gold-300 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-          </svg>
-          {badge}
-        </div>
-      )}
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    {subtitle && (
+      <p class="inline-block text-[#D4A843] font-semibold text-sm uppercase tracking-widest mb-4 bg-white/10 px-4 py-1.5 rounded-full">
+        {subtitle}
+      </p>
+    )}
 
-      <h1 class={`font-serif font-bold text-white leading-tight mb-6 ${compact ? 'text-3xl md:text-4xl lg:text-5xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}>
-        {headline}
-      </h1>
+    <h1 class={`font-serif font-bold text-white leading-tight mb-6 ${variant === 'full' ? 'text-4xl md:text-5xl lg:text-6xl' : 'text-3xl md:text-4xl'}`}>
+      {title}
+    </h1>
 
-      {subheadline && (
-        <p class="text-lg md:text-xl text-teal-100 mb-8 leading-relaxed max-w-3xl mx-auto">
-          {subheadline}
-        </p>
-      )}
+    {description && (
+      <p class={`text-white/80 mx-auto leading-relaxed mb-8 ${variant === 'full' ? 'text-lg md:text-xl max-w-3xl' : 'text-base max-w-2xl'}`}>
+        {description}
+      </p>
+    )}
 
+    {badges && badges.length > 0 && (
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        {badges.map(badge => (
+          <span class="bg-white/10 border border-white/20 text-white/90 text-sm px-4 py-2 rounded-full font-medium">
+            {badge}
+          </span>
+        ))}
+      </div>
+    )}
+
+    {(primaryCta || secondaryCta) && (
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={ctaHref} class="btn-primary text-base !py-4 !px-8 shadow-xl">
-          {ctaText}
-        </a>
-        {secondaryCtaText && (
-          <a href={secondaryCtaHref} class="btn-secondary text-base !py-4 !px-8">
-            {secondaryCtaText}
+        {primaryCta && (
+          <a href={primaryCta.href} class="bg-[#D4A843] text-white font-semibold px-8 py-4 rounded hover:bg-[#B8902E] transition-colors duration-200 text-lg">
+            {primaryCta.label}
+          </a>
+        )}
+        {secondaryCta && (
+          <a href={secondaryCta.href} class="border-2 border-white text-white font-semibold px-8 py-4 rounded hover:bg-white hover:text-[#0D6E6E] transition-colors duration-200 text-lg">
+            {secondaryCta.label}
           </a>
         )}
       </div>
-
-      {showStats && (
-        <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-teal-400/30 pt-10">
-          <div class="text-center">
-            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">4</div>
-            <div class="text-teal-200 text-sm">Expert Attorneys</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">2</div>
-            <div class="text-teal-200 text-sm">Maryland Offices</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">8</div>
-            <div class="text-teal-200 text-sm">Practice Areas</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-serif font-bold text-gold-400 mb-1">Free</div>
-            <div class="text-teal-200 text-sm">Consultations</div>
-          </div>
-        </div>
-      )}
-    </div>
+    )}
   </div>
 </section>

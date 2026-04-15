@@ -1,81 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply font-sans text-gray-800 antialiased;
   }
-
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold;
+    @apply font-serif;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-block bg-gold-400 hover:bg-gold-500 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-center;
+    @apply inline-block bg-[#D4A843] text-white font-semibold px-8 py-3 rounded hover:bg-[#B8902E] transition-colors duration-200 text-center;
   }
-
   .btn-secondary {
-    @apply inline-block border-2 border-white hover:bg-white hover:text-teal-500 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-center;
+    @apply inline-block border-2 border-[#D4A843] text-[#D4A843] font-semibold px-8 py-3 rounded hover:bg-[#D4A843] hover:text-white transition-colors duration-200 text-center;
   }
-
-  .btn-outline {
-    @apply inline-block border-2 border-teal-500 hover:bg-teal-500 hover:text-white text-teal-500 font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-center;
+  .btn-outline-white {
+    @apply inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded hover:bg-white hover:text-[#0D6E6E] transition-colors duration-200 text-center;
   }
-
   .section-heading {
-    @apply font-serif text-3xl md:text-4xl font-bold text-teal-500 mb-4;
+    @apply text-3xl md:text-4xl font-serif text-[#0D6E6E] font-bold mb-4;
   }
-
   .section-subheading {
-    @apply text-lg text-gray-600 mb-8 max-w-2xl mx-auto;
+    @apply text-xl text-gray-600 mb-8 leading-relaxed;
   }
-
   .card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+    @apply bg-white rounded-xl shadow-md p-6 border border-gray-100;
   }
-
-  .service-card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border-l-4 border-gold-400 p-6;
+  .teal-bg {
+    @apply bg-[#0D6E6E];
   }
-
-  .prose-custom {
-    @apply text-gray-700 leading-relaxed space-y-4;
-  }
-
-  .prose-custom h2 {
-    @apply font-serif text-2xl md:text-3xl font-bold text-teal-500 mt-10 mb-4;
-  }
-
-  .prose-custom h3 {
-    @apply font-serif text-xl font-bold text-teal-700 mt-8 mb-3;
-  }
-
-  .prose-custom p {
-    @apply text-gray-700 leading-relaxed;
-  }
-
-  .prose-custom ul {
-    @apply list-disc list-inside space-y-2 pl-4;
-  }
-
-  .prose-custom li {
-    @apply text-gray-700;
-  }
-
-  .teal-gradient {
-    @apply bg-gradient-to-br from-teal-500 to-teal-700;
-  }
-
-  .gold-gradient {
-    @apply bg-gradient-to-br from-gold-400 to-gold-600;
+  .gold-text {
+    @apply text-[#D4A843];
   }
 }
