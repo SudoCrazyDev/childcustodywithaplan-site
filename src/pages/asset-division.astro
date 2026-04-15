@@ -1,254 +1,192 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Asset Division in Maryland Divorce | Equitable Distribution Attorneys | Child Custody with a Plan"
-  description="Maryland follows equitable distribution — not 50/50. Our divorce attorneys fight for a fair share of marital property including real estate, retirement accounts, and investments. Call (301) 289-8917."
-  ogTitle="Maryland Asset Division Attorneys | Equitable Distribution | Child Custody with a Plan"
-  ogDescription="Protect your financial future. Our Maryland divorce attorneys ensure equitable — not equal — division of marital assets. Rockville & Baltimore offices."
+  title="Asset Division in Maryland Divorce | Divorce With A Plan"
+  description="Maryland divorce attorneys specializing in equitable distribution of marital assets. Protecting your property, retirement accounts, real estate, and investments. Rockville & Baltimore offices."
+  ogTitle="Asset Division in Maryland Divorce | Divorce With A Plan"
+  ogDescription="Expert marital asset division attorneys in Maryland. We protect your financial future during divorce. Serving Montgomery County, Baltimore, Howard County and beyond."
 >
-
   <!-- Hero -->
-  <section class="relative bg-[#0D6E6E] text-white py-20 md:py-28">
-    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-repeat"></div>
-    <div class="relative max-w-5xl mx-auto px-6 text-center">
-      <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-3">Maryland Marital Property Law</p>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
-        Asset Division in<br class="hidden md:block" /> Maryland Divorce
+  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">Maryland Property Division Attorneys</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Protecting What You've Built.<br class="hidden md:block" />
+        Asset Division Done Right.
       </h1>
-      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
-        Maryland is an equitable distribution state — "fair" doesn't mean "equal." We ensure the division of marital property truly reflects your contributions and circumstances.
+      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+        Dividing marital assets is one of the most consequential parts of any divorce. Our Maryland property division attorneys ensure you receive your fair share — and protect what's rightfully yours.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
-          Book Free Consultation
+        <a href="/free-consultation" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+          Schedule Free Consultation
         </a>
-        <a href="tel:3012898917" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D6E6E] transition-colors">
-          (301) 289-8917
+        <a href="tel:2402693592" class="border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+          Call (240) 269-3592
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <div class="bg-gray-50 border-b border-gray-200">
-    <div class="max-w-5xl mx-auto px-6 py-3">
-      <nav class="text-sm text-gray-500">
-        <a href="/" class="hover:text-[#0D6E6E]">Home</a>
-        <span class="mx-2">/</span>
-        <a href="/divorce" class="hover:text-[#0D6E6E]">Divorce</a>
-        <span class="mx-2">/</span>
-        <span class="text-gray-800 font-medium">Asset Division</span>
-      </nav>
-    </div>
-  </div>
-
-  <!-- Maryland Law Overview -->
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-5">How Maryland Divides Marital Property</h2>
-          <p class="text-gray-600 mb-4">
-            Under Maryland Family Law § 8-205, courts have broad authority to distribute marital property based on what is "fair and just" — not necessarily equal. This means a judge analyzes a range of statutory factors before making a property award.
-          </p>
-          <p class="text-gray-600 mb-4">
-            Maryland does <strong>not</strong> divide property in a single step. Instead, the court first determines what is marital versus non-marital, then values marital property, and finally makes a monetary award to balance any inequity in how titled assets are distributed.
-          </p>
-          <p class="text-gray-600">
-            This three-step framework creates significant strategic opportunities — and risks. Having skilled legal counsel is critical to ensuring the court has all the facts needed to make a truly equitable determination.
-          </p>
-        </div>
-        <div class="space-y-4">
-          <div class="bg-[#0D6E6E] text-white rounded-xl p-6">
-            <h3 class="text-lg font-bold mb-3">Maryland's 3-Step Property Division Process</h3>
-            <ol class="space-y-3">
-              {[
-                { step: "1", text: "Classify — Identify what is marital property vs. non-marital (separate) property" },
-                { step: "2", text: "Value — Determine the fair market value of all marital assets and debts" },
-                { step: "3", text: "Distribute — Award property equitably using the § 8-205 factors" }
-              ].map(item => (
-                <li class="flex gap-3 items-start">
-                  <span class="bg-[#D4A843] text-white w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">{item.step}</span>
-                  <span class="text-white/90 text-sm">{item.text}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div class="bg-amber-50 border border-[#D4A843]/30 rounded-xl p-5">
-            <p class="text-sm text-gray-700"><strong class="text-[#D4A843]">Important:</strong> Maryland courts cannot transfer title to property held in one spouse's name. Instead, the court uses "monetary awards" to balance the equities — making proper legal strategy essential.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marital vs Non-Marital -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Marital vs. Non-Marital Property</h2>
-      <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Understanding the distinction between marital and separate property is the foundation of every asset division case.</p>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-6 border-l-4 border-[#0D6E6E] shadow-sm">
-          <h3 class="text-xl font-bold text-[#0D6E6E] mb-4">Marital Property (Subject to Division)</h3>
-          <ul class="space-y-2 text-gray-600">
-            {[
-              "All property acquired during the marriage",
-              "Income earned by either spouse during marriage",
-              "Real estate purchased during marriage (even if titled in one name)",
-              "Retirement contributions made during marriage",
-              "Business interests developed or grown during marriage",
-              "Joint bank accounts and investment accounts",
-              "Vehicles purchased during marriage",
-              "Appreciation on non-marital property due to marital effort"
-            ].map(item => (
-              <li class="flex items-start gap-2">
-                <span class="text-[#0D6E6E] font-bold">✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-white rounded-xl p-6 border-l-4 border-gray-400 shadow-sm">
-          <h3 class="text-xl font-bold text-gray-700 mb-4">Non-Marital Property (Typically Excluded)</h3>
-          <ul class="space-y-2 text-gray-600">
-            {[
-              "Property owned before the marriage",
-              "Inheritances received by one spouse (even during marriage)",
-              "Gifts given to one spouse from a third party",
-              "Property excluded by a valid prenuptial agreement",
-              "Proceeds from personal injury claims (pain and suffering)",
-              "Property directly traceable to non-marital sources",
-              "Property kept entirely separate and not commingled"
-            ].map(item => (
-              <li class="flex items-start gap-2">
-                <span class="text-gray-400 font-bold">✗</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <div class="mt-4 bg-amber-50 rounded-lg p-3">
-            <p class="text-xs text-gray-600"><strong>Note:</strong> Commingling non-marital assets with marital funds can convert them into marital property. Tracing is critical.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Statutory Factors -->
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Factors Courts Consider Under MD § 8-205</h2>
-      <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Maryland courts examine all relevant circumstances to determine what distribution is equitable. These factors guide our legal strategy.</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[
-          { factor: "Length of Marriage", desc: "Longer marriages often result in more equal division" },
-          { factor: "Monetary Contributions", desc: "Income, property, and financial investments by each spouse" },
-          { factor: "Non-Monetary Contributions", desc: "Homemaking, childcare, and support of the other spouse's career" },
-          { factor: "Circumstances That Contributed to Breakdown", desc: "Adultery, abuse, or other fault may be considered" },
-          { factor: "Age and Health", desc: "Physical and mental health of both spouses" },
-          { factor: "Economic Circumstances", desc: "Current income, earning potential, and financial needs" },
-          { factor: "How Property Was Acquired", desc: "Source of funds, timing, and method of acquisition" },
-          { factor: "Obligations and Rights", desc: "Existing debts, legal obligations, and claims against property" },
-          { factor: "Any Other Relevant Factor", desc: "Courts have discretion to weigh any appropriate consideration" }
-        ].map(f => (
-          <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
-            <h3 class="font-bold text-gray-900 mb-1">{f.factor}</h3>
-            <p class="text-sm text-gray-600">{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Types of Assets -->
-  <section class="py-16 bg-[#0D6E6E]">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-white text-center mb-3">Asset Types We Handle</h2>
-      <p class="text-white/75 text-center mb-10 max-w-2xl mx-auto">Our attorneys have experience valuing and dividing all types of marital assets — from straightforward bank accounts to complex financial instruments.</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[
-          { icon: "🏠", title: "Marital Home & Real Estate", desc: "Primary residence, rental properties, vacation homes — we address valuation, buyout, and sale options." },
-          { icon: "💰", title: "Retirement Accounts", desc: "401(k), 403(b), pensions, IRAs — we handle QDROs and ensure tax-efficient division." },
-          { icon: "📈", title: "Investment Portfolios", desc: "Stocks, bonds, mutual funds, brokerage accounts — we account for unrealized gains and tax basis." },
-          { icon: "🏢", title: "Business Interests", desc: "From LLCs to professional practices — we coordinate business valuation experts." },
-          { icon: "🚗", title: "Vehicles & Personal Property", desc: "Cars, boats, jewelry, art, collectibles — properly valued and equitably distributed." },
-          { icon: "💳", title: "Marital Debt", desc: "Mortgages, credit cards, loans — debt division is as important as asset division." }
-        ].map(asset => (
-          <div class="bg-white/10 rounded-xl p-5 text-white">
-            <div class="text-3xl mb-3">{asset.icon}</div>
-            <h3 class="font-bold text-lg mb-2">{asset.title}</h3>
-            <p class="text-white/80 text-sm">{asset.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Strategy -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
+  <!-- Maryland Equitable Distribution -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-5">Our Asset Division Strategy</h2>
-          <p class="text-gray-600 mb-4">
-            Asset division isn't just about what you get today — it's about what those assets mean for your financial security tomorrow. Our attorneys think long-term.
+          <h2 class="text-3xl font-bold text-slate-900 mb-5">Maryland Is an Equitable Distribution State</h2>
+          <p class="text-slate-600 mb-4">
+            Unlike community property states that split assets 50/50, Maryland follows the principle of <strong>equitable distribution</strong> — meaning assets are divided <em>fairly</em>, but not necessarily equally. Courts consider a wide range of factors when determining what's fair.
           </p>
-          <ul class="space-y-4">
+          <p class="text-slate-600 mb-4">
+            This distinction matters enormously. It means the outcome of your asset division depends heavily on how your case is presented and argued. The right attorney — and the right strategy — can make a substantial difference to your financial future.
+          </p>
+          <p class="text-slate-600">
+            Our attorneys at Divorce With A Plan have deep experience valuing, categorizing, and arguing for fair division of all marital property across Maryland courts.
+          </p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Factors Maryland Courts Consider</h3>
+          <ul class="space-y-2">
             {[
-              { title: "Comprehensive Asset Discovery", desc: "We identify all marital assets — including hidden, undervalued, or overlooked ones through discovery and subpoenas if necessary." },
-              { title: "Expert Valuation Coordination", desc: "We work with certified business valuators, real estate appraisers, and forensic accountants to establish accurate values." },
-              { title: "Tax-Conscious Division", desc: "We consider the after-tax value of every asset — not just the face value — to negotiate truly equitable outcomes." },
-              { title: "Strategic Trade-Off Analysis", desc: "We help you understand the real-world implications of keeping the house versus a retirement account versus liquid assets." }
-            ].map(item => (
-              <li class="flex gap-4 items-start">
-                <span class="w-8 h-8 bg-[#D4A843] rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-1">✓</span>
-                <div>
-                  <strong class="text-gray-900">{item.title}</strong>
-                  <p class="text-gray-600 text-sm mt-1">{item.desc}</p>
-                </div>
+              "Length of the marriage",
+              "Each spouse's financial contributions",
+              "Each spouse's non-monetary contributions (homemaking, child-rearing)",
+              "Circumstances that contributed to the estrangement",
+              "Each party's economic circumstances",
+              "How and when property was acquired",
+              "Each party's debts and liabilities",
+              "Opportunities for future acquisitions"
+            ].map(factor => (
+              <li class="flex items-start gap-3">
+                <span class="text-amber-500 font-bold mt-0.5">✓</span>
+                <span class="text-slate-700 text-sm">{factor}</span>
               </li>
             ))}
           </ul>
         </div>
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-          <h3 class="text-xl font-bold text-[#0D6E6E] mb-4">Related Practice Areas</h3>
-          <div class="space-y-3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Marital vs. Separate Property -->
+  <section class="py-16 px-4 bg-slate-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Marital Property vs. Separate Property</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Not all assets are subject to division. Understanding the difference between marital and separate property is the first critical step.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-8 border-l-4 border-amber-500">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Marital Property (Subject to Division)</h3>
+          <ul class="space-y-2">
             {[
-              { title: "High-Net-Worth Divorce", link: "/high-net-worth-divorce" },
-              { title: "Divorces Involving Businesses", link: "/divorces-involving-businesses" },
-              { title: "Divorce for Professionals", link: "/divorce-lawyer-for-professionals" },
-              { title: "Spousal Support / Alimony", link: "/spousal-support" },
-              { title: "Divorce Overview", link: "/divorce" }
-            ].map(area => (
-              <a href={area.link} class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-[#0D6E6E]/5 transition-colors group">
-                <span class="text-gray-700 group-hover:text-[#0D6E6E] font-medium">{area.title}</span>
-                <span class="text-[#D4A843]">→</span>
-              </a>
+              "Income earned by either spouse during marriage",
+              "Family home and real estate purchased during marriage",
+              "Retirement accounts and pension benefits accrued during marriage",
+              "Investment accounts and brokerage accounts",
+              "Vehicles, furniture, and personal property acquired during marriage",
+              "Business interests developed or grown during marriage",
+              "Bank accounts funded with marital income"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <span class="text-amber-500">•</span>
+                <span class="text-slate-600 text-sm">{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
+        <div class="bg-white rounded-xl p-8 border-l-4 border-slate-400">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Separate Property (Generally Protected)</h3>
+          <ul class="space-y-2">
+            {[
+              "Assets owned before the marriage",
+              "Inheritances received by one spouse (even during marriage)",
+              "Gifts given to one spouse individually",
+              "Property excluded by a valid prenuptial or postnuptial agreement",
+              "Personal injury awards (pain and suffering portion)",
+              "Property purchased with separate property funds"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <span class="text-slate-400">•</span>
+                <span class="text-slate-600 text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
+        <p class="text-slate-700 text-sm"><strong class="text-amber-700">Important:</strong> Separate property can become <em>commingled</em> — mixed with marital assets — which may make it subject to division. Tracing and protecting separate property requires careful legal analysis. Our attorneys have experience identifying and protecting assets that should remain yours alone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of Assets We Handle -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Complex Assets We Handle</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Asset division becomes especially complex when high-value or hard-to-value property is involved. We have the expertise to handle it all.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: "🏠", title: "Real Estate", desc: "Family homes, rental properties, vacation homes, and commercial real estate — properly valued and strategically addressed." },
+          { icon: "💼", title: "Business Interests", desc: "Ownership stakes, partnerships, LLCs, and professional practices require specialized valuation methods." },
+          { icon: "📈", title: "Investment Portfolios", desc: "Stocks, bonds, mutual funds, and brokerage accounts — divided with tax implications in mind." },
+          { icon: "🏦", title: "Retirement Accounts", desc: "401(k)s, IRAs, pensions, and deferred compensation plans often require a QDRO for proper division." },
+          { icon: "🎨", title: "Valuable Collections", desc: "Art, jewelry, antiques, and collectibles may require independent appraisal to determine fair market value." },
+          { icon: "📊", title: "Stock Options & RSUs", desc: "Unvested equity compensation from employers requires careful analysis to determine what's marital vs. separate." }
+        ].map(asset => (
+          <div class="bg-slate-50 rounded-xl p-6">
+            <div class="text-3xl mb-3">{asset.icon}</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{asset.title}</h3>
+            <p class="text-slate-600 text-sm">{asset.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach -->
+  <section class="py-16 px-4 bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Our Strategic Approach to Asset Division</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto">We don't just react — we build a comprehensive property strategy from day one.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        {[
+          { step: "1", title: "Comprehensive Asset Inventory", desc: "We help you identify and document every asset — including those that may be hidden or undervalued." },
+          { step: "2", title: "Proper Valuation", desc: "Working with financial experts and appraisers, we ensure all assets are accurately valued at fair market value." },
+          { step: "3", title: "Classification Strategy", desc: "We carefully analyze each asset to determine marital vs. separate status and build arguments to protect your separate property." },
+          { step: "4", title: "Negotiation or Litigation", desc: "We pursue the most favorable settlement possible — and if necessary, we're fully prepared to try your case in court." }
+        ].map(item => (
+          <div class="flex gap-4">
+            <div class="w-10 h-10 bg-amber-500 text-white font-bold rounded-full flex items-center justify-center flex-shrink-0">{item.step}</div>
+            <div>
+              <h3 class="text-lg font-bold mb-2">{item.title}</h3>
+              <p class="text-slate-300 text-sm">{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 bg-white">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Protect Your Financial Future</h2>
-      <p class="text-gray-600 mb-8">Don't leave the division of your marital assets to chance. Our Maryland divorce attorneys will fight to ensure you receive a fair and equitable outcome.</p>
+  <section class="py-16 px-4 bg-amber-500">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Don't Leave Your Financial Future to Chance</h2>
+      <p class="text-amber-100 mb-8 text-lg">Schedule a free consultation with our Maryland property division attorneys today.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-[#0D6E6E] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#0a5a5a] transition-colors">
+        <a href="/free-consultation" class="bg-white text-amber-600 hover:bg-amber-50 font-bold py-3 px-8 rounded-lg transition-colors">
           Book Free Consultation
         </a>
-        <a href="tel:3012898917" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
-          Call (301) 289-8917
+        <a href="tel:2402693592" class="border-2 border-white text-white hover:bg-amber-600 font-bold py-3 px-8 rounded-lg transition-colors">
+          (240) 269-3592
         </a>
       </div>
-      <p class="text-sm text-gray-500 mt-4">Rockville: 100 Park Ave Suite 205, MD 20850 · Baltimore: 1537 Light St #100, MD 21230</p>
     </div>
   </section>
-
 </BaseLayout>

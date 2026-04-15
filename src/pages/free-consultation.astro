@@ -1,323 +1,264 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Free Consultation | Maryland Divorce & Custody Attorneys | Child Custody with a Plan"
-  description="Book your free consultation with Maryland family law attorneys. Serving Rockville and Baltimore. Discuss your divorce, custody, or alimony case — no obligation. Call (301) 289-8917."
-  ogTitle="Book a Free Consultation | Child Custody with a Plan"
-  ogDescription="Schedule your free consultation with experienced Maryland divorce and custody attorneys. Rockville and Baltimore offices. Mon–Fri 9AM–9PM."
+  title="Free Consultation — Maryland Divorce Attorneys | Divorce With A Plan"
+  description="Schedule your free consultation with Divorce With A Plan — Maryland's strategic divorce and family law firm. Rockville office: (240) 269-3592. Baltimore: (240) 326-7712."
+  ogTitle="Free Consultation | Divorce With A Plan — Maryland Family Law"
+  ogDescription="Book your free consultation with Maryland's strategic divorce attorneys. Serving Rockville, Baltimore, Montgomery County, and beyond. No obligation."
 >
-
   <!-- Hero -->
-  <section class="relative bg-[#0D6E6E] text-white py-16 md:py-20">
-    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-repeat"></div>
-    <div class="relative max-w-5xl mx-auto px-6 text-center">
-      <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-3">No Obligation · Completely Confidential</p>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
-        Book Your Free<br class="hidden md:block" /> Consultation
+  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">No Obligation. Fully Confidential.</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Schedule Your Free<br class="hidden md:block" />
+        Consultation Today
       </h1>
-      <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        Take the first step toward a clear plan. Our Maryland family law attorneys will review your situation, answer your questions, and outline your options — completely free of charge.
+      <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+        The first step toward a plan is a conversation. Tell us about your situation, and we'll tell you how we can help. No pressure, no obligation — just straightforward legal guidance from experienced Maryland family law attorneys.
       </p>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <div class="bg-gray-50 border-b border-gray-200">
-    <div class="max-w-5xl mx-auto px-6 py-3">
-      <nav class="text-sm text-gray-500">
-        <a href="/" class="hover:text-[#0D6E6E]">Home</a>
-        <span class="mx-2">/</span>
-        <span class="text-gray-800 font-medium">Free Consultation</span>
-      </nav>
-    </div>
-  </div>
+  <!-- Contact & Form Section -->
+  <section class="py-16 px-4 bg-slate-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12">
 
-  <!-- 3-Step Process -->
-  <section class="py-14 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
-        <p class="text-gray-600 mt-2">Three simple steps to get started</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            step: "01",
-            title: "Schedule Your Call",
-            desc: "Fill out the form below or call us directly at (301) 289-8917. Choose a time that works for your schedule — we offer appointments Monday through Friday, 9AM to 9PM.",
-            icon: "📅"
-          },
-          {
-            step: "02",
-            title: "Share Your Situation",
-            desc: "Speak one-on-one with a Maryland attorney. You'll have 30–45 minutes to explain your circumstances in complete confidence. We listen carefully and ask the right questions.",
-            icon: "🗣️"
-          },
-          {
-            step: "03",
-            title: "Get a Clear Plan",
-            desc: "Walk away with a clear understanding of your legal options, realistic outcomes, and the next steps you should take — whether you hire us or not.",
-            icon: "📋"
-          }
-        ].map(step => (
-          <div class="text-center">
-            <div class="w-16 h-16 bg-[#0D6E6E] rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-              {step.icon}
+        <!-- Contact Info -->
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Get in Touch</h2>
+
+          <div class="space-y-6 mb-8">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 text-white">📍</div>
+              <div>
+                <h3 class="font-bold text-slate-900">Rockville Office (Primary)</h3>
+                <p class="text-slate-600">100 Park Ave, Suite 205<br />Rockville, MD 20850</p>
+                <p class="text-amber-600 font-semibold mt-1">(240) 269-3592</p>
+              </div>
             </div>
-            <p class="text-4xl font-bold text-[#D4A843] mb-2">{step.step}</p>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Form + Contact -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid lg:grid-cols-5 gap-10">
-
-        <!-- Form -->
-        <div class="lg:col-span-3">
-          <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">Request Your Free Consultation</h2>
-            <p class="text-gray-500 text-sm mb-6">All information is kept strictly confidential. We typically respond within one business day.</p>
-
-            <form name="free-consultation" method="POST" data-netlify="true" class="space-y-5" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="free-consultation" />
-              <p class="hidden">
-                <label>Don't fill this out: <input name="bot-field" /></label>
-              </p>
-
-              <div class="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1.5">First Name <span class="text-red-500">*</span></label>
-                  <input
-                    type="text"
-                    id="first-name"
-                    name="first-name"
-                    required
-                    placeholder="Your first name"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent placeholder-gray-400 text-sm"
-                  />
-                </div>
-                <div>
-                  <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1.5">Last Name <span class="text-red-500">*</span></label>
-                  <input
-                    type="text"
-                    id="last-name"
-                    name="last-name"
-                    required
-                    placeholder="Your last name"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent placeholder-gray-400 text-sm"
-                  />
-                </div>
-              </div>
-
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 text-white">📍</div>
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="your@email.com"
-                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent placeholder-gray-400 text-sm"
-                />
+                <h3 class="font-bold text-slate-900">Baltimore Office</h3>
+                <p class="text-slate-600">Serving Baltimore City & County</p>
+                <p class="text-amber-600 font-semibold mt-1">(240) 326-7712</p>
               </div>
-
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 text-white">✉️</div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number <span class="text-red-500">*</span></label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  placeholder="(301) 555-0100"
-                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent placeholder-gray-400 text-sm"
-                />
-              </div>
-
-              <div>
-                <label for="county" class="block text-sm font-medium text-gray-700 mb-1.5">Maryland County</label>
-                <select
-                  id="county"
-                  name="county"
-                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent text-sm bg-white"
-                >
-                  <option value="">Select your county</option>
-                  <option>Montgomery County</option>
-                  <option>Baltimore City</option>
-                  <option>Baltimore County</option>
-                  <option>Howard County</option>
-                  <option>Prince George's County</option>
-                  <option>Anne Arundel County</option>
-                  <option>Frederick County</option>
-                  <option>Other Maryland County</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="practice-area" class="block text-sm font-medium text-gray-700 mb-1.5">What Do You Need Help With? <span class="text-red-500">*</span></label>
-                <select
-                  id="practice-area"
-                  name="practice-area"
-                  required
-                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent text-sm bg-white"
-                >
-                  <option value="">Select a practice area</option>
-                  <option>Divorce (Uncontested)</option>
-                  <option>Divorce (Contested)</option>
-                  <option>High-Net-Worth Divorce</option>
-                  <option>Divorce Involving a Business</option>
-                  <option>Divorce for Professionals</option>
-                  <option>Child Custody</option>
-                  <option>Child Custody Modification</option>
-                  <option>Spousal Support / Alimony</option>
-                  <option>Asset Division</option>
-                  <option>Other Family Law Matter</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="preferred-contact" class="block text-sm font-medium text-gray-700 mb-1.5">Preferred Contact Method</label>
-                <div class="flex gap-4">
-                  {["Phone Call", "Email", "Either"].map(method => (
-                    <label class="flex items-center gap-2 cursor-pointer">
-                      <input type="radio" name="preferred-contact" value={method} class="accent-[#0D6E6E]" />
-                      <span class="text-sm text-gray-700">{method}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1.5">Brief Summary of Your Situation</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  placeholder="Share as much or as little as you're comfortable with. All information is confidential."
-                  class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#0D6E6E] focus:border-transparent placeholder-gray-400 text-sm resize-none"
-                ></textarea>
-              </div>
-
-              <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
-                <p class="text-xs text-gray-500">
-                  By submitting this form, you agree to be contacted by Child Custody with a Plan. Submitting this form does not create an attorney-client relationship. Do not include confidential information until a formal engagement is established.
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full bg-[#0D6E6E] hover:bg-[#0a5a5a] text-white font-bold py-4 px-6 rounded-lg transition-colors text-lg"
-              >
-                Request Free Consultation
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="lg:col-span-2 space-y-6">
-
-          <!-- Call CTA -->
-          <div class="bg-[#0D6E6E] rounded-2xl p-6 text-white">
-            <h3 class="text-xl font-bold mb-2">Prefer to Call?</h3>
-            <p class="text-white/75 text-sm mb-4">Speak directly with our team — no waiting, no runaround.</p>
-            <a href="tel:3012898917" class="block text-center bg-[#D4A843] hover:bg-[#b8902f] text-white font-bold py-3 px-6 rounded-lg transition-colors text-xl">
-              (301) 289-8917
-            </a>
-            <p class="text-center text-white/60 text-xs mt-2">Mon–Fri · 9AM–9PM</p>
-          </div>
-
-          <!-- Offices -->
-          <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">Our Offices</h3>
-            <div class="space-y-5">
-              <div>
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="text-[#D4A843]">📍</span>
-                  <p class="font-bold text-gray-900">Rockville Office</p>
-                </div>
-                <p class="text-gray-600 text-sm pl-6">100 Park Ave, Suite 205<br />Rockville, MD 20850</p>
-                <p class="text-gray-500 text-xs pl-6 mt-1">Near Rockville Metro Station</p>
-              </div>
-              <div class="border-t border-gray-100 pt-4">
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="text-[#D4A843]">📍</span>
-                  <p class="font-bold text-gray-900">Baltimore Office</p>
-                </div>
-                <p class="text-gray-600 text-sm pl-6">1537 Light St, Suite 100<br />Baltimore, MD 21230</p>
-                <p class="text-gray-500 text-xs pl-6 mt-1">Federal Hill neighborhood</p>
+                <h3 class="font-bold text-slate-900">Email</h3>
+                <a href="mailto:info@josephialaw.com" class="text-amber-600 hover:text-amber-700">info@josephialaw.com</a>
               </div>
             </div>
           </div>
 
-          <!-- What to Expect -->
-          <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">What to Expect</h3>
-            <ul class="space-y-3 text-sm">
-              {[
-                { icon: "⏱️", text: "30–45 minute consultation with an attorney (not a paralegal)" },
-                { icon: "🔒", text: "Strictly confidential — protected by attorney-client privilege" },
-                { icon: "💬", text: "Honest assessment of your situation and realistic options" },
-                { icon: "📋", text: "Clear explanation of Maryland law applicable to your case" },
-                { icon: "✅", text: "No pressure — decide to hire us on your own terms" }
-              ].map(item => (
-                <li class="flex items-start gap-3">
-                  <span class="text-lg flex-shrink-0">{item.icon}</span>
-                  <span class="text-gray-600">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <!-- Areas Served -->
-          <div class="bg-[#D4A843]/10 rounded-2xl border border-[#D4A843]/20 p-5">
-            <h3 class="font-bold text-gray-900 mb-3">Areas We Serve</h3>
+          <div class="bg-white rounded-xl p-6 border border-slate-200 mb-6">
+            <h3 class="font-bold text-slate-900 mb-3">Areas We Serve</h3>
             <div class="flex flex-wrap gap-2">
               {[
-                "Montgomery County",
-                "Baltimore City",
-                "Baltimore County",
-                "Howard County",
-                "Prince George's County",
-                "Anne Arundel County",
-                "Frederick County",
-                "All Maryland Counties"
-              ].map(area => (
-                <span class="text-xs bg-white text-gray-700 border border-[#D4A843]/30 rounded-full px-3 py-1">{area}</span>
+                "Montgomery County", "Baltimore City", "Baltimore County",
+                "Howard County", "Prince George's County", "Anne Arundel County",
+                "Frederick County", "Carroll County", "Harford County"
+              ].map(county => (
+                <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full">{county}</span>
               ))}
             </div>
           </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 class="font-bold text-amber-800 mb-2">Your Privacy Is Protected</h3>
+            <p class="text-amber-700 text-sm">Everything you share with us is protected by attorney-client privilege. We handle all family law matters with complete discretion and professionalism.</p>
+          </div>
         </div>
+
+        <!-- Consultation Form -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Request Your Free Consultation</h2>
+          <form action="#" method="POST" class="space-y-5">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="first-name" class="block text-sm font-medium text-slate-700 mb-1">First Name *</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first_name"
+                  required
+                  class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                  placeholder="Jane"
+                />
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium text-slate-700 mb-1">Last Name *</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last_name"
+                  required
+                  class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                  placeholder="Smith"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                placeholder="jane@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                placeholder="(240) 555-0100"
+              />
+            </div>
+
+            <div>
+              <label for="matter-type" class="block text-sm font-medium text-slate-700 mb-1">Type of Legal Matter *</label>
+              <select
+                id="matter-type"
+                name="matter_type"
+                required
+                class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+              >
+                <option value="">Select a practice area...</option>
+                <option value="divorce">Divorce</option>
+                <option value="high-asset-divorce">High-Asset / High-Net-Worth Divorce</option>
+                <option value="business-divorce">Divorce Involving a Business</option>
+                <option value="professional-divorce">Divorce for Professionals</option>
+                <option value="child-custody">Child Custody</option>
+                <option value="custody-modification">Child Custody Modification</option>
+                <option value="spousal-support">Spousal Support / Alimony</option>
+                <option value="asset-division">Asset Division</option>
+                <option value="other">Other Family Law Matter</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="county" class="block text-sm font-medium text-slate-700 mb-1">County Where Your Case Will Be Filed</label>
+              <select
+                id="county"
+                name="county"
+                class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+              >
+                <option value="">Select a county...</option>
+                <option value="montgomery">Montgomery County</option>
+                <option value="baltimore-city">Baltimore City</option>
+                <option value="baltimore-county">Baltimore County</option>
+                <option value="howard">Howard County</option>
+                <option value="prince-georges">Prince George's County</option>
+                <option value="anne-arundel">Anne Arundel County</option>
+                <option value="frederick">Frederick County</option>
+                <option value="harford">Harford County</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Brief Description of Your Situation</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                placeholder="Please share a brief overview of your situation. All information is kept strictly confidential."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="preferred-contact" class="block text-sm font-medium text-slate-700 mb-1">Preferred Contact Method</label>
+              <div class="flex gap-4">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="preferred_contact" value="phone" class="accent-amber-500" checked /> Phone
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="preferred_contact" value="email" class="accent-amber-500" /> Email
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="preferred_contact" value="either" class="accent-amber-500" /> Either
+                </label>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+            >
+              Request Free Consultation
+            </button>
+
+            <p class="text-xs text-slate-400 text-center">
+              By submitting this form, you agree to be contacted by Divorce With A Plan regarding your legal matter. Submission does not create an attorney-client relationship.
+            </p>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Trust Signals -->
-  <section class="py-14 bg-white border-t border-gray-100">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-2xl font-bold text-gray-900 text-center mb-10">Why Clients Choose Child Custody with a Plan</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <!-- What to Expect -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">What to Expect at Your Consultation</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Our consultations are designed to be informative, productive, and completely confidential.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
         {[
-          { icon: "🏆", title: "Strategy First", desc: "Every case begins with our proprietary PROMISE Framework — a clear plan built before we file a single document." },
-          { icon: "⚖️", title: "Proven Results", desc: "Our attorneys have successfully tried contested cases exceeding $2M in marital assets." },
-          { icon: "🔒", title: "Complete Discretion", desc: "We treat every case with the confidentiality and sensitivity it deserves — especially for professionals and executives." },
-          { icon: "🤝", title: "Compassionate Advocacy", desc: "Legal strategy with genuine empathy. We fight hard for you while keeping your wellbeing front of mind." }
-        ].map(trust => (
+          { icon: "📋", title: "Case Overview", desc: "We listen to your situation without judgment and ask clarifying questions to understand the full picture." },
+          { icon: "⚖️", title: "Legal Assessment", desc: "We explain how Maryland law applies to your specific circumstances and what options are available to you." },
+          { icon: "🗺️", title: "Strategic Roadmap", desc: "We outline a preliminary strategy and give you a realistic picture of the process, timeline, and outcomes." },
+          { icon: "💬", title: "Your Questions Answered", desc: "We answer every question you have — so you leave feeling informed and empowered, not overwhelmed." }
+        ].map(item => (
           <div class="text-center">
-            <div class="text-4xl mb-3">{trust.icon}</div>
-            <h3 class="font-bold text-gray-900 mb-2">{trust.title}</h3>
-            <p class="text-gray-600 text-sm">{trust.desc}</p>
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-slate-600 text-sm">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- What to Bring -->
+  <section class="py-16 px-4 bg-slate-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6">What to Bring to Your Consultation</h2>
+      <p class="text-slate-600 mb-8">Don't worry about gathering everything — but if you have these items available, they'll help us have a more productive conversation:</p>
+      <div class="grid md:grid-cols-2 gap-4 text-left">
+        {[
+          "Marriage certificate (if applicable)",
+          "Recent tax returns (last 2-3 years)",
+          "Recent pay stubs or income documentation",
+          "A list of major marital assets (real estate, retirement accounts, investments)",
+          "Any existing court orders related to your family law matter",
+          "Names and ages of your children (if applicable)",
+          "Any prenuptial or postnuptial agreement",
+          "Timeline of key events in your marriage"
+        ].map(item => (
+          <div class="flex items-start gap-3 bg-white p-4 rounded-lg border border-slate-200">
+            <span class="text-amber-500 font-bold mt-0.5">✓</span>
+            <span class="text-slate-700 text-sm">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>

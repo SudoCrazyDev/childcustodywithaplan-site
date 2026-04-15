@@ -1,202 +1,135 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const articles = [
+const posts = [
   {
-    category: "Divorce",
-    title: "Maryland Divorce Law 2024: What Changed and What It Means for You",
-    excerpt: "Maryland's divorce law underwent significant changes in October 2023. The 'limited divorce' was eliminated, new grounds were added, and separation requirements changed. Here's what every Maryland resident needs to know.",
-    tags: ["Divorce", "Maryland Law", "2024 Updates"],
-    readTime: "6 min read",
-    href: "/blog/maryland-divorce-law-changes-2024"
+    slug: "maryland-divorce-law-changes-2023",
+    title: "Maryland's 2023 Divorce Law Changes: What You Need to Know",
+    date: "March 15, 2024",
+    category: "Divorce Law",
+    excerpt: "Maryland dramatically simplified divorce in October 2023, eliminating the old limited divorce and creating new no-fault grounds. Here's what changed and how it affects your case.",
+    readTime: "5 min read"
   },
   {
-    category: "Child Custody",
-    title: "The Best Interests Standard in Maryland: A Parent's Complete Guide",
-    excerpt: "Every custody decision in Maryland is guided by one overriding principle: the best interests of the child. But what does that actually mean in practice? We break down the 12 factors Maryland courts consider.",
-    tags: ["Child Custody", "Best Interests", "Maryland Courts"],
-    readTime: "8 min read",
-    href: "/blog/best-interests-standard-maryland"
-  },
-  {
+    slug: "equitable-distribution-maryland",
+    title: "Equitable Distribution in Maryland: Fair Doesn't Mean Equal",
+    date: "February 28, 2024",
     category: "Asset Division",
-    title: "Equitable Distribution in Maryland: 'Fair' Doesn't Mean '50/50'",
-    excerpt: "Many people assume divorce means splitting everything down the middle. Maryland's equitable distribution law is far more nuanced — and understanding it can significantly affect your financial outcome.",
-    tags: ["Asset Division", "Property", "Maryland Law"],
-    readTime: "7 min read",
-    href: "/blog/equitable-distribution-maryland"
+    excerpt: "Maryland divides marital property equitably — not equally. Understanding the factors courts consider can make a major difference in your divorce outcome.",
+    readTime: "7 min read"
   },
   {
-    category: "Spousal Support",
-    title: "Maryland Alimony: Who Gets It, How Much, and For How Long",
-    excerpt: "Alimony is one of the most contested issues in Maryland divorce. This guide explains the three types of alimony, the 12 factors courts consider, and strategies for both payors and recipients.",
-    tags: ["Alimony", "Spousal Support", "Divorce"],
-    readTime: "9 min read",
-    href: "/blog/maryland-alimony-guide"
-  },
-  {
-    category: "High-Net-Worth Divorce",
-    title: "Business Valuation in Divorce: What Maryland Business Owners Need to Know",
-    excerpt: "If you own a business and are going through divorce, the valuation of that business may be the single most important financial issue in your case. Three methods, countless variables — here's how to protect your interests.",
-    tags: ["Business Divorce", "Valuation", "High-Asset"],
-    readTime: "10 min read",
-    href: "/blog/business-valuation-divorce-maryland"
-  },
-  {
+    slug: "child-custody-best-interests",
+    title: "How Maryland Courts Determine Child Custody: The Best Interests Standard Explained",
+    date: "February 10, 2024",
     category: "Child Custody",
-    title: "Parenting Plans in Maryland: What Every Co-Parent Should Include",
-    excerpt: "A vague parenting plan is a future conflict waiting to happen. We outline the essential components of a strong Maryland parenting plan — from holiday schedules to decision-making protocols.",
-    tags: ["Parenting Plan", "Co-Parenting", "Child Custody"],
-    readTime: "7 min read",
-    href: "/blog/parenting-plan-maryland-guide"
+    excerpt: "Maryland judges evaluate a comprehensive list of factors when deciding custody. Here's what they look for and how to present your strongest case.",
+    readTime: "8 min read"
   },
   {
-    category: "Divorce",
-    title: "Uncontested vs. Contested Divorce in Maryland: Which Path Is Right for You?",
-    excerpt: "Many divorcing couples assume they need a contentious courtroom battle. Often, an uncontested approach saves time, money, and emotional energy. But it's not right for everyone — here's how to decide.",
-    tags: ["Contested Divorce", "Uncontested Divorce", "Maryland"],
-    readTime: "6 min read",
-    href: "/blog/contested-vs-uncontested-divorce-maryland"
+    slug: "high-asset-divorce-mistakes",
+    title: "5 Costly Mistakes in High-Asset Maryland Divorces (And How to Avoid Them)",
+    date: "January 22, 2024",
+    category: "High-Net-Worth Divorce",
+    excerpt: "When significant assets are at stake, even small legal missteps can cost you hundreds of thousands of dollars. Our attorneys share the most common mistakes they see — and how to avoid them.",
+    readTime: "9 min read"
   },
   {
-    category: "Custody Modification",
+    slug: "spousal-support-maryland-guide",
+    title: "The Complete Guide to Spousal Support in Maryland",
+    date: "January 8, 2024",
+    category: "Spousal Support",
+    excerpt: "From pendente lite to indefinite alimony — everything you need to know about how Maryland courts determine if spousal support is awarded and how much.",
+    readTime: "10 min read"
+  },
+  {
+    slug: "business-valuation-divorce",
+    title: "Business Valuation in Maryland Divorce: What Business Owners Must Know",
+    date: "December 18, 2023",
+    category: "Business Divorce",
+    excerpt: "If you or your spouse owns a business, it may be the most valuable — and most contested — asset in your divorce. Here's how business valuation works in Maryland.",
+    readTime: "8 min read"
+  },
+  {
+    slug: "custody-modification-material-change",
     title: "When Can You Modify a Custody Order in Maryland?",
-    excerpt: "Custody orders aren't permanent. If your circumstances have significantly changed since your order was entered, you may be entitled to a modification. Learn what qualifies as a 'material change.'",
-    tags: ["Modification", "Child Custody", "Maryland Courts"],
-    readTime: "6 min read",
-    href: "/blog/modify-custody-order-maryland"
+    date: "December 5, 2023",
+    category: "Child Custody",
+    excerpt: "Life changes — and sometimes custody orders need to change with it. Learn what constitutes a 'material change in circumstances' under Maryland law.",
+    readTime: "6 min read"
   },
   {
-    category: "Divorce for Professionals",
-    title: "Protecting Your Professional License in a Maryland Divorce",
-    excerpt: "Doctors, attorneys, accountants, and other licensed professionals face unique divorce risks — not just financial, but professional. Here's what you need to know about protecting your license and reputation.",
-    tags: ["Professional Divorce", "License Protection", "High Earners"],
-    readTime: "8 min read",
-    href: "/blog/protect-professional-license-divorce-maryland"
+    slug: "divorce-for-doctors-maryland",
+    title: "Divorce for Maryland Physicians: Protecting Your Practice and Income",
+    date: "November 20, 2023",
+    category: "Professional Divorce",
+    excerpt: "Medical professionals face unique divorce challenges: practice valuation, professional goodwill, complex income structures. Here's what every Maryland physician needs to know.",
+    readTime: "7 min read"
+  },
+  {
+    slug: "what-to-expect-first-consultation",
+    title: "What to Expect at Your First Divorce Attorney Consultation in Maryland",
+    date: "November 7, 2023",
+    category: "Getting Started",
+    excerpt: "Your first meeting with a divorce attorney can feel overwhelming. We walk you through exactly what to bring, what to ask, and what to expect.",
+    readTime: "5 min read"
   }
 ];
 
-const categories = ["All", "Divorce", "Child Custody", "Asset Division", "Spousal Support", "High-Net-Worth Divorce", "Custody Modification", "Divorce for Professionals"];
-
-const resources = [
-  {
-    icon: "📋",
-    title: "Maryland Divorce Checklist",
-    desc: "A comprehensive list of documents, decisions, and steps to take before filing for divorce in Maryland.",
-    type: "Free Checklist"
-  },
-  {
-    icon: "👨‍👩‍👧",
-    title: "Parenting Plan Template",
-    desc: "A detailed Maryland-specific parenting plan template covering schedules, holidays, communication, and decision-making.",
-    type: "Free Template"
-  },
-  {
-    icon: "💰",
-    title: "Maryland Child Support Calculator Guide",
-    desc: "Understand how Maryland calculates child support — income shares method, adjustments, and what to expect.",
-    type: "Free Guide"
-  },
-  {
-    icon: "📊",
-    title: "Asset Inventory Worksheet",
-    desc: "Document all marital and non-marital assets to prepare for equitable distribution discussions.",
-    type: "Free Worksheet"
-  }
-];
+const categories = ["All", "Divorce Law", "Asset Division", "Child Custody", "High-Net-Worth Divorce", "Spousal Support", "Business Divorce", "Professional Divorce", "Getting Started"];
 ---
 
 <BaseLayout
-  title="Maryland Divorce & Family Law Resources | Blog & Guides | Child Custody with a Plan"
-  description="Expert guides, checklists, and articles on Maryland divorce, child custody, spousal support, and asset division from the attorneys at Child Custody with a Plan."
-  ogTitle="Maryland Family Law Blog & Resources | Child Custody with a Plan"
-  ogDescription="Free guides, checklists, and expert articles on Maryland divorce law, child custody, spousal support, and asset division from experienced Maryland family law attorneys."
+  title="Maryland Divorce & Family Law Blog | Divorce With A Plan"
+  description="Expert insights on Maryland divorce law, child custody, asset division, spousal support, and high-asset divorce from the attorneys at Divorce With A Plan in Rockville, MD."
+  ogTitle="Maryland Divorce & Family Law Blog | Divorce With A Plan"
+  ogDescription="Practical legal guidance on Maryland divorce and family law from experienced attorneys. Read articles on custody, asset division, spousal support, and more."
 >
-
   <!-- Hero -->
-  <section class="relative bg-[#0D6E6E] text-white py-16 md:py-20">
-    <div class="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-repeat"></div>
-    <div class="relative max-w-5xl mx-auto px-6 text-center">
-      <p class="text-[#D4A843] font-semibold uppercase tracking-widest text-sm mb-3">Knowledge is Power</p>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
-        Maryland Family Law<br class="hidden md:block" /> Resource Hub
-      </h1>
-      <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        Expert articles, free checklists, and practical guides from the attorneys at Child Custody with a Plan — because informed clients make better decisions.
+  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-16 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="text-amber-400 uppercase tracking-widest text-sm font-semibold mb-3">Maryland Family Law Insights</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Divorce & Family Law Blog</h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+        Practical legal guidance from Maryland's experienced divorce attorneys. Stay informed about the laws that affect your case.
       </p>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <div class="bg-gray-50 border-b border-gray-200">
-    <div class="max-w-5xl mx-auto px-6 py-3">
-      <nav class="text-sm text-gray-500">
-        <a href="/" class="hover:text-[#0D6E6E]">Home</a>
-        <span class="mx-2">/</span>
-        <span class="text-gray-800 font-medium">Resources & Blog</span>
-      </nav>
-    </div>
-  </div>
-
-  <!-- Free Resources Banner -->
-  <section class="py-10 bg-[#D4A843]/10 border-b border-[#D4A843]/20">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-7">
-        <h2 class="text-2xl font-bold text-gray-900">Free Resources for Maryland Families</h2>
-        <p class="text-gray-600 mt-1">Download these free tools to help you navigate your situation.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {resources.map(resource => (
-          <div class="bg-white rounded-xl p-5 border border-[#D4A843]/20 shadow-sm">
-            <div class="text-3xl mb-3">{resource.icon}</div>
-            <span class="text-xs font-semibold text-[#D4A843] bg-[#D4A843]/10 px-2 py-0.5 rounded-full">{resource.type}</span>
-            <h3 class="font-bold text-gray-900 mt-2 mb-1">{resource.title}</h3>
-            <p class="text-gray-600 text-xs mb-3">{resource.desc}</p>
-            <a href="/free-consultation" class="text-xs text-[#0D6E6E] font-semibold hover:underline">Get Free Access →</a>
-          </div>
+  <!-- Categories -->
+  <section class="bg-white border-b border-slate-200 py-4 px-4 sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        {categories.map(cat => (
+          <span class={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors ${cat === 'All' ? 'bg-amber-500 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}>
+            {cat}
+          </span>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Articles -->
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900">Latest Articles & Guides</h2>
-          <p class="text-gray-600 mt-1">Expert insight from Maryland family law attorneys</p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          {["Divorce", "Child Custody", "Asset Division"].map(cat => (
-            <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200 hover:bg-[#0D6E6E]/10 hover:text-[#0D6E6E] cursor-pointer transition-colors">
-              {cat}
-            </span>
-          ))}
-        </div>
-      </div>
-
+  <!-- Blog Posts Grid -->
+  <section class="py-16 px-4 bg-slate-50">
+    <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map(article => (
-          <article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow group">
-            <div class="h-2 bg-[#0D6E6E]"></div>
+        {posts.map(post => (
+          <article class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-semibold text-[#0D6E6E] bg-[#0D6E6E]/10 px-2 py-1 rounded-full">{article.category}</span>
-                <span class="text-xs text-gray-400">{article.readTime}</span>
+                <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full">{post.category}</span>
+                <span class="text-xs text-slate-400">{post.readTime}</span>
               </div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0D6E6E] transition-colors leading-tight">
-                <a href={article.href}>{article.title}</a>
-              </h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">{article.excerpt}</p>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {article.tags.map(tag => (
-                  <span class="text-xs text-gray-500 bg-gray-50 border border-gray-200 px-2 py-0.5 rounded">{tag}</span>
-                ))}
+              <h2 class="text-lg font-bold text-slate-900 mb-3 leading-snug hover:text-amber-600 transition-colors">
+                <a href={`/blog/${post.slug}`}>{post.title}</a>
+              </h2>
+              <p class="text-slate-600 text-sm mb-4 leading-relaxed">{post.excerpt}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-slate-400">{post.date}</span>
+                <a href={`/blog/${post.slug}`} class="text-amber-600 hover:text-amber-700 text-sm font-semibold">
+                  Read More →
+                </a>
               </div>
-              <a href={article.href} class="text-sm font-semibold text-[#0D6E6E] hover:text-[#D4A843] transition-colors">
-                Read Article →
-              </a>
             </div>
           </article>
         ))}
@@ -204,56 +137,46 @@ const resources = [
     </div>
   </section>
 
-  <!-- Topics Grid -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-gray-900 text-center mb-3">Browse by Practice Area</h2>
-      <p class="text-gray-600 text-center mb-10">Find guides and articles specific to your legal situation.</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  <!-- Newsletter / CTA -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-2xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Have Questions About Your Specific Situation?</h2>
+        <p class="text-slate-300 mb-8">
+          Our blog covers general Maryland family law topics, but every case is unique. Schedule a free consultation to discuss your specific circumstances with one of our attorneys.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/free-consultation" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+            Book Free Consultation
+          </a>
+          <a href="tel:2402693592" class="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold py-3 px-8 rounded-lg transition-colors">
+            Call (240) 269-3592
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Topics -->
+  <section class="py-12 px-4 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">Explore by Practice Area</h2>
+      <div class="flex flex-wrap justify-center gap-3">
         {[
-          { title: "Divorce", count: "12 articles", icon: "⚖️", link: "/divorce" },
-          { title: "Child Custody", count: "15 articles", icon: "👨‍👩‍👧", link: "/child-custody" },
-          { title: "Asset Division", count: "8 articles", icon: "🏠", link: "/asset-division" },
-          { title: "Spousal Support", count: "6 articles", icon: "💰", link: "/spousal-support" },
-          { title: "High-Net-Worth Divorce", count: "9 articles", icon: "📈", link: "/high-net-worth-divorce" },
-          { title: "Business & Divorce", count: "7 articles", icon: "🏢", link: "/divorces-involving-businesses" },
-          { title: "Divorce for Professionals", count: "5 articles", icon: "💼", link: "/divorce-lawyer-for-professionals" },
-          { title: "Custody Modification", count: "4 articles", icon: "📋", link: "/child-custody-modification" }
+          { label: "Divorce", href: "/divorce" },
+          { label: "Asset Division", href: "/asset-division" },
+          { label: "Child Custody", href: "/child-custody" },
+          { label: "Child Custody Modification", href: "/child-custody-modification" },
+          { label: "Spousal Support", href: "/spousal-support" },
+          { label: "High-Net-Worth Divorce", href: "/high-net-worth-divorce" },
+          { label: "Business Divorce", href: "/divorces-involving-businesses" },
+          { label: "Divorce for Professionals", href: "/divorce-lawyer-for-professionals" }
         ].map(topic => (
-          <a href={topic.link} class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-[#0D6E6E]/30 transition-all group text-center">
-            <div class="text-3xl mb-3">{topic.icon}</div>
-            <h3 class="font-bold text-gray-900 group-hover:text-[#0D6E6E] transition-colors">{topic.title}</h3>
-            <p class="text-xs text-gray-500 mt-1">{topic.count}</p>
+          <a href={topic.href} class="bg-white border border-slate-200 text-slate-700 hover:border-amber-400 hover:text-amber-600 px-4 py-2 rounded-full text-sm transition-colors shadow-sm">
+            {topic.label}
           </a>
         ))}
       </div>
     </div>
   </section>
-
-  <!-- Newsletter / Consultation CTA -->
-  <section class="py-16 bg-[#0D6E6E]">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Have Specific Questions?</h2>
-      <p class="text-white/75 mb-8">Reading articles is a great start, but every family law situation is unique. Speak with a Maryland attorney who can give you advice tailored to your circumstances.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-consultation" class="bg-[#D4A843] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#b8902f] transition-colors">
-          Book Free Consultation
-        </a>
-        <a href="tel:3012898917" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D6E6E] transition-colors">
-          Call (301) 289-8917
-        </a>
-      </div>
-      <p class="text-white/50 text-sm mt-4">Mon–Fri 9AM–9PM · Rockville & Baltimore</p>
-    </div>
-  </section>
-
-  <!-- Disclaimer -->
-  <section class="py-8 bg-gray-50 border-t border-gray-200">
-    <div class="max-w-5xl mx-auto px-6">
-      <p class="text-xs text-gray-400 text-center">
-        <strong>Legal Disclaimer:</strong> The articles and resources on this page are for general informational purposes only and do not constitute legal advice. Reading these materials does not create an attorney-client relationship. Every legal situation is unique. Please consult with a licensed Maryland family law attorney for advice specific to your circumstances.
-      </p>
-    </div>
-  </section>
-
 </BaseLayout>
