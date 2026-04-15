@@ -7,21 +7,62 @@ const whatToExpect = [
   { title: 'Your Legal Rights', desc: 'Many people are surprised to learn what their rights actually are. We explain what the law entitles you to — and what it does not — in plain, understandable language.' },
   { title: 'A Path Forward', desc: 'By the end of your consultation, you will have a clearer picture of your options and, if we are the right fit, the beginning of a strategy for moving forward.' },
 ];
+
+const freeConsultSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/free-consultation/#webpage",
+      "url": "https://childcustodywithaplan.com/free-consultation",
+      "name": "Free Consultation — Maryland Child Custody & Family Law Attorney",
+      "description": "Schedule your free consultation with Child Custody with a Plan. Maryland family law attorneys serving Rockville and Baltimore. Get honest legal guidance on custody, divorce, and family law matters.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Free Consultation", "item": "https://childcustodywithaplan.com/free-consultation" }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Free Family Law Consultation Maryland",
+      "description": "Free initial consultation with an experienced Maryland family law attorney covering child custody, divorce, spousal support, and asset division.",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial consultation — no obligation"
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Free Consultation — Maryland Family Law Attorneys | Child Custody with a Plan"
-  description="Schedule your free consultation with Child Custody with a Plan. Our Maryland family law attorneys serve Rockville and Baltimore. Get honest legal guidance on custody, divorce, and family law matters."
+  title="Free Consultation — Maryland Child Custody &amp; Family Law Attorney"
+  description="Schedule your free consultation with Child Custody with a Plan. Maryland family law attorneys in Rockville &amp; Baltimore MD. Get honest legal guidance on child custody, divorce &amp; family law. Call (240) 326-7712."
+  canonicalURL="https://childcustodywithaplan.com/free-consultation"
+  ogImage="/images/hero-landing.webp"
+  schema={freeConsultSchema}
 >
   <section class="bg-teal py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="max-w-2xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">No Cost. No Obligation.</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Schedule Your Free Consultation
+          Free Consultation with a Maryland Family Law Attorney
         </h1>
         <p class="text-lg text-teal-100 leading-relaxed">
-          Take the first step toward clarity, strategy, and resolution. Your free consultation with a Maryland family law attorney is waiting — and it could change everything.
+          Take the first step toward clarity, strategy, and resolution. Your free consultation with a Maryland child custody or family law attorney is waiting — and it could change everything.
         </p>
       </div>
     </div>
@@ -29,7 +70,7 @@ const whatToExpect = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <span class="text-gray-800 font-medium">Free Consultation</span>
@@ -42,8 +83,8 @@ const whatToExpect = [
       <div class="grid lg:grid-cols-2 gap-14">
         <!-- Form -->
         <div>
-          <h2 class="font-serif text-2xl font-bold text-teal mb-2">Request Your Consultation</h2>
-          <p class="text-gray-600 text-sm mb-8 leading-relaxed">Fill out the form below and we will contact you within one business day to schedule your free, confidential consultation. You can also call us directly at <a href="tel:3012898917" class="text-teal font-semibold hover:text-gold">(301) 289-8917</a>.</p>
+          <h2 class="font-serif text-2xl font-bold text-teal mb-2">Request Your Free Consultation</h2>
+          <p class="text-gray-600 text-sm mb-8 leading-relaxed">Fill out the form below and we will contact you within one business day to schedule your free, confidential consultation with a Maryland family law attorney. You can also call us directly at <a href="tel:+12403267712" class="text-teal font-semibold hover:text-gold">(240) 326-7712</a>.</p>
 
           <form class="space-y-5" action="#" method="POST">
             <div class="grid sm:grid-cols-2 gap-5">
@@ -96,7 +137,7 @@ const whatToExpect = [
               <label for="preferred-office" class="block text-sm font-medium text-gray-700 mb-1.5">Preferred Office Location</label>
               <select id="preferred-office" name="preferred-office" class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent bg-white">
                 <option value="">No preference</option>
-                <option value="rockville">Rockville, MD</option>
+                <option value="rockville">Rockville, MD (Montgomery County)</option>
                 <option value="baltimore">Baltimore, MD</option>
                 <option value="virtual">Virtual / Phone Consultation</option>
               </select>
@@ -115,7 +156,7 @@ const whatToExpect = [
               Request My Free Consultation
             </button>
 
-            <p class="text-center text-sm text-gray-500">Or call us directly: <a href="tel:3012898917" class="text-teal font-semibold hover:text-gold">(301) 289-8917</a></p>
+            <p class="text-center text-sm text-gray-500">Or call us directly: <a href="tel:+12403267712" class="text-teal font-semibold hover:text-gold">(240) 326-7712</a></p>
           </form>
         </div>
 
@@ -172,9 +213,9 @@ const whatToExpect = [
 
           <div class="bg-gold p-6 rounded-sm text-white text-center">
             <p class="font-serif text-xl font-bold mb-2">Available Mon–Fri, 9AM–9PM</p>
-            <p class="text-white/90 text-sm mb-4">Extended hours designed to accommodate busy schedules.</p>
-            <a href="tel:3012898917" class="inline-block bg-white text-gold font-semibold px-6 py-3 rounded-sm text-sm hover:bg-gray-100 transition-colors uppercase tracking-wide">
-              Call (301) 289-8917
+            <p class="text-white/90 text-sm mb-4">Extended hours designed to accommodate busy schedules. Serving <a href="/child-custody" class="text-white underline">child custody</a> and <a href="/divorce" class="text-white underline">divorce</a> matters across all of Maryland.</p>
+            <a href="tel:+12403267712" class="inline-block bg-white text-gold font-semibold px-6 py-3 rounded-sm text-sm hover:bg-gray-100 transition-colors uppercase tracking-wide">
+              Call (240) 326-7712
             </a>
           </div>
         </div>

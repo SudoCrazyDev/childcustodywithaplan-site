@@ -50,7 +50,7 @@ const services = [
     desc: 'Your children\'s best interests are our highest priority. We fight for custody arrangements — physical and legal — that reflect your children\'s needs and your parental rights.',
     href: '/child-custody',
     icon: '👨‍👧',
-    features: ['Physical &amp; Legal Custody', 'Parenting Plans', 'Visitation Schedules', 'Guardian Ad Litem Matters'],
+    features: ['Physical &amp; Legal Custody', 'Parenting Plans', 'Visitation Schedules', 'Father Custody Rights Maryland'],
   },
   {
     title: 'Child Custody Modification',
@@ -60,11 +60,50 @@ const services = [
     features: ['Material Change of Circumstances', 'Relocation Cases', 'Emergency Modification', 'Agreement-Based Modifications'],
   },
 ];
+
+const servicesSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/services/#webpage",
+      "url": "https://childcustodywithaplan.com/services",
+      "name": "Maryland Family Law Services — Divorce & Child Custody Attorneys",
+      "description": "Comprehensive Maryland family law services: divorce, child custody, asset division, spousal support, high net worth divorce, and more. Serving Rockville and Baltimore.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Maryland Family Law Services",
+      "description": "Family law services offered by Child Custody with a Plan in Rockville and Baltimore, Maryland.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Divorce Attorney Maryland", "url": "https://childcustodywithaplan.com/divorce" },
+        { "@type": "ListItem", "position": 2, "name": "Asset Division Divorce Maryland", "url": "https://childcustodywithaplan.com/asset-division" },
+        { "@type": "ListItem", "position": 3, "name": "Business Divorce Maryland", "url": "https://childcustodywithaplan.com/divorces-involving-businesses" },
+        { "@type": "ListItem", "position": 4, "name": "Divorce for Professionals Maryland", "url": "https://childcustodywithaplan.com/divorce-lawyer-for-professionals" },
+        { "@type": "ListItem", "position": 5, "name": "High Net Worth Divorce Attorney Maryland", "url": "https://childcustodywithaplan.com/high-net-worth-divorce" },
+        { "@type": "ListItem", "position": 6, "name": "Spousal Support Lawyer Maryland", "url": "https://childcustodywithaplan.com/spousal-support" },
+        { "@type": "ListItem", "position": 7, "name": "Child Custody Attorney Maryland", "url": "https://childcustodywithaplan.com/child-custody" },
+        { "@type": "ListItem", "position": 8, "name": "Custody Modification Lawyer Maryland", "url": "https://childcustodywithaplan.com/child-custody-modification" }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Family Law Services — Maryland Divorce &amp; Child Custody Attorneys"
-  description="Child Custody with a Plan offers comprehensive Maryland family law services: divorce, child custody, asset division, spousal support, high net worth divorce, and more. Serving Rockville and Baltimore."
+  title="Maryland Family Law Services — Divorce &amp; Child Custody Attorneys"
+  description="Child Custody with a Plan offers comprehensive Maryland family law services: child custody, divorce, asset division, spousal support, high net worth divorce &amp; more. Rockville &amp; Baltimore. Free consultation."
+  canonicalURL="https://childcustodywithaplan.com/services"
+  ogImage="/images/hero-landing.webp"
+  schema={servicesSchema}
 >
   <!-- Hero -->
   <section class="bg-teal py-20 md:py-28">
@@ -75,7 +114,7 @@ const services = [
           Maryland Family Law Services
         </h1>
         <p class="text-lg text-teal-100 leading-relaxed">
-          From contested custody battles to complex high-asset divorces, our attorneys deliver strategic, results-driven representation across every major area of Maryland family law.
+          From contested custody battles to complex high-asset divorces, our Maryland attorneys deliver strategic, results-driven representation across every major area of Maryland family law — in Rockville, Baltimore, and all of Maryland.
         </p>
       </div>
     </div>
@@ -84,7 +123,7 @@ const services = [
   <!-- Breadcrumb -->
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal transition-colors">Home</a>
         <span>/</span>
         <span class="text-gray-800 font-medium">Services</span>
@@ -100,7 +139,7 @@ const services = [
         Family law matters are among the most consequential legal proceedings a person will ever face. The decisions made in the courtroom — or at the negotiating table — will shape your family's future for years to come.
       </p>
       <p class="text-gray-600 leading-relaxed">
-        At Child Custody with a Plan, we approach each practice area with the same commitment: thorough preparation, creative strategy, and unwavering advocacy. Explore our services below, then call us to discuss how we can help in your specific situation.
+        At Child Custody with a Plan, we approach each practice area with the same commitment: thorough preparation, creative strategy, and unwavering advocacy. Explore our Maryland family law services below, then <a href="/free-consultation" class="text-teal hover:text-gold font-medium">contact us</a> to discuss how we can help in your specific situation.
       </p>
     </div>
   </section>
@@ -160,7 +199,7 @@ const services = [
           </div>
         </div>
         <div class="bg-gray-50 p-8 rounded-sm">
-          <h3 class="font-serif text-xl font-bold text-teal mb-6">What to Expect When You Work with Us</h3>
+          <h3 class="font-serif text-xl font-bold text-teal mb-6">What to Expect When You Work with Our Maryland Family Law Attorneys</h3>
           <ul class="space-y-4">
             {[
               'A thorough initial consultation where we listen to your full story',

@@ -28,25 +28,78 @@ const protectionStrategies = [
   'Protecting minority ownership interests from undervaluation',
   'Addressing deferred compensation, carried interest, and equity not yet vested',
 ];
+
+const bizDivorceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/divorces-involving-businesses/#service",
+      "name": "Business Divorce Attorney Maryland",
+      "alternateName": ["Divorce Involving Business Maryland", "Business Valuation Divorce Lawyer Maryland"],
+      "serviceType": "Business Divorce Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" }
+      ],
+      "description": "Maryland attorneys specializing in divorce involving businesses. Complex business valuation, ownership disputes, and equitable distribution. Serving Rockville and Baltimore.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial consultation",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/divorces-involving-businesses"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/divorces-involving-businesses/#webpage",
+      "url": "https://childcustodywithaplan.com/divorces-involving-businesses",
+      "name": "Divorce Involving Businesses Maryland — Business Divorce Attorney | Child Custody with a Plan",
+      "description": "Maryland attorneys specializing in divorce involving businesses. Complex business valuation, ownership disputes, and equitable distribution in Rockville and Baltimore.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Divorces Involving Businesses", "item": "https://childcustodywithaplan.com/divorces-involving-businesses" }
+        ]
+      }
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Divorce Involving Businesses Maryland — Business Divorce Attorneys | Child Custody with a Plan"
-  description="Maryland attorneys specializing in divorce involving businesses. We handle complex business valuation, ownership disputes, and equitable distribution in Rockville and Baltimore. Free consultation."
+  title="Divorce Involving Businesses Maryland — Business Divorce Attorney"
+  description="Maryland business divorce attorney handling complex business valuation, ownership disputes &amp; equitable distribution. Protecting your business interests in Rockville &amp; Baltimore MD. Free consultation."
+  canonicalURL="https://childcustodywithaplan.com/divorces-involving-businesses"
+  ogImage="/images/divorces-involving-businesses.webp"
+  schema={bizDivorceSchema}
 >
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/divorces-involving-businesses.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="Divorces Involving Businesses Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Divorces Involving Businesses
+          Divorces Involving Businesses in Maryland
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           When a business is part of the marital estate, your divorce becomes exponentially more complex. Our Maryland business divorce attorneys bring the specialized knowledge needed to protect your ownership interests, business value, and financial legacy.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -54,7 +107,7 @@ const protectionStrategies = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -69,7 +122,7 @@ const protectionStrategies = [
       <div class="grid lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2 space-y-10">
           <div>
-            <h2 class="section-heading mb-4">The Unique Challenges of Business Divorce</h2>
+            <h2 class="section-heading mb-4">The Unique Challenges of Business Divorce in Maryland</h2>
             <div class="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 When a business is owned by one or both spouses during a marriage, divorce proceedings become significantly more involved than a typical property division case. Issues of ownership, valuation, contribution, and continuity must all be addressed — often simultaneously.
@@ -78,13 +131,13 @@ const protectionStrategies = [
                 Maryland courts treat business interests as potentially marital property, subject to equitable distribution. However, the legal and financial complexities of determining how much of a business is marital, how to value that interest, and how to divide it without destroying the business itself require an attorney with specific expertise in this area.
               </p>
               <p>
-                At Child Custody with a Plan, our Maryland divorce attorneys have experience handling divorces involving all types of business structures. We collaborate with business valuation experts, forensic accountants, and financial advisors to ensure that every dimension of your business interest is properly identified, valued, and protected.
+                At Child Custody with a Plan, our Maryland divorce attorneys have experience handling divorces involving all types of business structures. We collaborate with business valuation experts, forensic accountants, and financial advisors to ensure that every dimension of your business interest is properly identified, valued, and protected. See also our related services on <a href="/high-net-worth-divorce" class="text-teal hover:text-gold underline">high net worth divorce</a> and <a href="/asset-division" class="text-teal hover:text-gold underline">asset division in Maryland</a>.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-4">Types of Businesses We Handle</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-4">Types of Businesses We Handle in Maryland Divorce</h2>
             <div class="grid sm:grid-cols-2 gap-3">
               {businessTypes.map((type) => (
                 <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-sm">
@@ -96,7 +149,7 @@ const protectionStrategies = [
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Business Valuation Methods</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Business Valuation Methods in Maryland Divorce</h2>
             <p class="text-gray-600 mb-5 leading-relaxed">The first critical battleground in a business divorce is valuation. Different methods can produce dramatically different values — and the method chosen can significantly affect the outcome of your case.</p>
             <div class="space-y-4">
               {valuationMethods.map((vm) => (
@@ -109,7 +162,7 @@ const protectionStrategies = [
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-5">How We Protect Your Business Interests</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-5">How We Protect Your Business Interests in Divorce</h2>
             <div class="space-y-3">
               {protectionStrategies.map((strategy) => (
                 <div class="flex items-start gap-3 text-gray-700">
@@ -127,17 +180,17 @@ const protectionStrategies = [
               <h3 class="font-serif text-xl font-bold mb-4">Protect Your Business</h3>
               <p class="text-teal-100 text-sm mb-5 leading-relaxed">Business valuation disputes can be won or lost at the strategy stage. Contact us early for the best possible outcome.</p>
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(240) 326-7712</a>
             </div>
             <div class="bg-gray-50 p-6 rounded-sm">
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
-                  { label: 'Asset Division', href: '/asset-division' },
+                  { label: 'High Net Worth Divorce Maryland', href: '/high-net-worth-divorce' },
+                  { label: 'Asset Division Maryland', href: '/asset-division' },
                   { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
-                  { label: 'Divorce', href: '/divorce' },
-                  { label: 'Spousal Support', href: '/spousal-support' },
+                  { label: 'Divorce Attorney Maryland', href: '/divorce' },
+                  { label: 'Spousal Support Lawyer Maryland', href: '/spousal-support' },
                 ].map((link) => (
                   <li>
                     <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">

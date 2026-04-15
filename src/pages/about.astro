@@ -44,11 +44,76 @@ const promiseSteps = [
   { letter: 'S', word: 'Strategize', desc: 'Every decision fits within a deliberate, long-term strategic framework.' },
   { letter: 'E', word: 'Execute', desc: 'Flawless execution in court and at the negotiating table.' },
 ];
+
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://childcustodywithaplan.com/about/#webpage",
+      "url": "https://childcustodywithaplan.com/about",
+      "name": "About Child Custody with a Plan — Maryland Family Law Firm Since 2013",
+      "description": "Learn about Child Custody with a Plan, a Maryland family law firm founded in 2013. Serving Rockville, Baltimore, and all of Maryland with strategic, compassionate family law representation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "about": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://childcustodywithaplan.com/about" }
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://childcustodywithaplan.com/#organization",
+      "name": "Child Custody with a Plan",
+      "url": "https://childcustodywithaplan.com",
+      "foundingDate": "2013",
+      "description": "Maryland family law firm specializing in child custody, divorce, and family law. Offices in Rockville and Baltimore serving all of Maryland.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "100 Park Ave Suite 205",
+          "addressLocality": "Rockville",
+          "addressRegion": "MD",
+          "postalCode": "20850",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "1537 Light St #100",
+          "addressLocality": "Baltimore",
+          "addressRegion": "MD",
+          "postalCode": "21230",
+          "addressCountry": "US"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "(240) 326-7712",
+        "contactType": "customer service",
+        "availableLanguage": "English",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      },
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": "5" },
+      "areaServed": "Maryland"
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="About Child Custody with a Plan — Maryland Family Law Firm"
-  description="Learn about Child Custody with a Plan, a Maryland family law firm founded in 2013. Serving Rockville, Baltimore, and all of Maryland with strategic, compassionate family law representation."
+  title="About Child Custody with a Plan — Maryland Family Law Firm Since 2013"
+  description="Child Custody with a Plan is a Maryland family law firm founded in 2013. Strategic, compassionate family law representation for custody, divorce &amp; more. Offices in Rockville &amp; Baltimore MD."
+  canonicalURL="https://childcustodywithaplan.com/about"
+  ogImage="/images/hero-landing.webp"
+  schema={aboutSchema}
 >
   <!-- Hero -->
   <section class="bg-teal py-20 md:py-28">
@@ -56,7 +121,7 @@ const promiseSteps = [
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">About the Firm</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Where Child Custody Meets Strategy
+          Maryland Family Law Firm Serving Rockville &amp; Baltimore Since 2013
         </h1>
         <p class="text-lg text-teal-100 leading-relaxed">
           Child Custody with a Plan is a Maryland family law firm dedicated to empowering families with strategic legal representation, compassionate counsel, and proven results across Rockville, Baltimore, and all of Maryland.
@@ -68,7 +133,7 @@ const promiseSteps = [
   <!-- Breadcrumb -->
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal transition-colors">Home</a>
         <span>/</span>
         <span class="text-gray-800 font-medium">About</span>
@@ -91,7 +156,7 @@ const promiseSteps = [
               We recognized a gap in the family law space. Too many families were entering the legal system without a clear strategy, without a trusted advocate who truly understood their goals, and without the individualized attention their cases demanded. We set out to change that.
             </p>
             <p>
-              Today, from our offices in Rockville and Baltimore, we serve clients throughout Montgomery County, Baltimore City, Howard County, Prince George's County, Anne Arundel County, and beyond. Our practice spans divorce, child custody, asset division, high-net-worth divorce, spousal support, business divorce, and more.
+              Today, from our offices in Rockville and Baltimore, we serve clients throughout Montgomery County, Baltimore City, Howard County, Prince George's County, Anne Arundel County, and beyond. Our practice spans <a href="/child-custody" class="text-teal hover:text-gold underline">child custody</a>, <a href="/divorce" class="text-teal hover:text-gold underline">divorce</a>, <a href="/asset-division" class="text-teal hover:text-gold underline">asset division</a>, <a href="/high-net-worth-divorce" class="text-teal hover:text-gold underline">high-net-worth divorce</a>, <a href="/spousal-support" class="text-teal hover:text-gold underline">spousal support</a>, business divorce, and more.
             </p>
             <p>
               What has never changed is our approach: every case receives the full weight of our firm's resources, intellect, and dedication. Because for us, it is not just a case — it is your family's future.
@@ -118,19 +183,19 @@ const promiseSteps = [
             </div>
           </div>
           <div class="border-t border-gray-200 pt-8">
-            <h3 class="font-serif text-lg font-bold text-teal mb-3">Our Offices</h3>
+            <h3 class="font-serif text-lg font-bold text-teal mb-3">Our Maryland Offices</h3>
             <div class="space-y-3 text-sm text-gray-600">
               <div class="flex items-start gap-3">
                 <span class="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></span>
                 <div>
-                  <strong class="text-gray-800">Rockville, MD</strong><br/>
+                  <strong class="text-gray-800">Rockville, MD (Montgomery County)</strong><br/>
                   100 Park Ave Suite 205, Rockville, MD 20850
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <span class="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></span>
                 <div>
-                  <strong class="text-gray-800">Baltimore, MD</strong><br/>
+                  <strong class="text-gray-800">Baltimore, MD (Baltimore City)</strong><br/>
                   1537 Light St #100, Baltimore, MD 21230
                 </div>
               </div>
@@ -142,11 +207,11 @@ const promiseSteps = [
   </section>
 
   <!-- Our Values -->
-  <section class="py-20 bg-gray-50">
+  <section class="py-20 bg-gray-50" aria-labelledby="values-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">What We Stand For</p>
-        <h2 class="section-heading mb-4">Our Core Values</h2>
+        <h2 id="values-heading" class="section-heading mb-4">Our Core Values</h2>
         <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">These principles guide every interaction, every strategy, and every decision we make on behalf of our clients.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -162,11 +227,11 @@ const promiseSteps = [
   </section>
 
   <!-- PROMISE Framework -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-white" aria-labelledby="promise-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Our Process</p>
-        <h2 class="section-heading mb-4">The PROMISE Framework</h2>
+        <h2 id="promise-heading" class="section-heading mb-4">The PROMISE Framework</h2>
         <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
           Our proprietary PROMISE Framework is the backbone of every client representation. It is a seven-step, structured approach that transforms legal complexity into executable strategy.
         </p>
@@ -203,11 +268,11 @@ const promiseSteps = [
   </section>
 
   <!-- Areas Served -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-16 bg-gray-50" aria-labelledby="areas-heading">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
-        <h2 class="section-heading mb-4">Areas We Serve</h2>
-        <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">We represent clients throughout Maryland, with particular depth of experience in:</p>
+        <h2 id="areas-heading" class="section-heading mb-4">Maryland Areas We Serve</h2>
+        <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">Our family law attorneys serve clients throughout Maryland, with particular depth of experience in the following areas. <a href="/contact" class="text-teal hover:text-gold font-medium">Contact our team</a> to discuss your matter.</p>
       </div>
       <div class="flex flex-wrap justify-center gap-3">
         {['Montgomery County', 'Baltimore City', 'Baltimore County', 'Howard County', "Prince George's County", 'Anne Arundel County', 'Frederick County', 'Carroll County', 'Harford County', 'Washington D.C.', 'Northern Virginia', 'All of Maryland'].map((area) => (

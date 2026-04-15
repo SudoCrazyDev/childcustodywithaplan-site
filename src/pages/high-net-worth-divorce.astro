@@ -35,25 +35,107 @@ const whyChooseUs = [
     desc: 'When opposing parties are unreasonable, we are fully prepared to present a compelling case before a Maryland circuit court judge.',
   },
 ];
+
+const hnwSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/high-net-worth-divorce/#service",
+      "name": "High Net Worth Divorce Attorney Maryland",
+      "alternateName": [
+        "High Asset Divorce Lawyer Maryland",
+        "High Net Worth Divorce Attorney Rockville MD",
+        "High Net Worth Divorce Attorney Baltimore MD",
+        "Complex Asset Divorce Maryland"
+      ],
+      "serviceType": "High Net Worth Divorce Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" },
+        { "@type": "AdministrativeArea", "name": "Montgomery County, MD" },
+        { "@type": "AdministrativeArea", "name": "Bethesda, MD" },
+        { "@type": "AdministrativeArea", "name": "Potomac, MD" }
+      ],
+      "description": "Maryland high net worth divorce attorneys protecting complex assets, business interests, investments, and offshore accounts in high-asset divorce proceedings. Serving Rockville and Baltimore with strategic, discreet representation.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Confidential initial consultation",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/high-net-worth-divorce"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/high-net-worth-divorce/#webpage",
+      "url": "https://childcustodywithaplan.com/high-net-worth-divorce",
+      "name": "High Net Worth Divorce Attorney Maryland | Protecting Complex Wealth",
+      "description": "Maryland high net worth divorce attorneys protecting complex assets, business interests, and investments. Serving Rockville and Baltimore. Strategic, discreet representation. Free consultation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "High Net Worth Divorce", "item": "https://childcustodywithaplan.com/high-net-worth-divorce" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is property divided in a high net worth divorce in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maryland is an equitable distribution state, meaning marital property is divided fairly but not necessarily equally. In high net worth cases, courts consider all marital assets including real estate, investment portfolios, business interests, retirement accounts, and deferred compensation. Complex valuation of business interests and hidden asset discovery are often critical issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a special attorney for a high net worth divorce in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. High net worth divorces involve complex financial analysis, business valuation, forensic accounting, and sophisticated legal strategy that general family law practitioners may not be equipped to handle. An attorney with specific experience in high-asset Maryland divorces is essential to protecting your financial interests."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="High Net Worth Divorce Attorneys Maryland — Protecting Complex Wealth | Child Custody with a Plan"
-  description="Maryland high net worth divorce attorneys protecting complex assets, business interests, and investments. Serving Rockville and Baltimore. Strategic, discreet representation. Free consultation."
+  title="High Net Worth Divorce Attorney Maryland — Protecting Complex Wealth"
+  description="Maryland high net worth divorce attorney protecting complex assets, business interests &amp; investments. Serving Rockville &amp; Baltimore. Strategic, discreet representation. Free confidential consultation."
+  canonicalURL="https://childcustodywithaplan.com/high-net-worth-divorce"
+  ogImage="/images/high-net-worth-divorce.webp"
+  schema={hnwSchema}
 >
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/high-net-worth-divorce.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="High Net Worth Divorce Attorney Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          High Net Worth Divorce in Maryland
+          High Net Worth Divorce Attorney in Maryland
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           When significant wealth, complex assets, and sophisticated financial structures are involved, your divorce demands more than a general practitioner. Our Maryland high net worth divorce attorneys bring specialized expertise, strategic sophistication, and absolute discretion to protect everything you have built.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Confidential Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -61,7 +143,7 @@ const whyChooseUs = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -85,13 +167,13 @@ const whyChooseUs = [
                 In Maryland, property division in high-asset divorces involves painstaking analysis of what constitutes marital versus non-marital property, how to value complex assets, and what division structure produces the best after-tax, long-term outcome for our client.
               </p>
               <p>
-                At Child Custody with a Plan, we approach high net worth divorce with the same rigor we bring to all complex matters — but with a heightened awareness that the financial decisions made in your divorce will compound over decades. We get it right the first time.
+                At Child Custody with a Plan, we approach high net worth divorce with the same rigor we bring to all complex matters — but with a heightened awareness that the financial decisions made in your divorce will compound over decades. We get it right the first time. Our <a href="/asset-division" class="text-teal hover:text-gold underline">asset division attorneys</a> work alongside financial experts to protect your interests.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Complex Assets We Handle</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Complex Assets We Handle in High Net Worth Divorce</h2>
             <div class="grid sm:grid-cols-2 gap-3">
               {complexAssets.map((asset) => (
                 <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-sm">
@@ -130,12 +212,12 @@ const whyChooseUs = [
           </div>
 
           <div class="bg-teal-50 border-l-4 border-teal p-6">
-            <h3 class="font-serif text-xl font-bold text-teal mb-3">The Tax Dimension of High-Asset Divorce</h3>
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">The Tax Dimension of High-Asset Divorce in Maryland</h3>
             <p class="text-gray-600 text-sm leading-relaxed mb-3">
               In high net worth cases, the tax consequences of different property division structures can amount to hundreds of thousands of dollars. We work alongside your financial and tax advisors to ensure that settlement proposals are analyzed not just for their face value, but for their true after-tax economic impact.
             </p>
             <p class="text-gray-600 text-sm leading-relaxed">
-              From capital gains on real estate transfers to the tax treatment of retirement account divisions via QDRO, we make sure you understand the full financial picture before agreeing to any settlement.
+              From capital gains on real estate transfers to the tax treatment of retirement account divisions via QDRO, we make sure you understand the full financial picture before agreeing to any settlement. See also our page on <a href="/spousal-support" class="text-teal hover:text-gold font-medium">spousal support in high-asset Maryland divorces</a>.
             </p>
           </div>
         </div>
@@ -146,17 +228,17 @@ const whyChooseUs = [
               <h3 class="font-serif text-xl font-bold mb-4">Confidential Consultation</h3>
               <p class="text-teal-100 text-sm mb-5 leading-relaxed">High-asset matters require discretion from day one. Your consultation is completely confidential.</p>
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Schedule Consultation</a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(240) 326-7712</a>
             </div>
             <div class="bg-gray-50 p-6 rounded-sm">
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'Asset Division', href: '/asset-division' },
-                  { label: 'Business Divorce', href: '/divorces-involving-businesses' },
+                  { label: 'Asset Division Maryland', href: '/asset-division' },
+                  { label: 'Business Divorce Attorney', href: '/divorces-involving-businesses' },
                   { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
-                  { label: 'Spousal Support', href: '/spousal-support' },
-                  { label: 'Divorce', href: '/divorce' },
+                  { label: 'Spousal Support Maryland', href: '/spousal-support' },
+                  { label: 'Divorce Attorney Maryland', href: '/divorce' },
                 ].map((link) => (
                   <li>
                     <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">

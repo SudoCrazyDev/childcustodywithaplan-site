@@ -48,11 +48,67 @@ const attorneys = [
     focusAreas: ['Child Custody', 'Child Custody Modification', 'Divorce', 'Family Law', 'Domestic Matters'],
   },
 ];
+
+const attorneysSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/attorneys/#webpage",
+      "url": "https://childcustodywithaplan.com/attorneys",
+      "name": "Maryland Family Law Attorneys — Child Custody with a Plan Legal Team",
+      "description": "Meet the attorneys at Child Custody with a Plan. Experienced Maryland family law attorneys serving Rockville, Baltimore, and all of Maryland. Free consultations available.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Our Attorneys", "item": "https://childcustodywithaplan.com/attorneys" }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://childcustodywithaplan.com/attorneys/#monique",
+      "name": "Monique Nettleford-Bruce",
+      "jobTitle": "Family Law Attorney",
+      "description": "Maryland and Virginia licensed family law attorney specializing in child custody, divorce, and spousal support. Former Maryland Legal Aid staff attorney.",
+      "worksFor": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "American University Washington College of Law" },
+        { "@type": "CollegeOrUniversity", "name": "University of Arizona" }
+      ],
+      "knowsAbout": ["Child Custody Law Maryland", "Divorce Law Maryland", "Spousal Support", "Asset Division"],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Juris Doctor", "credentialCategory": "degree" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://childcustodywithaplan.com/attorneys/#aysia",
+      "name": "Aysia Stockton",
+      "jobTitle": "Family Law Attorney",
+      "description": "Maryland and Washington D.C. licensed family law attorney specializing in child custody, custody modification, and divorce. Former Deputy Clerk, Richmond General District Court.",
+      "worksFor": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Appalachian School of Law" },
+        { "@type": "CollegeOrUniversity", "name": "Clark Atlanta University" }
+      ],
+      "knowsAbout": ["Child Custody Maryland", "Child Custody Modification Maryland", "Divorce Law Maryland"],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Juris Doctor", "credentialCategory": "degree" }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Our Attorneys — Maryland Family Law Team | Child Custody with a Plan"
-  description="Meet the attorneys at Child Custody with a Plan. Monique Nettleford-Bruce and Aysia Stockton are experienced Maryland family law attorneys serving Rockville, Baltimore, and beyond. Free consultations available."
+  title="Our Maryland Family Law Attorneys | Child Custody with a Plan"
+  description="Meet the attorneys at Child Custody with a Plan — experienced Maryland family law attorneys in Rockville &amp; Baltimore. Child custody, divorce &amp; family law specialists. Free consultations available."
+  canonicalURL="https://childcustodywithaplan.com/attorneys"
+  ogImage="/images/hero-landing.webp"
+  schema={attorneysSchema}
 >
   <!-- Hero -->
   <section class="bg-teal py-20 md:py-28">
@@ -60,10 +116,10 @@ const attorneys = [
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">The Legal Team</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Dedicated Maryland Family Law Attorneys
+          Maryland Family Law Attorneys
         </h1>
         <p class="text-lg text-teal-100 leading-relaxed">
-          Our attorneys combine academic distinction, public service experience, and private practice excellence to deliver family law representation that is both strategic and deeply personal.
+          Our attorneys combine academic distinction, public service experience, and private practice excellence to deliver family law representation that is both strategic and deeply personal — across child custody, divorce, and all family law matters in Maryland.
         </p>
       </div>
     </div>
@@ -72,7 +128,7 @@ const attorneys = [
   <!-- Breadcrumb -->
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal transition-colors">Home</a>
         <span>/</span>
         <span class="text-gray-800 font-medium">Our Attorneys</span>
@@ -172,11 +228,11 @@ const attorneys = [
             </div>
 
             <div class="mt-10 bg-teal-50 p-6 rounded-sm border-l-4 border-teal">
-              <p class="text-teal font-semibold mb-2">Ready to work with our team?</p>
-              <p class="text-gray-600 text-sm mb-4">Schedule your free consultation to discuss your custody or family law matter with our attorneys.</p>
+              <p class="text-teal font-semibold mb-2">Ready to work with our Maryland family law team?</p>
+              <p class="text-gray-600 text-sm mb-4">Schedule your free consultation to discuss your <a href="/child-custody" class="text-teal hover:text-gold font-medium">custody</a> or <a href="/divorce" class="text-teal hover:text-gold font-medium">divorce</a> matter with our attorneys.</p>
               <div class="flex flex-wrap gap-3">
                 <a href="/free-consultation" class="btn-primary text-xs">Free Consultation</a>
-                <a href="tel:3012898917" class="btn-outline-teal text-xs">Call (301) 289-8917</a>
+                <a href="tel:+12403267712" class="btn-outline-teal text-xs">Call (240) 326-7712</a>
               </div>
             </div>
           </div>
@@ -190,7 +246,7 @@ const attorneys = [
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="section-heading mb-4">Our Commitment to Every Client</h2>
       <p class="text-gray-600 leading-relaxed mb-8">
-        Every attorney at Child Custody with a Plan is selected not only for legal excellence, but for their dedication to client empowerment and community service. We believe that the best family law attorneys combine sharp legal minds with genuine empathy for the families they serve.
+        Every attorney at Child Custody with a Plan is selected not only for legal excellence, but for their dedication to client empowerment and community service. We believe that the best Maryland family law attorneys combine sharp legal minds with genuine empathy for the families they serve.
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="/about" class="btn-outline-teal">About Our Firm</a>

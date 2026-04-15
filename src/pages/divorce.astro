@@ -18,26 +18,109 @@ const steps = [
   { num: '05', title: 'Trial (if needed)', desc: 'If negotiation fails, we present your case powerfully before the circuit court judge.' },
   { num: '06', title: 'Final Decree', desc: 'Upon resolution, the court issues a Judgment of Absolute Divorce, finalizing your legal separation.' },
 ];
+
+const divorceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/divorce/#service",
+      "name": "Divorce Attorney Maryland",
+      "alternateName": ["Maryland Divorce Lawyer", "Divorce Lawyer Rockville MD", "Divorce Attorney Baltimore MD"],
+      "serviceType": "Divorce Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" },
+        { "@type": "AdministrativeArea", "name": "Montgomery County, MD" },
+        { "@type": "AdministrativeArea", "name": "Baltimore County, MD" }
+      ],
+      "description": "Strategic divorce representation in Maryland for contested and uncontested matters. Protecting your rights from filing through final judgment. Offices in Rockville and Baltimore.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial divorce consultation",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/divorce"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/divorce/#webpage",
+      "url": "https://childcustodywithaplan.com/divorce",
+      "name": "Divorce Attorney Maryland — Strategic Divorce Representation | Child Custody with a Plan",
+      "description": "Experienced Maryland divorce attorneys serving Rockville and Baltimore. Strategic, compassionate divorce representation for contested and uncontested matters. Free consultation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Divorce", "item": "https://childcustodywithaplan.com/divorce" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the grounds for divorce in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maryland recognizes several grounds for absolute divorce, including 12-month separation, mutual consent (with a signed settlement agreement), irreconcilable differences (added in 2023), adultery, and cruelty or vicious conduct. Most modern Maryland divorces proceed on no-fault grounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a divorce take in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An uncontested Maryland divorce with a settlement agreement can be finalized in as little as 30-60 days. Contested divorces typically take 12-24 months depending on the complexity of issues and court scheduling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a lawyer for a divorce in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While you are not legally required to have an attorney, having an experienced Maryland divorce attorney is strongly recommended. Divorce involves complex issues including property division, child custody, and support that can have lasting financial and personal consequences."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Maryland Divorce Attorneys — Strategic Divorce Representation | Child Custody with a Plan"
-  description="Experienced Maryland divorce attorneys serving Rockville and Baltimore. Child Custody with a Plan provides strategic, compassionate divorce representation for contested and uncontested matters. Free consultation."
+  title="Divorce Attorney Maryland — Strategic Divorce Representation"
+  description="Experienced Maryland divorce attorney serving Rockville &amp; Baltimore. Child Custody with a Plan provides strategic, compassionate divorce representation for contested &amp; uncontested matters. Free consultation."
+  canonicalURL="https://childcustodywithaplan.com/divorce"
+  ogImage="/images/divorce.webp"
+  schema={divorceSchema}
 >
   <!-- Hero -->
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/divorce.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="Divorce Attorney Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Maryland Divorce Attorneys
+          Divorce Attorney in Maryland
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           Divorce is one of the most significant legal proceedings you will ever face. At Child Custody with a Plan, we provide the strategic representation, compassionate counsel, and decisive advocacy you need to protect your rights and secure your future.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -46,7 +129,7 @@ const steps = [
   <!-- Breadcrumb -->
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -72,7 +155,7 @@ const steps = [
                 Maryland recognizes two types of divorce: <strong>Absolute Divorce</strong> and <strong>Limited Divorce</strong>. An absolute divorce is a complete legal dissolution of the marriage, addressing all issues including property division, custody, and support. A limited divorce is a court-supervised separation that can address immediate needs such as support and custody but does not end the marriage.
               </p>
               <p>
-                At Child Custody with a Plan, our Maryland divorce attorneys handle both contested and uncontested matters. Whether you and your spouse are in agreement on all issues or facing contentious disputes over property, custody, and support, we provide the legal guidance and advocacy your situation requires.
+                At Child Custody with a Plan, our Maryland divorce attorneys handle both contested and uncontested matters. Whether you and your spouse are in agreement on all issues or facing contentious disputes over property, <a href="/child-custody" class="text-teal hover:text-gold underline">child custody</a>, and support, we provide the legal guidance and advocacy your situation requires.
               </p>
             </div>
           </div>
@@ -110,13 +193,32 @@ const steps = [
 
           <!-- Additional Content -->
           <div class="bg-teal-50 p-6 rounded-sm border-l-4 border-teal">
-            <h3 class="font-serif text-xl font-bold text-teal mb-3">Contested vs. Uncontested Divorce</h3>
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Contested vs. Uncontested Divorce in Maryland</h3>
             <p class="text-gray-600 text-sm leading-relaxed mb-3">
               An <strong>uncontested divorce</strong> occurs when both spouses agree on all issues — division of property, child custody, visitation, and support. These matters can often be resolved more efficiently and cost-effectively, and our firm helps clients reach fair, comprehensive marital settlement agreements.
             </p>
             <p class="text-gray-600 text-sm leading-relaxed">
               A <strong>contested divorce</strong> arises when spouses disagree on one or more key issues. These cases require skilled litigation and negotiation. Our attorneys are experienced trial lawyers who know how to present compelling cases in Maryland circuit courts.
             </p>
+          </div>
+
+          <!-- Related services links for internal linking -->
+          <div class="bg-gray-50 p-6 rounded-sm">
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Divorce-Related Legal Services</h3>
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Divorce in Maryland often intersects with several other legal matters. Our attorneys handle all related issues under one roof:</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {[
+                { label: 'Asset Division in Divorce', href: '/asset-division', desc: 'Equitable distribution of marital property' },
+                { label: 'Spousal Support / Alimony', href: '/spousal-support', desc: 'Seeking or defending alimony claims' },
+                { label: 'Child Custody', href: '/child-custody', desc: 'Physical and legal custody arrangements' },
+                { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce', desc: 'Complex asset divorce representation' },
+              ].map((item) => (
+                <a href={item.href} class="block bg-white p-4 border border-gray-200 hover:border-teal transition-colors rounded-sm group">
+                  <p class="font-semibold text-teal text-sm group-hover:text-gold transition-colors">{item.label}</p>
+                  <p class="text-gray-500 text-xs mt-1">{item.desc}</p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -129,8 +231,8 @@ const steps = [
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">
                 Schedule Consultation
               </a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">
-                (301) 289-8917
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">
+                (240) 326-7712
               </a>
             </div>
 
@@ -138,10 +240,10 @@ const steps = [
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'Asset Division', href: '/asset-division' },
-                  { label: 'Spousal Support', href: '/spousal-support' },
-                  { label: 'Child Custody', href: '/child-custody' },
-                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
+                  { label: 'Asset Division Maryland', href: '/asset-division' },
+                  { label: 'Spousal Support Lawyer Maryland', href: '/spousal-support' },
+                  { label: 'Child Custody Attorney Maryland', href: '/child-custody' },
+                  { label: 'High Net Worth Divorce Attorney', href: '/high-net-worth-divorce' },
                   { label: 'Business Divorce', href: '/divorces-involving-businesses' },
                 ].map((link) => (
                   <li>

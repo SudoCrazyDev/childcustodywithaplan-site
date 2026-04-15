@@ -21,25 +21,99 @@ const modificationSteps = [
   { num: '05', step: 'Negotiate or Litigate', desc: 'Many modifications are resolved through negotiation or mediation. When the other parent refuses a reasonable arrangement, we are fully prepared to litigate.' },
   { num: '06', step: 'Obtain the Revised Order', desc: 'A successful modification results in a new court order reflecting the updated custody arrangement, enforceable by the court.' },
 ];
+
+const modificationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/child-custody-modification/#service",
+      "name": "Custody Modification Lawyer Maryland",
+      "alternateName": ["Child Custody Modification Attorney Maryland", "Modify Custody Order Maryland"],
+      "serviceType": "Child Custody Modification Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" }
+      ],
+      "description": "Maryland custody modification attorneys helping parents seek or defend against changes to existing custody orders. Serving Rockville, Baltimore, and all of Maryland.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial consultation",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/child-custody-modification"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/child-custody-modification/#webpage",
+      "url": "https://childcustodywithaplan.com/child-custody-modification",
+      "name": "Custody Modification Lawyer Maryland | Child Custody with a Plan",
+      "description": "Maryland child custody modification attorneys helping parents seek or defend custody changes. Offices in Rockville and Baltimore. Free consultation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Child Custody Modification", "item": "https://childcustodywithaplan.com/child-custody-modification" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What qualifies as a material change in circumstances for custody modification in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A material change in circumstances is a significant change that affects the child's welfare since the last custody order. Common examples include a parent's relocation, change in employment, remarriage, the child's changing needs, evidence of abuse or neglect, and a parent's substance abuse problem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to modify a custody order in Maryland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The timeline varies. Emergency modifications can be heard within days. Agreed modifications may be processed within weeks. Contested modifications requiring a full hearing can take several months. An experienced Maryland custody modification attorney can help expedite the process."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Child Custody Modification Attorneys Maryland | Child Custody with a Plan"
-  description="Maryland child custody modification attorneys helping parents seek or defend against custody changes. Rockville and Baltimore offices. When circumstances change, your custody order should too. Free consultation."
+  title="Custody Modification Lawyer Maryland | Child Custody with a Plan"
+  description="Maryland custody modification lawyer helping parents seek or defend custody changes. Offices in Rockville &amp; Baltimore MD. When life changes, your custody order should too. Free consultation."
+  canonicalURL="https://childcustodywithaplan.com/child-custody-modification"
+  ogImage="/images/child-custody-modification.webp"
+  schema={modificationSchema}
 >
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/child-custody-modification.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="Child Custody Modification Lawyer Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Child Custody Modification in Maryland
+          Child Custody Modification Lawyer in Maryland
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           Life changes. When circumstances shift significantly after an initial custody order, Maryland law provides a pathway to modify that order to better reflect your children's current needs and your family's new reality. We help you navigate that process strategically and effectively.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -47,7 +121,7 @@ const modificationSteps = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -62,7 +136,7 @@ const modificationSteps = [
       <div class="grid lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2 space-y-10">
           <div>
-            <h2 class="section-heading mb-4">When Can a Custody Order Be Modified?</h2>
+            <h2 class="section-heading mb-4">When Can a Custody Order Be Modified in Maryland?</h2>
             <div class="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 In Maryland, an existing child custody order can be modified when a party demonstrates: (1) a material change in circumstances since the last custody order was entered, and (2) that a modification of custody would be in the child's best interests.
@@ -71,13 +145,13 @@ const modificationSteps = [
                 The "material change" requirement is a meaningful legal threshold — not every change in circumstances justifies revisiting a custody order. Courts are generally reluctant to disturb existing arrangements, as stability itself serves children's best interests. However, when a genuine material change has occurred, the court will conduct a fresh best-interests analysis.
               </p>
               <p>
-                Our Maryland child custody modification attorneys carefully evaluate whether the circumstances in your case meet this threshold — and build the most compelling possible case for the modification you need.
+                Our Maryland custody modification attorneys carefully evaluate whether the circumstances in your case meet this threshold — and build the most compelling possible case for the modification you need. We also handle related <a href="/child-custody" class="text-teal hover:text-gold underline">child custody</a> and <a href="/divorce" class="text-teal hover:text-gold underline">divorce matters</a> throughout Maryland.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Common Grounds for Custody Modification</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Common Grounds for Custody Modification in Maryland</h2>
             <div class="grid sm:grid-cols-2 gap-5">
               {materialChanges.map((mc) => (
                 <div class="bg-gray-50 border-l-4 border-gold p-5">
@@ -89,7 +163,7 @@ const modificationSteps = [
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">The Modification Process: Step by Step</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">The Custody Modification Process: Step by Step</h2>
             <div class="space-y-4">
               {modificationSteps.map((step) => (
                 <div class="flex gap-4 items-start">
@@ -121,7 +195,7 @@ const modificationSteps = [
           </div>
 
           <div class="bg-teal-50 border-l-4 border-teal p-6">
-            <h3 class="font-serif text-xl font-bold text-teal mb-3">Emergency Custody Modifications</h3>
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Emergency Custody Modifications in Maryland</h3>
             <p class="text-gray-600 text-sm leading-relaxed mb-3">
               In urgent situations — where a child is in immediate danger — Maryland courts can issue emergency temporary custody orders on an expedited basis, sometimes on the same day as filing. These orders provide immediate protection while a full hearing is scheduled.
             </p>
@@ -137,15 +211,15 @@ const modificationSteps = [
               <h3 class="font-serif text-xl font-bold mb-4">Has Something Changed?</h3>
               <p class="text-teal-100 text-sm mb-5 leading-relaxed">If your circumstances have changed since your custody order was entered, speak with our attorneys today about your modification options.</p>
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(240) 326-7712</a>
             </div>
             <div class="bg-gray-50 p-6 rounded-sm">
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'Child Custody', href: '/child-custody' },
-                  { label: 'Divorce', href: '/divorce' },
-                  { label: 'Spousal Support', href: '/spousal-support' },
+                  { label: 'Child Custody Attorney Maryland', href: '/child-custody' },
+                  { label: 'Divorce Attorney Maryland', href: '/divorce' },
+                  { label: 'Spousal Support Lawyer Maryland', href: '/spousal-support' },
                   { label: 'All Services', href: '/services' },
                 ].map((link) => (
                   <li>

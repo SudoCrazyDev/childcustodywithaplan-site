@@ -23,25 +23,103 @@ const factors = [
   'Tax consequences of proposed distribution',
   'Any prior marriage of each spouse',
 ];
+
+const assetDivisionSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/asset-division/#service",
+      "name": "Asset Division Divorce Maryland",
+      "alternateName": [
+        "Marital Property Division Maryland",
+        "Equitable Distribution Lawyer Maryland",
+        "Divorce Property Division Attorney Maryland"
+      ],
+      "serviceType": "Marital Asset Division Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" }
+      ],
+      "description": "Maryland asset division attorneys protecting your financial future in divorce. We handle complex marital property division including real estate, retirement accounts, business interests, and investment portfolios. Serving Rockville and Baltimore.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial consultation on asset division",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/asset-division"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/asset-division/#webpage",
+      "url": "https://childcustodywithaplan.com/asset-division",
+      "name": "Asset Division Divorce Maryland — Equitable Property Distribution | Child Custody with a Plan",
+      "description": "Maryland asset division attorneys protecting your financial future in divorce. Complex marital property division in Rockville and Baltimore. Free consultation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Asset Division", "item": "https://childcustodywithaplan.com/asset-division" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Maryland a 50/50 divorce state for asset division?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Maryland is an equitable distribution state, not a community property state. This means marital assets are divided fairly based on the circumstances of each case, but not necessarily 50/50. Courts weigh numerous factors including the length of the marriage, each spouse's contributions, and the financial circumstances of each party."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What counts as marital property in a Maryland divorce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Marital property in Maryland generally includes all property acquired by either spouse during the marriage, regardless of whose name it is in. This includes real estate, bank accounts, retirement accounts, investment portfolios, and business interests acquired during the marriage. Property owned before the marriage, inherited assets, and gifts from third parties are typically considered non-marital property."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Asset Division Attorneys Maryland — Equitable Property Distribution | Child Custody with a Plan"
-  description="Maryland asset division attorneys protecting your financial future in divorce. Child Custody with a Plan handles complex marital property division in Rockville and Baltimore. Free consultation."
+  title="Asset Division Divorce Maryland — Equitable Property Distribution"
+  description="Maryland asset division attorney protecting your financial future in divorce. Complex marital property division including real estate, retirement accounts &amp; businesses. Rockville &amp; Baltimore. Free consultation."
+  canonicalURL="https://childcustodywithaplan.com/asset-division"
+  ogImage="/images/asset-division.webp"
+  schema={assetDivisionSchema}
 >
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/asset-division.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="Asset Division Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
           Asset Division in Maryland Divorce
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           Maryland's equitable distribution law does not mean a simple 50/50 split. It means the court divides marital property in a way that is fair — given all the circumstances. Our attorneys fight to ensure that fairness works in your favor.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -49,7 +127,7 @@ const factors = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -64,7 +142,7 @@ const factors = [
       <div class="grid lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2 space-y-10">
           <div>
-            <h2 class="section-heading mb-4">Understanding Marital Property in Maryland</h2>
+            <h2 class="section-heading mb-4">Understanding Marital Property Division in Maryland</h2>
             <div class="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 Under Maryland law, property acquired during the marriage is generally considered <strong>marital property</strong> and subject to equitable distribution at divorce. However, the distinction between marital and non-marital (separate) property is not always straightforward — especially in long marriages or those involving inherited assets, gifts, and property brought into the marriage by one spouse.
@@ -73,13 +151,13 @@ const factors = [
                 <strong>Non-marital property</strong> — assets owned before the marriage, inherited assets, and gifts received from third parties — is generally excluded from division. However, when non-marital assets are commingled with marital funds, or when their value has increased due to the efforts of either spouse, they may become partially or fully marital in nature.
               </p>
               <p>
-                Our attorneys conduct thorough financial investigations to identify all marital property, trace the origin of all assets, and ensure nothing is overlooked or undervalued in the division process.
+                Our attorneys conduct thorough financial investigations to identify all marital property, trace the origin of all assets, and ensure nothing is overlooked or undervalued in the division process. In complex cases, we work alongside our <a href="/high-net-worth-divorce" class="text-teal hover:text-gold underline">high net worth divorce</a> team to maximize outcomes.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Types of Assets We Handle</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Types of Marital Assets We Handle</h2>
             <div class="grid sm:grid-cols-2 gap-4">
               {assetTypes.map((asset) => (
                 <div class="bg-gray-50 p-5 border-l-4 border-gold">
@@ -104,12 +182,12 @@ const factors = [
           </div>
 
           <div class="bg-teal-50 border-l-4 border-teal p-6 rounded-sm">
-            <h3 class="font-serif text-xl font-bold text-teal mb-3">Hidden Assets: We Find What Others Miss</h3>
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Hidden Assets in Maryland Divorce: We Find What Others Miss</h3>
             <p class="text-gray-600 text-sm leading-relaxed mb-3">
               In high-conflict divorces, spouses sometimes attempt to conceal assets — through undervalued businesses, hidden accounts, deferred compensation, or transfers to third parties. Our attorneys are skilled at identifying and addressing asset concealment.
             </p>
             <p class="text-gray-600 text-sm leading-relaxed">
-              We work with forensic accountants, business valuation experts, and financial analysts to uncover the complete picture of marital wealth and ensure you receive your fair share.
+              We work with forensic accountants, business valuation experts, and financial analysts to uncover the complete picture of marital wealth and ensure you receive your fair share. This service is closely connected to our <a href="/divorces-involving-businesses" class="text-teal hover:text-gold font-medium">business divorce</a> practice.
             </p>
           </div>
         </div>
@@ -120,16 +198,16 @@ const factors = [
               <h3 class="font-serif text-xl font-bold mb-4">Protect Your Financial Future</h3>
               <p class="text-teal-100 text-sm mb-5 leading-relaxed">Asset division decisions are permanent. Get the strategic representation you need before agreeing to anything.</p>
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(240) 326-7712</a>
             </div>
             <div class="bg-gray-50 p-6 rounded-sm">
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'Divorce', href: '/divorce' },
-                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
-                  { label: 'Business Divorce', href: '/divorces-involving-businesses' },
-                  { label: 'Spousal Support', href: '/spousal-support' },
+                  { label: 'Divorce Attorney Maryland', href: '/divorce' },
+                  { label: 'High Net Worth Divorce Maryland', href: '/high-net-worth-divorce' },
+                  { label: 'Business Divorce Attorney', href: '/divorces-involving-businesses' },
+                  { label: 'Spousal Support Lawyer Maryland', href: '/spousal-support' },
                   { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
                 ].map((link) => (
                   <li>

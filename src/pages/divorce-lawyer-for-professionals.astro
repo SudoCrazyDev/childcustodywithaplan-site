@@ -29,25 +29,78 @@ const uniqueChallenges = [
     desc: 'Many professionals operate under restrictive covenants. These agreements can affect business valuation, income potential, and post-divorce career options — all of which must be addressed in settlement.',
   },
 ];
+
+const profDivorceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/divorce-lawyer-for-professionals/#service",
+      "name": "Divorce Lawyer for Professionals Maryland",
+      "alternateName": ["Physician Divorce Attorney Maryland", "Executive Divorce Lawyer Maryland", "Professional Divorce Attorney Rockville MD"],
+      "serviceType": "Professional Divorce Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" }
+      ],
+      "description": "Maryland divorce attorneys specializing in divorce for doctors, executives, attorneys, and licensed professionals. Protecting complex income, business interests, and professional reputation. Serving Rockville and Baltimore.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial consultation",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/divorce-lawyer-for-professionals"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/divorce-lawyer-for-professionals/#webpage",
+      "url": "https://childcustodywithaplan.com/divorce-lawyer-for-professionals",
+      "name": "Divorce Lawyer for Professionals Maryland — Physician, Executive & Attorney Divorce",
+      "description": "Maryland divorce lawyers specializing in divorce for doctors, executives, attorneys, and professionals. Protecting complex income, business interests, and professional reputation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Divorce for Professionals", "item": "https://childcustodywithaplan.com/divorce-lawyer-for-professionals" }
+        ]
+      }
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Divorce Lawyer for Professionals Maryland — Physician, Executive &amp; Attorney Divorce | Child Custody with a Plan"
-  description="Maryland divorce lawyers specializing in divorce for doctors, executives, attorneys, and professionals. Protecting complex income, business interests, and professional reputation. Free consultation in Rockville or Baltimore."
+  title="Divorce Lawyer for Professionals Maryland — Physician &amp; Executive Divorce"
+  description="Maryland divorce lawyers specializing in divorce for doctors, executives, attorneys &amp; professionals. Protecting complex income, business interests &amp; professional reputation. Free consultation in Rockville or Baltimore."
+  canonicalURL="https://childcustodywithaplan.com/divorce-lawyer-for-professionals"
+  ogImage="/images/divorce-lawyer-for-professionals.webp"
+  schema={profDivorceSchema}
 >
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/divorce-lawyer-for-professionals.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="Divorce Lawyer for Professionals Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Divorce Lawyer for Professionals
+          Divorce Lawyer for Professionals in Maryland
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           As a professional — physician, attorney, executive, or business owner — your divorce involves stakes that go far beyond personal relationships. Your income, business interests, professional reputation, and career are all on the line. We understand your world.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -55,7 +108,7 @@ const uniqueChallenges = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -79,13 +132,13 @@ const uniqueChallenges = [
                 At Child Custody with a Plan, we represent Maryland professionals in divorce proceedings with a deep understanding of the unique legal, financial, and personal challenges involved. Our attorneys know how to analyze complex compensation packages, contest improper business valuations, and protect your professional reputation throughout the process.
               </p>
               <p>
-                We approach every professional divorce with the same strategic discipline we apply to all our cases — but with a heightened awareness of the career-specific dimensions that can make or break the outcome.
+                We approach every professional divorce with the same strategic discipline we apply to all our cases — but with a heightened awareness of the career-specific dimensions that can make or break the outcome. This often overlaps with our <a href="/high-net-worth-divorce" class="text-teal hover:text-gold underline">high net worth divorce</a> and <a href="/asset-division" class="text-teal hover:text-gold underline">asset division</a> practices.
               </p>
             </div>
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Professionals We Represent</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Professionals We Represent in Maryland Divorce</h2>
             <div class="grid sm:grid-cols-2 gap-6">
               {professionalTypes.map((prof) => (
                 <div class="bg-gray-50 p-5 rounded-sm border-b-2 border-gold">
@@ -105,7 +158,7 @@ const uniqueChallenges = [
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Unique Challenges for Professional Divorce</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Unique Challenges for Professional Divorce in Maryland</h2>
             <div class="space-y-5">
               {uniqueChallenges.map((challenge) => (
                 <div class="bg-teal-50 border-l-4 border-teal p-5">
@@ -133,17 +186,17 @@ const uniqueChallenges = [
               <h3 class="font-serif text-xl font-bold mb-4">Protect Your Career &amp; Future</h3>
               <p class="text-teal-100 text-sm mb-5 leading-relaxed">Do not let divorce derail what you have spent your career building. Our team is ready to help.</p>
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(240) 326-7712</a>
             </div>
             <div class="bg-gray-50 p-6 rounded-sm">
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
-                  { label: 'Business Divorce', href: '/divorces-involving-businesses' },
-                  { label: 'Asset Division', href: '/asset-division' },
-                  { label: 'Spousal Support', href: '/spousal-support' },
-                  { label: 'Divorce', href: '/divorce' },
+                  { label: 'High Net Worth Divorce Maryland', href: '/high-net-worth-divorce' },
+                  { label: 'Business Divorce Attorney', href: '/divorces-involving-businesses' },
+                  { label: 'Asset Division Maryland', href: '/asset-division' },
+                  { label: 'Spousal Support Lawyer Maryland', href: '/spousal-support' },
+                  { label: 'Divorce Attorney Maryland', href: '/divorce' },
                 ].map((link) => (
                   <li>
                     <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">

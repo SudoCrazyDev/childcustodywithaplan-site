@@ -31,25 +31,104 @@ const factors = [
   'Whether the award would award the recipient a standard of living unconscionably disparate to the payor',
   'Agreement between the parties',
 ];
+
+const spousalSupportSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://childcustodywithaplan.com/spousal-support/#service",
+      "name": "Spousal Support Lawyer Maryland",
+      "alternateName": [
+        "Alimony Lawyer Maryland",
+        "Spousal Support Attorney Maryland",
+        "Alimony Attorney Rockville MD",
+        "Alimony Lawyer Baltimore MD"
+      ],
+      "serviceType": "Spousal Support and Alimony Legal Representation",
+      "provider": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "areaServed": [
+        { "@type": "State", "name": "Maryland" },
+        { "@type": "City", "name": "Rockville, MD" },
+        { "@type": "City", "name": "Baltimore, MD" }
+      ],
+      "description": "Maryland spousal support and alimony attorneys representing both recipients and payors. Strategic advocacy for fair alimony outcomes in divorce proceedings. Serving Rockville and Baltimore.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free initial consultation on spousal support matters",
+        "url": "https://childcustodywithaplan.com/free-consultation"
+      },
+      "url": "https://childcustodywithaplan.com/spousal-support"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://childcustodywithaplan.com/spousal-support/#webpage",
+      "url": "https://childcustodywithaplan.com/spousal-support",
+      "name": "Spousal Support Lawyer Maryland — Alimony Attorney | Child Custody with a Plan",
+      "description": "Maryland spousal support and alimony attorneys representing both recipients and payors. Strategic advocacy for fair outcomes in Rockville and Baltimore. Free consultation.",
+      "isPartOf": { "@id": "https://childcustodywithaplan.com/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://childcustodywithaplan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://childcustodywithaplan.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Spousal Support", "item": "https://childcustodywithaplan.com/spousal-support" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does a Maryland court decide the amount of spousal support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maryland courts consider numerous statutory factors including each spouse's earning capacity, the duration of the marriage, the standard of living established during the marriage, each party's financial resources, contributions to the family (monetary and non-monetary), and the circumstances leading to the divorce. There is no formula — alimony is highly discretionary, making experienced legal advocacy critical."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can alimony be modified after a Maryland divorce is finalized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Rehabilitative alimony can be modified or terminated upon a showing of a material change in circumstances, such as a significant income change, the recipient's remarriage, or cohabitation. Indefinite alimony may also be modified if circumstances change significantly. An experienced Maryland spousal support attorney can evaluate whether modification is appropriate in your situation."
+          }
+        }
+      ]
+    }
+  ]
+});
 ---
 
 <BaseLayout
-  title="Spousal Support Attorneys Maryland — Alimony &amp; Spousal Support | Child Custody with a Plan"
-  description="Maryland spousal support and alimony attorneys representing both recipients and payors. Strategic advocacy for fair alimony outcomes in Rockville and Baltimore. Free consultation available."
+  title="Spousal Support Lawyer Maryland — Alimony Attorney | Child Custody with a Plan"
+  description="Maryland spousal support &amp; alimony attorney representing recipients and payors. Strategic advocacy for fair alimony outcomes in Rockville &amp; Baltimore MD. Free consultation available."
+  canonicalURL="https://childcustodywithaplan.com/spousal-support"
+  ogImage="/images/spousal-support.webp"
+  schema={spousalSupportSchema}
 >
-  <section class="bg-teal py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <!-- Hero -->
+  <section
+    class="relative overflow-hidden"
+    style="background-image: url('/images/spousal-support.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    aria-label="Spousal Support Alimony Lawyer Maryland Hero"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
         <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-          Spousal Support &amp; Alimony in Maryland
+          Spousal Support &amp; Alimony Lawyer in Maryland
         </h1>
-        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+        <p class="text-lg text-gray-200 leading-relaxed mb-8">
           Whether you are seeking alimony to maintain financial stability after divorce or defending against an award you believe is unjust, our Maryland spousal support attorneys provide strategic, evidence-based advocacy designed to protect your financial future.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/free-consultation" class="btn-primary">Free Consultation</a>
-          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+          <a href="tel:+12403267712" class="btn-secondary">Call (240) 326-7712</a>
         </div>
       </div>
     </div>
@@ -57,7 +136,7 @@ const factors = [
 
   <div class="bg-gray-50 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <nav class="text-sm text-gray-500 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-500 flex items-center gap-2">
         <a href="/" class="hover:text-teal">Home</a>
         <span>/</span>
         <a href="/services" class="hover:text-teal">Services</a>
@@ -81,7 +160,7 @@ const factors = [
                 Unlike child support, which is determined by a specific formula, alimony decisions involve significant judicial discretion. This makes strategic legal advocacy — and thorough financial documentation — absolutely essential.
               </p>
               <p>
-                Whether you are the spouse who needs support to rebuild financial independence or the spouse facing a potentially excessive alimony claim, our Maryland spousal support attorneys will build a compelling, evidence-supported case tailored to your goals.
+                Whether you are the spouse who needs support to rebuild financial independence or the spouse facing a potentially excessive alimony claim, our Maryland spousal support attorneys will build a compelling, evidence-supported case tailored to your goals. These issues frequently arise alongside <a href="/divorce" class="text-teal hover:text-gold underline">divorce proceedings</a> and <a href="/asset-division" class="text-teal hover:text-gold underline">asset division</a>.
               </p>
             </div>
           </div>
@@ -99,7 +178,7 @@ const factors = [
           </div>
 
           <div>
-            <h2 class="font-serif text-2xl font-bold text-teal mb-5">Statutory Factors Maryland Courts Consider</h2>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-5">Statutory Factors Maryland Courts Consider for Spousal Support</h2>
             <p class="text-gray-600 mb-4 leading-relaxed">Maryland courts are required to consider all of the following factors when making alimony determinations:</p>
             <div class="grid sm:grid-cols-2 gap-3">
               {factors.map((factor) => (
@@ -113,7 +192,7 @@ const factors = [
 
           <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-teal text-white p-6 rounded-sm">
-              <h3 class="font-serif text-xl font-bold mb-3">Seeking Alimony</h3>
+              <h3 class="font-serif text-xl font-bold mb-3">Seeking Alimony in Maryland</h3>
               <p class="text-teal-100 text-sm leading-relaxed mb-3">
                 If you sacrificed career advancement, education, or earning potential during your marriage, you may have a strong alimony claim. We build detailed financial narratives that document your contributions and future needs to secure the support you deserve.
               </p>
@@ -127,12 +206,12 @@ const factors = [
           </div>
 
           <div class="bg-teal-50 border-l-4 border-teal p-6">
-            <h3 class="font-serif text-xl font-bold text-teal mb-3">Alimony Modification &amp; Termination</h3>
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Alimony Modification &amp; Termination in Maryland</h3>
             <p class="text-gray-600 text-sm leading-relaxed mb-3">
               Even after alimony is ordered, circumstances can change. Maryland law allows for modification of alimony awards upon a showing of a material change in circumstances — such as a significant change in either party's income, health, or cohabitation.
             </p>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Alimony automatically terminates upon the death of either party or the recipient's remarriage. It may also be terminated or modified if the recipient cohabitates with another person in a romantic relationship.
+              Alimony automatically terminates upon the death of either party or the recipient's remarriage. It may also be terminated or modified if the recipient cohabitates with another person in a romantic relationship. This is similar to the standard for <a href="/child-custody-modification" class="text-teal hover:text-gold font-medium">custody modification in Maryland</a>.
             </p>
           </div>
         </div>
@@ -143,16 +222,16 @@ const factors = [
               <h3 class="font-serif text-xl font-bold mb-4">Discuss Your Alimony Matter</h3>
               <p class="text-teal-100 text-sm mb-5 leading-relaxed">Get an honest assessment of your alimony rights or obligations from experienced Maryland attorneys.</p>
               <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
-              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+              <a href="tel:+12403267712" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(240) 326-7712</a>
             </div>
             <div class="bg-gray-50 p-6 rounded-sm">
               <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
               <ul class="space-y-2">
                 {[
-                  { label: 'Divorce', href: '/divorce' },
-                  { label: 'Asset Division', href: '/asset-division' },
-                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
-                  { label: 'Child Custody', href: '/child-custody' },
+                  { label: 'Divorce Attorney Maryland', href: '/divorce' },
+                  { label: 'Asset Division Maryland', href: '/asset-division' },
+                  { label: 'High Net Worth Divorce Maryland', href: '/high-net-worth-divorce' },
+                  { label: 'Child Custody Attorney Maryland', href: '/child-custody' },
                   { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
                 ].map((link) => (
                   <li>

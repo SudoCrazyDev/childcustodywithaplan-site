@@ -1,0 +1,31 @@
+# robots.txt — Child Custody with a Plan
+# https://childcustodywithaplan.com
+
+User-agent: *
+Allow: /
+
+# Block internal/utility paths
+Disallow: /404
+Disallow: /api/
+Disallow: /_astro/
+
+# Sitemap location
+Sitemap: https://childcustodywithaplan.com/sitemap.xml
+
+# Crawl-delay (optional, be conservative)
+# Crawl-delay: 1
+
+# Specific bot directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /

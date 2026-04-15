@@ -9,18 +9,24 @@ export interface Props {
   ogImage?: string;
   canonicalURL?: string;
   noIndex?: boolean;
+  ogType?: string;
+  schema?: string;
 }
 
 const {
   title,
   description,
-  ogImage = '/og-default.jpg',
+  ogImage = '/images/hero-landing.webp',
   canonicalURL = Astro.url.href,
   noIndex = false,
+  ogType = 'website',
+  schema,
 } = Astro.props;
 
 const siteName = 'Child Custody with a Plan';
+const siteUrl = 'https://childcustodywithaplan.com';
 const fullTitle = title.includes(siteName) ? title : title + ' | ' + siteName;
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
 ---
 
 <!DOCTYPE html>
@@ -32,63 +38,164 @@ const fullTitle = title.includes(siteName) ? title : title + ' | ' + siteName;
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'} />
+    <meta name="geo.region" content="US-MD" />
+    <meta name="geo.placename" content="Rockville, MD" />
 
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Child Custody with a Plan — Maryland Family Law Attorneys" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@childcustodyplan" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+    <meta name="twitter:image:alt" content="Child Custody with a Plan — Maryland Family Law Attorneys" />
 
-    <!-- Local Business Schema -->
+    <!-- Global LegalService + Organization Schema (present on all pages) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LegalService",
-      "name": "Child Custody with a Plan",
-      "url": "https://childcustodywithaplan.com",
-      "telephone": "(301) 289-8917",
-      "description": "Maryland family law firm specializing in child custody, divorce, and family law matters. Serving Rockville and Baltimore.",
-      "slogan": "Where Child Custody Meets Strategy",
-      "foundingDate": "2013",
-      "address": [
+      "@graph": [
         {
-          "@type": "PostalAddress",
-          "streetAddress": "100 Park Ave Suite 205",
-          "addressLocality": "Rockville",
-          "addressRegion": "MD",
-          "postalCode": "20850",
-          "addressCountry": "US"
+          "@type": "LegalService",
+          "@id": "https://childcustodywithaplan.com/#legalservice",
+          "name": "Child Custody with a Plan",
+          "alternateName": "CCWAP",
+          "url": "https://childcustodywithaplan.com",
+          "logo": "https://childcustodywithaplan.com/favicon.svg",
+          "image": "https://childcustodywithaplan.com/images/hero-landing.webp",
+          "telephone": "(240) 326-7712",
+          "email": "info@childcustodywithaplan.com",
+          "description": "Maryland family law firm specializing in child custody, divorce, child custody modification, spousal support, asset division, and high net worth divorce. Serving Rockville, Baltimore, and all of Maryland since 2013.",
+          "slogan": "Where Child Custody Meets Strategy",
+          "foundingDate": "2013",
+          "priceRange": "$$",
+          "currenciesAccepted": "USD",
+          "paymentAccepted": "Cash, Credit Card, Check",
+          "areaServed": [
+            { "@type": "State", "name": "Maryland" },
+            { "@type": "City", "name": "Rockville", "sameAs": "https://en.wikipedia.org/wiki/Rockville,_Maryland" },
+            { "@type": "City", "name": "Baltimore", "sameAs": "https://en.wikipedia.org/wiki/Baltimore" },
+            { "@type": "AdministrativeArea", "name": "Montgomery County, MD" },
+            { "@type": "AdministrativeArea", "name": "Baltimore County, MD" },
+            { "@type": "AdministrativeArea", "name": "Howard County, MD" },
+            { "@type": "AdministrativeArea", "name": "Prince George's County, MD" },
+            { "@type": "AdministrativeArea", "name": "Anne Arundel County, MD" }
+          ],
+          "knowsAbout": [
+            "Child Custody Law Maryland",
+            "Divorce Law Maryland",
+            "Family Law Maryland",
+            "Child Custody Modification",
+            "High Net Worth Divorce",
+            "Spousal Support Maryland",
+            "Asset Division Divorce Maryland",
+            "Father Custody Rights Maryland"
+          ],
+          "location": [
+            {
+              "@type": "LocalBusiness",
+              "name": "Child Custody with a Plan — Rockville Office",
+              "@id": "https://childcustodywithaplan.com/#rockville",
+              "telephone": "(240) 326-7712",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "100 Park Ave Suite 205",
+                "addressLocality": "Rockville",
+                "addressRegion": "MD",
+                "postalCode": "20850",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "39.0840",
+                "longitude": "-77.1528"
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "21:00"
+              },
+              "url": "https://childcustodywithaplan.com/contact"
+            },
+            {
+              "@type": "LocalBusiness",
+              "name": "Child Custody with a Plan — Baltimore Office",
+              "@id": "https://childcustodywithaplan.com/#baltimore",
+              "telephone": "(240) 326-7712",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1537 Light St #100",
+                "addressLocality": "Baltimore",
+                "addressRegion": "MD",
+                "postalCode": "21230",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "39.2778",
+                "longitude": "-76.6143"
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "21:00"
+              },
+              "url": "https://childcustodywithaplan.com/contact"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Maryland Family Law Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Child Custody Attorney Maryland" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Divorce Attorney Maryland" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Child Custody Modification Lawyer Maryland" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "High Net Worth Divorce Attorney Maryland" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spousal Support Lawyer Maryland" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asset Division Divorce Maryland" } }
+            ]
+          },
+          "sameAs": [
+            "https://www.facebook.com/childcustodywithaplan",
+            "https://www.linkedin.com/company/child-custody-with-a-plan"
+          ]
         },
         {
-          "@type": "PostalAddress",
-          "streetAddress": "1537 Light St #100",
-          "addressLocality": "Baltimore",
-          "addressRegion": "MD",
-          "postalCode": "21230",
-          "addressCountry": "US"
+          "@type": "WebSite",
+          "@id": "https://childcustodywithaplan.com/#website",
+          "url": "https://childcustodywithaplan.com",
+          "name": "Child Custody with a Plan",
+          "description": "Maryland child custody and family law attorneys serving Rockville, Baltimore, and all of Maryland.",
+          "publisher": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://childcustodywithaplan.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": "en-US"
         }
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "21:00"
-      },
-      "areaServed": ["Maryland", "Montgomery County MD", "Baltimore MD", "Rockville MD"]
+      ]
     }
     </script>
+
+    <!-- Page-specific schema slot -->
+    {schema && <script type="application/ld+json" set:html={schema} />}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
