@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const groundsForDivorce = [
+  { ground: '12-Month Separation', desc: 'Maryland allows an absolute divorce after 12 months of continuous, uninterrupted separation when there are no minor children, or upon mutual consent with a written settlement agreement.' },
+  { ground: 'Mutual Consent', desc: 'Couples with a signed, comprehensive marital settlement agreement covering all issues including child custody, support, and property may seek a mutual consent divorce.' },
+  { ground: 'Irreconcilable Differences', desc: 'Under the 2023 updates to Maryland divorce law, irreconcilable differences now serve as an additional ground for absolute divorce, eliminating the need to prove fault in most cases.' },
+  { ground: 'Adultery', desc: 'Fault-based grounds such as adultery remain available under Maryland law and may be relevant to alimony determinations.' },
+  { ground: 'Cruelty or Excessively Vicious Conduct', desc: 'Where a spouse or a minor child has been subject to cruelty or vicious conduct, a fault-based divorce may be available.' },
+];
+
+const steps = [
+  { num: '01', title: 'File the Complaint', desc: 'Your attorney files a Complaint for Absolute Divorce in the appropriate Maryland circuit court.' },
+  { num: '02', title: 'Service of Process', desc: 'The other spouse must be formally served with the divorce papers and given an opportunity to respond.' },
+  { num: '03', title: 'Discovery Phase', desc: 'Both sides exchange financial information, documents, and other evidence relevant to the proceedings.' },
+  { num: '04', title: 'Negotiation / Mediation', desc: 'Most divorces settle out of court. We negotiate firmly on your behalf to reach a fair resolution.' },
+  { num: '05', title: 'Trial (if needed)', desc: 'If negotiation fails, we present your case powerfully before the circuit court judge.' },
+  { num: '06', title: 'Final Decree', desc: 'Upon resolution, the court issues a Judgment of Absolute Divorce, finalizing your legal separation.' },
+];
+---
+
+<BaseLayout
+  title="Maryland Divorce Attorneys — Strategic Divorce Representation | Child Custody with a Plan"
+  description="Experienced Maryland divorce attorneys serving Rockville and Baltimore. Child Custody with a Plan provides strategic, compassionate divorce representation for contested and uncontested matters. Free consultation."
+>
+  <!-- Hero -->
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Maryland Divorce Attorneys
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+          Divorce is one of the most significant legal proceedings you will ever face. At Child Custody with a Plan, we provide the strategic representation, compassionate counsel, and decisive advocacy you need to protect your rights and secure your future.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="btn-primary">Free Consultation</a>
+          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-teal">Services</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">Divorce</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Content -->
+        <div class="lg:col-span-2 space-y-8">
+          <div>
+            <h2 class="section-heading mb-4">Maryland Divorce Law: What You Need to Know</h2>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Maryland divorce law underwent significant changes in 2023, modernizing the grounds for divorce and streamlining the process for many couples. Understanding these changes — and how they apply to your specific situation — is essential before you take any legal steps.
+              </p>
+              <p>
+                Maryland recognizes two types of divorce: <strong>Absolute Divorce</strong> and <strong>Limited Divorce</strong>. An absolute divorce is a complete legal dissolution of the marriage, addressing all issues including property division, custody, and support. A limited divorce is a court-supervised separation that can address immediate needs such as support and custody but does not end the marriage.
+              </p>
+              <p>
+                At Child Custody with a Plan, our Maryland divorce attorneys handle both contested and uncontested matters. Whether you and your spouse are in agreement on all issues or facing contentious disputes over property, custody, and support, we provide the legal guidance and advocacy your situation requires.
+              </p>
+            </div>
+          </div>
+
+          <!-- Grounds -->
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Grounds for Divorce in Maryland</h2>
+            <div class="space-y-4">
+              {groundsForDivorce.map((g) => (
+                <div class="border-l-4 border-gold pl-5 py-2">
+                  <h3 class="font-semibold text-gray-800 mb-1">{g.ground}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">{g.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Steps -->
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">The Maryland Divorce Process</h2>
+            <div class="space-y-4">
+              {steps.map((step) => (
+                <div class="flex gap-4 items-start">
+                  <div class="w-12 h-12 bg-teal text-white font-bold flex items-center justify-center flex-shrink-0 rounded-sm text-sm">
+                    {step.num}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">{step.title}</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Additional Content -->
+          <div class="bg-teal-50 p-6 rounded-sm border-l-4 border-teal">
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Contested vs. Uncontested Divorce</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              An <strong>uncontested divorce</strong> occurs when both spouses agree on all issues — division of property, child custody, visitation, and support. These matters can often be resolved more efficiently and cost-effectively, and our firm helps clients reach fair, comprehensive marital settlement agreements.
+            </p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              A <strong>contested divorce</strong> arises when spouses disagree on one or more key issues. These cases require skilled litigation and negotiation. Our attorneys are experienced trial lawyers who know how to present compelling cases in Maryland circuit courts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-teal text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-4">Start with a Free Consultation</h3>
+              <p class="text-teal-100 text-sm mb-5 leading-relaxed">Speak with an experienced Maryland divorce attorney before making any decisions. Your consultation is completely free and confidential.</p>
+              <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">
+                Schedule Consultation
+              </a>
+              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">
+                (301) 289-8917
+              </a>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-sm">
+              <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
+              <ul class="space-y-2">
+                {[
+                  { label: 'Asset Division', href: '/asset-division' },
+                  { label: 'Spousal Support', href: '/spousal-support' },
+                  { label: 'Child Custody', href: '/child-custody' },
+                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
+                  { label: 'Business Divorce', href: '/divorces-involving-businesses' },
+                ].map((link) => (
+                  <li>
+                    <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">
+                      <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-gold p-6 rounded-sm text-white">
+              <h3 class="font-serif text-xl font-bold mb-2">Our Offices</h3>
+              <div class="space-y-3 text-sm text-white/90">
+                <div>
+                  <strong>Rockville</strong><br/>
+                  100 Park Ave Suite 205, MD 20850
+                </div>
+                <div>
+                  <strong>Baltimore</strong><br/>
+                  1537 Light St #100, MD 21230
+                </div>
+                <div>Mon–Fri: 9AM–9PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

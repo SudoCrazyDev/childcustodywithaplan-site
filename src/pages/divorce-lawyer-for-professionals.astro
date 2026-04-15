@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const professionalTypes = [
+  { type: 'Physicians & Surgeons', icon: '🏥', concerns: ['Medical practice valuation', 'Malpractice tail coverage', 'Hospital privileges and partnerships', 'Complex income averaging'] },
+  { type: 'Attorneys & Judges', icon: '⚖️', concerns: ['Law firm partnership interests', 'Client relationship confidentiality', 'Deferred compensation structures', 'Bar licensing considerations'] },
+  { type: 'Corporate Executives', icon: '💼', concerns: ['Stock options and RSUs', 'Executive bonuses and deferred pay', 'Non-compete agreements', 'Corporate benefit plans'] },
+  { type: 'Business Owners', icon: '🏢', concerns: ['Business valuation', 'Goodwill (personal vs. enterprise)', 'Key-person insurance', 'Ownership succession planning'] },
+  { type: 'Financial Professionals', icon: '📊', concerns: ['Investment book of business', 'Regulatory compliance concerns', 'Licensing and registration issues', 'Bonus and commission structures'] },
+  { type: 'Academics & Researchers', icon: '🎓', concerns: ['Tenure and faculty appointments', 'Research grants and intellectual property', 'Sabbatical pay structures', 'University benefit plans'] },
+];
+
+const uniqueChallenges = [
+  {
+    title: 'Complex Income Structures',
+    desc: 'Professional income often includes base salary, bonuses, commissions, profit-sharing, and deferred compensation. Accurately calculating income for support purposes requires detailed financial analysis.',
+  },
+  {
+    title: 'Professional Goodwill',
+    desc: 'Maryland courts distinguish between personal goodwill (tied to the individual professional) and enterprise goodwill (tied to the business itself). Only enterprise goodwill is divisible as marital property.',
+  },
+  {
+    title: 'Licensing and Reputation',
+    desc: 'Divorce proceedings can create professional and reputational risks. We handle your matter with the utmost discretion to protect your standing in your field and with licensing boards.',
+  },
+  {
+    title: 'Non-Compete Agreements',
+    desc: 'Many professionals operate under restrictive covenants. These agreements can affect business valuation, income potential, and post-divorce career options — all of which must be addressed in settlement.',
+  },
+];
+---
+
+<BaseLayout
+  title="Divorce Lawyer for Professionals Maryland — Physician, Executive &amp; Attorney Divorce | Child Custody with a Plan"
+  description="Maryland divorce lawyers specializing in divorce for doctors, executives, attorneys, and professionals. Protecting complex income, business interests, and professional reputation. Free consultation in Rockville or Baltimore."
+>
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Divorce Lawyer for Professionals
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+          As a professional — physician, attorney, executive, or business owner — your divorce involves stakes that go far beyond personal relationships. Your income, business interests, professional reputation, and career are all on the line. We understand your world.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="btn-primary">Free Consultation</a>
+          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-teal">Services</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">Divorce for Professionals</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-10">
+          <div>
+            <h2 class="section-heading mb-4">When Your Career Is Part of the Equation</h2>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Professionals invest years — sometimes decades — building their careers, practices, and reputations. A divorce that is not carefully managed can jeopardize everything you have built. The financial complexity alone — multiple income streams, deferred compensation, professional goodwill, business interests — can overwhelm attorneys who lack specialized experience.
+              </p>
+              <p>
+                At Child Custody with a Plan, we represent Maryland professionals in divorce proceedings with a deep understanding of the unique legal, financial, and personal challenges involved. Our attorneys know how to analyze complex compensation packages, contest improper business valuations, and protect your professional reputation throughout the process.
+              </p>
+              <p>
+                We approach every professional divorce with the same strategic discipline we apply to all our cases — but with a heightened awareness of the career-specific dimensions that can make or break the outcome.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Professionals We Represent</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+              {professionalTypes.map((prof) => (
+                <div class="bg-gray-50 p-5 rounded-sm border-b-2 border-gold">
+                  <div class="text-3xl mb-3">{prof.icon}</div>
+                  <h3 class="font-semibold text-teal mb-3">{prof.type}</h3>
+                  <ul class="space-y-1.5">
+                    {prof.concerns.map((c) => (
+                      <li class="flex items-start gap-2 text-sm text-gray-600">
+                        <svg class="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Unique Challenges for Professional Divorce</h2>
+            <div class="space-y-5">
+              {uniqueChallenges.map((challenge) => (
+                <div class="bg-teal-50 border-l-4 border-teal p-5">
+                  <h3 class="font-semibold text-teal mb-2">{challenge.title}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">{challenge.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-gray-900 text-white p-8 rounded-sm">
+            <h3 class="font-serif text-2xl font-bold mb-4">Discretion Is Not Optional</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              For professionals, a contentious or publicly messy divorce can have professional consequences far beyond the courtroom. We handle every case with the utmost discretion, protecting your reputation in your professional community, with employers, boards, and licensing authorities.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              Our goal is not just a favorable legal outcome — it is an outcome that positions you for continued professional success long after the divorce is finalized.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-teal text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-4">Protect Your Career &amp; Future</h3>
+              <p class="text-teal-100 text-sm mb-5 leading-relaxed">Do not let divorce derail what you have spent your career building. Our team is ready to help.</p>
+              <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
+              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-sm">
+              <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
+              <ul class="space-y-2">
+                {[
+                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
+                  { label: 'Business Divorce', href: '/divorces-involving-businesses' },
+                  { label: 'Asset Division', href: '/asset-division' },
+                  { label: 'Spousal Support', href: '/spousal-support' },
+                  { label: 'Divorce', href: '/divorce' },
+                ].map((link) => (
+                  <li>
+                    <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">
+                      <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

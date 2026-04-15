@@ -1,0 +1,172 @@
+---
+const navLinks = [
+  { label: 'Home', href: '/' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'About the Firm', href: '/about' },
+      { label: 'Our Attorneys', href: '/attorneys' },
+    ],
+  },
+  {
+    label: 'Services',
+    href: '/services',
+    children: [
+      { label: 'All Services', href: '/services' },
+      { label: 'Divorce', href: '/divorce' },
+      { label: 'Asset Division', href: '/asset-division' },
+      { label: 'Divorces Involving Businesses', href: '/divorces-involving-businesses' },
+      { label: 'Divorce Lawyer for Professionals', href: '/divorce-lawyer-for-professionals' },
+      { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
+      { label: 'Spousal Support', href: '/spousal-support' },
+      { label: 'Child Custody', href: '/child-custody' },
+      { label: 'Child Custody Modification', href: '/child-custody-modification' },
+    ],
+  },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="w-full z-50 bg-white shadow-sm">
+  <!-- Top bar -->
+  <div class="bg-teal text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">
+      <div class="flex items-center gap-6">
+        <a href="tel:3012898917" class="flex items-center gap-1.5 hover:text-gold transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          (301) 289-8917
+        </a>
+        <span class="hidden sm:inline text-teal-300">|</span>
+        <span class="hidden sm:flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+          Mon–Fri 9AM–9PM
+        </span>
+      </div>
+      <a href="/free-consultation" class="bg-gold hover:bg-gold-600 text-white px-4 py-1 text-xs font-semibold uppercase tracking-wider transition-colors rounded-sm">
+        Free Consultation
+      </a>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="/" class="flex flex-col leading-tight group">
+      <span class="font-serif text-xl font-bold text-teal group-hover:text-teal-600 transition-colors">Child Custody</span>
+      <span class="font-serif text-xl font-bold text-gold">with a Plan</span>
+      <span class="text-xs text-gray-500 font-sans tracking-widest uppercase">Where Child Custody Meets Strategy</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden lg:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <li class="relative group">
+          <a
+            href={link.href}
+            class={
+              'flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-sm ' +
+              (currentPath === link.href || currentPath.startsWith(link.href + '/') && link.href !== '/'
+                ? 'text-teal font-semibold'
+                : 'text-gray-700 hover:text-teal')
+            }
+          >
+            {link.label}
+            {link.children && (
+              <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            )}
+          </a>
+          {link.children && (
+            <ul class="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-gold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              {link.children.map((child) => (
+                <li>
+                  <a
+                    href={child.href}
+                    class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-teal-50 hover:text-teal transition-colors border-b border-gray-100 last:border-0"
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="/free-consultation" class="btn-primary text-xs">Schedule Consultation</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span class="block w-6 h-0.5 bg-teal transition-transform" id="bar1"></span>
+      <span class="block w-6 h-0.5 bg-teal transition-opacity" id="bar2"></span>
+      <span class="block w-6 h-0.5 bg-teal transition-transform" id="bar3"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+    <ul class="py-2">
+      {navLinks.map((link) => (
+        <li>
+          <a href={link.href} class="block px-6 py-3 text-gray-700 hover:text-teal hover:bg-teal-50 font-medium transition-colors">
+            {link.label}
+          </a>
+          {link.children && (
+            <ul class="bg-gray-50 border-l-4 border-gold ml-6">
+              {link.children.map((child) => (
+                <li>
+                  <a href={child.href} class="block px-4 py-2.5 text-sm text-gray-600 hover:text-teal transition-colors">
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+      <li class="px-6 py-3">
+        <a href="/free-consultation" class="btn-primary block text-center text-xs">Free Consultation</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (bar1) bar1.style.transform = '';
+        if (bar2) bar2.style.opacity = '';
+        if (bar3) bar3.style.transform = '';
+      } else {
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (bar1) bar1.style.transform = 'translateY(8px) rotate(45deg)';
+        if (bar2) bar2.style.opacity = '0';
+        if (bar3) bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+      }
+    });
+  }
+</script>

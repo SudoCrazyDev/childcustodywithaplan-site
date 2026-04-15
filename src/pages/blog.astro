@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const posts = [
+  {
+    title: 'Understanding Maryland\'s 2023 Divorce Law Changes',
+    slug: '#',
+    date: 'January 15, 2025',
+    category: 'Divorce',
+    excerpt: 'Maryland\'s 2023 updates to divorce law eliminated some traditional fault-based requirements and modernized the process for many couples. Here is what you need to know about how these changes may affect your divorce proceedings.',
+    readTime: '5 min read',
+  },
+  {
+    title: 'The Best Interests of the Child Standard in Maryland Custody Cases',
+    slug: '#',
+    date: 'January 8, 2025',
+    category: 'Child Custody',
+    excerpt: 'Every custody decision in Maryland is governed by the best interests of the child standard. But what does that actually mean in practice? We break down the factors Maryland courts evaluate and how they apply to real cases.',
+    readTime: '7 min read',
+  },
+  {
+    title: 'How Business Ownership Affects Your Maryland Divorce',
+    slug: '#',
+    date: 'December 20, 2024',
+    category: 'Business Divorce',
+    excerpt: 'If you or your spouse owns a business, your divorce becomes significantly more complex. Business valuation, the distinction between personal and enterprise goodwill, and ownership continuity are all critical issues.',
+    readTime: '6 min read',
+  },
+  {
+    title: 'Child Custody Modification in Maryland: Meeting the Material Change Standard',
+    slug: '#',
+    date: 'December 10, 2024',
+    category: 'Child Custody',
+    excerpt: 'Not every change in circumstances justifies modifying a custody order. Maryland courts require a showing of material change before they will reconsider an existing arrangement. Learn what qualifies — and what does not.',
+    readTime: '5 min read',
+  },
+  {
+    title: 'Alimony in Maryland: What Factors Actually Matter',
+    slug: '#',
+    date: 'November 28, 2024',
+    category: 'Spousal Support',
+    excerpt: 'Unlike child support, which follows a specific formula, alimony in Maryland involves significant judicial discretion. Understanding the statutory factors is essential whether you are seeking support or defending against a claim.',
+    readTime: '6 min read',
+  },
+  {
+    title: 'Protecting Your Professional License in a Maryland Divorce',
+    slug: '#',
+    date: 'November 15, 2024',
+    category: 'Divorce for Professionals',
+    excerpt: 'Doctors, attorneys, and other licensed professionals face unique risks in divorce proceedings. From licensing board disclosures to income calculation complexities, here is how to protect your career during a divorce.',
+    readTime: '7 min read',
+  },
+  {
+    title: 'Hidden Assets in High-Net-Worth Divorces: How We Find Them',
+    slug: '#',
+    date: 'November 1, 2024',
+    category: 'High Net Worth Divorce',
+    excerpt: 'When significant wealth is at stake, asset concealment is a real risk. From undervalued businesses to offshore accounts, we explain the most common methods of asset hiding — and the forensic tools used to uncover them.',
+    readTime: '8 min read',
+  },
+  {
+    title: 'Parenting Plans in Maryland: Building an Agreement That Lasts',
+    slug: '#',
+    date: 'October 18, 2024',
+    category: 'Child Custody',
+    excerpt: 'A comprehensive parenting plan is the foundation of stable co-parenting. Learn what every Maryland parenting plan should include and how to create one that serves your children\'s long-term needs.',
+    readTime: '6 min read',
+  },
+  {
+    title: 'What Is Equitable Distribution? Maryland\'s Approach to Property Division',
+    slug: '#',
+    date: 'October 5, 2024',
+    category: 'Asset Division',
+    excerpt: 'Maryland is an equitable distribution state — but equitable does not mean equal. Understanding how courts determine fairness in property division is essential to protecting your financial interests in a divorce.',
+    readTime: '5 min read',
+  },
+];
+
+const categories = ['All', 'Child Custody', 'Divorce', 'Asset Division', 'Spousal Support', 'High Net Worth Divorce', 'Business Divorce', 'Divorce for Professionals'];
+---
+
+<BaseLayout
+  title="Family Law Blog — Maryland Custody &amp; Divorce Legal Resources | Child Custody with a Plan"
+  description="Maryland family law blog from Child Custody with a Plan. Articles on child custody, divorce, alimony, asset division, and more. Educational resources for Maryland families navigating family law."
+>
+  <section class="bg-teal py-20 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Legal Resources</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Maryland Family Law Blog
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed">
+          Practical legal information to help Maryland families navigate custody, divorce, and family law with confidence. Written by our attorneys.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal">Home</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">Blog</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="bg-white border-b border-gray-200 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap gap-2">
+        {categories.map((cat, i) => (
+          <button class={
+            'px-4 py-1.5 text-sm font-medium rounded-full transition-colors ' +
+            (i === 0
+              ? 'bg-teal text-white'
+              : 'bg-gray-100 text-gray-600 hover:bg-teal hover:text-white')
+          }>
+            {cat}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Posts -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-sm overflow-hidden group">
+            <div class="bg-teal h-2"></div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-4">
+                <span class="bg-gold/10 text-gold text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">{post.category}</span>
+                <span class="text-gray-400 text-xs">{post.readTime}</span>
+              </div>
+              <h2 class="font-serif text-lg font-bold text-gray-900 mb-3 group-hover:text-teal transition-colors leading-snug">
+                <a href={post.slug}>{post.title}</a>
+              </h2>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <span class="text-gray-400 text-xs">{post.date}</span>
+                <a href={post.slug} class="text-teal text-sm font-semibold hover:text-gold transition-colors">Read More &rarr;</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-12 bg-white border border-gray-200 p-6 rounded-sm text-center max-w-3xl mx-auto">
+        <p class="text-xs text-gray-500 leading-relaxed">
+          <strong>Legal Information Disclaimer:</strong> The articles on this blog are provided for general informational purposes only and do not constitute legal advice. Reading these articles does not create an attorney-client relationship. Family law matters are highly fact-specific. Please consult with a licensed Maryland attorney about your individual situation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-serif text-2xl font-bold text-teal mb-4">Stay Informed on Maryland Family Law</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">Subscribe to receive updates on Maryland family law changes, court decisions, and practical legal guidance.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required class="flex-grow border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal" />
+        <button type="submit" class="bg-teal text-white px-6 py-3 text-sm font-semibold rounded-sm hover:bg-teal-600 transition-colors uppercase tracking-wide whitespace-nowrap">Subscribe</button>
+      </form>
+      <p class="text-xs text-gray-400 mt-3">No spam. Unsubscribe at any time.</p>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

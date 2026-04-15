@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-gold text-white font-semibold px-8 py-3 rounded-sm hover:bg-gold-600 transition-colors duration-200 tracking-wide uppercase text-sm;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-sm hover:bg-white hover:text-teal transition-colors duration-200 tracking-wide uppercase text-sm;
+  }
+
+  .btn-outline-teal {
+    @apply inline-block bg-transparent border-2 border-teal text-teal font-semibold px-8 py-3 rounded-sm hover:bg-teal hover:text-white transition-colors duration-200 tracking-wide uppercase text-sm;
+  }
+
+  .section-heading {
+    @apply font-serif text-3xl md:text-4xl text-teal font-bold leading-tight;
+  }
+
+  .section-subheading {
+    @apply font-serif text-xl md:text-2xl text-gray-700 font-medium;
+  }
+
+  .gold-underline {
+    @apply relative inline-block;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-1 bg-gold;
+  }
+
+  .card {
+    @apply bg-white rounded-sm shadow-md hover:shadow-lg transition-shadow duration-300 p-6;
+  }
+
+  .practice-card {
+    @apply bg-white border-l-4 border-gold p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .attorney-card {
+    @apply bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

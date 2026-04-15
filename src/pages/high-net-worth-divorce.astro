@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const complexAssets = [
+  'Luxury real estate portfolios (multiple properties, commercial holdings)',
+  'Investment accounts and stock portfolios',
+  'Hedge fund and private equity interests',
+  'Cryptocurrency and digital asset holdings',
+  'Deferred executive compensation packages',
+  'Stock options, restricted stock units (RSUs), and equity grants',
+  'Business ownership interests and partnership stakes',
+  'Art, jewelry, collectibles, and other high-value personal property',
+  'Offshore accounts and foreign assets',
+  'Family trusts and complex estate planning structures',
+  'Retirement accounts (pensions, 401(k)s, profit-sharing plans)',
+  'Intellectual property and royalty streams',
+];
+
+const whyChooseUs = [
+  {
+    title: 'Expert Financial Analysis',
+    desc: 'We work with certified financial analysts, forensic accountants, and business valuation experts to ensure every asset is properly identified and valued.',
+  },
+  {
+    title: 'Hidden Asset Detection',
+    desc: 'High-net-worth spouses sometimes attempt to obscure assets through business structures, offshore accounts, or underreported income. We have the tools to find them.',
+  },
+  {
+    title: 'Sophisticated Settlement Strategy',
+    desc: 'Not every asset is best divided. Sometimes a strategic trade-off — keeping the business in exchange for retirement accounts — produces better long-term outcomes.',
+  },
+  {
+    title: 'Trial-Ready Representation',
+    desc: 'When opposing parties are unreasonable, we are fully prepared to present a compelling case before a Maryland circuit court judge.',
+  },
+];
+---
+
+<BaseLayout
+  title="High Net Worth Divorce Attorneys Maryland — Protecting Complex Wealth | Child Custody with a Plan"
+  description="Maryland high net worth divorce attorneys protecting complex assets, business interests, and investments. Serving Rockville and Baltimore. Strategic, discreet representation. Free consultation."
+>
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          High Net Worth Divorce in Maryland
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+          When significant wealth, complex assets, and sophisticated financial structures are involved, your divorce demands more than a general practitioner. Our Maryland high net worth divorce attorneys bring specialized expertise, strategic sophistication, and absolute discretion to protect everything you have built.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="btn-primary">Confidential Consultation</a>
+          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-teal">Services</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">High Net Worth Divorce</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-10">
+          <div>
+            <h2 class="section-heading mb-4">The Stakes Are Higher — So Must Be Your Attorney</h2>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                A high net worth divorce is categorically different from a typical family law case. The financial complexity — multiple asset classes, business interests, offshore accounts, trusts, and deferred compensation — demands an attorney who thinks in terms of long-term financial strategy, not just immediate legal resolution.
+              </p>
+              <p>
+                In Maryland, property division in high-asset divorces involves painstaking analysis of what constitutes marital versus non-marital property, how to value complex assets, and what division structure produces the best after-tax, long-term outcome for our client.
+              </p>
+              <p>
+                At Child Custody with a Plan, we approach high net worth divorce with the same rigor we bring to all complex matters — but with a heightened awareness that the financial decisions made in your divorce will compound over decades. We get it right the first time.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Complex Assets We Handle</h2>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {complexAssets.map((asset) => (
+                <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-sm">
+                  <svg class="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span class="text-sm text-gray-700">{asset}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Why High Net Worth Cases Demand Different Representation</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+              {whyChooseUs.map((item) => (
+                <div class="bg-teal-50 p-5 border-t-4 border-teal">
+                  <h3 class="font-semibold text-teal mb-2">{item.title}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-900 text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-3">Prenuptial &amp; Postnuptial Agreements</h3>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Existing prenuptial or postnuptial agreements can significantly affect the division of high-value assets. We analyze these agreements carefully, challenging provisions that are unconscionable, improperly executed, or violated during the marriage.
+              </p>
+            </div>
+            <div class="bg-gold text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-3">Protecting Privacy</h3>
+              <p class="text-white/90 text-sm leading-relaxed">
+                For high-profile clients, privacy is paramount. We employ strategic litigation approaches designed to minimize public exposure while maximizing legal outcomes — protecting both your wealth and your reputation.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-teal-50 border-l-4 border-teal p-6">
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">The Tax Dimension of High-Asset Divorce</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              In high net worth cases, the tax consequences of different property division structures can amount to hundreds of thousands of dollars. We work alongside your financial and tax advisors to ensure that settlement proposals are analyzed not just for their face value, but for their true after-tax economic impact.
+            </p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              From capital gains on real estate transfers to the tax treatment of retirement account divisions via QDRO, we make sure you understand the full financial picture before agreeing to any settlement.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-teal text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-4">Confidential Consultation</h3>
+              <p class="text-teal-100 text-sm mb-5 leading-relaxed">High-asset matters require discretion from day one. Your consultation is completely confidential.</p>
+              <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Schedule Consultation</a>
+              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-sm">
+              <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
+              <ul class="space-y-2">
+                {[
+                  { label: 'Asset Division', href: '/asset-division' },
+                  { label: 'Business Divorce', href: '/divorces-involving-businesses' },
+                  { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
+                  { label: 'Spousal Support', href: '/spousal-support' },
+                  { label: 'Divorce', href: '/divorce' },
+                ].map((link) => (
+                  <li>
+                    <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">
+                      <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const supportTypes = [
+  {
+    type: 'Pendente Lite Alimony',
+    desc: 'Temporary support ordered during the divorce proceedings to maintain the financial status quo while the case is pending. This can be critical for maintaining your lifestyle and ability to participate in the litigation.',
+  },
+  {
+    type: 'Rehabilitative Alimony',
+    desc: 'Time-limited support designed to allow a lower-earning spouse to become self-supporting through education, job training, or career development. Maryland courts most commonly award rehabilitative alimony.',
+  },
+  {
+    type: 'Indefinite Alimony',
+    desc: 'Reserved for cases where the recipient spouse is unable to become self-supporting or where the disparity in the parties\' standards of living after divorce would be unconscionable. This is less commonly awarded but available in appropriate circumstances.',
+  },
+];
+
+const factors = [
+  'Ability of the party seeking alimony to be wholly or partly self-supporting',
+  'Time necessary for the party seeking alimony to gain sufficient education or training',
+  'Standard of living established during the marriage',
+  'Duration of the marriage',
+  'Contributions, monetary and non-monetary, of each party to the well-being of the family',
+  'Circumstances that led to the separation',
+  'Age of each party',
+  'Physical and mental condition of each party',
+  'Ability of the paying party to meet their own needs while meeting the recipient\'s needs',
+  'Financial needs and financial resources of each party, including all income and assets',
+  'Whether the award would award the recipient a standard of living unconscionably disparate to the payor',
+  'Agreement between the parties',
+];
+---
+
+<BaseLayout
+  title="Spousal Support Attorneys Maryland — Alimony &amp; Spousal Support | Child Custody with a Plan"
+  description="Maryland spousal support and alimony attorneys representing both recipients and payors. Strategic advocacy for fair alimony outcomes in Rockville and Baltimore. Free consultation available."
+>
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Spousal Support &amp; Alimony in Maryland
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed mb-8">
+          Whether you are seeking alimony to maintain financial stability after divorce or defending against an award you believe is unjust, our Maryland spousal support attorneys provide strategic, evidence-based advocacy designed to protect your financial future.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/free-consultation" class="btn-primary">Free Consultation</a>
+          <a href="tel:3012898917" class="btn-secondary">Call (301) 289-8917</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-teal">Services</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">Spousal Support</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-10">
+          <div>
+            <h2 class="section-heading mb-4">Understanding Alimony Under Maryland Law</h2>
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                In Maryland, spousal support (also called alimony) is not automatically awarded in divorce proceedings. Courts evaluate a complex set of statutory factors to determine whether alimony is appropriate, what type of alimony to award, and for how long.
+              </p>
+              <p>
+                Unlike child support, which is determined by a specific formula, alimony decisions involve significant judicial discretion. This makes strategic legal advocacy — and thorough financial documentation — absolutely essential.
+              </p>
+              <p>
+                Whether you are the spouse who needs support to rebuild financial independence or the spouse facing a potentially excessive alimony claim, our Maryland spousal support attorneys will build a compelling, evidence-supported case tailored to your goals.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">Types of Alimony in Maryland</h2>
+            <div class="space-y-5">
+              {supportTypes.map((st) => (
+                <div class="border border-gray-200 rounded-sm p-6 hover:border-teal transition-colors">
+                  <h3 class="font-serif text-lg font-bold text-teal mb-2">{st.type}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">{st.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-5">Statutory Factors Maryland Courts Consider</h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">Maryland courts are required to consider all of the following factors when making alimony determinations:</p>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {factors.map((factor) => (
+                <div class="flex items-start gap-3 bg-gray-50 p-3 rounded-sm">
+                  <svg class="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span class="text-sm text-gray-700">{factor}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-teal text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-3">Seeking Alimony</h3>
+              <p class="text-teal-100 text-sm leading-relaxed mb-3">
+                If you sacrificed career advancement, education, or earning potential during your marriage, you may have a strong alimony claim. We build detailed financial narratives that document your contributions and future needs to secure the support you deserve.
+              </p>
+            </div>
+            <div class="bg-gray-900 text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-3">Defending Against Alimony</h3>
+              <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                If you believe an alimony claim against you is excessive or unjust, we provide aggressive defense. We challenge inflated lifestyle claims, document the other spouse's earning capacity, and advocate for fair, appropriately limited awards.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-teal-50 border-l-4 border-teal p-6">
+            <h3 class="font-serif text-xl font-bold text-teal mb-3">Alimony Modification &amp; Termination</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">
+              Even after alimony is ordered, circumstances can change. Maryland law allows for modification of alimony awards upon a showing of a material change in circumstances — such as a significant change in either party's income, health, or cohabitation.
+            </p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Alimony automatically terminates upon the death of either party or the recipient's remarriage. It may also be terminated or modified if the recipient cohabitates with another person in a romantic relationship.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-teal text-white p-6 rounded-sm">
+              <h3 class="font-serif text-xl font-bold mb-4">Discuss Your Alimony Matter</h3>
+              <p class="text-teal-100 text-sm mb-5 leading-relaxed">Get an honest assessment of your alimony rights or obligations from experienced Maryland attorneys.</p>
+              <a href="/free-consultation" class="block bg-gold text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gold-600 transition-colors rounded-sm mb-3">Free Consultation</a>
+              <a href="tel:3012898917" class="block border border-white text-white text-center py-3 text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-teal transition-colors rounded-sm">(301) 289-8917</a>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-sm">
+              <h3 class="font-semibold text-gray-800 mb-4">Related Services</h3>
+              <ul class="space-y-2">
+                {[
+                  { label: 'Divorce', href: '/divorce' },
+                  { label: 'Asset Division', href: '/asset-division' },
+                  { label: 'High Net Worth Divorce', href: '/high-net-worth-divorce' },
+                  { label: 'Child Custody', href: '/child-custody' },
+                  { label: 'Divorce for Professionals', href: '/divorce-lawyer-for-professionals' },
+                ].map((link) => (
+                  <li>
+                    <a href={link.href} class="flex items-center gap-2 text-sm text-gray-600 hover:text-teal transition-colors">
+                      <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const services = [
+  {
+    title: 'Divorce',
+    desc: 'Comprehensive divorce representation in Maryland courts. From uncontested matters to highly contested proceedings, we guide you through every stage with strategy and clarity.',
+    href: '/divorce',
+    icon: '⚖️',
+    features: ['Contested &amp; Uncontested Divorce', 'Absolute vs. Limited Divorce', 'Grounds for Divorce in MD', 'Negotiated Settlements'],
+  },
+  {
+    title: 'Asset Division',
+    desc: 'Maryland follows equitable distribution principles. We fight to ensure you receive a fair share of all marital assets — property, retirement accounts, investments, and more.',
+    href: '/asset-division',
+    icon: '🏠',
+    features: ['Marital vs. Separate Property', 'Real Estate Division', 'Retirement Account Division', 'Business Valuation'],
+  },
+  {
+    title: 'Divorces Involving Businesses',
+    desc: 'When a business is part of the marital estate, the stakes are exponentially higher. We untangle ownership structures, valuations, and distribution challenges with precision.',
+    href: '/divorces-involving-businesses',
+    icon: '🏢',
+    features: ['Business Valuation', 'Ownership Dispute Resolution', 'Protecting Business Continuity', 'Buy-Out Negotiations'],
+  },
+  {
+    title: 'Divorce Lawyer for Professionals',
+    desc: 'Physicians, executives, attorneys, and other professionals face unique divorce risks — from licensing implications to complex compensation structures. We understand your world.',
+    href: '/divorce-lawyer-for-professionals',
+    icon: '🎓',
+    features: ['Complex Income Structures', 'Deferred Compensation', 'Professional License Protection', 'Reputation Management'],
+  },
+  {
+    title: 'High Net Worth Divorce',
+    desc: 'High-asset divorces demand specialized expertise. We protect your wealth, investments, real estate portfolio, and business interests with the sophistication the situation demands.',
+    href: '/high-net-worth-divorce',
+    icon: '💎',
+    features: ['Multi-Jurisdictional Assets', 'Hidden Asset Discovery', 'Investment Portfolio Division', 'Prenuptial Agreement Review'],
+  },
+  {
+    title: 'Spousal Support',
+    desc: 'Whether you are seeking alimony or defending against an unjust award, we provide powerful advocacy backed by thorough financial analysis and Maryland law expertise.',
+    href: '/spousal-support',
+    icon: '📋',
+    features: ['Alimony Calculation', 'Rehabilitative Support', 'Pendente Lite Support', 'Modification of Existing Orders'],
+  },
+  {
+    title: 'Child Custody',
+    desc: 'Your children\'s best interests are our highest priority. We fight for custody arrangements — physical and legal — that reflect your children\'s needs and your parental rights.',
+    href: '/child-custody',
+    icon: '👨‍👧',
+    features: ['Physical &amp; Legal Custody', 'Parenting Plans', 'Visitation Schedules', 'Guardian Ad Litem Matters'],
+  },
+  {
+    title: 'Child Custody Modification',
+    desc: 'Life circumstances change. When a material change in circumstances warrants a custody modification, we help you navigate the court process efficiently and effectively.',
+    href: '/child-custody-modification',
+    icon: '🔄',
+    features: ['Material Change of Circumstances', 'Relocation Cases', 'Emergency Modification', 'Agreement-Based Modifications'],
+  },
+];
+---
+
+<BaseLayout
+  title="Family Law Services — Maryland Divorce &amp; Child Custody Attorneys"
+  description="Child Custody with a Plan offers comprehensive Maryland family law services: divorce, child custody, asset division, spousal support, high net worth divorce, and more. Serving Rockville and Baltimore."
+>
+  <!-- Hero -->
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">What We Do</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Maryland Family Law Services
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed">
+          From contested custody battles to complex high-asset divorces, our attorneys deliver strategic, results-driven representation across every major area of Maryland family law.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">Services</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="section-heading mb-6">Strategic Representation in Every Practice Area</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Family law matters are among the most consequential legal proceedings a person will ever face. The decisions made in the courtroom — or at the negotiating table — will shape your family's future for years to come.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        At Child Custody with a Plan, we approach each practice area with the same commitment: thorough preparation, creative strategy, and unwavering advocacy. Explore our services below, then call us to discuss how we can help in your specific situation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-10 pb-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        {services.map((svc) => (
+          <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-sm overflow-hidden group">
+            <div class="bg-teal p-6 group-hover:bg-teal-600 transition-colors">
+              <div class="text-4xl mb-3">{svc.icon}</div>
+              <h2 class="font-serif text-2xl font-bold text-white">{svc.title}</h2>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600 leading-relaxed mb-5" set:html={svc.desc}></p>
+              <ul class="space-y-2 mb-6">
+                {svc.features.map((f) => (
+                  <li class="flex items-center gap-2 text-sm text-gray-700">
+                    <svg class="w-4 h-4 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span set:html={f}></span>
+                  </li>
+                ))}
+              </ul>
+              <a href={svc.href} class="inline-flex items-center gap-2 text-teal font-semibold text-sm hover:text-gold transition-colors">
+                Learn More About {svc.title}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why CCWAP -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Our Advantage</p>
+          <h2 class="section-heading mb-6">The PROMISE Framework Difference</h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              What sets Child Custody with a Plan apart is not just what we practice — it is how we practice. Every service we provide is delivered through our proprietary PROMISE Framework: Prepare, Research, Organize, Manage, Innovate, Strategize, Execute.
+            </p>
+            <p>
+              This structured, systematic approach means that regardless of whether your matter involves a simple custody agreement or a multi-million-dollar asset division, you receive the same disciplined, strategic representation.
+            </p>
+            <p>
+              We do not believe in cookie-cutter legal strategies. Every family is different. Every case has unique facts, unique goals, and unique challenges. Our job is to understand yours — completely — and then build the right plan.
+            </p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="/free-consultation" class="btn-primary">Start with a Free Consultation</a>
+            <a href="/about" class="btn-outline-teal">About Our Approach</a>
+          </div>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-sm">
+          <h3 class="font-serif text-xl font-bold text-teal mb-6">What to Expect When You Work with Us</h3>
+          <ul class="space-y-4">
+            {[
+              'A thorough initial consultation where we listen to your full story',
+              'A clear explanation of your legal options, rights, and realistic outcomes',
+              'A customized legal strategy built around your specific goals',
+              'Proactive communication and regular case updates',
+              'Aggressive advocacy in negotiation and, when necessary, in court',
+              'Compassionate support throughout the entire process',
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

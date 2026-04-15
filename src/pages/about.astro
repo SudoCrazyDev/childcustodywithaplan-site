@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const values = [
+  {
+    title: 'Strategy Over Reaction',
+    desc: 'Every case begins with a thorough analysis and a deliberate plan. We never simply react to circumstances — we shape the outcome through methodical preparation.',
+    icon: '♟️',
+  },
+  {
+    title: 'Empathy in Practice',
+    desc: 'Family law is personal. Our attorneys lead with genuine compassion for every client navigating one of life\'s most difficult chapters.',
+    icon: '🤝',
+  },
+  {
+    title: 'Community Commitment',
+    desc: 'We are rooted in Maryland communities — from Rockville to Baltimore — and understand the unique dynamics of local courts, families, and cultures.',
+    icon: '🌟',
+  },
+  {
+    title: 'Transparent Communication',
+    desc: 'Clients deserve to know what is happening in their case. We commit to clear, timely communication at every stage of representation.',
+    icon: '💬',
+  },
+  {
+    title: 'Results with Integrity',
+    desc: 'We fight hard for our clients within the bounds of the law and professional ethics — because lasting results are built on a foundation of integrity.',
+    icon: '⚖️',
+  },
+  {
+    title: 'Empowering Clients',
+    desc: 'An informed client is an empowered client. We educate you on your rights, options, and realistic outcomes every step of the way.',
+    icon: '🔑',
+  },
+];
+
+const promiseSteps = [
+  { letter: 'P', word: 'Prepare', desc: 'Thorough case analysis before any court appearance or negotiation.' },
+  { letter: 'R', word: 'Research', desc: 'Rigorous legal research and Maryland family law precedent review.' },
+  { letter: 'O', word: 'Organize', desc: 'Building a coherent, persuasive narrative around your facts and goals.' },
+  { letter: 'M', word: 'Manage', desc: 'Proactive case management that keeps your matter on track.' },
+  { letter: 'I', word: 'Innovate', desc: 'Creative legal strategies tailored to your unique circumstances.' },
+  { letter: 'S', word: 'Strategize', desc: 'Every decision fits within a deliberate, long-term strategic framework.' },
+  { letter: 'E', word: 'Execute', desc: 'Flawless execution in court and at the negotiating table.' },
+];
+---
+
+<BaseLayout
+  title="About Child Custody with a Plan — Maryland Family Law Firm"
+  description="Learn about Child Custody with a Plan, a Maryland family law firm founded in 2013. Serving Rockville, Baltimore, and all of Maryland with strategic, compassionate family law representation."
+>
+  <!-- Hero -->
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">About the Firm</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Where Child Custody Meets Strategy
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed">
+          Child Custody with a Plan is a Maryland family law firm dedicated to empowering families with strategic legal representation, compassionate counsel, and proven results across Rockville, Baltimore, and all of Maryland.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">About</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Our Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Our Story</p>
+          <h2 class="section-heading mb-6">Founded on the Belief That Every Family Deserves a Plan</h2>
+          <div class="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              Child Custody with a Plan was established in 2013 with a singular mission: to provide Maryland families with the kind of strategic, empowering legal representation that changes outcomes — and lives.
+            </p>
+            <p>
+              We recognized a gap in the family law space. Too many families were entering the legal system without a clear strategy, without a trusted advocate who truly understood their goals, and without the individualized attention their cases demanded. We set out to change that.
+            </p>
+            <p>
+              Today, from our offices in Rockville and Baltimore, we serve clients throughout Montgomery County, Baltimore City, Howard County, Prince George's County, Anne Arundel County, and beyond. Our practice spans divorce, child custody, asset division, high-net-worth divorce, spousal support, business divorce, and more.
+            </p>
+            <p>
+              What has never changed is our approach: every case receives the full weight of our firm's resources, intellect, and dedication. Because for us, it is not just a case — it is your family's future.
+            </p>
+          </div>
+        </div>
+        <div class="bg-gray-50 p-10 rounded-sm">
+          <div class="grid grid-cols-2 gap-8 text-center mb-10">
+            <div>
+              <p class="font-serif text-5xl font-bold text-teal mb-2">2013</p>
+              <p class="text-gray-600 text-sm font-medium">Year Established</p>
+            </div>
+            <div>
+              <p class="font-serif text-5xl font-bold text-teal mb-2">2</p>
+              <p class="text-gray-600 text-sm font-medium">Office Locations</p>
+            </div>
+            <div>
+              <p class="font-serif text-5xl font-bold text-teal mb-2">8</p>
+              <p class="text-gray-600 text-sm font-medium">Practice Areas</p>
+            </div>
+            <div>
+              <p class="font-serif text-5xl font-bold text-teal mb-2">3</p>
+              <p class="text-gray-600 text-sm font-medium">States Licensed</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-200 pt-8">
+            <h3 class="font-serif text-lg font-bold text-teal mb-3">Our Offices</h3>
+            <div class="space-y-3 text-sm text-gray-600">
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-gray-800">Rockville, MD</strong><br/>
+                  100 Park Ave Suite 205, Rockville, MD 20850
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-gold rounded-full mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-gray-800">Baltimore, MD</strong><br/>
+                  1537 Light St #100, Baltimore, MD 21230
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">What We Stand For</p>
+        <h2 class="section-heading mb-4">Our Core Values</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">These principles guide every interaction, every strategy, and every decision we make on behalf of our clients.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {values.map((v) => (
+          <div class="bg-white p-6 shadow-sm hover:shadow-md transition-shadow border-l-4 border-gold">
+            <div class="text-3xl mb-4">{v.icon}</div>
+            <h3 class="font-serif text-xl font-bold text-teal mb-2">{v.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE Framework -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Our Process</p>
+        <h2 class="section-heading mb-4">The PROMISE Framework</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Our proprietary PROMISE Framework is the backbone of every client representation. It is a seven-step, structured approach that transforms legal complexity into executable strategy.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        {promiseSteps.slice(0, 4).map((step, i) => (
+          <div class="relative bg-teal text-white p-6 rounded-sm">
+            <div class="font-serif text-6xl font-bold text-white opacity-10 absolute top-4 right-4">{step.letter}</div>
+            <div class="relative z-10">
+              <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-white font-bold font-serif text-lg mb-3">
+                {i + 1}
+              </div>
+              <h3 class="font-semibold text-white mb-2">{step.word}</h3>
+              <p class="text-teal-100 text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        {promiseSteps.slice(4).map((step, i) => (
+          <div class="relative bg-teal text-white p-6 rounded-sm">
+            <div class="font-serif text-6xl font-bold text-white opacity-10 absolute top-4 right-4">{step.letter}</div>
+            <div class="relative z-10">
+              <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-white font-bold font-serif text-lg mb-3">
+                {i + 5}
+              </div>
+              <h3 class="font-semibold text-white mb-2">{step.word}</h3>
+              <p class="text-teal-100 text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas Served -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="section-heading mb-4">Areas We Serve</h2>
+        <p class="text-gray-600 max-w-xl mx-auto leading-relaxed">We represent clients throughout Maryland, with particular depth of experience in:</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {['Montgomery County', 'Baltimore City', 'Baltimore County', 'Howard County', "Prince George's County", 'Anne Arundel County', 'Frederick County', 'Carroll County', 'Harford County', 'Washington D.C.', 'Northern Virginia', 'All of Maryland'].map((area) => (
+          <span class="bg-white border border-teal text-teal text-sm font-medium px-4 py-2 rounded-sm hover:bg-teal hover:text-white transition-colors cursor-default">{area}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

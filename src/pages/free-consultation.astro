@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whatToExpect = [
+  { title: 'A Listening Ear', desc: 'We start by listening — fully and without judgment. You will have the floor to explain your situation, your concerns, and what you hope to achieve.' },
+  { title: 'Honest Assessment', desc: 'After hearing your story, we provide an honest, realistic assessment of your legal options and likely outcomes. We do not sugarcoat, and we do not give empty promises.' },
+  { title: 'Your Legal Rights', desc: 'Many people are surprised to learn what their rights actually are. We explain what the law entitles you to — and what it does not — in plain, understandable language.' },
+  { title: 'A Path Forward', desc: 'By the end of your consultation, you will have a clearer picture of your options and, if we are the right fit, the beginning of a strategy for moving forward.' },
+];
+---
+
+<BaseLayout
+  title="Free Consultation — Maryland Family Law Attorneys | Child Custody with a Plan"
+  description="Schedule your free consultation with Child Custody with a Plan. Our Maryland family law attorneys serve Rockville and Baltimore. Get honest legal guidance on custody, divorce, and family law matters."
+>
+  <section class="bg-teal py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">No Cost. No Obligation.</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          Schedule Your Free Consultation
+        </h1>
+        <p class="text-lg text-teal-100 leading-relaxed">
+          Take the first step toward clarity, strategy, and resolution. Your free consultation with a Maryland family law attorney is waiting — and it could change everything.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a href="/" class="hover:text-teal">Home</a>
+        <span>/</span>
+        <span class="text-gray-800 font-medium">Free Consultation</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-14">
+        <!-- Form -->
+        <div>
+          <h2 class="font-serif text-2xl font-bold text-teal mb-2">Request Your Consultation</h2>
+          <p class="text-gray-600 text-sm mb-8 leading-relaxed">Fill out the form below and we will contact you within one business day to schedule your free, confidential consultation. You can also call us directly at <a href="tel:3012898917" class="text-teal font-semibold hover:text-gold">(301) 289-8917</a>.</p>
+
+          <form class="space-y-5" action="#" method="POST">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="fname" class="block text-sm font-medium text-gray-700 mb-1.5">First Name <span class="text-red-500">*</span></label>
+                <input type="text" id="fname" name="fname" required class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent" />
+              </div>
+              <div>
+                <label for="lname" class="block text-sm font-medium text-gray-700 mb-1.5">Last Name <span class="text-red-500">*</span></label>
+                <input type="text" id="lname" name="lname" required class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent" />
+              </div>
+            </div>
+
+            <div>
+              <label for="cemail" class="block text-sm font-medium text-gray-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
+              <input type="email" id="cemail" name="email" required class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent" />
+            </div>
+
+            <div>
+              <label for="cphone" class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+              <input type="tel" id="cphone" name="phone" required class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent" />
+            </div>
+
+            <div>
+              <label for="pref-contact" class="block text-sm font-medium text-gray-700 mb-1.5">Preferred Contact Method</label>
+              <select id="pref-contact" name="pref-contact" class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent bg-white">
+                <option value="phone">Phone call</option>
+                <option value="email">Email</option>
+                <option value="either">Either</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="consultation-type" class="block text-sm font-medium text-gray-700 mb-1.5">Type of Legal Matter <span class="text-red-500">*</span></label>
+              <select id="consultation-type" name="consultation-type" required class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent bg-white">
+                <option value="">Select...</option>
+                <option value="child-custody">Child Custody</option>
+                <option value="custody-modification">Child Custody Modification</option>
+                <option value="divorce">Divorce</option>
+                <option value="asset-division">Asset Division</option>
+                <option value="high-net-worth">High Net Worth Divorce</option>
+                <option value="alimony">Spousal Support / Alimony</option>
+                <option value="business-divorce">Divorce Involving a Business</option>
+                <option value="professional-divorce">Divorce for Professionals</option>
+                <option value="other">Other Family Law Matter</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="preferred-office" class="block text-sm font-medium text-gray-700 mb-1.5">Preferred Office Location</label>
+              <select id="preferred-office" name="preferred-office" class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent bg-white">
+                <option value="">No preference</option>
+                <option value="rockville">Rockville, MD</option>
+                <option value="baltimore">Baltimore, MD</option>
+                <option value="virtual">Virtual / Phone Consultation</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="csituation" class="block text-sm font-medium text-gray-700 mb-1.5">Brief Description of Your Situation</label>
+              <textarea id="csituation" name="situation" rows="4" class="w-full border border-gray-300 rounded-sm px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent resize-none" placeholder="Tell us a little about your situation so we can be prepared to help you..."></textarea>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-sm text-xs text-gray-500 leading-relaxed">
+              Submitting this form does not create an attorney-client relationship. Please do not include highly sensitive case information. Your information is kept strictly confidential.
+            </div>
+
+            <button type="submit" class="w-full bg-gold text-white font-semibold py-4 px-8 rounded-sm hover:bg-gold-600 transition-colors uppercase tracking-wide text-sm">
+              Request My Free Consultation
+            </button>
+
+            <p class="text-center text-sm text-gray-500">Or call us directly: <a href="tel:3012898917" class="text-teal font-semibold hover:text-gold">(301) 289-8917</a></p>
+          </form>
+        </div>
+
+        <!-- What to Expect + Info -->
+        <div class="space-y-10">
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-teal mb-6">What to Expect at Your Consultation</h2>
+            <div class="space-y-5">
+              {whatToExpect.map((item, index) => (
+                <div class="flex gap-4 items-start">
+                  <div class="w-10 h-10 bg-teal text-white font-bold flex items-center justify-center flex-shrink-0 rounded-full text-sm">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">{item.title}</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-teal text-white p-6 rounded-sm">
+            <h3 class="font-serif text-xl font-bold mb-4">Come Prepared</h3>
+            <p class="text-teal-100 text-sm mb-4 leading-relaxed">To make the most of your consultation, consider gathering:</p>
+            <ul class="space-y-2 text-sm text-teal-100">
+              {[
+                'Any existing court orders or legal agreements',
+                'Relevant financial documents (tax returns, pay stubs, bank statements)',
+                'A timeline of key events in your matter',
+                'A list of your questions and concerns',
+                'Information about children involved (names, ages, schools)',
+              ].map((item) => (
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 gap-5">
+            <div class="bg-gray-50 p-5 text-center rounded-sm">
+              <div class="text-3xl mb-2">🏢</div>
+              <p class="font-semibold text-teal text-sm">Rockville Office</p>
+              <p class="text-gray-600 text-xs mt-1">100 Park Ave Suite 205<br/>Rockville, MD 20850</p>
+            </div>
+            <div class="bg-gray-50 p-5 text-center rounded-sm">
+              <div class="text-3xl mb-2">🏙️</div>
+              <p class="font-semibold text-teal text-sm">Baltimore Office</p>
+              <p class="text-gray-600 text-xs mt-1">1537 Light St #100<br/>Baltimore, MD 21230</p>
+            </div>
+          </div>
+
+          <div class="bg-gold p-6 rounded-sm text-white text-center">
+            <p class="font-serif text-xl font-bold mb-2">Available Mon–Fri, 9AM–9PM</p>
+            <p class="text-white/90 text-sm mb-4">Extended hours designed to accommodate busy schedules.</p>
+            <a href="tel:3012898917" class="inline-block bg-white text-gold font-semibold px-6 py-3 rounded-sm text-sm hover:bg-gray-100 transition-colors uppercase tracking-wide">
+              Call (301) 289-8917
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
