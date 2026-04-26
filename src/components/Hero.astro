@@ -10,6 +10,15 @@ export interface Props {
   overlay?: boolean;
   size?: 'lg' | 'md' | 'sm';
   centered?: boolean;
+  /**
+   * When provided, renders a native <img> as the hero background
+   * instead of a CSS background-image, so the browser can discover
+   * and fetch the image early (critical for LCP).
+   */
+  imageSrc?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 const {
@@ -23,6 +32,10 @@ const {
   overlay = false,
   size = 'lg',
   centered = false,
+  imageSrc,
+  imageAlt = '',
+  imageWidth = 1920,
+  imageHeight = 1080,
 } = Astro.props;
 
 const sizeClasses = {
@@ -32,9 +45,30 @@ const sizeClasses = {
 };
 ---
 
-<section class={bgClass + ' relative ' + sizeClasses[size]}>
-  {overlay && <div class="absolute inset-0 bg-teal bg-opacity-80"></div>}
-  <div class={'max-w-7xl mx-auto px-4 sm:px-6 relative z-10 ' + (centered ? 'text-center' : '')}>
+<section
+  class={'relative overflow-hidden ' + (imageSrc ? '' : bgClass + ' ') + sizeClasses[size]}
+  style={imageSrc ? 'min-height: 480px;' : ''}
+>
+  {imageSrc && (
+    <>
+      <!-- Native <img> for LCP: eager, high-priority, no lazy-loading -->
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        width={imageWidth}
+        height={imageHeight}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        style="z-index:0;"
+      />
+      <!-- Dark overlay for text legibility -->
+      <div class="absolute inset-0 bg-black" style="opacity:0.65;z-index:1;"></div>
+    </>
+  )}
+  {!imageSrc && overlay && <div class="absolute inset-0 bg-teal bg-opacity-80"></div>}
+  <div class={'max-w-7xl mx-auto px-4 sm:px-6 relative ' + (imageSrc ? 'z-10 py-24 md:py-32' : 'z-10 ') + (centered ? 'text-center' : '')}>
     <div class={centered ? 'max-w-3xl mx-auto' : 'max-w-3xl'}>
       <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
         {heading}

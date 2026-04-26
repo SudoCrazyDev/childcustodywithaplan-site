@@ -95,13 +95,24 @@ const modificationSchema = JSON.stringify({
   ogImage="/images/child-custody-modification.webp"
   schema={modificationSchema}
 >
-  <!-- Hero -->
+  <!-- Hero with native <img> for LCP performance -->
   <section
     class="relative overflow-hidden"
-    style="background-image: url('/images/child-custody-modification.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    style="min-height: 480px;"
     aria-label="Child Custody Modification Lawyer Maryland Hero"
   >
-    <div class="absolute inset-0 bg-black/65"></div>
+    <img
+      src="/images/child-custody-modification.webp"
+      alt="Child Custody Modification Lawyer Maryland — Modify Existing Custody Orders"
+      width="1920"
+      height="1080"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="z-index:0;"
+    />
+    <div class="absolute inset-0 bg-black" style="opacity:0.65;z-index:1;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>

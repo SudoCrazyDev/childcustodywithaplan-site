@@ -101,13 +101,24 @@ const assetDivisionSchema = JSON.stringify({
   ogImage="/images/asset-division.webp"
   schema={assetDivisionSchema}
 >
-  <!-- Hero -->
+  <!-- Hero with native <img> for LCP performance -->
   <section
     class="relative overflow-hidden"
-    style="background-image: url('/images/asset-division.webp'); background-size: cover; background-position: center; min-height: 480px;"
+    style="min-height: 480px;"
     aria-label="Asset Division Maryland Hero"
   >
-    <div class="absolute inset-0 bg-black/65"></div>
+    <img
+      src="/images/asset-division.webp"
+      alt="Asset Division Maryland — Equitable Property Distribution Attorney"
+      width="1920"
+      height="1080"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="z-index:0;"
+    />
+    <div class="absolute inset-0 bg-black" style="opacity:0.65;z-index:1;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
       <div class="max-w-3xl">
         <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Practice Area</p>
