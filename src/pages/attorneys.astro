@@ -47,6 +47,24 @@ const attorneys = [
     ],
     focusAreas: ['Child Custody', 'Child Custody Modification', 'Divorce', 'Family Law', 'Domestic Matters'],
   },
+  {
+    name: 'Stephen Lincoln',
+    title: 'Associate Attorney',
+    initials: 'SL',
+    barAdmissions: ['Admitted to Practice Law in Maryland & Illinois'],
+    education: [
+      { degree: 'J.D.', school: 'DePaul University College of Law' },
+      { degree: 'B.A.', school: 'University of Wisconsin-Madison' },
+    ],
+    distinctions: [],
+    priorExperience: [],
+    bio: [
+      'Stephen Lincoln is a family law attorney admitted to practice in Maryland and Illinois, bringing a cross-jurisdictional perspective to the firm\'s practice. His legal training at DePaul University College of Law equipped him with a rigorous foundation in family law, litigation strategy, and client advocacy.',
+      'Stephen\'s academic background at the University of Wisconsin-Madison provided the analytical and communication skills that underpin his approach to complex family law matters. He is committed to helping clients navigate the challenges of divorce, custody, and related proceedings with clarity, purpose, and strategic focus.',
+      'At Child Custody with a Plan, Stephen works alongside the firm\'s experienced team to deliver the thorough, client-centered representation that families in Maryland deserve. His dual-state bar admission reflects both his dedication to professional development and his ability to serve clients with diverse legal needs.',
+    ],
+    focusAreas: ['Child Custody', 'Divorce', 'Asset Division', 'Spousal Support', 'Family Law'],
+  },
 ];
 
 const attorneysSchema = JSON.stringify({
@@ -95,6 +113,22 @@ const attorneysSchema = JSON.stringify({
         { "@type": "CollegeOrUniversity", "name": "Clark Atlanta University" }
       ],
       "knowsAbout": ["Child Custody Maryland", "Child Custody Modification Maryland", "Divorce Law Maryland"],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "Juris Doctor", "credentialCategory": "degree" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://childcustodywithaplan.com/attorneys/#stephen",
+      "name": "Stephen Lincoln",
+      "jobTitle": "Family Law Attorney",
+      "description": "Maryland and Illinois admitted family law attorney at Child Custody with a Plan. J.D., DePaul University College of Law; B.A., University of Wisconsin-Madison.",
+      "worksFor": { "@id": "https://childcustodywithaplan.com/#legalservice" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "DePaul University College of Law" },
+        { "@type": "CollegeOrUniversity", "name": "University of Wisconsin-Madison" }
+      ],
+      "knowsAbout": ["Child Custody Maryland", "Divorce Law Maryland", "Family Law Illinois"],
       "hasCredential": [
         { "@type": "EducationalOccupationalCredential", "name": "Juris Doctor", "credentialCategory": "degree" }
       ]
@@ -215,17 +249,19 @@ const attorneysSchema = JSON.stringify({
               ))}
             </div>
 
-            <div class="mt-10">
-              <h3 class="font-serif text-xl font-bold text-teal mb-4">Prior Experience</h3>
-              <ul class="space-y-3">
-                {attorney.priorExperience.map((exp) => (
-                  <li class="flex items-start gap-3 text-gray-600">
-                    <span class="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></span>
-                    <span>{exp}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {attorney.priorExperience.length > 0 && (
+              <div class="mt-10">
+                <h3 class="font-serif text-xl font-bold text-teal mb-4">Prior Experience</h3>
+                <ul class="space-y-3">
+                  {attorney.priorExperience.map((exp) => (
+                    <li class="flex items-start gap-3 text-gray-600">
+                      <span class="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></span>
+                      <span>{exp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div class="mt-10 bg-teal-50 p-6 rounded-sm border-l-4 border-teal">
               <p class="text-teal font-semibold mb-2">Ready to work with our Maryland family law team?</p>
