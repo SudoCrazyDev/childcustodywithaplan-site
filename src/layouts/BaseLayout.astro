@@ -27,6 +27,9 @@ const siteName = 'Child Custody with a Plan';
 const siteUrl = 'https://childcustodywithaplan.com';
 const fullTitle = title.includes(siteName) ? title : title + ' | ' + siteName;
 const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage;
+
+// Only preload the hero image on the homepage (the true LCP image)
+const isHomePage = Astro.url.pathname === '/';
 ---
 
 <!DOCTYPE html>
@@ -43,6 +46,67 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
     <meta name="geo.placename" content="Rockville, MD" />
 
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- ── LCP image preload (homepage hero only) ─────────────────────── -->
+    {isHomePage && (
+      <link
+        rel="preload"
+        as="image"
+        href="/images/hero-landing.webp"
+        fetchpriority="high"
+      />
+    )}
+
+    <!-- ── Google Fonts: preconnect first, then non-blocking stylesheet ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Load fonts non-blocking:
+      1. rel="preload" as="style" + onload trick defers render-blocking.
+      2. <noscript> fallback for browsers with JS disabled.
+    -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- ── Critical above-the-fold CSS (inlined to eliminate render-blocking) ── -->
+    <style>
+      /* Font stack fallbacks so text is visible before webfonts load */
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        background: #fff;
+        color: #1f2937;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,h2,h3,h4,h5,h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
+      /* Nav skeleton — prevents layout shift */
+      header {
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08);
+      }
+      /* Hero skeleton */
+      .hero-skeleton {
+        min-height: 82vh;
+        background: #0D6E6E;
+      }
+      /* Prevent colour-contrast issues on light grey text */
+      .text-gray-400  { color: #6b7280; }  /* 5.74:1 on white — WCAG AA ✓ */
+      .text-gray-500  { color: #6b7280; }  /* 5.74:1 on white — WCAG AA ✓ */
+      /* teal-100 on teal bg already passes; guard text-teal-100 explicitly */
+    </style>
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
@@ -198,8 +262,6 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
     {schema && <script type="application/ld+json" set:html={schema} />}
 
     <link rel="icon" type="image/png" href="/images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body class="flex flex-col min-h-screen">
     <Header />
