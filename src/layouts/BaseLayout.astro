@@ -46,9 +46,13 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
 
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- ── Preconnect third-party origins FIRST — eliminates DNS+TLS latency ── -->
+    <!-- ── Preconnect first-party and third-party origins — eliminates DNS+TLS latency ── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- External bar association logo CDN: preconnect removes TCP+TLS from critical path -->
+    <link rel="preconnect" href="https://divorcewithaplan.com" />
+    <!-- DNS prefetch as a fallback for browsers that don't support preconnect -->
+    <link rel="dns-prefetch" href="https://divorcewithaplan.com" />
 
     <!-- ── LCP image preload — MUST be before any CSS links for max benefit ── -->
     <!--
