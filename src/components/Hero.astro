@@ -11,14 +11,23 @@ export interface Props {
   size?: 'lg' | 'md' | 'sm';
   centered?: boolean;
   /**
-   * When provided, renders a native <img> as the hero background
+   * When provided, renders a native <picture>/<img> as the hero background
    * instead of a CSS background-image, so the browser can discover
    * and fetch the image early (critical for LCP).
+   *
+   * If imageSrcset400 / imageSrcset800 / imageSrcset1200 are also provided,
+   * a full responsive <picture> element with WebP sources is rendered.
+   * Otherwise falls back to a plain <img> using imageSrc.
    */
   imageSrc?: string;
   imageAlt?: string;
   imageWidth?: number;
   imageHeight?: number;
+  /** WebP srcset variants for responsive <picture> element */
+  imageSrcset400?: string;
+  imageSrcset800?: string;
+  imageSrcset1200?: string;
+  imageSizes?: string;
 }
 
 const {
@@ -34,8 +43,12 @@ const {
   centered = false,
   imageSrc,
   imageAlt = '',
-  imageWidth = 1920,
-  imageHeight = 1080,
+  imageWidth = 1200,
+  imageHeight = 686,
+  imageSrcset400,
+  imageSrcset800,
+  imageSrcset1200,
+  imageSizes = '(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px',
 } = Astro.props;
 
 const sizeClasses = {
@@ -43,6 +56,9 @@ const sizeClasses = {
   md: 'py-16 md:py-24',
   sm: 'py-10 md:py-16',
 };
+
+// Determine whether we have the full responsive WebP srcset trio
+const hasResponsiveSrcset = !!(imageSrcset400 && imageSrcset800 && imageSrcset1200);
 ---
 
 <section
@@ -51,18 +67,46 @@ const sizeClasses = {
 >
   {imageSrc && (
     <>
-      <!-- Native <img> for LCP: eager, high-priority, no lazy-loading -->
-      <img
-        src={imageSrc}
-        alt={imageAlt}
-        width={imageWidth}
-        height={imageHeight}
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-        style="z-index:0;"
-      />
+      {hasResponsiveSrcset ? (
+        /* ── Responsive <picture> with WebP srcset — LCP element ────────────
+           • <source type="image/webp"> with 3 size variants lets the browser
+             pick the smallest appropriate WebP for the viewport.
+           • Fallback <img> uses the 1200w WebP directly (modern browsers only
+             ever hit this if <source> is not matched, which is rare).
+           • NO loading="lazy" — this is above-the-fold and must load eagerly.
+           • fetchpriority="high" — signals to the browser this is the LCP.
+           • decoding="async" — decodes off the main thread.
+        ─────────────────────────────────────────────────────────────────── */
+        <picture class="absolute inset-0 w-full h-full" style="z-index:0;">
+          <source
+            srcset={`${imageSrcset400} 400w, ${imageSrcset800} 800w, ${imageSrcset1200} 1200w`}
+            sizes={imageSizes}
+            type="image/webp"
+          />
+          <img
+            src={imageSrcset1200}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            fetchpriority="high"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+            style="z-index:0;"
+          />
+        </picture>
+      ) : (
+        /* ── Plain <img> fallback when no WebP srcset is provided ───────── */
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+          fetchpriority="high"
+          decoding="async"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          style="z-index:0;"
+        />
+      )}
       <!-- Dark overlay for text legibility -->
       <div class="absolute inset-0 bg-black" style="opacity:0.65;z-index:1;"></div>
     </>

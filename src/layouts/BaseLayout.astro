@@ -61,11 +61,13 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
       queue so the browser starts downloading it in parallel with HTML
       parsing, long before it encounters the <img> tag in the body.
       fetchpriority="high" further boosts it above other high-priority items.
+      type="image/webp" tells the browser this preload is for a WebP resource.
     -->
     <link
       rel="preload"
       as="image"
-      href={ogImage}
+      href="/images/hero-banner-1200w.webp"
+      type="image/webp"
       fetchpriority="high"
     />
 
