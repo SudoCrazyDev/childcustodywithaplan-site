@@ -73,9 +73,10 @@ const hasResponsiveSrcset = !!(imageSrcset400 && imageSrcset800 && imageSrcset12
              pick the smallest appropriate WebP for the viewport.
            • Fallback <img> uses the 1200w WebP directly (modern browsers only
              ever hit this if <source> is not matched, which is rare).
-           • NO loading="lazy" — this is above-the-fold and must load eagerly.
+           • loading="eager" — this is the LCP element; must NOT be lazy.
            • fetchpriority="high" — signals to the browser this is the LCP.
            • decoding="async" — decodes off the main thread.
+           • Explicit width/height — prevents CLS by reserving layout space.
         ─────────────────────────────────────────────────────────────────── */
         <picture class="absolute inset-0 w-full h-full" style="z-index:0;">
           <source
@@ -88,6 +89,7 @@ const hasResponsiveSrcset = !!(imageSrcset400 && imageSrcset800 && imageSrcset12
             alt={imageAlt}
             width={imageWidth}
             height={imageHeight}
+            loading="eager"
             fetchpriority="high"
             decoding="async"
             class="absolute inset-0 w-full h-full object-cover object-center"
@@ -101,6 +103,7 @@ const hasResponsiveSrcset = !!(imageSrcset400 && imageSrcset800 && imageSrcset12
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
+          loading="eager"
           fetchpriority="high"
           decoding="async"
           class="absolute inset-0 w-full h-full object-cover object-center"
