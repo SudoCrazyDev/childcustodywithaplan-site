@@ -9,14 +9,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ogImage="/images/hero-landing.webp"
 >
 
+  <!--
+    ── Homepage-specific LCP image preload ─────────────────────────────────────
+    The hero-banner images are responsive (400w / 800w / 1200w).
+    We preload the largest as the primary LCP candidate.
+    The `imagesrcset` + `imagesizes` attributes match the <img> srcset/sizes below
+    so the browser preloads exactly the right variant for the viewport.
+  -->
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero-banner-1200w.jpg"
+      imagesrcset="/images/hero-banner-400w.jpg 400w, /images/hero-banner-800w.jpg 800w, /images/hero-banner-1200w.jpg 1200w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+  </Fragment>
+
   <!-- ===================== 1. HERO (LCP) ===================== -->
   <!--
-    LCP FIX:
-    • Native <img> instead of background-image so the browser can discover + fetch early
-    • fetchpriority="high" promotes it in the browser's resource scheduler
-    • loading="eager" prevents lazy-loading deferral
-    • decoding="async" keeps the main thread free while image decodes
-    • Explicit width/height prevents layout shift
+    LCP OPTIMISATIONS applied here:
+    • Native <img> (not background-image) — browser can discover + fetch early.
+    • srcset with 3 breakpoints (400w / 800w / 1200w) — mobile downloads the
+      smallest variant, desktop downloads the largest.  Saves ~60–80 % bytes
+      on a 375px screen vs loading the full 1200px image.
+    • sizes="100vw" — hero always fills the full viewport width.
+    • fetchpriority="high" — promotes above other high-priority resources.
+    • loading="eager" — disables lazy-load deferral.
+    • decoding="async" — offloads JPEG decode from the main thread.
+    • Explicit width/height — reserves layout space, prevents CLS.
   -->
   <section
     class="relative overflow-hidden"
@@ -25,18 +47,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   >
     <!-- Hero background image — THIS IS THE LCP ELEMENT -->
     <img
-      src="/images/hero-landing.webp"
-      alt="Maryland Child Custody Attorney — Child Custody with a Plan"
-      width="1920"
-      height="1080"
+      src="/images/hero-banner-1200w.jpg"
+      srcset="/images/hero-banner-400w.jpg 400w,
+              /images/hero-banner-800w.jpg 800w,
+              /images/hero-banner-1200w.jpg 1200w"
+      sizes="100vw"
+      alt="Maryland Child Custody Attorneys — Child Custody with a Plan, Rockville and Baltimore"
+      width="1200"
+      height="800"
       fetchpriority="high"
       loading="eager"
       decoding="async"
       class="absolute inset-0 w-full h-full object-cover object-center"
       style="z-index:0;"
     />
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black" style="opacity: 0.62; z-index:1;"></div>
+    <!-- Dark overlay — ensures text contrast on all viewport sizes -->
+    <div class="absolute inset-0 bg-black" style="opacity: 0.62; z-index:1;" aria-hidden="true"></div>
 
     <div class="relative flex flex-col items-center justify-center text-center min-h-[82vh] px-4 sm:px-6 py-24 max-w-5xl mx-auto w-full" style="z-index:2;">
       <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-4">Maryland Family Law Attorneys</p>
@@ -86,38 +112,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="flex flex-wrap items-center justify-center gap-10 md:gap-16">
         <img
           src="https://divorcewithaplan.com/wp-content/uploads/2025/04/Divorce-With-A-Plan-Maryland-Family-Law-Attorneys_Alliance-of-Black-Women-Attorneyswhite.png"
-          alt="Alliance of Black Women Attorneys"
+          alt="Alliance of Black Women Attorneys member"
           width="160"
           height="64"
           loading="lazy"
           decoding="async"
+          sizes="160px"
           class="h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
         />
         <img
           src="https://divorcewithaplan.com/wp-content/uploads/2025/04/Divorce-With-A-Plan-Maryland-Family-Law-Attorneys_Maryland-State-Bar-Associationwhite.png"
-          alt="Maryland State Bar Association"
+          alt="Maryland State Bar Association member"
           width="160"
           height="64"
           loading="lazy"
           decoding="async"
+          sizes="160px"
           class="h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
         />
         <img
           src="https://divorcewithaplan.com/wp-content/uploads/2025/04/Divorce-With-A-Plan-Maryland-Family-Law-Attorneys_Bar-Associations-of-Baltimore-Citywhite.png"
-          alt="Bar Association of Baltimore City"
+          alt="Bar Association of Baltimore City member"
           width="160"
           height="64"
           loading="lazy"
           decoding="async"
+          sizes="160px"
           class="h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
         />
         <img
           src="https://divorcewithaplan.com/wp-content/uploads/2025/04/Divorce-With-A-Plan-Maryland-Family-Law-Attorneys_Anne-Arundel-County-Bar-Associationwhite.png"
-          alt="Anne Arundel County Bar Association"
+          alt="Anne Arundel County Bar Association member"
           width="160"
           height="64"
           loading="lazy"
           decoding="async"
+          sizes="160px"
           class="h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
         />
       </div>
@@ -141,11 +171,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-child-custody.png"
-              alt="Child Custody"
+              alt="Child Custody legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -159,11 +190,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-custody-modification.png"
-              alt="Custody Modification"
+              alt="Child Custody Modification legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -177,11 +209,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-divorce.png"
-              alt="Divorce"
+              alt="Divorce legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -195,11 +228,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-asset-division.png"
-              alt="Asset Division"
+              alt="Asset Division legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -213,11 +247,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-high-net-worth.png"
-              alt="High Net Worth Divorce"
+              alt="High Net Worth Divorce legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -231,11 +266,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-spousal-support.png"
-              alt="Spousal Support"
+              alt="Spousal Support legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -249,11 +285,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-professionals-divorce.png"
-              alt="Divorce for Professionals"
+              alt="Divorce Lawyer for Professionals icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -267,11 +304,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="mb-4">
             <img
               src="/images/icon-business-divorce.png"
-              alt="Business Divorce"
+              alt="Business Divorce legal services icon"
               width="64"
               height="64"
               loading="lazy"
               decoding="async"
+              sizes="64px"
               class="w-16 h-16"
             />
           </div>
@@ -302,11 +340,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="w-12 h-12 mb-4">
             <img
               src="/images/icon-experienced.png"
-              alt="Experienced"
+              alt="Experienced attorneys icon"
               width="48"
               height="48"
               loading="lazy"
               decoding="async"
+              sizes="48px"
               class="w-12 h-12"
             />
           </div>
@@ -319,11 +358,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="w-12 h-12 mb-4">
             <img
               src="/images/icon-strategic.png"
-              alt="Strategic"
+              alt="Strategic legal approach icon"
               width="48"
               height="48"
               loading="lazy"
               decoding="async"
+              sizes="48px"
               class="w-12 h-12"
             />
           </div>
@@ -336,11 +376,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="w-12 h-12 mb-4">
             <img
               src="/images/icon-compassionate.png"
-              alt="Compassionate"
+              alt="Compassionate advocacy icon"
               width="48"
               height="48"
               loading="lazy"
               decoding="async"
+              sizes="48px"
               class="w-12 h-12"
             />
           </div>
@@ -353,11 +394,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="w-12 h-12 mb-4">
             <img
               src="/images/icon-results.png"
-              alt="Results"
+              alt="Results-driven legal representation icon"
               width="48"
               height="48"
               loading="lazy"
               decoding="async"
+              sizes="48px"
               class="w-12 h-12"
             />
           </div>
@@ -370,11 +412,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="w-12 h-12 mb-4">
             <img
               src="/images/icon-available.png"
-              alt="Available"
+              alt="Available to clients icon"
               width="48"
               height="48"
               loading="lazy"
               decoding="async"
+              sizes="48px"
               class="w-12 h-12"
             />
           </div>
@@ -387,11 +430,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="w-12 h-12 mb-4">
             <img
               src="/images/icon-affordable.png"
-              alt="Affordable"
+              alt="Affordable family law representation icon"
               width="48"
               height="48"
               loading="lazy"
               decoding="async"
+              sizes="48px"
               class="w-12 h-12"
             />
           </div>
@@ -415,7 +459,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Monique Nettleford-Bruce -->
         <div class="bg-white shadow-md p-6 border-t-4 border-teal text-center">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto">MN</div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto" aria-hidden="true">MN</div>
           <h3 class="font-serif text-lg font-bold text-teal mb-1">Monique Nettleford-Bruce</h3>
           <p class="text-gold font-semibold text-xs mb-3 uppercase tracking-wide">Senior Attorney</p>
           <p class="text-gray-600 text-sm leading-relaxed mb-4">J.D., American University Washington College of Law. Former Maryland Legal Aid staff attorney representing clients in housing, custody, divorce, and public benefits matters. Barred in MD and VA.</p>
@@ -424,7 +468,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Aysia Stockton -->
         <div class="bg-white shadow-md p-6 border-t-4 border-teal text-center">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto">AS</div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto" aria-hidden="true">AS</div>
           <h3 class="font-serif text-lg font-bold text-teal mb-1">Aysia Stockton</h3>
           <p class="text-gold font-semibold text-xs mb-3 uppercase tracking-wide">Senior Attorney</p>
           <p class="text-gray-600 text-sm leading-relaxed mb-4">J.D., Appalachian School of Law (2020). B.S. in Criminal Justice, Clark Atlanta University. Former Deputy Clerk, Richmond General District Court. Barred in MD and DC.</p>
@@ -433,7 +477,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Stephen Lincoln -->
         <div class="bg-white shadow-md p-6 border-t-4 border-teal text-center">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto">SL</div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto" aria-hidden="true">SL</div>
           <h3 class="font-serif text-lg font-bold text-teal mb-1">Stephen Lincoln</h3>
           <p class="text-gold font-semibold text-xs mb-3 uppercase tracking-wide">Senior Attorney</p>
           <p class="text-gray-600 text-sm leading-relaxed mb-4">J.D., DePaul University College of Law. B.A., University of Wisconsin-Madison. Admitted to Practice Law in Maryland &amp; Illinois.</p>
@@ -442,7 +486,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Paola Rodriguez -->
         <div class="bg-white shadow-md p-6 border-t-4 border-teal text-center">
-          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto">PR</div>
+          <div class="w-16 h-16 bg-teal rounded-full flex items-center justify-center mb-4 text-white font-serif text-xl font-bold mx-auto" aria-hidden="true">PR</div>
           <h3 class="font-serif text-lg font-bold text-teal mb-1">Paola Rodriguez</h3>
           <p class="text-gold font-semibold text-xs mb-3 uppercase tracking-wide">Senior Attorney</p>
           <p class="text-gray-600 text-sm leading-relaxed mb-4">J.D., University of the District of Columbia, David A. Clarke School of Law. Dedicated advocate bringing skilled family law representation to clients throughout Maryland.</p>
@@ -502,7 +546,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="w-full h-64">
             <iframe
-              title="Rockville Office Map"
+              title="Rockville Office Location Map"
               width="600"
               height="256"
               style="border:0;width:100%;height:100%;"
@@ -550,7 +594,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="w-full h-64">
             <iframe
-              title="Baltimore Office Map"
+              title="Baltimore Office Location Map"
               width="600"
               height="256"
               style="border:0;width:100%;height:100%;"

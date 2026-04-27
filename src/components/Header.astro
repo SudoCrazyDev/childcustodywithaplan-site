@@ -37,12 +37,16 @@ const currentPath = Astro.url.pathname;
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-0">
       <div class="flex items-center gap-6">
         <a href="tel:+12403267712" class="flex items-center gap-1.5 hover:text-gold transition-colors">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
           (240) 326-7712
         </a>
         <span class="hidden sm:inline text-teal-300">|</span>
         <span class="hidden sm:flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+          </svg>
           Mon–Fri 9AM–9PM
         </span>
       </div>
@@ -58,13 +62,14 @@ const currentPath = Astro.url.pathname;
     <a href="/" class="flex items-center">
       <img
         src="/images/logo.png"
-        alt="Child Custody with a Plan"
+        alt="Child Custody with a Plan — Maryland Family Law Attorneys"
         width="200"
         height="48"
         loading="eager"
         decoding="async"
         fetchpriority="high"
         class="h-12 w-auto"
+        sizes="200px"
       />
     </a>
 
@@ -111,20 +116,38 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <!-- Mobile hamburger -->
+    <!--
+      aria-expanded is toggled by JS below.
+      The three bars animate via CSS transform (no layout triggers).
+    -->
     <button
       id="mobile-menu-btn"
       class="lg:hidden flex flex-col gap-1.5 p-2"
       aria-label="Open menu"
       aria-expanded="false"
+      aria-controls="mobile-menu"
     >
-      <span class="block w-6 h-0.5 bg-teal transition-transform" id="bar1"></span>
-      <span class="block w-6 h-0.5 bg-teal transition-opacity" id="bar2"></span>
-      <span class="block w-6 h-0.5 bg-teal transition-transform" id="bar3"></span>
+      <span class="mobile-bar block w-6 h-0.5 bg-teal" id="bar1" aria-hidden="true"></span>
+      <span class="mobile-bar block w-6 h-0.5 bg-teal" id="bar2" aria-hidden="true"></span>
+      <span class="mobile-bar block w-6 h-0.5 bg-teal" id="bar3" aria-hidden="true"></span>
     </button>
   </nav>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-200 bg-white">
+  <!--
+    Mobile menu — transition controlled entirely by CSS via the `.is-open` class.
+    JS only adds/removes the class; it never reads layout properties (offsetHeight,
+    offsetWidth, getBoundingClientRect, scrollTop) after mutating the DOM,
+    so there is zero forced reflow.
+
+    Animation uses max-height + opacity (GPU-composited opacity is cheap;
+    max-height is an overflow clip — no layout recalculation of other elements).
+  -->
+  <div
+    id="mobile-menu"
+    role="region"
+    aria-label="Mobile navigation"
+    class="lg:hidden border-t border-gray-200 bg-white"
+  >
     <ul class="py-2">
       {navLinks.map((link) => (
         <li>
@@ -151,29 +174,83 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const bar1 = document.getElementById('bar1');
-  const bar2 = document.getElementById('bar2');
-  const bar3 = document.getElementById('bar3');
+<style>
+  /*
+   * ── Hamburger bar animations ─────────────────────────────────────────────
+   * Transform-only transitions: no layout-triggering properties.
+   * `will-change: transform` promotes each bar to its own compositor layer,
+   * ensuring the animation runs entirely on the GPU.
+   */
+  .mobile-bar {
+    display: block;
+    width: 1.5rem;   /* 24px */
+    height: 2px;
+    background-color: #0D6E6E;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    will-change: transform;
+    transform-origin: center;
+  }
 
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      const isOpen = !menu.classList.contains('hidden');
+  /* When the button carries [aria-expanded="true"], animate to × */
+  [aria-expanded="true"] #bar1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+  [aria-expanded="true"] #bar2 {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  [aria-expanded="true"] #bar3 {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  /*
+   * Mobile menu toggle — zero-reflow implementation.
+   *
+   * KEY PRINCIPLE: Never read layout properties (offsetWidth, offsetHeight,
+   * getBoundingClientRect, scrollTop, clientWidth, etc.) AFTER mutating the
+   * DOM.  All DOM reads are batched before any writes.
+   *
+   * The animation is driven entirely by CSS transitions on .is-open (defined
+   * in BaseLayout's <style>).  JS only flips the class and aria-expanded; it
+   * never queries computed layout.
+   */
+  (function () {
+    const btn  = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
+    const menu = document.getElementById('mobile-menu') as HTMLElement | null;
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', function () {
+      // ── Batch reads BEFORE any writes ──────────────────────────────────
+      const isOpen = this.getAttribute('aria-expanded') === 'true';
+
+      // ── All writes happen together, after reads ─────────────────────────
       if (isOpen) {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-        if (bar1) bar1.style.transform = '';
-        if (bar2) bar2.style.opacity = '';
-        if (bar3) bar3.style.transform = '';
+        this.setAttribute('aria-expanded', 'false');
+        this.setAttribute('aria-label', 'Open menu');
+        menu.classList.remove('is-open');
       } else {
-        menu.classList.remove('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-        if (bar1) bar1.style.transform = 'translateY(8px) rotate(45deg)';
-        if (bar2) bar2.style.opacity = '0';
-        if (bar3) bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        this.setAttribute('aria-expanded', 'true');
+        this.setAttribute('aria-label', 'Close menu');
+        menu.classList.add('is-open');
       }
     });
-  }
+
+    // Close menu when a nav link is tapped (improves mobile UX)
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        // Read first
+        const stillOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Then write
+        if (stillOpen) {
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Open menu');
+          menu.classList.remove('is-open');
+        }
+      });
+    });
+  })();
 </script>
