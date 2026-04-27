@@ -46,27 +46,20 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
 
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- ── Flatten network chain: preconnect third-party origins first ─── -->
-    <!--
-      Preconnect tells the browser to open a TCP+TLS connection to these
-      origins ASAP, before any resource from them is actually requested.
-      This eliminates the DNS + handshake latency from the critical path.
-    -->
+    <!-- ── Preconnect third-party origins FIRST — eliminates DNS+TLS latency ── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- ── LCP image preload — page-specific hero ───────────────────────── -->
+    <!-- ── LCP image preload — MUST be before any CSS links for max benefit ── -->
     <!--
-      Preloading the hero image moves it to the very front of the fetch
-      queue so the browser starts downloading it in parallel with HTML
-      parsing, long before it encounters the <img> tag in the body.
-      fetchpriority="high" further boosts it above other high-priority items.
-      type="image/webp" tells the browser this preload is for a WebP resource.
+      Preloading hero-landing.webp (the optimised Sharp-generated WebP) moves
+      it to the very front of the fetch queue before the browser parses <body>.
+      fetchpriority="high" further elevates it above other high-priority items.
     -->
     <link
       rel="preload"
       as="image"
-      href="/images/hero-banner-1200w.webp"
+      href="/images/hero-landing.webp"
       type="image/webp"
       fetchpriority="high"
     />
@@ -77,20 +70,12 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
       body/typography base, header skeleton, hero skeleton, and key utility
       classes.  Because they are inlined the browser can paint the first
       frame without waiting for any external stylesheet.
-
-      All color values have been verified for WCAG AA compliance:
-        • Normal text (< 18 pt): minimum 4.5:1 contrast ratio
-        • Large text (≥ 18 pt / bold ≥ 14 pt): minimum 3:1 contrast ratio
     -->
     <style>
       /* ── Reset & box model ──────────────────────────────────────────── */
       *, *::before, *::after { box-sizing: border-box; }
 
       /* ── Body base ──────────────────────────────────────────────────── */
-      /*
-       * Color: #1f2937 (gray-800) on #ffffff
-       * Contrast: 16.1:1 ✓ PASSES AAA
-       */
       body {
         margin: 0;
         font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
@@ -114,7 +99,6 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
       img { max-width: 100%; height: auto; }
 
       /* ── Navigation skeleton ────────────────────────────────────────── */
-      /* Prevents layout shift before Tailwind loads */
       header {
         width: 100%;
         background: #ffffff;
@@ -125,7 +109,6 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
       }
 
       /* ── Hero skeleton ──────────────────────────────────────────────── */
-      /* Reserves space so the page doesn't reflow when the image loads */
       .hero-skeleton {
         min-height: 480px;
         background: #0D6E6E;
@@ -137,43 +120,21 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
       .min-h-screen    { min-height: 100vh; }
       .flex-grow       { flex-grow: 1; }
 
-      /*
-       * ── WCAG AA contrast overrides ───────────────────────────────────
-       *
-       * Tailwind's text-gray-400 (#9ca3af) = 2.85:1 on white → FAILS AA.
-       * We promote it to #6b7280 (gray-500) = 5.74:1 on white → PASSES AA.
-       *
-       * This override loads before Tailwind, so it applies atomically on
-       * first paint and is then simply re-confirmed once Tailwind loads
-       * (both files specify !important, so specificity is consistent).
-       *
-       * Dark-bg check: #6b7280 on #111827 (gray-900) = 7.3:1 → PASSES AAA.
-       * The fix is safe on both light and dark backgrounds.
-       */
+      /* ── WCAG AA contrast: text-gray-400 promoted to gray-500 ───────── */
       .text-gray-400 { color: #6b7280 !important; }
 
-      /*
-       * ── Teal brand color ─────────────────────────────────────────────
-       * Defined here so it is available before Tailwind config loads.
-       */
+      /* ── Teal brand colours ─────────────────────────────────────────── */
       .text-teal  { color: #0D6E6E; }
       .bg-teal    { background-color: #0D6E6E; }
       .text-gold  { color: #B8860B; }
       .bg-gold    { background-color: #B8860B; }
 
-      /*
-       * ── Mobile menu — transform-based animation ───────────────────────
-       * Using max-height + opacity transitions (no offsetHeight reads)
-       * to avoid forced reflow.  The JS toggle only flips data attributes;
-       * all animation is pure CSS.  No layout-triggering properties
-       * (top/height/display) are changed after DOM mutations.
-       */
+      /* ── Mobile menu animation (GPU-composited, no reflow) ──────────── */
       #mobile-menu {
         overflow: hidden;
         max-height: 0;
         opacity: 0;
         visibility: hidden;
-        /* GPU-composited properties only — no layout reflow */
         transition: max-height 0.28s ease, opacity 0.22s ease, visibility 0s linear 0.28s;
       }
       #mobile-menu.is-open {
@@ -184,31 +145,22 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : siteUrl + ogImage
       }
     </style>
 
-    <!-- ── Non-critical CSS: deferred with media="print" trick ──────────── -->
+    <!-- ── Non-critical CSS: async load via preload + onload swap ────────── -->
     <!--
-      By setting media="print" the browser downloads the stylesheet without
-      blocking rendering.  The onload handler immediately switches media to
-      "all", applying the styles as soon as the file is ready.  The
-      <noscript> fallback handles JS-disabled browsers.
-
-      This eliminates the render-blocking stylesheet from the critical path,
-      typically saving 200–500 ms on mobile networks.
+      The rel="preload" + onload trick downloads the stylesheet without
+      blocking rendering.  The browser fetches it at high priority in the
+      background; onload immediately promotes rel to "stylesheet".
+      The <noscript> fallback ensures styles load in JS-disabled browsers.
     -->
     <link
       rel="preload"
-      as="style"
       href="/styles/global.css"
+      as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript><link rel="stylesheet" href="/styles/global.css" /></noscript>
 
     <!-- ── Google Fonts: non-blocking deferred load ─────────────────────── -->
-    <!--
-      1. rel="preload" as="style" + onload swap defers render-blocking.
-      2. <noscript> fallback for JS-disabled browsers.
-      The preconnect tags above have already opened the connection, so the
-      font CSS file itself loads with minimal latency.
-    -->
     <link
       rel="preload"
       as="style"

@@ -9,37 +9,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ogImage="/images/hero-landing.webp"
 >
 
-  <!--
-    ── Homepage-specific LCP image preload ─────────────────────────────────────
-    We preload the 1200w WebP as the primary LCP candidate and supply
-    imagesrcset + imagesizes so the browser preloads exactly the right
-    variant for the current viewport (400w on mobile, 800w on tablet, 1200w
-    on desktop).  type="image/webp" lets WebP-capable browsers use this hint;
-    others will fall back to loading via the <picture> element normally.
-  -->
-  <Fragment slot="head">
-    <link
-      rel="preload"
-      as="image"
-      href="/images/hero-banner-1200w.webp"
-      type="image/webp"
-      imagesrcset="/images/hero-banner-400w.webp 400w, /images/hero-banner-800w.webp 800w, /images/hero-banner-1200w.webp 1200w"
-      imagesizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px"
-      fetchpriority="high"
-    />
-  </Fragment>
-
   <!-- ===================== 1. HERO (LCP) ===================== -->
   <!--
     LCP OPTIMISATIONS applied here:
-    • <picture> with WebP <source> srcset — browser picks the smallest
-      appropriate WebP variant for the viewport, saving 60–80% bytes on
-      mobile vs loading the full 1200px image.
-    • sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px"
-      — matches exactly what's served at each breakpoint.
+    • hero-landing.webp — the Sharp-optimised WebP already on disk.
     • fetchpriority="high" — promotes above other high-priority resources.
-    • NO loading="lazy" — this is the LCP element, must load eagerly.
-    • decoding="async" — offloads WebP/JPEG decode from the main thread.
+    • loading="eager" (no lazy) — this is the LCP element; must load immediately.
+    • decoding="async" — offloads WebP decode from the main thread.
     • Explicit width/height — reserves layout space, prevents CLS.
   -->
   <section
@@ -48,23 +24,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     aria-label="Maryland Child Custody Attorney Hero"
   >
     <!-- Hero background image — THIS IS THE LCP ELEMENT -->
-    <picture class="absolute inset-0 w-full h-full" style="z-index:0;">
-      <source
-        srcset="/images/hero-banner-400w.webp 400w, /images/hero-banner-800w.webp 800w, /images/hero-banner-1200w.webp 1200w"
-        sizes="(max-width: 480px) 400px, (max-width: 1024px) 800px, 1200px"
-        type="image/webp"
-      />
-      <img
-        src="/images/hero-banner-1200w.webp"
-        alt="A parent and child walking hand-in-hand through a sunlit park"
-        width="1200"
-        height="686"
-        fetchpriority="high"
-        decoding="async"
-        class="absolute inset-0 w-full h-full object-cover object-center"
-        style="z-index:0;"
-      />
-    </picture>
+    <img
+      src="/images/hero-landing.webp"
+      alt="A parent and child walking hand-in-hand — Maryland Child Custody with a Plan attorneys"
+      width="1200"
+      height="686"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="z-index:0;"
+    />
     <!-- Dark overlay — ensures text contrast on all viewport sizes -->
     <div class="absolute inset-0 bg-black" style="opacity: 0.62; z-index:1;" aria-hidden="true"></div>
 
